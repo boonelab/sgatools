@@ -1,0 +1,81 @@
+2012-12-19 13:47:26,188 - [INFO] - from play in main 
+Listening for HTTP on port 8080...
+
+2012-12-19 13:48:31,302 - [INFO] - from play in play-akka.actor.default-dispatcher-1 
+Application started (Dev)
+
+2012-12-19 13:48:36,112 - [INFO] - from application in play-akka.actor.actions-dispatcher-11 
+sJOB ID:57195e2d-b9ff-4106-ab10-ac1b80ecf464
+
+2012-12-19 13:48:36,113 - [INFO] - from application in play-akka.actor.actions-dispatcher-11 
+selected for NS JSON:["cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat","cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat","cln1cln2M_Y8835_1_mini.jpeg.dat","cln1cln2M_Y13073_1_mini.jpeg.dat","cln1cln2M_Y13095_1_mini.jpeg.dat","cln1cln2M_Y13096_1_mini.jpeg.dat","test_omarq_1_mini copy.jpeg.dat"]
+
+2012-12-19 13:48:48,755 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+{replicates=4, linkageCutoff=200, scoringFunction=Cᵢⱼ - CᵢCⱼ, doScoring=true, selectedArrayDefPlate=All plates, jobid=57195e2d-b9ff-4106-ab10-ac1b80ecf464, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2012-12-19 13:48:48,756 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@cd8658e
+
+2012-12-19 13:48:48,756 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+JOBid = 57195e2d-b9ff-4106-ab10-ac1b80ecf464
+
+2012-12-19 13:48:48,756 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+Files preloaded from IA, populating plate file map:
+
+2012-12-19 13:48:48,769 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+selectedForNS = ["cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat","cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat","cln1cln2M_Y8835_1_mini.jpeg.dat","cln1cln2M_Y13073_1_mini.jpeg.dat","cln1cln2M_Y13095_1_mini.jpeg.dat","cln1cln2M_Y13096_1_mini.jpeg.dat","test_omarq_1_mini copy.jpeg.dat"]
+
+2012-12-19 13:48:48,773 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,773 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,773 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	cln1cln2M_Y8835_1_mini.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y8835_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,773 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	cln1cln2M_Y13073_1_mini.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13073_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,774 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	cln1cln2M_Y13095_1_mini.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13095_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,774 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	cln1cln2M_Y13096_1_mini.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13096_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,774 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	test_omarq_1_mini copy.jpeg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/test_omarq_1_mini copy.jpeg.dat
+
+2012-12-19 13:48:48,775 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+=================================
+
+2012-12-19 13:48:48,776 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/
+
+2012-12-19 13:48:48,776 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+nsDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ns/
+
+2012-12-19 13:48:48,776 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+outputFilesDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ns/output_files/
+
+2012-12-19 13:48:48,776 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+=================================
+
+2012-12-19 13:48:48,777 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+PLATEFILEMAP = {test_omarq_1_mini copy.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/test_omarq_1_mini copy.jpeg.dat, cln1cln2M_Y8835_1_mini.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y8835_1_mini.jpeg.dat, cln1cln2M_Y13073_1_mini.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13073_1_mini.jpeg.dat, cln1cln2M_Y13095_1_mini.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13095_1_mini.jpeg.dat, cln1cln2M_Y13096_1_mini.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13096_1_mini.jpeg.dat, cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat, cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat}
+
+2012-12-19 13:48:48,777 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+ADFILES=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14
+
+2012-12-19 13:48:48,777 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+INPUTFILES=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/test_omarq_1_mini copy.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y8835_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13073_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13095_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13096_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,777 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+SAVENAMES=test_omarq_1_mini copy.jpeg.dat:cln1cln2M_Y8835_1_mini.jpeg.dat:cln1cln2M_Y13073_1_mini.jpeg.dat:cln1cln2M_Y13095_1_mini.jpeg.dat:cln1cln2M_Y13096_1_mini.jpeg.dat:cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat:cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat
+
+2012-12-19 13:48:48,778 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+SCRIPT CALL=Rscript /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R --inputfiles /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/test_omarq_1_mini copy.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y8835_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13073_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13095_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_Y13096_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ia/output_files/cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat --savenames test_omarq_1_mini copy.jpeg.dat:cln1cln2M_Y8835_1_mini.jpeg.dat:cln1cln2M_Y13073_1_mini.jpeg.dat:cln1cln2M_Y13095_1_mini.jpeg.dat:cln1cln2M_Y13096_1_mini.jpeg.dat:cln1cln2M_wt-SN-CLN2_1_mini.jpeg.dat:cln1cln2M_wt-SN-CLN1_1_mini.jpeg.dat --outputdir /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/57195e2d-b9ff-4106-ab10-ac1b80ecf464/ns/output_files/ --replicates 4 --linkagecutoff 200 --adfiles /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14 --score --sfunction -1 
+
+2012-12-19 13:50:44,086 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
+Application started (Dev)
+

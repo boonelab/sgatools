@@ -1,0 +1,68 @@
+@(elements: helper.FieldElements)
+<div class="control-group 
+	@if(elements.hasErrors) {error}" 
+	@if(elements.args.contains('height)){style="height:@elements.args.get('height)"}
+	id="cg-@elements.id">
+	
+	<label @if(elements.args.contains('helpModal)){onClick="labelHelpClicked('@elements.args.get('helpModal)')" data-toggle="modal" data-target="#helpModal"}
+		class="control-label" for="@elements.id">
+		
+		
+		@if(elements.args.contains('helpModal)){ <abbr title=""> }
+		@elements.label
+		@if(elements.args.contains('helpModal)){ </abbr> }
+	</label>
+	
+	<div class="controls">
+	
+		@if(elements.args.contains('uploadwidget)){
+				<div style="position:absolute; top:-100px;">@elements.input</div>
+				<input type="button" class="btn" id="@elements.id-btn" value="@elements.args.get('uploadwidget)"/>
+				<span class="help-inline" id="@elements.id-span">@if(elements.args.contains('uploadhelp)){ @elements.args.get('uploadhelp) }</span>
+				<script>
+					$('#@elements.id-btn').click(function(){
+						$('#@elements.id').trigger('click');
+					});
+					$('#@elements.id').change(function(){
+						var n = $('#@elements.id')[0].files.length;
+						if(n == 1) {
+							$('#@elements.id-span').html($('#@elements.id')[0].files[0].name);
+						}else if(n > 1){
+							$('#@elements.id-span').html(n + " files selected");
+						}
+						
+						if(n > 0){
+							$('#@elements.id-btn').val("Change"); 
+						}else{
+							$('#@elements.id-btn').val("@elements.args.get('uploadwidget)");
+							$('#@elements.id-span').html('');
+						}
+					});
+				</script>
+				
+				@if(elements.hasErrors) {
+					<span class="help-block" >@elements.errors.mkString(", ")</span>
+				}
+		}else{
+			@if(elements.args.contains('append)){<div class="input-append">}
+			@elements.input
+			@if(elements.args.contains('append)){</div>}
+			
+			<!--
+			<span class="help-inline">@elements.infos.mkString(", ")
+			</span>-->
+			
+			@if(elements.hasErrors) {
+					<span class="help-block" style="margin-left:5px;padding-top:5px">@elements.errors.mkString(", ")</span>
+			}
+  			
+		}
+		
+		
+		
+  		
+		@if(elements.args.contains('appendHTML)){
+			<div id="list"></div>
+		}
+  	</div>
+</div>

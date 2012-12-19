@@ -1,0 +1,223 @@
+@(job: NSjob)
+
+@import play.libs.Scala._
+@import play.Logger;
+@main(title="Data analysis", nav="da") {
+	
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/d3.v2.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/sgatools.heatmap.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/sgatools.histogram.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/crossfilter.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/dc/dc.js")"></script>
+	<link type="text/css" rel="stylesheet" href="@routes.Assets.at("external/sgatools-analysis/dc/dc.css")" />
+	
+	
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.js")"></script>
+	<link type="text/css" rel="stylesheet" href="@routes.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.css")" />
+	
+	<h2>Data analysis</h2><br>
+	
+	<div class="well">
+		<select id="dataCombobox" class="input-xlarge">
+		@for((key,value) <- job.outputFilesMap){
+			<option image-path="/assets/jobs/@job.jobid/ia/input_images/@key.substring(0,key.length-4)" 
+					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
+					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
+		}
+		</select>
+		<select id="viewType" class="input-medium">
+			<option name="colonysize" domainHigh=300 domainMed=150 domainLow=0>Raw colony sizes</option>
+			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
+			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1 selected>Scored data</option> }
+		</select>
+		
+		<style>
+			.input-prepend .add-on{
+				margin-right:-4px;
+			}
+			.span3c{
+				width:195px;
+			}
+		</style>
+			
+		<div class="container">
+		<div class="row" style="margin-left:-18px">
+			<div class="input-prepend span3c">
+			  <span class="add-on">Low</span>
+			  <input class="span1 domainInput" id="domainLowInput" type="text" style="text-align:center;" placeholder="">
+			  <input type="text" id="colorLow" class="input-mini color-picker miniColors" size="7" autocomplete="off" value="#FF0000" maxlength="7">
+			</div>
+            
+             <div class="input-prepend span3c">
+			  <span class="add-on">Med</span>
+			  <input class="span1 domainInput" id="domainMedInput" type="text" style="text-align:center;" placeholder="">
+			  <input type="text" id="colorMed" class="input-mini color-picker miniColors" size="7" autocomplete="off" value="#000000" maxlength="7">
+			</div>
+			
+			<div class="input-prepend span3c">
+			  <span class="add-on">High</span>
+			  <input class="span1 domainInput" id="domainHighInput" type="text" style="text-align:center;" placeholder="">
+			  <input type="text" id="colorHigh" class="input-mini color-picker miniColors" size="7" autocomplete="off" value="#008000" maxlength="7">
+			</div>
+		</div>	
+		
+		<div class="row">
+			<div class="span2">
+				<label for="griddedImage" class="">Gridded image</label>
+				<div class="toggle-button">
+					 <input id="griddedImage" type="checkbox" value="value1">
+				</div>
+			</div>
+			
+			
+			<div class="span2">
+				<label for="hideImage" class="">Hide plate image</label>
+				<div class="toggle-button">
+					 <input id="hideImage" type="checkbox" value="value1">
+				</div>
+			</div>
+			
+			
+			<script>
+				$('#griddedImage').change(function(){
+					var plate = $('#dataCombobox option:selected');
+					if($('#griddedImage').is(':checked')){
+						$('#plateImage').attr('src', plate.attr('gridded-image-path'));
+					}else{
+						$('#plateImage').attr('src', plate.attr('image-path'));
+					}
+					
+				});
+				
+				$('#hideImage').change(function(){
+					if($('#hideImage').is(':checked')){
+						$('#plateImage').hide();
+						maxHeatmapWidth = 920;
+					}else{
+						$('#plateImage').show();
+						maxHeatmapWidth = 460;
+					}
+					$('#dataCombobox').trigger('change');
+				});
+			</script>
+			
+		</div>
+		</div>
+			
+		
+	</div><!-- End well -->
+	
+			<center>
+			
+			<div class="conatiner">
+			
+			<!--Heatmap & Image-->
+			<div class="row">
+				<div id="plateImageContents" class="span6" ><img id="plateImage"></div>
+				<div id="heatmapContents" class="span6" ></div>
+			</div>
+			
+			<hr><!--Separator-->
+			
+			
+			<style>
+				#data-table tbody{
+					height:150px;
+  					overflow:auto;
+				}
+			</style>
+			<!--Histogram-->
+			<div class="row span12">
+				<div id="bar-chart">
+			    	<div id="data-count">
+			    		<span class="filter-count"></span> selected out of <span class="total-count"></span>
+			    		<a class="reset" href="javascript:barChart.filterAll();dc.redrawAll();" style="display:none;">reset</a>
+			    	</div>
+			    	<div id="bar-chart-contents">
+			    	</div>
+			    </div>
+				<table id="data-table" class="table table-hover table-condensed" style="margin-bottom:100px">
+				    <thead><tr class="row"><th>Row</th><th>Col</th><th>Query</th><th>Array</th><th>Score</th></tr>
+				    </thead>
+			    </table>    
+			</div>
+			
+			
+			</div>
+			</center>
+			
+	<script type="text/javascript">
+			var maxHeatmapWidth = 460;
+			
+			$('.domainInput').change(function(){
+				$('#dataCombobox').trigger('change');
+			});
+			
+			$('#viewType').change(function(){
+				var viewtype = $('#viewType option:selected');
+				
+				$('#domainLowInput').val(viewtype.attr('domainLow'));
+				$('#domainMedInput').val(viewtype.attr('domainMed'));
+				$('#domainHighInput').val(viewtype.attr('domainHigh'));
+				
+				$('#dataCombobox').trigger('change');
+			});
+			
+			$(".color-picker").miniColors({
+			    change: function(hex, rgb) { 
+					$('#dataCombobox').trigger('change');
+			    }
+			});
+			
+			$(document).ready(function() {
+				$('#viewType').trigger('change');
+				$('#dataCombobox').trigger('change');
+			});
+			
+		    $('#dataCombobox').change(function() {
+		    	var viewtype = $('#viewType option:selected');
+		    	var plate = $('#dataCombobox option:selected');
+		    	
+				drawHeatmap({
+					heatmapContainer : '#heatmapContents',
+					dataPath : plate.attr('data-path'),
+					gridSize : 10,
+					maxwidth: maxHeatmapWidth,
+					domainLow: +$('#domainLowInput').val(),
+					domainMed: +$('#domainMedInput').val(), 
+					domainHigh: +$('#domainHighInput').val(),
+					columnToUse: viewtype.attr('name'),
+					colorLow: $('#colorLow').val(),
+					colorMed: $('#colorMed').val(), 
+					colorHigh: $('#colorHigh').val()
+				});
+				
+				var barChart = drawBarChart({
+					'dataName' : plate.attr('data-path'),
+					'divChart' : "#bar-chart-contents", 
+					'divDataTable' : "#data-table", 
+					'divDataCount' : "#data-count",
+					'maxDataRows' : 10, 
+					'chartWidth' : 946, 
+					'chartHeight' : 200,
+					columnToUse: viewtype.attr('name'),
+					domainLow: +$('#domainLowInput').val(),
+					domainHigh: +$('#domainHighInput').val()
+				});		
+				
+				$('#plateImage')
+					.attr('src', plate.attr('image-path'))
+					.css({ height: $('.heatmapSVG').height() - 20,
+							width: $('.heatmapSVG').width() - 20});
+				
+				$('#griddedImage').trigger('change');
+				
+				$('#plateImage').error(function() {
+				  $('#plateImage').attr('src', "@routes.Assets.at("images/noimage_plate_small.jpeg")");
+				});
+			});
+			
+	</script>
+	
+	
+}

@@ -1,0 +1,234 @@
+@(nsForm: Form[NSjob], jobid: String, selectedFromIA: String)
+
+@import helper._
+@import helper.twitterBootstrap._
+@implicitFieldConstructor = @{ FieldConstructor(extra.twitterBootstrapInput.f) }
+@main("Normalization & Scoring", nav="ns") {
+	
+	
+	@helper.form(action = routes.NScontroller.submit, 'enctype -> "multipart/form-data", 'id -> "normalizationScoringForm", 'class->"form-horizontal") {
+		<h2>Normalization & Scoring</h2>  
+		<hr>
+		
+		<div id="errorBox"></div>
+		
+		<div id="loadedFilesBox" class="hide">
+		<h3 id="loadedFilesHeader" style="margin-bottom:10px">Loaded files</h3>
+		<table id="loadedFilesTable" class="table table-condensed" style="width:100%">
+		</table>
+		<hr>
+		</div>
+			
+		<!--Data upload-->
+			<h3 style="margin-bottom:10px">Data input</h3>
+			<fieldset>
+			
+            <!--File format selection-->
+            <input type="hidden" id="jobid" name="jobid" value="@jobid"/>
+            <div id="preloadedPlateFiles" class="hide">
+            	
+            	@if("" != selectedFromIA){
+			    	<script>
+		            	$(document).ready(function(){
+		            		$('#cg-plateFiles').hide(); 
+		            		$('#loadedFilesHeader').text('Preloaded files');
+		            		var preloaded = JSON.parse('@Html(selectedFromIA)');
+		            		$('#loadedFilesTable').html(preloaded.fileTableSGA());
+		            		$('#loadedFilesBox').show();
+		            		$('#plateFiles').attr('valid', 'true');
+		            		$('#nssubmit').removeAttr('disabled');
+		            	});
+		            	
+	            	</script>
+            	}
+            </div>
+            
+            
+            
+            @inputFile(
+	            	nsForm("plateFiles"),
+	            	'_label -> "Plate file(s)",
+	            	'multiple -> "",
+	            	'uploadwidget -> "Select file(s)"
+	        )
+          	
+          	
+            
+			<!--Include array definition checkbox-->
+			@helper.input(
+				nsForm("doArrayDef"),
+				'_label -> "Plate layout",
+				'_showConstraints -> false,
+				'helpModal -> "array-definition"
+           	){ (id, name, value, args) =>
+			<label class="checkbox">
+				<input id="@id" name="@name" @toHtmlArgs(args) type="checkbox" value="true">
+					<span>&nbsp;Define plate layout</span>
+					</label>
+			}
+			
+			<!-- Enclose in div to be shown when checkbox clicked-->
+			<div id="arrDefOpts">
+			
+           	<!--Array definition files - predefined-->
+			@helper.input(nsForm("arrayDefPredefined"),'_label -> "") { (id, name, value, args) =>
+				<!--Populate predefined array definitions-->
+			    <select id="@id" name="@name" @toHtmlArgs(args)>
+			    	@for(value <- ComboboxOpts.arrayDef){
+			    		<option>@value</option>
+			    	}
+			    </select>
+				<!--Populate their plates-->
+				@for(i <- 0 to ComboboxOpts.arrayDef.size -1){
+					@if(i != 0 & i != ComboboxOpts.arrayDef.size-1){
+						<select class="plateCombo input-small" id="@ComboboxOpts.arrayDef.get(i)-plates" style="display:none">
+							@for(plateName <- ComboboxOpts.arrayDefPlates(ComboboxOpts.arrayDef.get(i))){
+								<option>@plateName</option>
+							}
+						</select>
+					}
+				}
+				<!--Button which triggers modal viewer-->
+				<button id="viewPlate" class="btn" type="button" data-toggle="modal" data-target="#helpModal" style="display:none">
+					<i class="icon-share"></i>
+				</button>
+			 }
+			 
+			<!-- Array definition custom file input-->
+			@inputFile(
+            	nsForm("arrayDefCustomFile"),
+            	'_label -> "",
+            	'uploadwidget -> "Select plate layout file"
+            )
+            
+            </div>
+			</fieldset>
+			<hr>
+			
+			
+			
+			
+			<h3 style="margin-bottom:10px">Options</h3>
+
+			<fieldset>
+			
+			
+            @select(
+                nsForm("replicates"), 
+                options = options(ComboboxOpts.replicates),
+                '_label -> "Replicates",
+                '_showConstraints -> false,
+				'helpModal -> "array-replicates"
+            )
+            
+          	@helper.input(
+           		nsForm("doLinkage"),
+           		'_label -> "Linkage correction",
+           		'_showConstraints -> false,
+           		'_help -> "Note—chromosome number/position data for genes must be supplied",
+				'helpModal -> "linkage-correction"
+           	){ (id, name, value, args) =>
+           		<label class="checkbox">
+					<input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+					<span>&nbsp;Remove genes with a specific proximity to one another from the analysis</span>
+				</label>
+			}
+			
+           	@helper.input(
+           		nsForm("linkageCutoff"),
+           		'_label -> "Linkage cutoff",
+           		'_showConstraints -> false,
+           		'pattern -> "\\d+"
+           	){ (id, name, value, args) =>
+           		<div class="input-append">
+      				<input class="span2" id="@id" name="@name" @toHtmlArgs(args) size="16" type="text" style="width:175px" 
+      				value="@nsForm.get.linkageCutoff"><span class="add-on">KB</span>
+      			</div>
+			}
+			
+				
+			@helper.input(
+           		nsForm("doScoring"),
+           		'_label -> "Score results",
+           		'_showConstraints -> false,
+           		'_help -> "Note—control screens and/or single mutant fitness data must be supplied",
+			'helpModal -> "do-scoring"
+           	){ (id, name, value, args) =>
+           		<label class="checkbox">
+					<input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+					 <span>&nbsp;Scores the normalized output</span>
+				</label>
+			}
+			@helper.input(
+           		nsForm("scoringFunction"),
+           		'_label -> "Scoring function",
+           		'_showConstraints -> false
+           	){ (id, name, value, args) =>
+           		<select id="@id" name="@name">
+           			@for(scoringFunction <- ComboboxOpts.scoringFunctions){
+           				<option>@Html(scoringFunction)</option>
+           			}
+				</select>
+           		
+			}
+				
+			</fieldset>
+			
+			<!--
+			<hr>
+			<h3 id="advancedOptsBtn" style="margin-bottom:10px;cursor: hand; cursor: pointer;">
+			Advanced options <i id="advancedOptsIcon" class="icon-chevron-right" style="font-size:10px; color:#0081cc"></i></h3>
+			<fieldset id="advancedOpts" class="hide">
+			<div class="alert">
+			  <button type="button" class="close" data-dismiss="alert">×</button>
+			  <strong>Warning!</strong> Changing these options could drastically affect your results. Do not modify unless necessary.
+			</div>
+			
+			<div class="row">
+				<div class="span2 offset2">
+				<strong><p>Normalizations</p></strong>
+		        <label id="advPlate"><input id="advPlate" type="checkbox" checked style="vertical-align:1px;"/> Plate-specific effect</label>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Spatial effect</label>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Row/column effect</label>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Competition effect</label>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Plate-specific effect 2</label>
+		        </div>
+		        <div class="span2">
+		        <strong><p>Filters</p></strong>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Large replicates</label>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Jackknife filter</label>
+		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Cap filter</label>
+		        </div>
+		        <div class="span2" id="advancedDesc">
+		        </div>
+		    </div>
+				
+			</fieldset>
+			-->
+			
+			
+			
+			<!--Submit/clear all box-->
+        	<div class="form-actions">
+		  	<button id="nssubmit" class="btn btn-primary" disabled>Normalize</button>
+		  	<a href="@routes.NScontroller.initNSform()"><button id="clearall" type="button" class="btn">Clear all</button></a>
+			</div>
+			
+			<!-- Scripts for the page -->
+    		<script src="@routes.Assets.at("javascripts/ns.js")"></script>
+			
+			
+	} 
+	<div id="loadingDiv" class="hide">
+		@loading("Normalizing / Scoring", "Expected time 2-5 seconds")
+	</div>
+	<script>
+	$("#nssubmit").click(function() {
+		$('#normalizationScoringForm').addClass('hide');
+		$('#loadingDiv').removeClass('hide');
+		$('#normalizationScoringForm').submit();
+	});
+	
+	
+	</script>
+}

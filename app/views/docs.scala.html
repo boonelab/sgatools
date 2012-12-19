@@ -1,0 +1,106 @@
+
+@main("Help", nav="hp") {
+    
+    <!--<h1>Some help goes here</h1>-->
+    <br>
+    
+	<div class="tabbable tabs-right">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#gs" data-toggle="tab">Getting started</a></li>
+        <li><a href="#fn" data-toggle="tab">File naming</a></li>
+        <li><a href="#ia" data-toggle="tab">Image analysis</a></li>
+        <li><a href="#ns" data-toggle="tab">Normalization & Scoring</a></li>
+        <li><a href="#da" data-toggle="tab">Data analysis</a></li>
+        <li><a href="#fa" data-toggle="tab">FAQs</a></li>
+      </ul>
+      <div class="tab-content">
+        
+        <div class="tab-pane active" id="gs">
+	       	<div class="page-header">
+	        	<h2>Getting started</h2>
+	        </div>
+        </div>
+        
+        <div class="tab-pane" id="fn">
+	        <div class="page-header">
+	        	<h2>File naming</h2>
+	        </div>
+	        
+	        <div id="file-naming-help">
+	        	<p>
+	        	In order to properly score your data and utilize array layout files, additional information must be supplied via the file name of the image or dat file you are using.
+	        	This information includes
+	        	
+	        	<ul>
+	        		<li>Query name / ORF</li>
+	        		<li>Screen type ― control vs non-control</li>
+	        		<li>Array plate id </li>
+	        	</ul>
+	        	
+	        	This information is supplemented through the file name in the following format:
+	        	
+	        	</p>
+	        	
+	        	<pre>{username}_{query}_{arrayplateid} …</pre>
+	        	
+	        	<p>such that the query name is prefixed by <code>wt-</code> or <code>ctrl-</code> to indicate a control plate.
+	        	
+	        	</p>
+	        	
+	        	<p>For example:</p>
+	        	
+	        	<ul>
+		        	<li>
+			        	<pre>michael_YDL108W_1_boone_15-12-12.jpg</pre>
+		        		<p>Indicates a <code>non-control</code> screen carried out by <code>michael</code> with the screen having the query <code>YDL108W</code> and an array plate id of <code>1</code>
+		        	</li>
+		        	
+		        	<li>
+			        	<pre>charlie_wt-YOR341W_9_sga_3-10-11.jpg</pre>
+		        		<p>Indicates a <code>control</code> screen carried out by <code>charlie</code> with the screen having the query <code>YOR341W</code> and an array plate id of <code>9</code>
+	        		</li>
+	        	</ul>
+	        	
+	        	<hr>
+	        	<strong>Note:</strong> It is not mandatory to name the files in the mentioned format. Files named with a format other than the one mentioned above will not me mapped a query/array ORF and will not be scored
+	        	
+	        </div>
+        </div>
+        
+        <div class="tab-pane" id="ia">
+        	<div class="page-header">
+	        	<h2>Image analysis</h2>
+	        </div>
+	        
+	        <p>
+	        Image analysis is the first step of the SGAtools pipeline and involves fitting a grid onto your plate images, then using the bounds of the grid to quantify the colony size using pixel intensities
+	        </p>
+	        
+	        <h3>Input:</h3>
+	        <div id="ia-plate-files">
+	        	<h4>Plate images</h4>
+	        	<p>Images of your screen in <code>.jpg</code> format</p>
+	        	<img src="http://placehold.it/350x200">
+	        </div>
+        </div>
+        
+        <div class="tab-pane" id="ns">
+        	<div class="page-header">
+	        	<h2>Normalization & Scoring</h2>
+	        </div>
+        </div>
+        
+        <div class="tab-pane" id="da">
+          	<div class="page-header">
+	        	<h2>Data analysis</h2>
+	        </div>
+        </div>
+        
+        <div class="tab-pane" id="fa">
+          	<div class="page-header">
+	        	<h2>FAQs</h2>
+	        </div>
+        </div>
+      </div>
+    </div>
+}
