@@ -166,7 +166,7 @@ fileNameMetadata <- function(file.name){
   sp = strsplit(file.name,split.pat)[[1]]
   
   # Regular expression query of control screens
-  ctrl.pat = '^wt'
+  ctrl.pat = 'wt|ctrl'
   # Regular expression for digit
   digit.pat = '^\\d+$'
   
@@ -179,15 +179,15 @@ fileNameMetadata <- function(file.name){
   ret$username = sub('\\s', '-', sp[1])
   
   # Set query name
-  ret$query = sub('\\s', '-', sp[2])
+  ret$query = sub('\\s', '-', sp[3])
   
   # Set is.control
-  ret$is.control = grepl(ctrl.pat, ret$query, ignore.case=T)
+  ret$is.control = grepl(ctrl.pat, sp[2], ignore.case=T)
   
   # Set array plate id
-  if(grepl(digit.pat, sp[3])){
+  if(grepl(digit.pat, sp[4])){
     # Valid array plate id
-    ret$arrayplateid = as.numeric(sp[3])
+    ret$arrayplateid = as.numeric(sp[4])
   }else{
     # Invalid array plate id
     ret$arrayplateid = NA
@@ -220,7 +220,7 @@ normalizeSGA <- function(plate.data,
   
   num.rows = attr(plate.data, 'num.rows')
   num.cols = attr(plate.data, 'num.cols')
-  
+ 
   # Replciates regardless of array (unique spots) - not same as array name
   rdbl = ceiling(plate.data$row/sqrt(replicates))
   cdbl = ceiling(plate.data$col/sqrt(replicates))
@@ -274,10 +274,11 @@ normalizeSGA <- function(plate.data,
   # LOL we're done, whew! return our data (minus extra cols generated)!
   if(!intermediate.data){
     m = match(c('spots','pnorm', 'snorm', 'rcnorm', 'pnorm2'), names(plate.data))
-    plate.data = plate.data[,-m]
+    plate.data.trunc = plate.data[,-m]
+    attr(plate.data.trunc, 'file.name.metadata') = attr(plate.data, 'file.name.metadata')
   }
   
-  return(plate.data)
+  return(plate.data.trunc)
 }
 
 
@@ -290,58 +291,71 @@ scoreSGA <- function(plate.data.list, scoring.function=1){
   # Merge list info
   merged.dat = do.call('rbind', plate.data.list)
   
-  querys = merged.dat$query
-  is.ctrl.row = grepl('^wt|^ctrl', querys, ignore.case=T)
-  is.dm.row = !is.ctrl.row
+  metadata.table = lapply(plate.data.list, function(plate.data){
+    d = attr(plate.data, 'file.name.metadata')
+    as.data.frame(d)
+  })
+  metadata.table = do.call('rbind', metadata.table)[,4:6]
   
-  # If we dont have any control plates, we cant do scoring
-  if(sum(is.ctrl.row) < 1)
+  # If we dont have any control/dm plates, we cant do scoring
+  if(sum(metadata.table$is.control) < 1 | sum(!metadata.table$is.control) < 1)
     return(plate.data.list)
   
-  merged.dat.ctrl = merged.dat[is.ctrl.row,]
-  merged.dat.dm = merged.dat[is.dm.row,]
-  
-  # We have at least one query, proceed to score
-  # Get single mutant fitness of arrays (non control plates) - computed as median of the plate
-  querys = unique(merged.dat.dm$query)
-  query.smf = sapply(querys, function(curr.query){
-    median( merged.dat.dm$ncolonysize[merged.dat.dm$query == curr.query] , na.rm=T)
-  })
-  
-  # Get array smf from control plates
-  arrays = unique(merged.dat.ctrl$array)
-  array.smf = sapply(arrays, function(curr.array){
-    median( merged.dat.ctrl$ncolonysize[ merged.dat.ctrl$array == curr.array ], na.rm=T )
-  })
-  
-  # Use default overall median or median from plates?
-  # Default overall median
-  overall.median = 510
-  # Get 60% middle median - R automatically removes NA values
-  vals = sort(merged.dat$ncolonysize)
-  length = length(vals)
-  lower = 0.2
-  upper = 0.8
-  middle.median = median( vals[round(lower*length):round(upper*length)], na.rm = T)
-  
-  # Do the scoring
-  plate.data.list = lapply(plate.data.list, function(plate.data){
-    #score = plate.data$ncolonysize/middle.median - (query.plate.median/middle.median*median.smf/middle.median)
+  # Do scoring for different array plate ids separatley 
+  for(arrayplateid in unique(metadata.table$arrayplateid)){
     
-    # Single mutant fitnesses
-    q.smf = query.smf[plate.data$query] / middle.median
-    a.smf = array.smf[plate.data$array] / middle.median
-    # Double mutant fitness
-    dm = plate.data$ncolonysize / middle.median
+    # Check if this array plate id has controls. if not, dont do anything
+    is.ctrl = metadata.table$is.control & metadata.table$arrayplateid == arrayplateid
+    is.dm = !metadata.table$is.control & metadata.table$arrayplateid == arrayplateid
     
-    # Score accourding to scoring function
-    if(scoring.function == 1){
-      plate.data$score = dm - (q.smf * a.smf)
-    }else if(scoring.function == 2){
-      plate.data$score = dm / (q.smf * a.smf)
-    }
-    plate.data
-  })
+    if(sum(is.ctrl) < 1 | sum(is.dm) < 1)
+      next
+    
+    merged.dat.ctrl = do.call('rbind', plate.data.list[is.ctrl])
+    merged.dat.dm = do.call('rbind', plate.data.list[is.dm])
+    
+    # We have at least one query, proceed to score
+    # Get single mutant fitness of arrays (non control plates) - computed as median of the plate
+    querys = unique(merged.dat.dm$query)
+    query.smf = sapply(querys, function(curr.query){
+      median( merged.dat.dm$ncolonysize[merged.dat.dm$query == curr.query] , na.rm=T)
+    })
+    
+    # Get array smf from control plates
+    arrays = unique(merged.dat.ctrl$array)
+    array.smf = sapply(arrays, function(curr.array){
+      median( merged.dat.ctrl$ncolonysize[ merged.dat.ctrl$array == curr.array ], na.rm=T )
+    })
+    
+    # Use default overall median or median from plates?
+    # Default overall median
+    overall.median = 510
+    # Get 60% middle median - R automatically removes NA values
+    vals = sort(merged.dat$ncolonysize)
+    length = length(vals)
+    lower = 0.2
+    upper = 0.8
+    middle.median = median( vals[round(lower*length):round(upper*length)], na.rm = T)
+    
+    # Do the scoring
+    plate.data.list[is.dm] = lapply(plate.data.list[is.dm], function(plate.data){
+      # Single mutant fitnesses
+      q.smf = query.smf[plate.data$query] / middle.median
+      a.smf = array.smf[plate.data$array] / middle.median
+      # Double mutant fitness
+      dm = plate.data$ncolonysize / middle.median
+      
+      # Score accourding to scoring function
+      if(scoring.function == 1){
+        plate.data$score = dm - (q.smf * a.smf)
+      }else if(scoring.function == 2){
+        plate.data$score = dm / (q.smf * a.smf)
+      }
+      plate.data
+    })
+    
+  }# End array plate id loop
+  
   # Done scoring, return the data
   return(plate.data.list)
 }

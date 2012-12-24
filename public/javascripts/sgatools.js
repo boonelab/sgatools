@@ -1,21 +1,16 @@
 
 String.prototype.parseSGAFileName = function() {
     var sp=this.split("_");
-    var pat = new RegExp("^[^_]+_[^_]+_\\d+([_|\.].*)?$");
+    var pat = new RegExp("^[^_]+_[^_]+_[^_]+_\\d+([_|\.].*)?$");
     var screenType = "―";
     var queryName = "―";
     var arrayPlateId = "―";
     
     if(pat.test(this)){
-    	arrayPlateId = sp[2];
-    	queryName = sp[1];
-    	if(/^(wt|ctrl)/i.test(queryName)){
+    	arrayPlateId = sp[3];
+    	queryName = sp[2];
+    	if(/^(wt|ctrl)/i.test(sp[1])){
     		screenType = "Control";
-    		console.log(queryName.split('-'));
-    		var tmp = queryName.split('-')[1];
-    		if(undefined != tmp){
-    			queryName = tmp;
-    		}
     	}else{
     		screenType = "Double mutant"
     	}

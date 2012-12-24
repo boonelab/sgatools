@@ -20,6 +20,7 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	
+		<script type="text/javascript" src="@routes.Assets.at("javascripts/sgatools.js")"></script>
 		<script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")"></script>
 		<script src="@routes.Assets.at("javascripts/jquery.cookie.js")"></script>
 		<script src="@routes.Assets.at("external/bootstrap-toggle/js/jquery.toggle.buttons.js")"></script>
@@ -74,7 +75,7 @@
 	<!-- Footer -->
 	<div id="footer">
       <div class="container">
-        <center><p class="muted credit">© 2012 Boone lab ⋅ <a href="#">Issue tracker</a> ⋅ <a href="#">Download</a></p></centre>
+        <center><p class="muted credit">© 2012 Boone lab ⋅ <a target="_blank" href="https://github.com/boonelab/sgatools/issues">Issue tracker</a> ⋅ <a href="https://github.com/boonelab/sgatools/tree/master/public/SGAtools" target="_blank">Download</a></p></centre>
       </div>
     </div>
     
@@ -83,7 +84,6 @@
 	@modal("arrayDefModal", "arrayDefModalHeading", "arrayDefModalBody")
 	
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/sgatools.js")"></script>
 	<script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
 	<script type="text/javascript" src="@routes.Assets.at("external/jasny-extensions/js/bootstrap-fileupload.js")"></script>
 	<script type="text/javascript">

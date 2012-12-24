@@ -6,6 +6,11 @@ public class Constants {
 	public final static String VERSION = "1.0.0";
 	public final static String IA_NAME = "HT colony grid analyzer";
 	
+	/*
+	 
+	 /home/sgatools/sgatools
+	 
+	 */
 	public final static String BASE = "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools";
 	
     public final static String BASE_PUBLIC_DIR = BASE + "/public";

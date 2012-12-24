@@ -1,19 +1,43 @@
 
 @main("Home", nav="hm") {
-   
+   	
 	<!-- Carousel -->	
 	<div id="carousel" class="carousel slide" rel="carousel">
 		<!-- Carousel items -->				
 		<div class="carousel-inner">
-			<div class="item">
-				<img src="http://placehold.it/1000x350">
-			</div>
+			<!--<div class="item active">
+				<center>
+				<div class="brand" style="width:1000px; height:200px; font-size:80px; padding-top:65px; color: #222">
+					<img src="@routes.Assets.at("images/sgaicon.png")" style="height:75px;margin-top:-15px;">
+					<b class="heavy">SGA</b>tools<br>
+					<div style="font-size:30px">Tools for the analysis and visualization of genetic screens</div>
+					
+				</div>
+				</center>
+
+			</div>-->
 			<div class="item active">
-				<img src="http://placehold.it/1000x350/222222/fff">
+				<img src="@routes.Assets.at("images/slider/ia_cover.jpg")">
+				<div class="carousel-caption">
+                      			<h4>Image analysis</h4>
+                      			<p>Easily and rapidly quantify colony sizes through grid fitting.</p>
+                    		</div>	
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/1000x350/0081CC/fff">
+				<img src="@routes.Assets.at("images/slider/ns_cover.jpg")">
+				<div class="carousel-caption">
+                      			<h4>Normalization</h4>
+                      			<p>Remove unwanted nutrition and image-based effects and apply filters to enhance the quality of your data.</p>
+                    		</div>	
 			</div>
+			<div class="item">
+				<img src="@routes.Assets.at("images/slider/da_cover.png")">
+				<div class="carousel-caption">
+                      			<h4>Data analysis</h4>
+                      			<p>Instant and interactive feedback of your analysis, provided straight through your browser.</p>
+                    		</div>	
+			</div>
+			
 		</div>
 		<!-- Carousel navigation -->
 		<a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
@@ -47,6 +71,5 @@
 		
 	</div>
 	
-    <h2 style="color:red">UNDER DEVELOPMENT: DO NOT USE</h2>
     
 }

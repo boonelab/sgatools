@@ -1933,7 +1933,11 @@ dc.barChart = function(parent, chartGroup) {
         w -= _gap;
         if (isNaN(w) || w < MIN_BAR_WIDTH)
             w = MIN_BAR_WIDTH;
-        w = 8;
+        
+        if(window.scoredData){
+	        w = 8;
+        }
+        
         //w = MIN_BAR_WIDTH + 2;
         return w;
     }

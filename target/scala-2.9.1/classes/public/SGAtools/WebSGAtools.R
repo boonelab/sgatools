@@ -67,6 +67,10 @@ if( length(args$savenames) != length(args$inputfiles)  ){
   stop('Number of save names must be equal to the number of input files')
 }
 
+if(! args$sfunction %in% c(1,2) & !is.na(args$sfunction)){
+  stop(paste0(args$sfunction, ' is an inavlid scoring function, must be 1 or 2'))
+}
+
 print(args)
 
 # Run normalization/scoring
@@ -75,9 +79,8 @@ sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, linkage
 
 # Score data if requested
 if(args$score){
-   sgadata.ns = scoreSGA(sgadata.ns, scoring.function=1)
+   sgadata.ns = scoreSGA(sgadata.ns, scoring.function=args$sfunction)
 }
-
 
 # Set working directory to output directory
 setwd(args$outputdir)

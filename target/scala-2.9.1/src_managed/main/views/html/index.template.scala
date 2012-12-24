@@ -28,20 +28,44 @@ object index extends BaseScalaTemplate[play.api.templates.Html,Format[play.api.t
         _display_ {
 
 Seq[Any](_display_(Seq[Any](/*2.2*/main("Home", nav="hm")/*2.24*/ {_display_(Seq[Any](format.raw/*2.26*/("""
-   
+   	
 	<!-- Carousel -->	
 	<div id="carousel" class="carousel slide" rel="carousel">
 		<!-- Carousel items -->				
 		<div class="carousel-inner">
-			<div class="item">
-				<img src="http://placehold.it/1000x350">
-			</div>
+			<!--<div class="item active">
+				<center>
+				<div class="brand" style="width:1000px; height:200px; font-size:80px; padding-top:65px; color: #222">
+					<img src=""""),_display_(Seq[Any](/*11.17*/routes/*11.23*/.Assets.at("images/sgaicon.png"))),format.raw/*11.55*/("""" style="height:75px;margin-top:-15px;">
+					<b class="heavy">SGA</b>tools<br>
+					<div style="font-size:30px">Tools for the analysis and visualization of genetic screens</div>
+					
+				</div>
+				</center>
+
+			</div>-->
 			<div class="item active">
-				<img src="http://placehold.it/1000x350/222222/fff">
+				<img src=""""),_display_(Seq[Any](/*20.16*/routes/*20.22*/.Assets.at("images/slider/ia_cover.jpg"))),format.raw/*20.62*/("""">
+				<div class="carousel-caption">
+                      			<h4>Image analysis</h4>
+                      			<p>Easily and rapidly quantify colony sizes through grid fitting.</p>
+                    		</div>	
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/1000x350/0081CC/fff">
+				<img src=""""),_display_(Seq[Any](/*27.16*/routes/*27.22*/.Assets.at("images/slider/ns_cover.jpg"))),format.raw/*27.62*/("""">
+				<div class="carousel-caption">
+                      			<h4>Normalization</h4>
+                      			<p>Remove unwanted nutrition and image-based effects and apply filters to enhance the quality of your data.</p>
+                    		</div>	
 			</div>
+			<div class="item">
+				<img src=""""),_display_(Seq[Any](/*34.16*/routes/*34.22*/.Assets.at("images/slider/da_cover.png"))),format.raw/*34.62*/("""">
+				<div class="carousel-caption">
+                      			<h4>Data analysis</h4>
+                      			<p>Instant and interactive feedback of your analysis, provided straight through your browser.</p>
+                    		</div>	
+			</div>
+			
 		</div>
 		<!-- Carousel navigation -->
 		<a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
@@ -75,7 +99,6 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Home", nav="hm")/*2.24*/ {_display_(Seq
 		
 	</div>
 	
-    <h2 style="color:red">UNDER DEVELOPMENT: DO NOT USE</h2>
     
 """)))})))}
     }
@@ -89,11 +112,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Home", nav="hm")/*2.24*/ {_display_(Seq
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Dec 19 13:47:31 EST 2012
+                    DATE: Mon Dec 24 12:47:57 EST 2012
                     SOURCE: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/app/views/index.scala.html
-                    HASH: d54603a0ea18c7c4814d71df44b78924d90c2fba
-                    MATRIX: 828->2|858->24|897->26
-                    LINES: 30->2|30->2|30->2
+                    HASH: 1c183b85f5b293bfcc2fd1fc9a73ad099f6cc647
+                    MATRIX: 828->2|858->24|897->26|1247->340|1262->346|1316->378|1620->646|1635->652|1697->692|1992->951|2007->957|2069->997|2405->1297|2420->1303|2482->1343
+                    LINES: 30->2|30->2|30->2|39->11|39->11|39->11|48->20|48->20|48->20|55->27|55->27|55->27|62->34|62->34|62->34
                     -- GENERATED --
                 */
             

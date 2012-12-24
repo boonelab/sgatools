@@ -158,19 +158,20 @@ public class NScontroller extends Controller {
         	Logger.info("Generated new UUID: "+job.jobid);
         }
         
-        String outputDir = Constants.JOB_OUTPUT_DIR + File.separator + job.jobid + File.separator  ;
-        String nsDir = outputDir + "ns" + File.separator;
-        String outputFilesDir = nsDir + "output_files"+	File.separator;
-        String inputFilesDir = nsDir + "input_files"+	File.separator;
-        Logger.info("=================================");
-        Logger.info("outputDir="+outputDir);
-        Logger.info("nsDir="+nsDir);
-        Logger.info("outputFilesDir="+outputFilesDir);
-        Logger.info("=================================");
-        boolean res1 = (new File( outputDir )).mkdir();
-        boolean res2 = (new File( nsDir )).mkdir();
-        boolean res3 = (new File( outputFilesDir )).mkdir();
-        boolean res4 = (new File( inputFilesDir )).mkdir();
+        File outputDir = new File(Constants.JOB_OUTPUT_DIR + File.separator + job.jobid + File.separator);
+        File nsDir = new File( outputDir.getPath() + File.separator + "ns" + File.separator);
+        File outputFilesDir = new File(nsDir + "output_files"+	File.separator);
+        File inputFilesDir = new File(nsDir + "input_files"+	File.separator);
+        
+        //Remove any ns directory if it exists
+        if(nsDir.exists()){
+        	nsDir.delete();
+        }
+        
+        boolean res1 = outputDir.mkdir();
+        boolean res2 = nsDir.mkdir();
+        boolean res3 = outputFilesDir.mkdir();
+        boolean res4 = inputFilesDir.mkdir();
         
         StringBuilder inputfiles = new StringBuilder();
         StringBuilder savenames = new StringBuilder();
@@ -186,7 +187,7 @@ public class NScontroller extends Controller {
         c.add("Rscript"); 			c.add(Constants.RSCRIPT_PATH);
         c.add("--inputfiles"); 		c.add(ninputfiles);
         c.add("--savenames"); 		c.add(nsavenames);
-        c.add("--outputdir"); 		c.add(outputFilesDir);
+        c.add("--outputdir"); 		c.add(outputFilesDir.getPath());
         c.add("--replicates"); 		c.add(job.replicates.toString());
         c.add("--linkagecutoff"); 	c.add(job.linkageCutoff.toString());
         
@@ -195,8 +196,9 @@ public class NScontroller extends Controller {
         }
         if(job.doScoring){ 
         	c.add("--score"); 
-        	c.add("--sfunction"); c.add(ComboboxOpts.scoringFunctions().indexOf(job.scoringFunction) + ""); 
+        	c.add("--sfunction"); c.add(job.scoringFunction); 
         }
+        Logger.info("#####"+c );
         
         String[] cmd = new String[c.size()];
         c.toArray(cmd);
@@ -206,13 +208,7 @@ public class NScontroller extends Controller {
         	t.append(s+ " ");
         }
 
-		Logger.info("PLATEFILEMAP = "+ plateFilesMap.toString());
-        Logger.info("ADFILES="+adfiles);
-        Logger.info("INPUTFILES="+ninputfiles);
-        Logger.info("SAVENAMES="+nsavenames);
-        Logger.info("SCRIPT CALL="+t);
-        
-        String zipFilePath = nsDir+ "normalizationscoring-sgatools-"+job.jobid+".zip";
+        String zipFilePath = nsDir.getPath()+ "normalizationscoring-sgatools-"+job.jobid+".zip";
         StringBuilder shell_output = new StringBuilder();
         StringBuilder shell_output_error = new StringBuilder();
         try{
@@ -238,7 +234,7 @@ public class NScontroller extends Controller {
 	        //#############################
 	        
 	        // Zip files 
-	        Zipper.zipDir(zipFilePath, outputFilesDir);
+	        Zipper.zipDir(zipFilePath, outputFilesDir.getPath());
         }catch(Exception e){
         	Logger.error(shell_output.toString());
         	Logger.error("===============================");
@@ -246,7 +242,7 @@ public class NScontroller extends Controller {
         	//Fatal error
         	filledForm.reject("plateFiles", "Fatal error, please contact developers "+ e.getMessage());
         	return badRequest(nsform.render(filledForm, "", ""));
-        }
+        }        
         
         //Record time elapsed
         long submissionEndTime = new Date().getTime(); //end time
@@ -255,7 +251,7 @@ public class NScontroller extends Controller {
         int minutes = (int) ((milliseconds / (1000*60)) % 60);
         
         Map<String, String> outputFilesMap = new HashMap();
-        for(File of: new File(outputFilesDir).listFiles()){
+        for(File of: outputFilesDir.listFiles()){
         	outputFilesMap.put(of.getName(), of.getPath());
         }
         
@@ -277,8 +273,7 @@ public class NScontroller extends Controller {
 	public static Result showJob(String jobid){
 		NSjob nsJob  = NScontroller.getJobFromJsonFile( jobid );
 		
-		if(nsJob == null) { return ok(errorpage.render("Job not found")); }
-		
+		if(nsJob == null) { return ok(errorpage.render("The job you have requested was not found, please check to make your job id is correct", "404")); }
 		return ok(nssummary.render(nsJob));
 	}
 	

@@ -166,7 +166,7 @@
            	){ (id, name, value, args) =>
            		<select id="@id" name="@name">
            			@for(scoringFunction <- ComboboxOpts.scoringFunctions){
-           				<option>@Html(scoringFunction)</option>
+           				<option value="@(ComboboxOpts.scoringFunctions.indexOf(scoringFunction)+1)">@Html(scoringFunction)</option>
            			}
 				</select>
            		

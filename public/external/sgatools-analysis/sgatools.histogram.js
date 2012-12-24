@@ -5,13 +5,13 @@ function drawBarChart(settings) {
 	var barChart;
 	
 	var options = {
-        'maxDataRows':10,
-        'chartWidth': 600,
-        'chartHeight': 200,
-        'columnToUse': 'score',
-        'domainLow'  : -1,			//Lower extreme of numerical values
-        'domainMed'  : 0,			//Medium extreme of numerical values
-        'domainHigh' : 1,			//Upper extreme of numerical values
+        maxDataRows	: 10,
+        chartWidth	: 600,
+        chartHeight	: 200,
+        columnToUse	: 'score',
+        domainLow	: -1,			//Lower extreme of numerical values
+        domainMed	: 0,			//Medium extreme of numerical values
+        domainHigh	: 1,			//Upper extreme of numerical values
     };
     $.extend(options,settings);
 	
@@ -47,11 +47,15 @@ function drawBarChart(settings) {
 		score = ndx.dimension(function(d) { return d.score; });
 		
 		if(options.columnToUse == "ncolonysize" || options.columnToUse == "colonysize"){
-			scores = score.group(function(d) { return Math.round(d*0.1)/0.1; });
+			scores = score.group(function(d) { return Math.round(d); });
+			window.scoredData = false;
 		}else{
 			scores = score.group(function(d) { return Math.round(d*40)/40; });
+			window.scoredData = true;
 		}
 		
+		options.domainLow = Math.round(options.domainLow);
+		options.domainHigh = Math.round(options.domainHigh);
 		
 		//Data count
 		dc.dataCount(options.divDataCount)

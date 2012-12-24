@@ -28,7 +28,8 @@ object about extends BaseScalaTemplate[play.api.templates.Html,Format[play.api.t
         _display_ {
 
 Seq[Any](_display_(Seq[Any](/*2.2*/main("About", nav="ab")/*2.25*/ {_display_(Seq[Any](format.raw/*2.27*/("""
-   <h2>About</h2><br>
+   <h2>About</h2>
+   <hr>
     <p>
     Screening for combinations of mutations that have an unexpected effect on phenotype is 
     a powerful approach that has revealed much about the genetic landscape of cells. 
@@ -46,6 +47,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("About", nav="ab")/*2.25*/ {_display_(Se
    Finally, the data can be visualised online to give intuition about the summary statistics, genes responsible for the strongest signal. 
    Further analysis functions, such as GO term enrichment and network visualisation, are available via external links.</p>
 
+<p>SGAtools was developed at the Charlie Boone laboratory - Donnelly Centre, University of Toronto</p>
+<hr>
+<img src="http://placehold.it/200x70&text=UofTLogo">
+<img src="http://placehold.it/200x70&text=BoonelabLogo">
+<img src="http://placehold.it/200x70&text=DonnellyLogo">
 <!--
 <strong>Please cite SGAtools as: </strong><br>
 <p>Wagih, O., Parts, L., ... , Boone, C. (2012) SGAtools: Tools for image processing, normalizing and scoring Synthetic Genetic Array screens</p>
@@ -62,9 +68,9 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("About", nav="ab")/*2.25*/ {_display_(Se
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Dec 19 13:47:30 EST 2012
+                    DATE: Mon Dec 24 02:37:05 EST 2012
                     SOURCE: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/app/views/about.scala.html
-                    HASH: fed7dd1479d388c02d904182cfc7224aeab24767
+                    HASH: 4228ae00b2a3446ef1c01fe31378c5b6df34cfde
                     MATRIX: 828->2|859->25|898->27
                     LINES: 30->2|30->2|30->2
                     -- GENERATED --

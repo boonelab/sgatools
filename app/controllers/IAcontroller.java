@@ -84,7 +84,7 @@ public class IAcontroller extends Controller {
 		IAjob ipJob  = IAcontroller.
 			getJobFromJsonFile( jobid );
 		
-		if(ipJob == null) { return ok(errorpage.render("Job not found")); }
+		if(ipJob == null) { return ok(errorpage.render("The job you have requested was not found, please check to make your job ID is correct", "404")); }
 		
 		return ok(iasummary.render(ipJob, nsForm.fill(new NSjob())));
 	}
@@ -107,14 +107,14 @@ public class IAcontroller extends Controller {
         
         //If any errors arise, reject the form submission
         if (filledForm.hasErrors()) { return badRequest(iaform.render(filledForm)); }
-
+        
         //Output directory: if it does not exist, create it. If we fail to create it halt
         File outDir = new File(Constants.JOB_OUTPUT_DIR);
         if(!outDir.exists()){
         	boolean res = outDir.mkdir();
         	if(!res){ 
             	filledForm.reject("plateImages", "Fatal error: failed to process images, please report this");
-        		return badRequest(iaform.render(filledForm)); 
+            	//return badRequest(iaform.render(filledForm)); 
         	}
         }
         
