@@ -856,3 +856,1068 @@ Application has started
 2012-12-24 12:48:07,469 - [INFO] - from play in play-akka.actor.default-dispatcher-119 
 Application started (Dev)
 
+2012-12-24 13:38:59,759 - [INFO] - from application in play-akka.actor.default-dispatcher-120 
+Application shutdown...
+
+2012-12-24 13:38:59,766 - [INFO] - from application in play-akka.actor.default-dispatcher-120 
+Application has started
+
+2012-12-24 13:38:59,767 - [INFO] - from play in play-akka.actor.default-dispatcher-120 
+Application started (Dev)
+
+2012-12-28 18:32:44,651 - [INFO] - from application in play-akka.actor.default-dispatcher-124 
+Application shutdown...
+
+2012-12-28 18:32:44,657 - [INFO] - from application in play-akka.actor.default-dispatcher-124 
+Application has started
+
+2012-12-28 18:32:44,657 - [INFO] - from play in play-akka.actor.default-dispatcher-124 
+Application started (Dev)
+
+2012-12-28 18:33:36,761 - [INFO] - from application in play-akka.actor.default-dispatcher-125 
+Application shutdown...
+
+2012-12-28 18:33:36,767 - [INFO] - from application in play-akka.actor.default-dispatcher-125 
+Application has started
+
+2012-12-28 18:33:36,767 - [INFO] - from play in play-akka.actor.default-dispatcher-125 
+Application started (Dev)
+
+2012-12-28 18:34:06,482 - [INFO] - from application in play-akka.actor.default-dispatcher-126 
+Application shutdown...
+
+2012-12-28 18:34:06,488 - [INFO] - from application in play-akka.actor.default-dispatcher-126 
+Application has started
+
+2012-12-28 18:34:06,488 - [INFO] - from play in play-akka.actor.default-dispatcher-126 
+Application started (Dev)
+
+2012-12-28 18:34:20,951 - [INFO] - from application in play-akka.actor.default-dispatcher-127 
+Application shutdown...
+
+2012-12-28 18:34:20,958 - [INFO] - from application in play-akka.actor.default-dispatcher-127 
+Application has started
+
+2012-12-28 18:34:20,958 - [INFO] - from play in play-akka.actor.default-dispatcher-127 
+Application started (Dev)
+
+2012-12-28 18:34:34,785 - [INFO] - from application in play-akka.actor.default-dispatcher-128 
+Application shutdown...
+
+2012-12-28 18:34:34,790 - [INFO] - from application in play-akka.actor.default-dispatcher-128 
+Application has started
+
+2012-12-28 18:34:34,790 - [INFO] - from play in play-akka.actor.default-dispatcher-128 
+Application started (Dev)
+
+2012-12-28 18:38:15,667 - [INFO] - from application in play-akka.actor.default-dispatcher-129 
+Application shutdown...
+
+2012-12-28 18:38:15,673 - [INFO] - from application in play-akka.actor.default-dispatcher-129 
+Application has started
+
+2012-12-28 18:38:15,674 - [INFO] - from play in play-akka.actor.default-dispatcher-129 
+Application started (Dev)
+
+2012-12-28 18:40:21,084 - [INFO] - from application in play-akka.actor.default-dispatcher-129 
+Application shutdown...
+
+2012-12-28 18:40:21,089 - [INFO] - from application in play-akka.actor.default-dispatcher-129 
+Application has started
+
+2012-12-28 18:40:21,089 - [INFO] - from play in play-akka.actor.default-dispatcher-129 
+Application started (Dev)
+
+2012-12-28 18:42:02,379 - [INFO] - from application in play-akka.actor.default-dispatcher-131 
+Application shutdown...
+
+2012-12-28 18:42:02,384 - [INFO] - from application in play-akka.actor.default-dispatcher-131 
+Application has started
+
+2012-12-28 18:42:02,385 - [INFO] - from play in play-akka.actor.default-dispatcher-131 
+Application started (Dev)
+
+2012-12-28 18:42:45,864 - [INFO] - from application in play-akka.actor.default-dispatcher-132 
+Application shutdown...
+
+2012-12-28 18:42:45,870 - [INFO] - from application in play-akka.actor.default-dispatcher-132 
+Application has started
+
+2012-12-28 18:42:45,871 - [INFO] - from play in play-akka.actor.default-dispatcher-132 
+Application started (Dev)
+
+2012-12-28 18:43:45,457 - [INFO] - from application in play-akka.actor.default-dispatcher-133 
+Application shutdown...
+
+2012-12-28 18:43:45,463 - [INFO] - from application in play-akka.actor.default-dispatcher-133 
+Application has started
+
+2012-12-28 18:43:45,463 - [INFO] - from play in play-akka.actor.default-dispatcher-133 
+Application started (Dev)
+
+2012-12-28 18:44:20,419 - [INFO] - from application in play-akka.actor.default-dispatcher-134 
+Application shutdown...
+
+2012-12-28 18:44:20,424 - [INFO] - from application in play-akka.actor.default-dispatcher-134 
+Application has started
+
+2012-12-28 18:44:20,425 - [INFO] - from play in play-akka.actor.default-dispatcher-134 
+Application started (Dev)
+
+2012-12-28 18:44:37,229 - [INFO] - from application in play-akka.actor.default-dispatcher-135 
+Application shutdown...
+
+2012-12-28 18:44:37,235 - [INFO] - from application in play-akka.actor.default-dispatcher-135 
+Application has started
+
+2012-12-28 18:44:37,235 - [INFO] - from play in play-akka.actor.default-dispatcher-135 
+Application started (Dev)
+
+2012-12-28 18:48:19,740 - [INFO] - from application in play-akka.actor.default-dispatcher-137 
+Application shutdown...
+
+2012-12-28 18:48:19,745 - [INFO] - from application in play-akka.actor.default-dispatcher-137 
+Application has started
+
+2012-12-28 18:48:19,746 - [INFO] - from play in play-akka.actor.default-dispatcher-137 
+Application started (Dev)
+
+2012-12-28 18:48:48,280 - [INFO] - from application in play-akka.actor.default-dispatcher-138 
+Application shutdown...
+
+2012-12-28 18:48:48,286 - [INFO] - from application in play-akka.actor.default-dispatcher-138 
+Application has started
+
+2012-12-28 18:48:48,286 - [INFO] - from play in play-akka.actor.default-dispatcher-138 
+Application started (Dev)
+
+2012-12-28 18:49:13,277 - [INFO] - from application in play-akka.actor.default-dispatcher-139 
+Application shutdown...
+
+2012-12-28 18:49:13,283 - [INFO] - from application in play-akka.actor.default-dispatcher-139 
+Application has started
+
+2012-12-28 18:49:13,283 - [INFO] - from play in play-akka.actor.default-dispatcher-139 
+Application started (Dev)
+
+2012-12-28 18:49:32,201 - [INFO] - from application in play-akka.actor.default-dispatcher-140 
+Application shutdown...
+
+2012-12-28 18:49:32,206 - [INFO] - from application in play-akka.actor.default-dispatcher-140 
+Application has started
+
+2012-12-28 18:49:32,207 - [INFO] - from play in play-akka.actor.default-dispatcher-140 
+Application started (Dev)
+
+2012-12-28 18:49:50,245 - [INFO] - from application in play-akka.actor.default-dispatcher-141 
+Application shutdown...
+
+2012-12-28 18:49:50,251 - [INFO] - from application in play-akka.actor.default-dispatcher-141 
+Application has started
+
+2012-12-28 18:49:50,252 - [INFO] - from play in play-akka.actor.default-dispatcher-141 
+Application started (Dev)
+
+2012-12-28 18:50:38,810 - [INFO] - from application in play-akka.actor.default-dispatcher-142 
+Application shutdown...
+
+2012-12-28 18:50:38,816 - [INFO] - from application in play-akka.actor.default-dispatcher-142 
+Application has started
+
+2012-12-28 18:50:38,816 - [INFO] - from play in play-akka.actor.default-dispatcher-142 
+Application started (Dev)
+
+2012-12-28 18:51:03,813 - [INFO] - from application in play-akka.actor.default-dispatcher-143 
+Application shutdown...
+
+2012-12-28 18:51:03,819 - [INFO] - from application in play-akka.actor.default-dispatcher-143 
+Application has started
+
+2012-12-28 18:51:03,819 - [INFO] - from play in play-akka.actor.default-dispatcher-143 
+Application started (Dev)
+
+2012-12-28 18:51:27,563 - [INFO] - from application in play-akka.actor.default-dispatcher-144 
+Application shutdown...
+
+2012-12-28 18:51:27,569 - [INFO] - from application in play-akka.actor.default-dispatcher-144 
+Application has started
+
+2012-12-28 18:51:27,569 - [INFO] - from play in play-akka.actor.default-dispatcher-144 
+Application started (Dev)
+
+2012-12-28 18:57:34,370 - [INFO] - from application in play-akka.actor.default-dispatcher-146 
+Application shutdown...
+
+2012-12-28 18:57:34,376 - [INFO] - from application in play-akka.actor.default-dispatcher-146 
+Application has started
+
+2012-12-28 18:57:34,376 - [INFO] - from play in play-akka.actor.default-dispatcher-146 
+Application started (Dev)
+
+2012-12-28 19:00:19,047 - [INFO] - from application in play-akka.actor.default-dispatcher-147 
+Application shutdown...
+
+2012-12-28 19:00:19,053 - [INFO] - from application in play-akka.actor.default-dispatcher-147 
+Application has started
+
+2012-12-28 19:00:19,053 - [INFO] - from play in play-akka.actor.default-dispatcher-147 
+Application started (Dev)
+
+2012-12-28 19:00:52,459 - [INFO] - from application in play-akka.actor.default-dispatcher-148 
+Application shutdown...
+
+2012-12-28 19:00:52,465 - [INFO] - from application in play-akka.actor.default-dispatcher-148 
+Application has started
+
+2012-12-28 19:00:52,465 - [INFO] - from play in play-akka.actor.default-dispatcher-148 
+Application started (Dev)
+
+2012-12-28 19:02:30,328 - [INFO] - from application in play-akka.actor.default-dispatcher-149 
+Application shutdown...
+
+2012-12-28 19:02:30,334 - [INFO] - from application in play-akka.actor.default-dispatcher-149 
+Application has started
+
+2012-12-28 19:02:30,334 - [INFO] - from play in play-akka.actor.default-dispatcher-149 
+Application started (Dev)
+
+2012-12-28 19:05:31,035 - [INFO] - from application in play-akka.actor.default-dispatcher-150 
+Application shutdown...
+
+2012-12-28 19:05:31,041 - [INFO] - from application in play-akka.actor.default-dispatcher-150 
+Application has started
+
+2012-12-28 19:05:31,041 - [INFO] - from play in play-akka.actor.default-dispatcher-150 
+Application started (Dev)
+
+2012-12-28 19:08:38,712 - [INFO] - from application in play-akka.actor.default-dispatcher-151 
+Application shutdown...
+
+2012-12-28 19:08:38,718 - [INFO] - from application in play-akka.actor.default-dispatcher-151 
+Application has started
+
+2012-12-28 19:08:38,718 - [INFO] - from play in play-akka.actor.default-dispatcher-151 
+Application started (Dev)
+
+2012-12-28 19:19:43,593 - [INFO] - from application in play-akka.actor.default-dispatcher-152 
+Application shutdown...
+
+2012-12-28 19:19:43,599 - [INFO] - from application in play-akka.actor.default-dispatcher-152 
+Application has started
+
+2012-12-28 19:19:43,599 - [INFO] - from play in play-akka.actor.default-dispatcher-152 
+Application started (Dev)
+
+2012-12-28 19:20:55,783 - [INFO] - from application in play-akka.actor.default-dispatcher-153 
+Application shutdown...
+
+2012-12-28 19:20:55,789 - [INFO] - from application in play-akka.actor.default-dispatcher-153 
+Application has started
+
+2012-12-28 19:20:55,789 - [INFO] - from play in play-akka.actor.default-dispatcher-153 
+Application started (Dev)
+
+2012-12-28 19:21:38,980 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ccb4474-88d2-4cca-8d0c-2ae120ec48f3/
+
+2012-12-28 19:24:04,411 - [INFO] - from application in play-akka.actor.default-dispatcher-156 
+Application shutdown...
+
+2012-12-28 19:24:04,417 - [INFO] - from application in play-akka.actor.default-dispatcher-156 
+Application has started
+
+2012-12-28 19:24:04,417 - [INFO] - from play in play-akka.actor.default-dispatcher-156 
+Application started (Dev)
+
+2012-12-28 19:27:06,929 - [INFO] - from application in play-akka.actor.default-dispatcher-157 
+Application shutdown...
+
+2012-12-28 19:27:06,935 - [INFO] - from application in play-akka.actor.default-dispatcher-157 
+Application has started
+
+2012-12-28 19:27:06,935 - [INFO] - from play in play-akka.actor.default-dispatcher-157 
+Application started (Dev)
+
+2012-12-28 19:40:27,408 - [INFO] - from application in play-akka.actor.default-dispatcher-158 
+Application shutdown...
+
+2012-12-28 19:40:27,414 - [INFO] - from application in play-akka.actor.default-dispatcher-158 
+Application has started
+
+2012-12-28 19:40:27,414 - [INFO] - from play in play-akka.actor.default-dispatcher-158 
+Application started (Dev)
+
+2012-12-28 19:41:03,310 - [INFO] - from application in play-akka.actor.default-dispatcher-159 
+Application shutdown...
+
+2012-12-28 19:41:03,316 - [INFO] - from application in play-akka.actor.default-dispatcher-159 
+Application has started
+
+2012-12-28 19:41:03,316 - [INFO] - from play in play-akka.actor.default-dispatcher-159 
+Application started (Dev)
+
+2012-12-28 19:41:05,983 - [INFO] - from application in play-akka.actor.default-dispatcher-159 
+Application shutdown...
+
+2012-12-28 19:41:05,990 - [INFO] - from application in play-akka.actor.default-dispatcher-159 
+Application has started
+
+2012-12-28 19:41:05,990 - [INFO] - from play in play-akka.actor.default-dispatcher-159 
+Application started (Dev)
+
+2012-12-28 19:42:53,242 - [INFO] - from application in play-akka.actor.default-dispatcher-160 
+Application shutdown...
+
+2012-12-28 19:42:53,247 - [INFO] - from application in play-akka.actor.default-dispatcher-160 
+Application has started
+
+2012-12-28 19:42:53,248 - [INFO] - from play in play-akka.actor.default-dispatcher-160 
+Application started (Dev)
+
+2012-12-28 19:43:50,415 - [INFO] - from application in play-akka.actor.default-dispatcher-160 
+Application shutdown...
+
+2012-12-28 19:43:50,422 - [INFO] - from application in play-akka.actor.default-dispatcher-160 
+Application has started
+
+2012-12-28 19:43:50,422 - [INFO] - from play in play-akka.actor.default-dispatcher-160 
+Application started (Dev)
+
+2012-12-28 19:44:12,914 - [INFO] - from application in play-akka.actor.default-dispatcher-162 
+Application shutdown...
+
+2012-12-28 19:44:12,920 - [INFO] - from application in play-akka.actor.default-dispatcher-162 
+Application has started
+
+2012-12-28 19:44:12,921 - [INFO] - from play in play-akka.actor.default-dispatcher-162 
+Application started (Dev)
+
+2012-12-28 19:44:40,837 - [INFO] - from application in play-akka.actor.default-dispatcher-163 
+Application shutdown...
+
+2012-12-28 19:44:40,843 - [INFO] - from application in play-akka.actor.default-dispatcher-163 
+Application has started
+
+2012-12-28 19:44:40,843 - [INFO] - from play in play-akka.actor.default-dispatcher-163 
+Application started (Dev)
+
+2012-12-28 19:51:21,074 - [INFO] - from application in play-akka.actor.default-dispatcher-164 
+Application shutdown...
+
+2012-12-28 19:51:21,080 - [INFO] - from application in play-akka.actor.default-dispatcher-164 
+Application has started
+
+2012-12-28 19:51:21,081 - [INFO] - from play in play-akka.actor.default-dispatcher-164 
+Application started (Dev)
+
+2012-12-28 19:51:38,393 - [INFO] - from application in play-akka.actor.default-dispatcher-165 
+Application shutdown...
+
+2012-12-28 19:51:38,398 - [INFO] - from application in play-akka.actor.default-dispatcher-165 
+Application has started
+
+2012-12-28 19:51:38,399 - [INFO] - from play in play-akka.actor.default-dispatcher-165 
+Application started (Dev)
+
+2012-12-28 19:54:11,733 - [INFO] - from application in play-akka.actor.default-dispatcher-166 
+Application shutdown...
+
+2012-12-28 19:54:11,739 - [INFO] - from application in play-akka.actor.default-dispatcher-166 
+Application has started
+
+2012-12-28 19:54:11,739 - [INFO] - from play in play-akka.actor.default-dispatcher-166 
+Application started (Dev)
+
+2012-12-28 19:55:52,287 - [INFO] - from application in play-akka.actor.default-dispatcher-167 
+Application shutdown...
+
+2012-12-28 19:55:52,293 - [INFO] - from application in play-akka.actor.default-dispatcher-167 
+Application has started
+
+2012-12-28 19:55:52,293 - [INFO] - from play in play-akka.actor.default-dispatcher-167 
+Application started (Dev)
+
+2012-12-28 19:56:34,973 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5416410d-fa4a-40b1-9b7d-62d8b30f215f/
+
+2012-12-28 19:58:15,188 - [INFO] - from application in play-akka.actor.default-dispatcher-170 
+Application shutdown...
+
+2012-12-28 19:58:15,193 - [INFO] - from application in play-akka.actor.default-dispatcher-170 
+Application has started
+
+2012-12-28 19:58:15,193 - [INFO] - from play in play-akka.actor.default-dispatcher-170 
+Application started (Dev)
+
+2012-12-28 20:02:09,250 - [INFO] - from application in play-akka.actor.default-dispatcher-171 
+Application shutdown...
+
+2012-12-28 20:02:09,256 - [INFO] - from application in play-akka.actor.default-dispatcher-171 
+Application has started
+
+2012-12-28 20:02:09,256 - [INFO] - from play in play-akka.actor.default-dispatcher-171 
+Application started (Dev)
+
+2012-12-28 20:22:57,678 - [INFO] - from application in play-akka.actor.default-dispatcher-172 
+Application shutdown...
+
+2012-12-28 20:22:57,684 - [INFO] - from application in play-akka.actor.default-dispatcher-172 
+Application has started
+
+2012-12-28 20:22:57,684 - [INFO] - from play in play-akka.actor.default-dispatcher-172 
+Application started (Dev)
+
+2012-12-28 20:23:52,812 - [INFO] - from application in play-akka.actor.default-dispatcher-173 
+Application shutdown...
+
+2012-12-28 20:23:52,818 - [INFO] - from application in play-akka.actor.default-dispatcher-173 
+Application has started
+
+2012-12-28 20:23:52,819 - [INFO] - from play in play-akka.actor.default-dispatcher-173 
+Application started (Dev)
+
+2012-12-28 20:26:16,945 - [INFO] - from application in play-akka.actor.default-dispatcher-174 
+Application shutdown...
+
+2012-12-28 20:26:16,951 - [INFO] - from application in play-akka.actor.default-dispatcher-174 
+Application has started
+
+2012-12-28 20:26:16,951 - [INFO] - from play in play-akka.actor.default-dispatcher-174 
+Application started (Dev)
+
+2012-12-28 20:33:16,833 - [INFO] - from application in play-akka.actor.default-dispatcher-175 
+Application shutdown...
+
+2012-12-28 20:33:16,839 - [INFO] - from application in play-akka.actor.default-dispatcher-175 
+Application has started
+
+2012-12-28 20:33:16,839 - [INFO] - from play in play-akka.actor.default-dispatcher-175 
+Application started (Dev)
+
+2012-12-28 20:38:43,521 - [INFO] - from application in play-akka.actor.default-dispatcher-176 
+Application shutdown...
+
+2012-12-28 20:38:43,527 - [INFO] - from application in play-akka.actor.default-dispatcher-176 
+Application has started
+
+2012-12-28 20:38:43,527 - [INFO] - from play in play-akka.actor.default-dispatcher-176 
+Application started (Dev)
+
+2012-12-28 20:39:57,940 - [INFO] - from application in play-akka.actor.default-dispatcher-177 
+Application shutdown...
+
+2012-12-28 20:39:57,946 - [INFO] - from application in play-akka.actor.default-dispatcher-177 
+Application has started
+
+2012-12-28 20:39:57,946 - [INFO] - from play in play-akka.actor.default-dispatcher-177 
+Application started (Dev)
+
+2012-12-28 20:43:55,529 - [INFO] - from application in play-akka.actor.default-dispatcher-178 
+Application shutdown...
+
+2012-12-28 20:43:55,535 - [INFO] - from application in play-akka.actor.default-dispatcher-178 
+Application has started
+
+2012-12-28 20:43:55,535 - [INFO] - from play in play-akka.actor.default-dispatcher-178 
+Application started (Dev)
+
+2012-12-28 20:44:52,713 - [INFO] - from application in play-akka.actor.default-dispatcher-179 
+Application shutdown...
+
+2012-12-28 20:44:52,719 - [INFO] - from application in play-akka.actor.default-dispatcher-179 
+Application has started
+
+2012-12-28 20:44:52,719 - [INFO] - from play in play-akka.actor.default-dispatcher-179 
+Application started (Dev)
+
+2012-12-28 20:45:44,970 - [INFO] - from application in play-akka.actor.default-dispatcher-180 
+Application shutdown...
+
+2012-12-28 20:45:44,976 - [INFO] - from application in play-akka.actor.default-dispatcher-180 
+Application has started
+
+2012-12-28 20:45:44,977 - [INFO] - from play in play-akka.actor.default-dispatcher-180 
+Application started (Dev)
+
+2012-12-28 20:45:54,837 - [INFO] - from application in play-akka.actor.default-dispatcher-181 
+Application shutdown...
+
+2012-12-28 20:45:54,843 - [INFO] - from application in play-akka.actor.default-dispatcher-181 
+Application has started
+
+2012-12-28 20:45:54,844 - [INFO] - from play in play-akka.actor.default-dispatcher-181 
+Application started (Dev)
+
+2012-12-28 20:53:25,305 - [INFO] - from application in play-akka.actor.default-dispatcher-182 
+Application shutdown...
+
+2012-12-28 20:53:25,311 - [INFO] - from application in play-akka.actor.default-dispatcher-182 
+Application has started
+
+2012-12-28 20:53:25,311 - [INFO] - from play in play-akka.actor.default-dispatcher-182 
+Application started (Dev)
+
+2012-12-28 20:54:03,213 - [INFO] - from application in play-akka.actor.default-dispatcher-183 
+Application shutdown...
+
+2012-12-28 20:54:03,219 - [INFO] - from application in play-akka.actor.default-dispatcher-183 
+Application has started
+
+2012-12-28 20:54:03,219 - [INFO] - from play in play-akka.actor.default-dispatcher-183 
+Application started (Dev)
+
+2012-12-28 20:54:35,596 - [INFO] - from application in play-akka.actor.default-dispatcher-184 
+Application shutdown...
+
+2012-12-28 20:54:35,602 - [INFO] - from application in play-akka.actor.default-dispatcher-184 
+Application has started
+
+2012-12-28 20:54:35,602 - [INFO] - from play in play-akka.actor.default-dispatcher-184 
+Application started (Dev)
+
+2012-12-28 21:10:18,091 - [INFO] - from application in play-akka.actor.default-dispatcher-185 
+Application shutdown...
+
+2012-12-28 21:10:18,097 - [INFO] - from application in play-akka.actor.default-dispatcher-185 
+Application has started
+
+2012-12-28 21:10:18,097 - [INFO] - from play in play-akka.actor.default-dispatcher-185 
+Application started (Dev)
+
+2012-12-28 21:10:46,538 - [INFO] - from application in play-akka.actor.default-dispatcher-186 
+Application shutdown...
+
+2012-12-28 21:10:46,544 - [INFO] - from application in play-akka.actor.default-dispatcher-186 
+Application has started
+
+2012-12-28 21:10:46,545 - [INFO] - from play in play-akka.actor.default-dispatcher-186 
+Application started (Dev)
+
+2012-12-28 21:10:46,597 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+sJOB ID:5416410d-fa4a-40b1-9b7d-62d8b30f215f
+
+2012-12-28 21:10:46,598 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+selected for NS JSON:["1536_example.jpg.dat"]
+
+2012-12-28 21:10:59,832 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+{replicates=4, linkageCutoff=200, scoringFunction=1, selectedArrayDefPlate=All plates, jobid=5416410d-fa4a-40b1-9b7d-62d8b30f215f, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2012-12-28 21:10:59,833 - [ERROR] - from application in play-akka.actor.actions-dispatcher-15 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@72d25165
+
+2012-12-28 21:10:59,833 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+JOBid = 5416410d-fa4a-40b1-9b7d-62d8b30f215f
+
+2012-12-28 21:10:59,833 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+Files preloaded from IA, populating plate file map:
+
+2012-12-28 21:10:59,842 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+selectedForNS = ["1536_example.jpg.dat"]
+
+2012-12-28 21:10:59,845 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+	1536_example.jpg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5416410d-fa4a-40b1-9b7d-62d8b30f215f/ia/output_files/1536_example.jpg.dat
+
+2012-12-28 21:10:59,846 - [INFO] - from application in play-akka.actor.actions-dispatcher-15 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5416410d-fa4a-40b1-9b7d-62d8b30f215f/ia/output_files/1536_example.jpg.dat, --savenames, 1536_example.jpg.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5416410d-fa4a-40b1-9b7d-62d8b30f215f/nsoutput_files, --replicates, 4, --linkagecutoff, 200, --adfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14]
+
+2012-12-28 21:15:00,867 - [INFO] - from application in play-akka.actor.default-dispatcher-191 
+Application shutdown...
+
+2012-12-28 21:15:00,891 - [INFO] - from application in play-akka.actor.default-dispatcher-191 
+Application has started
+
+2012-12-28 21:15:00,892 - [INFO] - from play in play-akka.actor.default-dispatcher-191 
+Application started (Dev)
+
+2012-12-28 21:20:43,654 - [INFO] - from application in play-akka.actor.default-dispatcher-192 
+Application shutdown...
+
+2012-12-28 21:20:43,661 - [INFO] - from application in play-akka.actor.default-dispatcher-192 
+Application has started
+
+2012-12-28 21:20:43,661 - [INFO] - from play in play-akka.actor.default-dispatcher-192 
+Application started (Dev)
+
+2012-12-28 21:21:49,458 - [INFO] - from application in play-akka.actor.default-dispatcher-193 
+Application shutdown...
+
+2012-12-28 21:21:49,466 - [INFO] - from application in play-akka.actor.default-dispatcher-193 
+Application has started
+
+2012-12-28 21:21:49,466 - [INFO] - from play in play-akka.actor.default-dispatcher-193 
+Application started (Dev)
+
+2012-12-28 21:22:28,705 - [INFO] - from application in play-akka.actor.default-dispatcher-194 
+Application shutdown...
+
+2012-12-28 21:22:28,711 - [INFO] - from application in play-akka.actor.default-dispatcher-194 
+Application has started
+
+2012-12-28 21:22:28,711 - [INFO] - from play in play-akka.actor.default-dispatcher-194 
+Application started (Dev)
+
+2012-12-28 21:22:31,403 - [INFO] - from application in play-akka.actor.default-dispatcher-194 
+Application shutdown...
+
+2012-12-28 21:22:31,408 - [INFO] - from application in play-akka.actor.default-dispatcher-194 
+Application has started
+
+2012-12-28 21:22:31,408 - [INFO] - from play in play-akka.actor.default-dispatcher-194 
+Application started (Dev)
+
+2012-12-28 21:23:12,876 - [INFO] - from application in play-akka.actor.default-dispatcher-195 
+Application shutdown...
+
+2012-12-28 21:23:12,884 - [INFO] - from application in play-akka.actor.default-dispatcher-195 
+Application has started
+
+2012-12-28 21:23:12,885 - [INFO] - from play in play-akka.actor.default-dispatcher-195 
+Application started (Dev)
+
+2012-12-28 21:23:15,561 - [INFO] - from application in play-akka.actor.default-dispatcher-195 
+Application shutdown...
+
+2012-12-28 21:23:15,568 - [INFO] - from application in play-akka.actor.default-dispatcher-195 
+Application has started
+
+2012-12-28 21:23:15,568 - [INFO] - from play in play-akka.actor.default-dispatcher-195 
+Application started (Dev)
+
+2012-12-28 21:23:21,537 - [INFO] - from application in play-akka.actor.default-dispatcher-195 
+Application shutdown...
+
+2012-12-28 21:23:21,543 - [INFO] - from application in play-akka.actor.default-dispatcher-195 
+Application has started
+
+2012-12-28 21:23:21,544 - [INFO] - from play in play-akka.actor.default-dispatcher-195 
+Application started (Dev)
+
+2012-12-28 21:24:20,672 - [INFO] - from application in play-akka.actor.default-dispatcher-196 
+Application shutdown...
+
+2012-12-28 21:24:20,678 - [INFO] - from application in play-akka.actor.default-dispatcher-196 
+Application has started
+
+2012-12-28 21:24:20,678 - [INFO] - from play in play-akka.actor.default-dispatcher-196 
+Application started (Dev)
+
+2012-12-28 21:26:42,451 - [INFO] - from application in play-akka.actor.default-dispatcher-199 
+Application shutdown...
+
+2012-12-28 21:26:42,458 - [INFO] - from application in play-akka.actor.default-dispatcher-199 
+Application has started
+
+2012-12-28 21:26:42,458 - [INFO] - from play in play-akka.actor.default-dispatcher-199 
+Application started (Dev)
+
+2012-12-28 21:27:06,632 - [INFO] - from application in play-akka.actor.default-dispatcher-201 
+Application shutdown...
+
+2012-12-28 21:27:06,640 - [INFO] - from application in play-akka.actor.default-dispatcher-201 
+Application has started
+
+2012-12-28 21:27:06,640 - [INFO] - from play in play-akka.actor.default-dispatcher-201 
+Application started (Dev)
+
+2012-12-28 21:27:09,311 - [INFO] - from application in play-akka.actor.default-dispatcher-201 
+Application shutdown...
+
+2012-12-28 21:27:09,318 - [INFO] - from application in play-akka.actor.default-dispatcher-201 
+Application has started
+
+2012-12-28 21:27:09,318 - [INFO] - from play in play-akka.actor.default-dispatcher-201 
+Application started (Dev)
+
+2012-12-28 21:27:45,400 - [INFO] - from application in play-akka.actor.default-dispatcher-201 
+Application shutdown...
+
+2012-12-28 21:27:45,407 - [INFO] - from application in play-akka.actor.default-dispatcher-201 
+Application has started
+
+2012-12-28 21:27:45,407 - [INFO] - from play in play-akka.actor.default-dispatcher-201 
+Application started (Dev)
+
+2012-12-28 21:33:21,243 - [INFO] - from application in play-akka.actor.default-dispatcher-205 
+Application shutdown...
+
+2012-12-28 21:33:21,251 - [INFO] - from application in play-akka.actor.default-dispatcher-205 
+Application has started
+
+2012-12-28 21:33:21,251 - [INFO] - from play in play-akka.actor.default-dispatcher-205 
+Application started (Dev)
+
+2012-12-28 21:37:05,290 - [INFO] - from application in play-akka.actor.default-dispatcher-207 
+Application shutdown...
+
+2012-12-28 21:37:05,295 - [INFO] - from application in play-akka.actor.default-dispatcher-207 
+Application has started
+
+2012-12-28 21:37:05,295 - [INFO] - from play in play-akka.actor.default-dispatcher-207 
+Application started (Dev)
+
+2012-12-28 21:38:36,454 - [INFO] - from application in play-akka.actor.default-dispatcher-208 
+Application shutdown...
+
+2012-12-28 21:38:36,461 - [INFO] - from application in play-akka.actor.default-dispatcher-208 
+Application has started
+
+2012-12-28 21:38:36,461 - [INFO] - from play in play-akka.actor.default-dispatcher-208 
+Application started (Dev)
+
+2012-12-28 21:38:50,594 - [INFO] - from application in play-akka.actor.default-dispatcher-209 
+Application shutdown...
+
+2012-12-28 21:38:50,600 - [INFO] - from application in play-akka.actor.default-dispatcher-209 
+Application has started
+
+2012-12-28 21:38:50,601 - [INFO] - from play in play-akka.actor.default-dispatcher-209 
+Application started (Dev)
+
+2012-12-28 21:39:30,267 - [INFO] - from application in play-akka.actor.default-dispatcher-210 
+Application shutdown...
+
+2012-12-28 21:39:30,273 - [INFO] - from application in play-akka.actor.default-dispatcher-210 
+Application has started
+
+2012-12-28 21:39:30,273 - [INFO] - from play in play-akka.actor.default-dispatcher-210 
+Application started (Dev)
+
+2012-12-28 21:40:04,156 - [INFO] - from application in play-akka.actor.default-dispatcher-211 
+Application shutdown...
+
+2012-12-28 21:40:04,162 - [INFO] - from application in play-akka.actor.default-dispatcher-211 
+Application has started
+
+2012-12-28 21:40:04,162 - [INFO] - from play in play-akka.actor.default-dispatcher-211 
+Application started (Dev)
+
+2012-12-28 21:42:21,925 - [INFO] - from application in play-akka.actor.default-dispatcher-213 
+Application shutdown...
+
+2012-12-28 21:42:21,931 - [INFO] - from application in play-akka.actor.default-dispatcher-213 
+Application has started
+
+2012-12-28 21:42:21,931 - [INFO] - from play in play-akka.actor.default-dispatcher-213 
+Application started (Dev)
+
+2012-12-28 21:51:19,029 - [INFO] - from application in play-akka.actor.default-dispatcher-220 
+Application shutdown...
+
+2012-12-28 21:51:19,035 - [INFO] - from application in play-akka.actor.default-dispatcher-220 
+Application has started
+
+2012-12-28 21:51:19,036 - [INFO] - from play in play-akka.actor.default-dispatcher-220 
+Application started (Dev)
+
+2012-12-28 21:56:00,515 - [INFO] - from application in play-akka.actor.default-dispatcher-221 
+Application shutdown...
+
+2012-12-28 21:56:00,523 - [INFO] - from application in play-akka.actor.default-dispatcher-221 
+Application has started
+
+2012-12-28 21:56:00,524 - [INFO] - from play in play-akka.actor.default-dispatcher-221 
+Application started (Dev)
+
+2012-12-28 21:57:17,756 - [INFO] - from application in play-akka.actor.default-dispatcher-223 
+Application shutdown...
+
+2012-12-28 21:57:17,763 - [INFO] - from application in play-akka.actor.default-dispatcher-223 
+Application has started
+
+2012-12-28 21:57:17,763 - [INFO] - from play in play-akka.actor.default-dispatcher-223 
+Application started (Dev)
+
+2012-12-28 21:59:15,352 - [INFO] - from application in play-akka.actor.default-dispatcher-225 
+Application shutdown...
+
+2012-12-28 21:59:15,357 - [INFO] - from application in play-akka.actor.default-dispatcher-225 
+Application has started
+
+2012-12-28 21:59:15,357 - [INFO] - from play in play-akka.actor.default-dispatcher-225 
+Application started (Dev)
+
+2012-12-28 22:02:12,358 - [INFO] - from application in play-akka.actor.default-dispatcher-226 
+Application shutdown...
+
+2012-12-28 22:02:12,366 - [INFO] - from application in play-akka.actor.default-dispatcher-226 
+Application has started
+
+2012-12-28 22:02:12,366 - [INFO] - from play in play-akka.actor.default-dispatcher-226 
+Application started (Dev)
+
+2012-12-28 22:02:31,643 - [INFO] - from application in play-akka.actor.default-dispatcher-227 
+Application shutdown...
+
+2012-12-28 22:02:31,648 - [INFO] - from application in play-akka.actor.default-dispatcher-227 
+Application has started
+
+2012-12-28 22:02:31,649 - [INFO] - from play in play-akka.actor.default-dispatcher-227 
+Application started (Dev)
+
+2012-12-28 22:02:47,837 - [INFO] - from application in play-akka.actor.default-dispatcher-228 
+Application shutdown...
+
+2012-12-28 22:02:47,842 - [INFO] - from application in play-akka.actor.default-dispatcher-228 
+Application has started
+
+2012-12-28 22:02:47,843 - [INFO] - from play in play-akka.actor.default-dispatcher-228 
+Application started (Dev)
+
+2012-12-28 22:03:04,802 - [INFO] - from application in play-akka.actor.default-dispatcher-229 
+Application shutdown...
+
+2012-12-28 22:03:04,808 - [INFO] - from application in play-akka.actor.default-dispatcher-229 
+Application has started
+
+2012-12-28 22:03:04,809 - [INFO] - from play in play-akka.actor.default-dispatcher-229 
+Application started (Dev)
+
+2012-12-28 22:04:35,853 - [INFO] - from application in play-akka.actor.default-dispatcher-230 
+Application shutdown...
+
+2012-12-28 22:04:35,858 - [INFO] - from application in play-akka.actor.default-dispatcher-230 
+Application has started
+
+2012-12-28 22:04:35,858 - [INFO] - from play in play-akka.actor.default-dispatcher-230 
+Application started (Dev)
+
+2012-12-28 22:05:04,242 - [INFO] - from application in play-akka.actor.default-dispatcher-231 
+Application shutdown...
+
+2012-12-28 22:05:04,248 - [INFO] - from application in play-akka.actor.default-dispatcher-231 
+Application has started
+
+2012-12-28 22:05:04,248 - [INFO] - from play in play-akka.actor.default-dispatcher-231 
+Application started (Dev)
+
+2012-12-28 22:05:06,907 - [INFO] - from application in play-akka.actor.default-dispatcher-231 
+Application shutdown...
+
+2012-12-28 22:05:06,912 - [INFO] - from application in play-akka.actor.default-dispatcher-231 
+Application has started
+
+2012-12-28 22:05:06,912 - [INFO] - from play in play-akka.actor.default-dispatcher-231 
+Application started (Dev)
+
+2012-12-28 22:05:30,927 - [INFO] - from application in play-akka.actor.default-dispatcher-232 
+Application shutdown...
+
+2012-12-28 22:05:30,932 - [INFO] - from application in play-akka.actor.default-dispatcher-232 
+Application has started
+
+2012-12-28 22:05:30,932 - [INFO] - from play in play-akka.actor.default-dispatcher-232 
+Application started (Dev)
+
+2012-12-28 22:06:17,065 - [INFO] - from application in play-akka.actor.default-dispatcher-233 
+Application shutdown...
+
+2012-12-28 22:06:17,071 - [INFO] - from application in play-akka.actor.default-dispatcher-233 
+Application has started
+
+2012-12-28 22:06:17,071 - [INFO] - from play in play-akka.actor.default-dispatcher-233 
+Application started (Dev)
+
+2012-12-28 22:06:21,855 - [INFO] - from application in play-akka.actor.default-dispatcher-233 
+Application shutdown...
+
+2012-12-28 22:06:21,861 - [INFO] - from application in play-akka.actor.default-dispatcher-233 
+Application has started
+
+2012-12-28 22:06:21,862 - [INFO] - from play in play-akka.actor.default-dispatcher-233 
+Application started (Dev)
+
+2012-12-28 22:07:04,829 - [INFO] - from application in play-akka.actor.default-dispatcher-234 
+Application shutdown...
+
+2012-12-28 22:07:04,835 - [INFO] - from application in play-akka.actor.default-dispatcher-234 
+Application has started
+
+2012-12-28 22:07:04,836 - [INFO] - from play in play-akka.actor.default-dispatcher-234 
+Application started (Dev)
+
+2012-12-28 22:07:42,667 - [INFO] - from application in play-akka.actor.default-dispatcher-235 
+Application shutdown...
+
+2012-12-28 22:07:42,673 - [INFO] - from application in play-akka.actor.default-dispatcher-235 
+Application has started
+
+2012-12-28 22:07:42,673 - [INFO] - from play in play-akka.actor.default-dispatcher-235 
+Application started (Dev)
+
+2012-12-28 22:08:30,451 - [INFO] - from application in play-akka.actor.default-dispatcher-236 
+Application shutdown...
+
+2012-12-28 22:08:30,458 - [INFO] - from application in play-akka.actor.default-dispatcher-236 
+Application has started
+
+2012-12-28 22:08:30,458 - [INFO] - from play in play-akka.actor.default-dispatcher-236 
+Application started (Dev)
+
+2012-12-28 22:09:47,490 - [INFO] - from application in play-akka.actor.default-dispatcher-237 
+Application shutdown...
+
+2012-12-28 22:09:47,496 - [INFO] - from application in play-akka.actor.default-dispatcher-237 
+Application has started
+
+2012-12-28 22:09:47,496 - [INFO] - from play in play-akka.actor.default-dispatcher-237 
+Application started (Dev)
+
+2012-12-28 22:10:32,840 - [INFO] - from application in play-akka.actor.default-dispatcher-238 
+Application shutdown...
+
+2012-12-28 22:10:32,848 - [INFO] - from application in play-akka.actor.default-dispatcher-238 
+Application has started
+
+2012-12-28 22:10:32,848 - [INFO] - from play in play-akka.actor.default-dispatcher-238 
+Application started (Dev)
+
+2012-12-28 22:10:43,569 - [INFO] - from application in play-akka.actor.default-dispatcher-239 
+Application shutdown...
+
+2012-12-28 22:10:43,576 - [INFO] - from application in play-akka.actor.default-dispatcher-239 
+Application has started
+
+2012-12-28 22:10:43,576 - [INFO] - from play in play-akka.actor.default-dispatcher-239 
+Application started (Dev)
+
+2012-12-28 22:26:49,904 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c247188c-5f81-44f8-8473-1ef688e6a087/
+
+2012-12-28 22:27:18,374 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/f97d4c76-b134-4c26-a93b-0d36ab2e9a7d/
+
+2012-12-28 22:27:53,476 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+sJOB ID:f97d4c76-b134-4c26-a93b-0d36ab2e9a7d
+
+2012-12-28 22:27:53,476 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+selected for NS JSON:["1536_example.jpg.dat"]
+
+2012-12-28 22:28:03,121 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+{replicates=4, linkageCutoff=200, scoringFunction=1, selectedArrayDefPlate=All plates, jobid=f97d4c76-b134-4c26-a93b-0d36ab2e9a7d, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2012-12-28 22:28:03,121 - [ERROR] - from application in play-akka.actor.actions-dispatcher-19 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@72da7807
+
+2012-12-28 22:28:03,121 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+JOBid = f97d4c76-b134-4c26-a93b-0d36ab2e9a7d
+
+2012-12-28 22:28:03,121 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+Files preloaded from IA, populating plate file map:
+
+2012-12-28 22:28:03,130 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+selectedForNS = ["1536_example.jpg.dat"]
+
+2012-12-28 22:28:03,132 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+	1536_example.jpg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/f97d4c76-b134-4c26-a93b-0d36ab2e9a7d/ia/output_files/1536_example.jpg.dat
+
+2012-12-28 22:28:03,133 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/f97d4c76-b134-4c26-a93b-0d36ab2e9a7d/ia/output_files/1536_example.jpg.dat, --savenames, 1536_example.jpg.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/f97d4c76-b134-4c26-a93b-0d36ab2e9a7d/nsoutput_files, --replicates, 4, --linkagecutoff, 200, --adfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14]
+
+2012-12-28 23:06:44,020 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8537c64a-77c6-49da-a954-d06c94ca803f/
+
+2012-12-28 23:07:02,041 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b9299bb5-0865-40df-91d4-c2c045cc5ac5/
+
+2012-12-28 23:07:49,801 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b6c9cb57-2f7d-42c8-a573-d810790d23aa/
+
+2012-12-28 23:07:57,341 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+sJOB ID:b6c9cb57-2f7d-42c8-a573-d810790d23aa
+
+2012-12-28 23:07:57,341 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+selected for NS JSON:["96_example.jpg.dat"]
+
+2012-12-28 23:08:03,050 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+{replicates=4, linkageCutoff=200, scoringFunction=1, jobid=b6c9cb57-2f7d-42c8-a573-d810790d23aa, arrayDefPredefined=― Predefined arrays ―}
+
+2012-12-28 23:08:03,050 - [ERROR] - from application in play-akka.actor.actions-dispatcher-20 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@6fe63c8a
+
+2012-12-28 23:08:03,050 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+JOBid = b6c9cb57-2f7d-42c8-a573-d810790d23aa
+
+2012-12-28 23:08:03,050 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+Files preloaded from IA, populating plate file map:
+
+2012-12-28 23:08:03,057 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+selectedForNS = ["96_example.jpg.dat"]
+
+2012-12-28 23:08:03,059 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+	96_example.jpg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b6c9cb57-2f7d-42c8-a573-d810790d23aa/ia/output_files/96_example.jpg.dat
+
+2012-12-28 23:08:03,059 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b6c9cb57-2f7d-42c8-a573-d810790d23aa/ia/output_files/96_example.jpg.dat, --savenames, 96_example.jpg.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b6c9cb57-2f7d-42c8-a573-d810790d23aa/nsoutput_files, --replicates, 4, --linkagecutoff, 200]
+
+2012-12-29 04:31:04,514 - [INFO] - from application in play-akka.actor.default-dispatcher-264 
+Application shutdown...
+
+2012-12-29 04:31:04,520 - [INFO] - from application in play-akka.actor.default-dispatcher-264 
+Application has started
+
+2012-12-29 04:31:04,521 - [INFO] - from play in play-akka.actor.default-dispatcher-264 
+Application started (Dev)
+
+2012-12-29 04:32:05,334 - [INFO] - from application in play-akka.actor.default-dispatcher-265 
+Application shutdown...
+
+2012-12-29 04:32:05,341 - [INFO] - from application in play-akka.actor.default-dispatcher-265 
+Application has started
+
+2012-12-29 04:32:05,341 - [INFO] - from play in play-akka.actor.default-dispatcher-265 
+Application started (Dev)
+
+2012-12-29 04:45:19,259 - [INFO] - from application in play-akka.actor.default-dispatcher-267 
+Application shutdown...
+
+2012-12-29 04:45:19,267 - [INFO] - from application in play-akka.actor.default-dispatcher-267 
+Application has started
+
+2012-12-29 04:45:19,267 - [INFO] - from play in play-akka.actor.default-dispatcher-267 
+Application started (Dev)
+
+2012-12-29 05:09:25,821 - [INFO] - from application in play-akka.actor.default-dispatcher-267 
+Application shutdown...
+
+2012-12-29 05:09:25,828 - [INFO] - from application in play-akka.actor.default-dispatcher-267 
+Application has started
+
+2012-12-29 05:09:25,828 - [INFO] - from play in play-akka.actor.default-dispatcher-267 
+Application started (Dev)
+
+2012-12-29 05:09:45,473 - [INFO] - from application in play-akka.actor.default-dispatcher-268 
+Application shutdown...
+
+2012-12-29 05:09:45,479 - [INFO] - from application in play-akka.actor.default-dispatcher-268 
+Application has started
+
+2012-12-29 05:09:45,479 - [INFO] - from play in play-akka.actor.default-dispatcher-268 
+Application started (Dev)
+
+2012-12-29 05:12:51,831 - [INFO] - from application in play-akka.actor.default-dispatcher-269 
+Application shutdown...
+
+2012-12-29 05:12:51,840 - [INFO] - from application in play-akka.actor.default-dispatcher-269 
+Application has started
+
+2012-12-29 05:12:51,840 - [INFO] - from play in play-akka.actor.default-dispatcher-269 
+Application started (Dev)
+
+2012-12-29 05:13:10,104 - [INFO] - from application in play-akka.actor.default-dispatcher-270 
+Application shutdown...
+
+2012-12-29 05:13:10,112 - [INFO] - from application in play-akka.actor.default-dispatcher-270 
+Application has started
+
+2012-12-29 05:13:10,112 - [INFO] - from play in play-akka.actor.default-dispatcher-270 
+Application started (Dev)
+
+2012-12-29 05:13:12,722 - [INFO] - from application in play-akka.actor.default-dispatcher-270 
+Application shutdown...
+
+2012-12-29 05:13:12,729 - [INFO] - from application in play-akka.actor.default-dispatcher-270 
+Application has started
+
+2012-12-29 05:13:12,729 - [INFO] - from play in play-akka.actor.default-dispatcher-270 
+Application started (Dev)
+

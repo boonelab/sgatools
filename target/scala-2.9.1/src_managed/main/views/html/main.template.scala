@@ -43,23 +43,24 @@ Seq[Any](format.raw/*1.45*/("""
 		<link href=""""),_display_(Seq[Any](/*14.16*/routes/*14.22*/.Assets.at("stylesheets/style.css"))),format.raw/*14.57*/("""" rel="stylesheet">
 		<link href=""""),_display_(Seq[Any](/*15.16*/routes/*15.22*/.Assets.at("external/jasny-extensions/css/jasny-bootstrap.min.css"))),format.raw/*15.89*/("""" rel="stylesheet">
 		<link href=""""),_display_(Seq[Any](/*16.16*/routes/*16.22*/.Assets.at("external/font-awesome/css/font-awesome.css"))),format.raw/*16.78*/("""" rel="stylesheet">
-		
+		<link href=""""),_display_(Seq[Any](/*17.16*/routes/*17.22*/.Assets.at("stylesheets/docs.css"))),format.raw/*17.56*/("""" rel="stylesheet">
+    
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	
-		<script type="text/javascript" src=""""),_display_(Seq[Any](/*23.40*/routes/*23.46*/.Assets.at("javascripts/sgatools.js"))),format.raw/*23.83*/(""""></script>
-		<script src=""""),_display_(Seq[Any](/*24.17*/routes/*24.23*/.Assets.at("javascripts/jquery-1.7.1.min.js"))),format.raw/*24.68*/(""""></script>
-		<script src=""""),_display_(Seq[Any](/*25.17*/routes/*25.23*/.Assets.at("javascripts/jquery.cookie.js"))),format.raw/*25.65*/(""""></script>
-		<script src=""""),_display_(Seq[Any](/*26.17*/routes/*26.23*/.Assets.at("external/bootstrap-toggle/js/jquery.toggle.buttons.js"))),format.raw/*26.90*/(""""></script>
-		<link href=""""),_display_(Seq[Any](/*27.16*/routes/*27.22*/.Assets.at("external/bootstrap-toggle/stylesheets/bootstrap-toggle-buttons.css"))),format.raw/*27.102*/("""" rel="stylesheet">
+		<script type="text/javascript" src=""""),_display_(Seq[Any](/*24.40*/routes/*24.46*/.Assets.at("javascripts/sgatools.js"))),format.raw/*24.83*/(""""></script>
+		<script src=""""),_display_(Seq[Any](/*25.17*/routes/*25.23*/.Assets.at("javascripts/jquery-1.7.1.min.js"))),format.raw/*25.68*/(""""></script>
+		<script src=""""),_display_(Seq[Any](/*26.17*/routes/*26.23*/.Assets.at("javascripts/jquery.cookie.js"))),format.raw/*26.65*/(""""></script>
+		<script src=""""),_display_(Seq[Any](/*27.17*/routes/*27.23*/.Assets.at("external/bootstrap-toggle/js/jquery.toggle.buttons.js"))),format.raw/*27.90*/(""""></script>
+		<link href=""""),_display_(Seq[Any](/*28.16*/routes/*28.22*/.Assets.at("external/bootstrap-toggle/stylesheets/bootstrap-toggle-buttons.css"))),format.raw/*28.102*/("""" rel="stylesheet">
 	
 		
 		<script>
-		$(document).ready(function()"""),format.raw("""{"""),format.raw/*31.32*/("""
+		$(document).ready(function()"""),format.raw("""{"""),format.raw/*32.32*/("""
 			$('.toggle-button').toggleButtons();
-		"""),format.raw("""}"""),format.raw/*33.4*/(""");
+		"""),format.raw("""}"""),format.raw/*34.4*/(""");
 		</script>
 	</head>
 	
@@ -71,21 +72,21 @@ Seq[Any](format.raw/*1.45*/("""
 		<div class="navbar navbar-fixed-top"> 
 			<div class="navbar-inner">
 				<div class="container">
-					<a class="brand" href=""""),_display_(Seq[Any](/*45.30*/routes/*45.36*/.Application.index())),format.raw/*45.56*/("""">
-						<img src=""""),_display_(Seq[Any](/*46.18*/routes/*46.24*/.Assets.at("images/sgaicon.png"))),format.raw/*46.56*/("""" style="height:32px;margin-top:-7px;">
+					<a class="brand" href=""""),_display_(Seq[Any](/*46.30*/routes/*46.36*/.Application.index())),format.raw/*46.56*/("""">
+						<img src=""""),_display_(Seq[Any](/*47.18*/routes/*47.24*/.Assets.at("images/sgaicon.png"))),format.raw/*47.56*/("""" style="height:32px;margin-top:-7px;" alt="SGAtools icon">
 						<b class="heavy">SGA</b>tools
 					</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class=""""),_display_(Seq[Any](/*51.20*/("active".when(nav == "ia")))),format.raw/*51.48*/(""""><a href=""""),_display_(Seq[Any](/*51.60*/routes/*51.66*/.IAcontroller.initIAForm())),format.raw/*51.92*/("""">Image analysis</a></li>
-							<li class=""""),_display_(Seq[Any](/*52.20*/("active".when(nav == "ns")))),format.raw/*52.48*/(""""><a href=""""),_display_(Seq[Any](/*52.60*/routes/*52.66*/.NScontroller.initNSform())),format.raw/*52.92*/("""">Normalization & Scoring</a></li>
-							<li class=""""),_display_(Seq[Any](/*53.20*/("active".when(nav == "da")))),format.raw/*53.48*/(""""><a href="#">Data analysis</a></li>
+							<li class=""""),_display_(Seq[Any](/*52.20*/("active".when(nav == "ia")))),format.raw/*52.48*/(""""><a href=""""),_display_(Seq[Any](/*52.60*/routes/*52.66*/.IAcontroller.initIAForm())),format.raw/*52.92*/("""">Image analysis</a></li>
+							<li class=""""),_display_(Seq[Any](/*53.20*/("active".when(nav == "ns")))),format.raw/*53.48*/(""""><a href=""""),_display_(Seq[Any](/*53.60*/routes/*53.66*/.NScontroller.initNSform())),format.raw/*53.92*/("""">Normalization & Scoring</a></li>
+							<li class=""""),_display_(Seq[Any](/*54.20*/("active".when(nav == "da")))),format.raw/*54.48*/(""""><a href="#">Data analysis</a></li>
 							
 						</ul>
 						<ul class="nav pull-right">
-							<li class=""""),_display_(Seq[Any](/*57.20*/("active".when(nav == "hp")))),format.raw/*57.48*/(""""><a href=""""),_display_(Seq[Any](/*57.60*/routes/*57.66*/.Application.renderHelpPage())),format.raw/*57.95*/("""">Help</a></li>
-							<li class=""""),_display_(Seq[Any](/*58.20*/("active".when(nav == "cn")))),format.raw/*58.48*/(""""><a href=""""),_display_(Seq[Any](/*58.60*/routes/*58.66*/.Application.renderContactPage())),format.raw/*58.98*/("""">Contact</a></li>
-							<li class=""""),_display_(Seq[Any](/*59.20*/("active".when(nav == "ab")))),format.raw/*59.48*/(""""><a href=""""),_display_(Seq[Any](/*59.60*/routes/*59.66*/.Application.renderAboutPage())),format.raw/*59.96*/("""">About</a></li>
+							<li class=""""),_display_(Seq[Any](/*58.20*/("active".when(nav == "hp")))),format.raw/*58.48*/(""""><a href=""""),_display_(Seq[Any](/*58.60*/routes/*58.66*/.Application.renderHelpPage())),format.raw/*58.95*/("""">Help</a></li>
+							<li class=""""),_display_(Seq[Any](/*59.20*/("active".when(nav == "cn")))),format.raw/*59.48*/(""""><a href=""""),_display_(Seq[Any](/*59.60*/routes/*59.66*/.Application.renderContactPage())),format.raw/*59.98*/("""">Contact</a></li>
+							<li class=""""),_display_(Seq[Any](/*60.20*/("active".when(nav == "ab")))),format.raw/*60.48*/(""""><a href=""""),_display_(Seq[Any](/*60.60*/routes/*60.66*/.Application.renderAboutPage())),format.raw/*60.96*/("""">About</a></li>
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div><!-- end .container -->
@@ -94,7 +95,7 @@ Seq[Any](format.raw/*1.45*/("""
 
 		<!-- Content -->
 		<div class="container" style="padding-top:90px">
-			"""),_display_(Seq[Any](/*68.5*/content)),format.raw/*68.12*/("""
+			"""),_display_(Seq[Any](/*69.5*/content)),format.raw/*69.12*/("""
 			
 			<div id="push"></div>
 	    </div>
@@ -109,14 +110,14 @@ Seq[Any](format.raw/*1.45*/("""
     </div>
     
 	<!-- Javascript -->
-	"""),_display_(Seq[Any](/*83.3*/modal("helpModal", "helpModalHeading", "helpModalBody"))),format.raw/*83.58*/("""
-	"""),_display_(Seq[Any](/*84.3*/modal("arrayDefModal", "arrayDefModalHeading", "arrayDefModalBody"))),format.raw/*84.70*/("""
+	"""),_display_(Seq[Any](/*84.3*/modal("helpModal", "helpModalHeading", "helpModalBody"))),format.raw/*84.58*/("""
+	"""),_display_(Seq[Any](/*85.3*/modal("arrayDefModal", "arrayDefModalHeading", "arrayDefModalBody"))),format.raw/*85.70*/("""
 	
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src=""""),_display_(Seq[Any](/*87.39*/routes/*87.45*/.Assets.at("javascripts/bootstrap.min.js"))),format.raw/*87.87*/(""""></script>
-	<script type="text/javascript" src=""""),_display_(Seq[Any](/*88.39*/routes/*88.45*/.Assets.at("external/jasny-extensions/js/bootstrap-fileupload.js"))),format.raw/*88.111*/(""""></script>
+	<script type="text/javascript" src=""""),_display_(Seq[Any](/*88.39*/routes/*88.45*/.Assets.at("javascripts/bootstrap.min.js"))),format.raw/*88.87*/(""""></script>
+	<script type="text/javascript" src=""""),_display_(Seq[Any](/*89.39*/routes/*89.45*/.Assets.at("external/jasny-extensions/js/bootstrap-fileupload.js"))),format.raw/*89.111*/(""""></script>
 	<script type="text/javascript">
-			$('#helpModal').modal("""),format.raw("""{"""),format.raw/*90.27*/("""show:false"""),format.raw("""}"""),format.raw/*90.38*/(""");
+			$('#helpModal').modal("""),format.raw("""{"""),format.raw/*91.27*/("""show:false"""),format.raw("""}"""),format.raw/*91.38*/(""");
 	</script>
 	
 </body>
@@ -133,11 +134,11 @@ Seq[Any](format.raw/*1.45*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Dec 24 02:28:27 EST 2012
+                    DATE: Sat Dec 29 05:09:41 EST 2012
                     SOURCE: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/app/views/main.scala.html
-                    HASH: 1915c0fb7d145b62b3a178da48c2fe556464cffe
-                    MATRIX: 766->1|886->44|1000->123|1026->128|1504->570|1519->576|1576->611|1647->646|1662->652|1751->719|1822->754|1837->760|1915->816|2187->1052|2202->1058|2261->1095|2325->1123|2340->1129|2407->1174|2471->1202|2486->1208|2550->1250|2614->1278|2629->1284|2718->1351|2781->1378|2796->1384|2899->1464|3013->1531|3103->1575|3397->1833|3412->1839|3454->1859|3510->1879|3525->1885|3579->1917|3775->2077|3825->2105|3873->2117|3888->2123|3936->2149|4017->2194|4067->2222|4115->2234|4130->2240|4178->2266|4268->2320|4318->2348|4464->2458|4514->2486|4562->2498|4577->2504|4628->2533|4699->2568|4749->2596|4797->2608|4812->2614|4866->2646|4940->2684|4990->2712|5038->2724|5053->2730|5105->2760|5377->2997|5406->3004|5905->3468|5982->3523|6020->3526|6109->3593|6255->3703|6270->3709|6334->3751|6420->3801|6435->3807|6524->3873|6642->3944|6700->3955
-                    LINES: 27->1|30->1|36->7|36->7|43->14|43->14|43->14|44->15|44->15|44->15|45->16|45->16|45->16|52->23|52->23|52->23|53->24|53->24|53->24|54->25|54->25|54->25|55->26|55->26|55->26|56->27|56->27|56->27|60->31|62->33|74->45|74->45|74->45|75->46|75->46|75->46|80->51|80->51|80->51|80->51|80->51|81->52|81->52|81->52|81->52|81->52|82->53|82->53|86->57|86->57|86->57|86->57|86->57|87->58|87->58|87->58|87->58|87->58|88->59|88->59|88->59|88->59|88->59|97->68|97->68|112->83|112->83|113->84|113->84|116->87|116->87|116->87|117->88|117->88|117->88|119->90|119->90
+                    HASH: 4e953cd3f96bcb1787afc47a5870713f7da3fff3
+                    MATRIX: 766->1|886->44|1000->123|1026->128|1504->570|1519->576|1576->611|1647->646|1662->652|1751->719|1822->754|1837->760|1915->816|1986->851|2001->857|2057->891|2331->1129|2346->1135|2405->1172|2469->1200|2484->1206|2551->1251|2615->1279|2630->1285|2694->1327|2758->1355|2773->1361|2862->1428|2925->1455|2940->1461|3043->1541|3157->1608|3247->1652|3541->1910|3556->1916|3598->1936|3654->1956|3669->1962|3723->1994|3939->2174|3989->2202|4037->2214|4052->2220|4100->2246|4181->2291|4231->2319|4279->2331|4294->2337|4342->2363|4432->2417|4482->2445|4628->2555|4678->2583|4726->2595|4741->2601|4792->2630|4863->2665|4913->2693|4961->2705|4976->2711|5030->2743|5104->2781|5154->2809|5202->2821|5217->2827|5269->2857|5541->3094|5570->3101|6069->3565|6146->3620|6184->3623|6273->3690|6419->3800|6434->3806|6498->3848|6584->3898|6599->3904|6688->3970|6806->4041|6864->4052
+                    LINES: 27->1|30->1|36->7|36->7|43->14|43->14|43->14|44->15|44->15|44->15|45->16|45->16|45->16|46->17|46->17|46->17|53->24|53->24|53->24|54->25|54->25|54->25|55->26|55->26|55->26|56->27|56->27|56->27|57->28|57->28|57->28|61->32|63->34|75->46|75->46|75->46|76->47|76->47|76->47|81->52|81->52|81->52|81->52|81->52|82->53|82->53|82->53|82->53|82->53|83->54|83->54|87->58|87->58|87->58|87->58|87->58|88->59|88->59|88->59|88->59|88->59|89->60|89->60|89->60|89->60|89->60|98->69|98->69|113->84|113->84|114->85|114->85|117->88|117->88|117->88|118->89|118->89|118->89|120->91|120->91
                     -- GENERATED --
                 */
             

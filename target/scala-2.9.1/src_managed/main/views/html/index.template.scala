@@ -99,6 +99,13 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Home", nav="hm")/*2.24*/ {_display_(Seq
 		
 	</div>
 	
+	<hr>
+	
+	<center>
+		<a href="#" style="font-size:18px;" class="btn btn-large"><i class="icon-download"></i> Download example images</a>
+		<a href=""""),_display_(Seq[Any](/*78.13*/routes/*78.19*/.IAcontroller.initIAForm())),format.raw/*78.45*/("""" style="font-size:18px;" class="btn btn-large"><i class="icon-signin"></i> Get started</a>
+	</center>
+	
     
 """)))})))}
     }
@@ -112,11 +119,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Home", nav="hm")/*2.24*/ {_display_(Seq
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Dec 24 12:47:57 EST 2012
+                    DATE: Fri Dec 28 22:10:40 EST 2012
                     SOURCE: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/app/views/index.scala.html
-                    HASH: 1c183b85f5b293bfcc2fd1fc9a73ad099f6cc647
-                    MATRIX: 828->2|858->24|897->26|1247->340|1262->346|1316->378|1620->646|1635->652|1697->692|1992->951|2007->957|2069->997|2405->1297|2420->1303|2482->1343
-                    LINES: 30->2|30->2|30->2|39->11|39->11|39->11|48->20|48->20|48->20|55->27|55->27|55->27|62->34|62->34|62->34
+                    HASH: f0f234706fdbbfd8df709703572eb14eaba6e6d9
+                    MATRIX: 828->2|858->24|897->26|1247->340|1262->346|1316->378|1620->646|1635->652|1697->692|1992->951|2007->957|2069->997|2405->1297|2420->1303|2482->1343|4243->3068|4258->3074|4306->3100
+                    LINES: 30->2|30->2|30->2|39->11|39->11|39->11|48->20|48->20|48->20|55->27|55->27|55->27|62->34|62->34|62->34|106->78|106->78|106->78
                     -- GENERATED --
                 */
             

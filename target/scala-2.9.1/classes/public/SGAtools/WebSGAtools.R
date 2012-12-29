@@ -1,5 +1,7 @@
 library(optparse)
 library(logging)
+
+# /home/sgatools/sgatools/public/SGAtools
 setwd('/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/')
 print(getwd())
 source('SGAtools.R')
