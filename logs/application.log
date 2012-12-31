@@ -1921,3 +1921,207 @@ Application has started
 2012-12-29 05:13:12,729 - [INFO] - from play in play-akka.actor.default-dispatcher-270 
 Application started (Dev)
 
+2012-12-31 12:57:56,895 - [INFO] - from application in play-akka.actor.default-dispatcher-272 
+Application shutdown...
+
+2012-12-31 12:57:56,901 - [INFO] - from application in play-akka.actor.default-dispatcher-272 
+Application has started
+
+2012-12-31 12:57:56,901 - [INFO] - from play in play-akka.actor.default-dispatcher-272 
+Application started (Dev)
+
+2012-12-31 12:58:17,642 - [INFO] - from application in play-akka.actor.actions-dispatcher-22 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/447fcd09-db54-493b-8171-0088ddb7a5f0/
+
+2012-12-31 13:00:21,390 - [INFO] - from application in play-akka.actor.default-dispatcher-274 
+Application shutdown...
+
+2012-12-31 13:00:21,396 - [INFO] - from application in play-akka.actor.default-dispatcher-274 
+Application has started
+
+2012-12-31 13:00:21,396 - [INFO] - from play in play-akka.actor.default-dispatcher-274 
+Application started (Dev)
+
+2012-12-31 13:00:21,460 - [INFO] - from application in play-akka.actor.actions-dispatcher-22 
+sJOB ID:447fcd09-db54-493b-8171-0088ddb7a5f0
+
+2012-12-31 13:00:21,461 - [INFO] - from application in play-akka.actor.actions-dispatcher-22 
+selected for NS JSON:["swed.jpg.dat"]
+
+2012-12-31 13:00:40,112 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+{replicates=4, linkageCutoff=200, scoringFunction=1, jobid=447fcd09-db54-493b-8171-0088ddb7a5f0, arrayDefPredefined=― Predefined arrays ―}
+
+2012-12-31 13:00:40,112 - [ERROR] - from application in play-akka.actor.actions-dispatcher-24 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@56e93915
+
+2012-12-31 13:00:40,113 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+JOBid = 447fcd09-db54-493b-8171-0088ddb7a5f0
+
+2012-12-31 13:00:40,113 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+Files preloaded from IA, populating plate file map:
+
+2012-12-31 13:00:40,119 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+selectedForNS = ["swed.jpg.dat"]
+
+2012-12-31 13:00:40,121 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	swed.jpg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/447fcd09-db54-493b-8171-0088ddb7a5f0/ia/output_files/swed.jpg.dat
+
+2012-12-31 13:00:40,121 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/447fcd09-db54-493b-8171-0088ddb7a5f0/ia/output_files/swed.jpg.dat, --savenames, swed.jpg.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/447fcd09-db54-493b-8171-0088ddb7a5f0/nsoutput_files, --replicates, 4, --linkagecutoff, 200]
+
+2012-12-31 13:24:54,579 - [INFO] - from application in play-akka.actor.default-dispatcher-277 
+Application shutdown...
+
+2012-12-31 13:24:54,585 - [INFO] - from application in play-akka.actor.default-dispatcher-277 
+Application has started
+
+2012-12-31 13:24:54,586 - [INFO] - from play in play-akka.actor.default-dispatcher-277 
+Application started (Dev)
+
+2012-12-31 13:26:16,423 - [INFO] - from application in play-akka.actor.default-dispatcher-278 
+Application shutdown...
+
+2012-12-31 13:26:16,431 - [INFO] - from application in play-akka.actor.default-dispatcher-278 
+Application has started
+
+2012-12-31 13:26:16,431 - [INFO] - from play in play-akka.actor.default-dispatcher-278 
+Application started (Dev)
+
+2012-12-31 13:27:00,069 - [INFO] - from application in play-akka.actor.default-dispatcher-279 
+Application shutdown...
+
+2012-12-31 13:27:00,076 - [INFO] - from application in play-akka.actor.default-dispatcher-279 
+Application has started
+
+2012-12-31 13:27:00,076 - [INFO] - from play in play-akka.actor.default-dispatcher-279 
+Application started (Dev)
+
+2012-12-31 13:27:34,069 - [INFO] - from application in play-akka.actor.default-dispatcher-280 
+Application shutdown...
+
+2012-12-31 13:27:34,076 - [INFO] - from application in play-akka.actor.default-dispatcher-280 
+Application has started
+
+2012-12-31 13:27:34,076 - [INFO] - from play in play-akka.actor.default-dispatcher-280 
+Application started (Dev)
+
+2012-12-31 13:28:41,955 - [INFO] - from application in play-akka.actor.default-dispatcher-281 
+Application shutdown...
+
+2012-12-31 13:28:41,962 - [INFO] - from application in play-akka.actor.default-dispatcher-281 
+Application has started
+
+2012-12-31 13:28:41,962 - [INFO] - from play in play-akka.actor.default-dispatcher-281 
+Application started (Dev)
+
+2012-12-31 13:36:46,117 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/77cfbb0c-24b3-4ceb-b5a5-f33fa00b6d9b/
+
+2012-12-31 13:54:21,768 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/
+
+2012-12-31 13:54:43,376 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+sJOB ID:6ee72d4d-dfdc-4268-a4a8-c047f697fdd6
+
+2012-12-31 13:54:43,376 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+selected for NS JSON:["sgatools_ctrl_YDL108W_1_boonelab.JPG.dat","sgatools_dm_YDL101_1_boonelab.JPG.dat"]
+
+2012-12-31 13:55:08,751 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+{replicates=4, linkageCutoff=200, scoringFunction=1, selectedArrayDefPlate=All plates, jobid=6ee72d4d-dfdc-4268-a4a8-c047f697fdd6, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2012-12-31 13:55:08,751 - [ERROR] - from application in play-akka.actor.actions-dispatcher-24 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@6d44a32c
+
+2012-12-31 13:55:08,752 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+JOBid = 6ee72d4d-dfdc-4268-a4a8-c047f697fdd6
+
+2012-12-31 13:55:08,752 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+Files preloaded from IA, populating plate file map:
+
+2012-12-31 13:55:08,758 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+selectedForNS = ["sgatools_ctrl_YDL108W_1_boonelab.JPG.dat","sgatools_dm_YDL101_1_boonelab.JPG.dat"]
+
+2012-12-31 13:55:08,759 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	sgatools_ctrl_YDL108W_1_boonelab.JPG.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_ctrl_YDL108W_1_boonelab.JPG.dat
+
+2012-12-31 13:55:08,760 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	sgatools_dm_YDL101_1_boonelab.JPG.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_dm_YDL101_1_boonelab.JPG.dat
+
+2012-12-31 13:55:08,761 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_ctrl_YDL108W_1_boonelab.JPG.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_dm_YDL101_1_boonelab.JPG.dat, --savenames, sgatools_ctrl_YDL108W_1_boonelab.JPG.dat:sgatools_dm_YDL101_1_boonelab.JPG.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/nsoutput_files, --replicates, 4, --linkagecutoff, 200, --adfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14]
+
+2012-12-31 13:56:13,231 - [INFO] - from application in play-akka.actor.default-dispatcher-287 
+Application shutdown...
+
+2012-12-31 13:56:13,239 - [INFO] - from application in play-akka.actor.default-dispatcher-287 
+Application has started
+
+2012-12-31 13:56:13,239 - [INFO] - from play in play-akka.actor.default-dispatcher-287 
+Application started (Dev)
+
+2012-12-31 13:59:03,041 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+{replicates=4, linkageCutoff=200, scoringFunction=1, doScoring=true, jobid=6ee72d4d-dfdc-4268-a4a8-c047f697fdd6, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2012-12-31 13:59:03,042 - [ERROR] - from application in play-akka.actor.actions-dispatcher-24 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@63556d49
+
+2012-12-31 13:59:03,043 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+JOBid = 6ee72d4d-dfdc-4268-a4a8-c047f697fdd6
+
+2012-12-31 13:59:03,043 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+Files preloaded from IA, populating plate file map:
+
+2012-12-31 13:59:03,052 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+selectedForNS = ["sgatools_ctrl_YDL108W_1_boonelab.JPG.dat","sgatools_dm_YDL101_1_boonelab.JPG.dat"]
+
+2012-12-31 13:59:03,054 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	sgatools_ctrl_YDL108W_1_boonelab.JPG.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_ctrl_YDL108W_1_boonelab.JPG.dat
+
+2012-12-31 13:59:03,054 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	sgatools_dm_YDL101_1_boonelab.JPG.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_dm_YDL101_1_boonelab.JPG.dat
+
+2012-12-31 13:59:03,056 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_ctrl_YDL108W_1_boonelab.JPG.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_dm_YDL101_1_boonelab.JPG.dat, --savenames, sgatools_ctrl_YDL108W_1_boonelab.JPG.dat:sgatools_dm_YDL101_1_boonelab.JPG.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/nsoutput_files, --replicates, 4, --linkagecutoff, 200, --adfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/, --score, --sfunction, 1]
+
+2012-12-31 14:00:40,412 - [INFO] - from application in play-akka.actor.default-dispatcher-291 
+Application shutdown...
+
+2012-12-31 14:00:40,419 - [INFO] - from application in play-akka.actor.default-dispatcher-291 
+Application has started
+
+2012-12-31 14:00:40,420 - [INFO] - from play in play-akka.actor.default-dispatcher-291 
+Application started (Dev)
+
+2012-12-31 14:01:04,085 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+{replicates=4, linkageCutoff=200, scoringFunction=1, doScoring=true, selectedArrayDefPlate=All plates, jobid=6ee72d4d-dfdc-4268-a4a8-c047f697fdd6, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2012-12-31 14:01:04,088 - [ERROR] - from application in play-akka.actor.actions-dispatcher-24 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@7a2bb817
+
+2012-12-31 14:01:04,088 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+JOBid = 6ee72d4d-dfdc-4268-a4a8-c047f697fdd6
+
+2012-12-31 14:01:04,088 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+Files preloaded from IA, populating plate file map:
+
+2012-12-31 14:01:04,095 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+selectedForNS = ["sgatools_ctrl_YDL108W_1_boonelab.JPG.dat","sgatools_dm_YDL101_1_boonelab.JPG.dat"]
+
+2012-12-31 14:01:04,097 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	sgatools_ctrl_YDL108W_1_boonelab.JPG.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_ctrl_YDL108W_1_boonelab.JPG.dat
+
+2012-12-31 14:01:04,097 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+	sgatools_dm_YDL101_1_boonelab.JPG.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_dm_YDL101_1_boonelab.JPG.dat
+
+2012-12-31 14:01:04,098 - [INFO] - from application in play-akka.actor.actions-dispatcher-24 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_ctrl_YDL108W_1_boonelab.JPG.dat:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/ia/output_files/sgatools_dm_YDL101_1_boonelab.JPG.dat, --savenames, sgatools_ctrl_YDL108W_1_boonelab.JPG.dat:sgatools_dm_YDL101_1_boonelab.JPG.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/6ee72d4d-dfdc-4268-a4a8-c047f697fdd6/nsoutput_files, --replicates, 4, --linkagecutoff, 200, --adfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14, --score, --sfunction, 1]
+
+2012-12-31 14:05:24,888 - [INFO] - from application in play-akka.actor.default-dispatcher-294 
+Application shutdown...
+
+2012-12-31 14:05:24,896 - [INFO] - from application in play-akka.actor.default-dispatcher-294 
+Application has started
+
+2012-12-31 14:05:24,896 - [INFO] - from play in play-akka.actor.default-dispatcher-294 
+Application started (Dev)
+

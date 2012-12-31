@@ -242,6 +242,7 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 1 2 171	0.944 229
 1 3 127 0.929 234
 1 4 156 0.959 238
+...
 			        		</pre>
 			        	</div>
 	        			
@@ -257,9 +258,9 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 				  	The gridded image will be displayed. 
 				  	Hover over the output image for a zoom in on specific colonies to ensure correct gridding
 		        	<div id="ia-grdding" style="margin-top:10px">
-			        	<img style="width:300px;height:200px;display:inline" src=""""),_display_(Seq[Any](/*232.72*/routes/*232.78*/.Assets.at("images/help/1536_example.jpg"))),format.raw/*232.120*/(""""> 
+			        	<img style="width:300px;height:200px;display:inline" src=""""),_display_(Seq[Any](/*233.72*/routes/*233.78*/.Assets.at("images/help/1536_example.jpg"))),format.raw/*233.120*/(""""> 
 			        	<i class="icon-circle-arrow-right muted" style="font-size:30px;display:inline"></i> 
-			        	<img style="width:300px;height:200px;display:inline" src=""""),_display_(Seq[Any](/*234.72*/routes/*234.78*/.Assets.at("images/help/masked_1536_example.jpg"))),format.raw/*234.127*/(""""> 
+			        	<img style="width:300px;height:200px;display:inline" src=""""),_display_(Seq[Any](/*235.72*/routes/*235.78*/.Assets.at("images/help/masked_1536_example.jpg"))),format.raw/*235.127*/(""""> 
 		        	</div>
 				  </dd>
 				  
@@ -308,7 +309,7 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 1	3	1996	1.057621  
 1	4	1704	1.032656  
 1	5	1755	1.109302  
-					...
+...
 					</pre>
 					</div>
 
@@ -397,8 +398,8 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 	        	
 	        	  
 	        	<ol>
-    				<li><img src="http://latex.codecogs.com/svg.latex?\small%20\inline%20\dpi"""),format.raw("""{"""),format.raw/*372.83*/("""300"""),format.raw("""}"""),format.raw/*372.87*/("""%20C_"""),format.raw("""{"""),format.raw/*372.93*/("""ij"""),format.raw("""}"""),format.raw/*372.96*/("""%20-%20C_"""),format.raw("""{"""),format.raw/*372.106*/("""i"""),format.raw("""}"""),format.raw/*372.108*/("""C_"""),format.raw("""{"""),format.raw/*372.111*/("""j"""),format.raw("""}"""),format.raw/*372.113*/(""""></li>
-    				<li><img src="http://latex.codecogs.com/svg.latex?\small%20\inline%20\dpi"""),format.raw("""{"""),format.raw/*373.83*/("""300"""),format.raw("""}"""),format.raw/*373.87*/("""%20C_"""),format.raw("""{"""),format.raw/*373.93*/("""ij"""),format.raw("""}"""),format.raw/*373.96*/("""%20/%20C_"""),format.raw("""{"""),format.raw/*373.106*/("""i"""),format.raw("""}"""),format.raw/*373.108*/("""C_"""),format.raw("""{"""),format.raw/*373.111*/("""j"""),format.raw("""}"""),format.raw/*373.113*/(""""></li>
+    				<li><img src="http://latex.codecogs.com/svg.latex?\small%20\inline%20\dpi"""),format.raw("""{"""),format.raw/*373.83*/("""300"""),format.raw("""}"""),format.raw/*373.87*/("""%20C_"""),format.raw("""{"""),format.raw/*373.93*/("""ij"""),format.raw("""}"""),format.raw/*373.96*/("""%20-%20C_"""),format.raw("""{"""),format.raw/*373.106*/("""i"""),format.raw("""}"""),format.raw/*373.108*/("""C_"""),format.raw("""{"""),format.raw/*373.111*/("""j"""),format.raw("""}"""),format.raw/*373.113*/(""""></li>
+    				<li><img src="http://latex.codecogs.com/svg.latex?\small%20\inline%20\dpi"""),format.raw("""{"""),format.raw/*374.83*/("""300"""),format.raw("""}"""),format.raw/*374.87*/("""%20C_"""),format.raw("""{"""),format.raw/*374.93*/("""ij"""),format.raw("""}"""),format.raw/*374.96*/("""%20/%20C_"""),format.raw("""{"""),format.raw/*374.106*/("""i"""),format.raw("""}"""),format.raw/*374.108*/("""C_"""),format.raw("""{"""),format.raw/*374.111*/("""j"""),format.raw("""}"""),format.raw/*374.113*/(""""></li>
     			</ol>
     			
     			Such that Cij represents the fitness of the double mutant, Ci the single mutant fitness of the query, Cj the single mutant fitness of the array
@@ -437,11 +438,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 3	6	196	file-name	Y8835	YBR138C	523.39	-0.008	NA
 3	7	173	file-name	Y8835	YBR028C	448.31	-0.0975	NA
 3	8	205	file-name	Y8835	YBR028C	526.61	0.0557	NA
-3	9	181	file-name	Y8835	YBR137W	NA	NA	"""),format.raw("""{"""),format.raw/*412.40*/("""status=JK"""),format.raw("""}"""),format.raw/*412.50*/("""
+3	9	181	file-name	Y8835	YBR137W	NA	NA	"""),format.raw("""{"""),format.raw/*413.40*/("""status=JK"""),format.raw("""}"""),format.raw/*413.50*/("""
 3	10	198	file-name	Y8835	YBR137W	520.88	0.0647	NA
 3	11	186	file-name	Y8835	YBR027C	489.08	-0.044	NA
 3	12	191	file-name	Y8835	YBR027C	501.44	-0.020	NA
-3	13	172	file-name	Y8835	YBR134W	NA	NA	"""),format.raw("""{"""),format.raw/*416.41*/("""status=JK"""),format.raw("""}"""),format.raw/*416.51*/("""
+3	13	172	file-name	Y8835	YBR134W	NA	NA	"""),format.raw("""{"""),format.raw/*417.41*/("""status=JK"""),format.raw("""}"""),format.raw/*417.51*/("""
 3	14	204	file-name	Y8835	YBR134W	534.83	0.0286	NA
 ...
 					</pre>
@@ -509,7 +510,7 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 	        	<li><b>Heatmap:</b> If you analyzed your images with SGAtools, your plate will appear adjacent to a heatmap of your processed data. 
 	        	Hover over the heatmap for details of colonies
 	        	<div class="thumbnail">
-	        		<img src=""""),_display_(Seq[Any](/*484.23*/routes/*484.29*/.Assets.at("images/help/da_heatmap.jpg"))),format.raw/*484.69*/("""">
+	        		<img src=""""),_display_(Seq[Any](/*485.23*/routes/*485.29*/.Assets.at("images/help/da_heatmap.jpg"))),format.raw/*485.69*/("""">
 	        	</div>
 	        	</li>
 	        	
@@ -518,7 +519,7 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 	        	<li><b>Histogram:</b> An interactive histogram of the data is shown. 
 	        	Click and drag the histogram to create a window of data you would like to inspect
 	        	<div class="thumbnail">
-	        		<img src=""""),_display_(Seq[Any](/*493.23*/routes/*493.29*/.Assets.at("images/help/da_histogram.jpg"))),format.raw/*493.71*/("""">
+	        		<img src=""""),_display_(Seq[Any](/*494.23*/routes/*494.29*/.Assets.at("images/help/da_histogram.jpg"))),format.raw/*494.71*/("""">
 	        	</div>
 	        	</li>
 	        	
@@ -560,11 +561,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main("Help", nav="hp")/*2.24*/ {_display_(Seq
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Dec 29 05:13:07 EST 2012
+                    DATE: Mon Dec 31 13:00:17 EST 2012
                     SOURCE: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/app/views/docs.scala.html
-                    HASH: 84df8cff5c4c2bef0c59c65bdbc4c0aa267e4ae4
-                    MATRIX: 827->2|857->24|896->26|954->49|968->55|1023->89|2669->1699|2684->1705|2753->1752|3595->2547|3651->2556|3700->2558|3758->2569|3807->2571|3860->2577|3909->2579|3969->2592|6807->5393|6823->5399|6889->5441|7124->5639|7140->5645|7205->5686|7418->5862|7434->5868|7499->5909|7710->6083|7726->6089|7790->6129|10055->8357|10071->8363|10137->8405|10346->8577|10362->8583|10435->8632|14836->12985|14888->12989|14942->12995|14993->12998|15052->13008|15103->13010|15155->13013|15206->13015|15344->13105|15396->13109|15450->13115|15501->13118|15560->13128|15611->13130|15663->13133|15714->13135|17207->14580|17265->14590|17504->14781|17562->14791|19791->16983|19807->16989|19870->17029|20208->17330|20224->17336|20289->17378
-                    LINES: 30->2|30->2|30->2|32->4|32->4|32->4|62->34|62->34|62->34|87->59|87->59|87->59|87->59|87->59|87->59|87->59|87->59|164->136|164->136|164->136|171->143|171->143|171->143|178->150|178->150|178->150|185->157|185->157|185->157|260->232|260->232|260->232|262->234|262->234|262->234|400->372|400->372|400->372|400->372|400->372|400->372|400->372|400->372|401->373|401->373|401->373|401->373|401->373|401->373|401->373|401->373|440->412|440->412|444->416|444->416|512->484|512->484|512->484|521->493|521->493|521->493
+                    HASH: db260742342bbaa22b91039983a4565b6d8ca54e
+                    MATRIX: 827->2|857->24|896->26|954->49|968->55|1023->89|2669->1699|2684->1705|2753->1752|3595->2547|3651->2556|3700->2558|3758->2569|3807->2571|3860->2577|3909->2579|3969->2592|6807->5393|6823->5399|6889->5441|7124->5639|7140->5645|7205->5686|7418->5862|7434->5868|7499->5909|7710->6083|7726->6089|7790->6129|10059->8361|10075->8367|10141->8409|10350->8581|10366->8587|10439->8636|14835->12984|14887->12988|14941->12994|14992->12997|15051->13007|15102->13009|15154->13012|15205->13014|15343->13104|15395->13108|15449->13114|15500->13117|15559->13127|15610->13129|15662->13132|15713->13134|17206->14579|17264->14589|17503->14780|17561->14790|19790->16982|19806->16988|19869->17028|20207->17329|20223->17335|20288->17377
+                    LINES: 30->2|30->2|30->2|32->4|32->4|32->4|62->34|62->34|62->34|87->59|87->59|87->59|87->59|87->59|87->59|87->59|87->59|164->136|164->136|164->136|171->143|171->143|171->143|178->150|178->150|178->150|185->157|185->157|185->157|261->233|261->233|261->233|263->235|263->235|263->235|401->373|401->373|401->373|401->373|401->373|401->373|401->373|401->373|402->374|402->374|402->374|402->374|402->374|402->374|402->374|402->374|441->413|441->413|445->417|445->417|513->485|513->485|513->485|522->494|522->494|522->494
                     -- GENERATED --
                 */
             

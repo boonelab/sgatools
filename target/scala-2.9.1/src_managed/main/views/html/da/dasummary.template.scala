@@ -41,34 +41,33 @@ Seq[Any](format.raw/*1.14*/("""
 	<script type="text/javascript" src=""""),_display_(Seq[Any](/*11.39*/routes/*11.45*/.Assets.at("external/sgatools-analysis/dc/dc.js"))),format.raw/*11.94*/(""""></script>
 	<link type="text/css" rel="stylesheet" href=""""),_display_(Seq[Any](/*12.48*/routes/*12.54*/.Assets.at("external/sgatools-analysis/dc/dc.css"))),format.raw/*12.104*/("""" />
 	
-	
-	<script type="text/javascript" src=""""),_display_(Seq[Any](/*15.39*/routes/*15.45*/.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.js"))),format.raw/*15.119*/(""""></script>
-	<link type="text/css" rel="stylesheet" href=""""),_display_(Seq[Any](/*16.48*/routes/*16.54*/.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.css"))),format.raw/*16.129*/("""" />
+	<script type="text/javascript" src=""""),_display_(Seq[Any](/*14.39*/routes/*14.45*/.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.js"))),format.raw/*14.119*/(""""></script>
+	<link type="text/css" rel="stylesheet" href=""""),_display_(Seq[Any](/*15.48*/routes/*15.54*/.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.css"))),format.raw/*15.129*/("""" />
 	
 	<h2>Data analysis</h2>
 	<hr>
 	
 	<div class="well">
 		<select id="dataCombobox" class="input-xlarge">
-		"""),_display_(Seq[Any](/*23.4*/for((key,value) <- job.outputFilesMap) yield /*23.42*/{_display_(Seq[Any](format.raw/*23.43*/("""
-			<option image-path="/assets/jobs/"""),_display_(Seq[Any](/*24.38*/job/*24.41*/.jobid)),format.raw/*24.47*/("""/ia/input_images/"""),_display_(Seq[Any](/*24.65*/key/*24.68*/.substring(0,key.length-4))),format.raw/*24.94*/("""" 
-					gridded-image-path="/assets/jobs/"""),_display_(Seq[Any](/*25.40*/job/*25.43*/.jobid)),format.raw/*25.49*/("""/ia/output_images/masked_"""),_display_(Seq[Any](/*25.75*/key/*25.78*/.substring(0,key.length-4))),format.raw/*25.104*/("""" 
-					data-path=""""),_display_(Seq[Any](/*26.18*/routes/*26.24*/.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", "")))),format.raw/*26.84*/("""">"""),_display_(Seq[Any](/*26.87*/key)),format.raw/*26.90*/("""</option>
-		""")))})),format.raw/*27.4*/("""
+		"""),_display_(Seq[Any](/*22.4*/for((key,value) <- job.outputFilesMap) yield /*22.42*/{_display_(Seq[Any](format.raw/*22.43*/("""
+			<option image-path="/assets/jobs/"""),_display_(Seq[Any](/*23.38*/job/*23.41*/.jobid)),format.raw/*23.47*/("""/ia/input_images/"""),_display_(Seq[Any](/*23.65*/key/*23.68*/.substring(0,key.length-4))),format.raw/*23.94*/("""" 
+					gridded-image-path="/assets/jobs/"""),_display_(Seq[Any](/*24.40*/job/*24.43*/.jobid)),format.raw/*24.49*/("""/ia/output_images/masked_"""),_display_(Seq[Any](/*24.75*/key/*24.78*/.substring(0,key.length-4))),format.raw/*24.104*/("""" 
+					data-path=""""),_display_(Seq[Any](/*25.18*/routes/*25.24*/.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", "")))),format.raw/*25.84*/("""">"""),_display_(Seq[Any](/*25.87*/key)),format.raw/*25.90*/("""</option>
+		""")))})),format.raw/*26.4*/("""
 		</select>
 		<select id="viewType" class="input-medium">
-			<option name="colonysize" domainHigh=300 domainMed=150 domainLow=0>Raw colony sizes</option>
+			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0>Raw colony sizes</option>
 			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
-			"""),_display_(Seq[Any](/*32.5*/if(job.doScoring)/*32.22*/ {_display_(Seq[Any](format.raw/*32.24*/("""<option name="score" domainHigh=1 domainMed=0 domainLow=-1 selected>Scored data</option> """)))})),format.raw/*32.114*/("""
+			"""),_display_(Seq[Any](/*31.5*/if(job.doScoring)/*31.22*/ {_display_(Seq[Any](format.raw/*31.24*/("""<option name="score" domainHigh=1 domainMed=0 domainLow=-1 selected>Scored data</option> """)))})),format.raw/*31.114*/("""
 		</select>
 		
 		<style>
-			.input-prepend .add-on"""),format.raw("""{"""),format.raw/*36.27*/("""
+			.input-prepend .add-on"""),format.raw("""{"""),format.raw/*35.27*/("""
 				margin-right:-4px;
-			"""),format.raw("""}"""),format.raw/*38.5*/("""
-			.span3c"""),format.raw("""{"""),format.raw/*39.12*/("""
+			"""),format.raw("""}"""),format.raw/*37.5*/("""
+			.span3c"""),format.raw("""{"""),format.raw/*38.12*/("""
 				width:195px;
-			"""),format.raw("""}"""),format.raw/*41.5*/("""
+			"""),format.raw("""}"""),format.raw/*40.5*/("""
 		</style>
 			
 		<div class="container">
@@ -110,26 +109,26 @@ Seq[Any](format.raw/*1.14*/("""
 			
 			
 			<script>
-				$('#griddedImage').change(function()"""),format.raw("""{"""),format.raw/*83.42*/("""
+				$('#griddedImage').change(function()"""),format.raw("""{"""),format.raw/*82.42*/("""
 					var plate = $('#dataCombobox option:selected');
-					if($('#griddedImage').is(':checked'))"""),format.raw("""{"""),format.raw/*85.44*/("""
+					if($('#griddedImage').is(':checked'))"""),format.raw("""{"""),format.raw/*84.44*/("""
 						$('#plateImage').attr('src', plate.attr('gridded-image-path'));
-					"""),format.raw("""}"""),format.raw/*87.7*/("""else"""),format.raw("""{"""),format.raw/*87.12*/("""
+					"""),format.raw("""}"""),format.raw/*86.7*/("""else"""),format.raw("""{"""),format.raw/*86.12*/("""
 						$('#plateImage').attr('src', plate.attr('image-path'));
-					"""),format.raw("""}"""),format.raw/*89.7*/("""
+					"""),format.raw("""}"""),format.raw/*88.7*/("""
 					
-				"""),format.raw("""}"""),format.raw/*91.6*/(""");
+				"""),format.raw("""}"""),format.raw/*90.6*/(""");
 				
-				$('#hideImage').change(function()"""),format.raw("""{"""),format.raw/*93.39*/("""
-					if($('#hideImage').is(':checked'))"""),format.raw("""{"""),format.raw/*94.41*/("""
+				$('#hideImage').change(function()"""),format.raw("""{"""),format.raw/*92.39*/("""
+					if($('#hideImage').is(':checked'))"""),format.raw("""{"""),format.raw/*93.41*/("""
 						$('#plateImage').hide();
 						maxHeatmapWidth = 920;
-					"""),format.raw("""}"""),format.raw/*97.7*/("""else"""),format.raw("""{"""),format.raw/*97.12*/("""
+					"""),format.raw("""}"""),format.raw/*96.7*/("""else"""),format.raw("""{"""),format.raw/*96.12*/("""
 						$('#plateImage').show();
 						maxHeatmapWidth = 460;
-					"""),format.raw("""}"""),format.raw/*100.7*/("""
+					"""),format.raw("""}"""),format.raw/*99.7*/("""
 					$('#dataCombobox').trigger('change');
-				"""),format.raw("""}"""),format.raw/*102.6*/(""");
+				"""),format.raw("""}"""),format.raw/*101.6*/(""");
 			</script>
 			
 		</div>
@@ -138,28 +137,33 @@ Seq[Any](format.raw/*1.14*/("""
 		
 	</div><!-- End well -->
 	
-			<center>
 			
 			<div class="conatiner">
 			
 			<!--Heatmap & Image-->
+			<h3 style="margin-bottom:5px">Heatmap</h3>
+			<center>
 			<div class="row">
 				<div id="plateImageContents" class="span6" ><img id="plateImage"></div>
 				<div id="heatmapContents" class="span6" ></div>
 			</div>
 			
+			</center>
 			<hr><!--Separator-->
 			
 			
 			<style>
-				#data-table tbody"""),format.raw("""{"""),format.raw/*125.23*/("""
+				#data-table tbody"""),format.raw("""{"""),format.raw/*126.23*/("""
 					height:150px;
   					overflow:auto;
-				"""),format.raw("""}"""),format.raw/*128.6*/("""
+				"""),format.raw("""}"""),format.raw/*129.6*/("""
 			</style>
 			<!--Histogram-->
+			
 			<div class="row span12">
 				<div id="bar-chart">
+					
+					<h3>Histogram</h3>
 			    	<div id="data-count">
 			    		<span class="filter-count"></span> selected out of <span class="total-count"></span>
 			    		<a class="reset" href="javascript:barChart.filterAll();dc.redrawAll();">reset</a>
@@ -175,16 +179,15 @@ Seq[Any](format.raw/*1.14*/("""
 			
 			
 			</div>
-			</center>
 			
 	<script type="text/javascript">
 			var maxHeatmapWidth = 460;
 			
-			$('.domainInput').change(function()"""),format.raw("""{"""),format.raw/*153.40*/("""
+			$('.domainInput').change(function()"""),format.raw("""{"""),format.raw/*156.40*/("""
 				$('#dataCombobox').trigger('change');
-			"""),format.raw("""}"""),format.raw/*155.5*/(""");
+			"""),format.raw("""}"""),format.raw/*158.5*/(""");
 			
-			$('#viewType').change(function()"""),format.raw("""{"""),format.raw/*157.37*/("""
+			$('#viewType').change(function()"""),format.raw("""{"""),format.raw/*160.37*/("""
 				var viewtype = $('#viewType option:selected');
 				
 				$('#domainLowInput').val(viewtype.attr('domainLow'));
@@ -192,24 +195,24 @@ Seq[Any](format.raw/*1.14*/("""
 				$('#domainHighInput').val(viewtype.attr('domainHigh'));
 				
 				$('#dataCombobox').trigger('change');
-			"""),format.raw("""}"""),format.raw/*165.5*/(""");
+			"""),format.raw("""}"""),format.raw/*168.5*/(""");
 			
-			$(".color-picker").miniColors("""),format.raw("""{"""),format.raw/*167.35*/("""
-			    change: function(hex, rgb) """),format.raw("""{"""),format.raw/*168.36*/(""" 
+			$(".color-picker").miniColors("""),format.raw("""{"""),format.raw/*170.35*/("""
+			    change: function(hex, rgb) """),format.raw("""{"""),format.raw/*171.36*/(""" 
 					$('#dataCombobox').trigger('change');
-			    """),format.raw("""}"""),format.raw/*170.9*/("""
-			"""),format.raw("""}"""),format.raw/*171.5*/(""");
+			    """),format.raw("""}"""),format.raw/*173.9*/("""
+			"""),format.raw("""}"""),format.raw/*174.5*/(""");
 			
-			$(document).ready(function() """),format.raw("""{"""),format.raw/*173.34*/("""
+			$(document).ready(function() """),format.raw("""{"""),format.raw/*176.34*/("""
 				$('#viewType').trigger('change');
 				$('#dataCombobox').trigger('change');
-			"""),format.raw("""}"""),format.raw/*176.5*/(""");
+			"""),format.raw("""}"""),format.raw/*179.5*/(""");
 			
-		    $('#dataCombobox').change(function() """),format.raw("""{"""),format.raw/*178.45*/("""
+		    $('#dataCombobox').change(function() """),format.raw("""{"""),format.raw/*181.45*/("""
 		    	var viewtype = $('#viewType option:selected');
 		    	var plate = $('#dataCombobox option:selected');
 		    	
-				drawHeatmap("""),format.raw("""{"""),format.raw/*182.18*/("""
+				drawHeatmap("""),format.raw("""{"""),format.raw/*185.18*/("""
 					heatmapContainer : '#heatmapContents',
 					dataPath : plate.attr('data-path'),
 					gridSize : 10,
@@ -221,9 +224,9 @@ Seq[Any](format.raw/*1.14*/("""
 					colorLow: $('#colorLow').val(),
 					colorMed: $('#colorMed').val(), 
 					colorHigh: $('#colorHigh').val()
-				"""),format.raw("""}"""),format.raw/*194.6*/(""");
+				"""),format.raw("""}"""),format.raw/*197.6*/(""");
 				
-				var barChart = drawBarChart("""),format.raw("""{"""),format.raw/*196.34*/("""
+				var barChart = drawBarChart("""),format.raw("""{"""),format.raw/*199.34*/("""
 					'dataName' : plate.attr('data-path'),
 					'divChart' : "#bar-chart-contents", 
 					'divDataTable' : "#data-table", 
@@ -234,19 +237,19 @@ Seq[Any](format.raw/*1.14*/("""
 					columnToUse: viewtype.attr('name'),
 					domainLow: +$('#domainLowInput').val(),
 					domainHigh: +$('#domainHighInput').val()
-				"""),format.raw("""}"""),format.raw/*207.6*/(""");		
+				"""),format.raw("""}"""),format.raw/*210.6*/(""");		
 				
 				$('#plateImage')
 					.attr('src', plate.attr('image-path'))
-					.css("""),format.raw("""{"""),format.raw/*211.12*/(""" height: $('.heatmapSVG').height() - 20,
-							width: $('.heatmapSVG').width() - 20"""),format.raw("""}"""),format.raw/*212.45*/(""");
+					.css("""),format.raw("""{"""),format.raw/*214.12*/(""" height: $('.heatmapSVG').height() - 20,
+							width: $('.heatmapSVG').width() - 20"""),format.raw("""}"""),format.raw/*215.45*/(""");
 				
 				$('#griddedImage').trigger('change');
 				
-				$('#plateImage').error(function() """),format.raw("""{"""),format.raw/*216.40*/("""
-				  $('#plateImage').attr('src', """"),_display_(Seq[Any](/*217.38*/routes/*217.44*/.Assets.at("images/noimage_plate_small.jpeg"))),format.raw/*217.89*/("""");
-				"""),format.raw("""}"""),format.raw/*218.6*/(""");
-			"""),format.raw("""}"""),format.raw/*219.5*/(""");
+				$('#plateImage').error(function() """),format.raw("""{"""),format.raw/*219.40*/("""
+				  $('#plateImage').attr('src', """"),_display_(Seq[Any](/*220.38*/routes/*220.44*/.Assets.at("images/noimage_plate_small.jpeg"))),format.raw/*220.89*/("""");
+				"""),format.raw("""}"""),format.raw/*221.6*/(""");
+			"""),format.raw("""}"""),format.raw/*222.5*/(""");
 			
 	</script>
 	
@@ -263,11 +266,11 @@ Seq[Any](format.raw/*1.14*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Dec 28 21:27:41 EST 2012
+                    DATE: Mon Dec 31 14:00:36 EST 2012
                     SOURCE: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/app/views/da/dasummary.scala.html
-                    HASH: 5a31b6b51fddc972f0db1a6c92e4f2cbce20b76f
-                    MATRIX: 761->1|896->13|933->63|978->100|1017->102|1093->143|1107->149|1177->198|1262->248|1276->254|1358->314|1443->364|1457->370|1541->432|1627->482|1642->488|1720->543|1806->593|1821->599|1892->648|1987->707|2002->713|2075->763|2158->810|2173->816|2270->890|2365->949|2380->955|2478->1030|2625->1142|2679->1180|2718->1181|2792->1219|2804->1222|2832->1228|2886->1246|2898->1249|2946->1275|3024->1317|3036->1320|3064->1326|3126->1352|3138->1355|3187->1381|3243->1401|3258->1407|3340->1467|3379->1470|3404->1473|3448->1486|3748->1751|3774->1768|3814->1770|3937->1860|4036->1912|4110->1940|4169->1952|4237->1974|5915->3605|6059->3702|6182->3779|6234->3784|6349->3853|6407->3865|6500->3911|6588->3952|6701->4019|6753->4024|6867->4091|6963->4140|7384->4513|7478->4560|8301->5335|8395->5382|8486->5425|8817->5709|8906->5750|8990->5786|9090->5839|9142->5844|9230->5884|9362->5969|9461->6020|9644->6155|10126->6590|10215->6631|10638->7007|10772->7093|10905->7178|11047->7272|11122->7310|11138->7316|11206->7361|11262->7370|11316->7377
-                    LINES: 27->1|33->1|35->5|35->5|35->5|37->7|37->7|37->7|38->8|38->8|38->8|39->9|39->9|39->9|40->10|40->10|40->10|41->11|41->11|41->11|42->12|42->12|42->12|45->15|45->15|45->15|46->16|46->16|46->16|53->23|53->23|53->23|54->24|54->24|54->24|54->24|54->24|54->24|55->25|55->25|55->25|55->25|55->25|55->25|56->26|56->26|56->26|56->26|56->26|57->27|62->32|62->32|62->32|62->32|66->36|68->38|69->39|71->41|113->83|115->85|117->87|117->87|119->89|121->91|123->93|124->94|127->97|127->97|130->100|132->102|155->125|158->128|183->153|185->155|187->157|195->165|197->167|198->168|200->170|201->171|203->173|206->176|208->178|212->182|224->194|226->196|237->207|241->211|242->212|246->216|247->217|247->217|247->217|248->218|249->219
+                    HASH: 437e812522dd3bed6d4b5174ae88e376a599b5ec
+                    MATRIX: 761->1|896->13|933->63|978->100|1017->102|1093->143|1107->149|1177->198|1262->248|1276->254|1358->314|1443->364|1457->370|1541->432|1627->482|1642->488|1720->543|1806->593|1821->599|1892->648|1987->707|2002->713|2075->763|2156->808|2171->814|2268->888|2363->947|2378->953|2476->1028|2623->1140|2677->1178|2716->1179|2790->1217|2802->1220|2830->1226|2884->1244|2896->1247|2944->1273|3022->1315|3034->1318|3062->1324|3124->1350|3136->1353|3185->1379|3241->1399|3256->1405|3338->1465|3377->1468|3402->1471|3446->1484|3748->1751|3774->1768|3814->1770|3937->1860|4036->1912|4110->1940|4169->1952|4237->1974|5915->3605|6059->3702|6182->3779|6234->3784|6349->3853|6407->3865|6500->3911|6588->3952|6701->4019|6753->4024|6866->4091|6962->4140|7442->4572|7536->4619|8380->5415|8474->5462|8565->5505|8896->5789|8985->5830|9069->5866|9169->5919|9221->5924|9309->5964|9441->6049|9540->6100|9723->6235|10205->6670|10294->6711|10717->7087|10851->7173|10984->7258|11126->7352|11201->7390|11217->7396|11285->7441|11341->7450|11395->7457
+                    LINES: 27->1|33->1|35->5|35->5|35->5|37->7|37->7|37->7|38->8|38->8|38->8|39->9|39->9|39->9|40->10|40->10|40->10|41->11|41->11|41->11|42->12|42->12|42->12|44->14|44->14|44->14|45->15|45->15|45->15|52->22|52->22|52->22|53->23|53->23|53->23|53->23|53->23|53->23|54->24|54->24|54->24|54->24|54->24|54->24|55->25|55->25|55->25|55->25|55->25|56->26|61->31|61->31|61->31|61->31|65->35|67->37|68->38|70->40|112->82|114->84|116->86|116->86|118->88|120->90|122->92|123->93|126->96|126->96|129->99|131->101|156->126|159->129|186->156|188->158|190->160|198->168|200->170|201->171|203->173|204->174|206->176|209->179|211->181|215->185|227->197|229->199|240->210|244->214|245->215|249->219|250->220|250->220|250->220|251->221|252->222
                     -- GENERATED --
                 */
             
