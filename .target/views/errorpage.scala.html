@@ -1,0 +1,9 @@
+@(requested: String)
+
+
+@main(title="Error", nav="errorpage") {
+	<center>
+		<h1 class="text-error">404</h1>
+		<h4>@if(requested == ""){Not found}else{@requested}</h4>
+	</center>
+}

@@ -1,0 +1,59 @@
+@(job: NSjob)
+
+@import play.libs.Scala._
+@import play.Logger;
+@main(title="Normalization complete", nav="ns") {
+	<h2>Normalization/Scoring complete!</h2><br>
+	<!--Buttons to download/repeat analysis or proceed to normalization-->
+	<a class="btn" href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download"></i> Download results</a>
+	<a class="btn" href="@routes.NScontroller.initNSform"><i class="icon-repeat"></i> Start over</a>
+	<a class="btn" href="/preloaded-dataanalysis/@job.jobid"><i class="icon-tasks"></i> Data analysis »</a>
+	
+	<br>
+	<br>
+	<h3 style="margin:bottom:10px">Plate files</h3>
+	
+	<script>
+		$(document).ready(function(){
+			var f = [ @for(fileName <- job.outputFilesMap.keySet){ "@fileName" , } ]
+			$('#plateFilesTable').html(f.fileTableSGA());
+		});
+		
+	</script>
+	<table class="table table-condensed" id="plateFilesTable">
+		
+	</table>
+	
+	<h3 style="margin:bottom:10px">Job summary</h3>
+	
+	<table class="table">
+		<tr>
+			<td style="width:200px">Elapsed time</td>
+			<td>@job.timeElapsed</td>
+		</tr>
+		<tr>
+			<td>Array layout file</td>
+			<td>@job.summaryAD</td>
+		</tr>
+		<tr>
+			<td>Replicates</td>
+			<td>@job.replicates</td>
+		</tr>
+		
+		@if(job.doLinkage == true){
+			<tr>
+				<td>Linkage correction cutoff</td>
+				<td>@job.linkageCutoff</td>
+			</tr>
+		}
+		<tr>
+			<td>Results scored</td>
+			<td><i 
+			@if(job.doScoring == true){ class="icon-ok"}else{class="icon-remove"} 
+			></i></td>
+		</tr>
+		
+	</table>
+	
+	
+}

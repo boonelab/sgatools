@@ -1,0 +1,87 @@
+@(iaForm: Form[IAjob])
+
+@import helper._
+@import helper.twitterBootstrap._
+@implicitFieldConstructor = @{ FieldConstructor(extra.twitterBootstrapInput.f) }
+@main("Image analysis", nav="ia") {
+    
+   @helper.form(action = routes.IAcontroller.submit(), 'enctype -> "multipart/form-data", 'id -> "imageprocessingForm", 'class->"form-horizontal") {
+		<h2>Image analysis</h2>
+		<hr>
+		<p>File name format: <code>username_orf_arrayplateid_...</code> where ORF begins with <code>wt</code> for control plates
+		<br>
+		Example: <code>bob_wt-YDL108W_13_boonelab.jpg</code>
+		</p>
+		
+		<h3 style="margin-bottom:10px">Data input</h3>
+		
+		<fieldset>
+		
+		<!--Images select button-->
+		  @inputFile(
+	        iaForm("plateImages"),
+	        '_label -> "Plate images(s)",
+	        'multiple -> "",
+	        'accept -> "image/gif, image/jpeg, image/png",
+	    	'uploadwidget -> "Select image(s)"
+	    )
+	    
+	    
+	    <!--Plate format of the screen images-->
+	    @select(
+            iaForm("plateFormat"), 
+            options = options(ComboboxOpts.plateFormat),
+            '_label -> "Plate format",
+            '_showConstraints -> false,
+            'style -> "width:350px"
+        )
+        
+	    <!--Crop option - best left at index 0-->
+         @select(
+            iaForm("cropOption"), 
+            options = options(ComboboxOpts.cropOption),
+            '_label -> "Crop option",
+            '_showConstraints -> false,
+            'style -> "width:350px"
+        )
+        
+		</fieldset>
+		
+	    <!--Loaded plates only visible when images selected (done via JS)-->
+	    <div id="loaded-plates" style="display:none">
+			<h3 id="loaded-label" style="margin-bottom:10px">Loaded plates</h3>
+			<fieldset>
+				<table id="loaded-table" class="table table-condensed">
+				<thead><tr><th>Plate image</th><th>File name</th><th>Screen type</th><th>Query name</th><th>Array plate id</th></tr></thead>
+				<tbody></tbody>
+				</table>
+			</fieldset>
+		</div>
+		
+	    <!--Submit/clear all box-->
+	    <div class="form-actions">
+		  <button id="iasubmit" type="submit" class="btn btn-primary">Process images</button>
+		  <a href="@routes.IAcontroller.initIAForm()"><button id="clearall" type="button" class="btn">Clear all</button></a>
+		</div>
+	}
+	
+	<div id="loadingDiv" class="hide">
+		@loading("Processing images", "Expected time 25-60 seconds")
+	</div>
+
+	<!-- Scripts for the page -->
+    <script src="@routes.Assets.at("javascripts/ia.js")"></script>
+    <script>
+    	$(document).ready(function(){
+    		$('#iasubmit').attr('disabled', 'disabled');
+    	});
+    	// Submit click
+    	$("#iasubmit").click(function() {
+  			$('#imageprocessingForm').toggleClass("hide");
+  			$('#loadingDiv').toggleClass("hide");
+  			$('#imageprocessingForm').submit();
+		});
+    	
+		$('#plateImages').change(handleFileSelect);
+    </script>
+}
