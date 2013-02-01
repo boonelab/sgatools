@@ -26,7 +26,7 @@
 		<script src="@routes.Assets.at("javascripts/jquery.cookie.js")"></script>
 		<script src="@routes.Assets.at("external/bootstrap-toggle/js/jquery.toggle.buttons.js")"></script>
 		<link href="@routes.Assets.at("external/bootstrap-toggle/stylesheets/bootstrap-toggle-buttons.css")" rel="stylesheet">
-	
+		<script src="@routes.Assets.at("javascripts/jquery.csvToTable.js")"></script>
 		
 		<script>
 		$(document).ready(function(){
@@ -44,14 +44,14 @@
 			<div class="navbar-inner">
 				<div class="container">
 					<a class="brand" href="@routes.Application.index()">
-						<img src="@routes.Assets.at("images/sgaicon.png")" style="height:32px;margin-top:-7px;" alt="SGAtools icon">
+						<img src="@routes.Assets.at("images/sgaicon_small.png")" style="height:32px;margin-top:-7px;" alt="SGAtools icon">
 						<b class="heavy">SGA</b>tools
 					</a>
 					<div class="nav-collapse">
 						<ul class="nav">
 							<li class="@("active".when(nav == "ia"))"><a href="@routes.IAcontroller.initIAForm()">Image analysis</a></li>
 							<li class="@("active".when(nav == "ns"))"><a href="@routes.NScontroller.initNSform()">Normalization & Scoring</a></li>
-							<li class="@("active".when(nav == "da"))"><a href="#">Data analysis</a></li>
+							<li class="@("active".when(nav == "da"))"><a href="#">Data visualization</a></li>
 							
 						</ul>
 						<ul class="nav pull-right">
@@ -89,6 +89,7 @@
 	<script type="text/javascript" src="@routes.Assets.at("external/jasny-extensions/js/bootstrap-fileupload.js")"></script>
 	<script type="text/javascript">
 			$('#helpModal').modal({show:false});
+			$('#arrayDefModal').modal({show:false});
 	</script>
 	
 </body>

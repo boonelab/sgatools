@@ -436,7 +436,25 @@ public class ContrastAdjuster extends PlugInFrame implements Runnable,
 		if (RGBImage) doMasking(imp, ip);
 		updateScrollBars(brightnessSlider);
 	}
-
+	
+	public ImagePlus adjustContrast2(ImagePlus imp, ImageProcessor ip, int cvalue) {
+		double slope;
+		double center = min + (max-min)/2.0;
+		double range = defaultMax-defaultMin;
+		double mid = sliderRange/2;
+		if (cvalue<=mid)
+			slope = cvalue/mid;
+		else
+			slope = mid/(sliderRange-cvalue);
+		if (slope>0.0) {
+			min = center-(0.5*range)/slope;
+			max = center+(0.5*range)/slope;
+		}
+		if (RGBImage) doMasking(imp, ip);
+		
+		return(imp);
+	}
+	
 	void adjustContrast(ImagePlus imp, ImageProcessor ip, int cvalue) {
 		double slope;
 		double center = min + (max-min)/2.0;

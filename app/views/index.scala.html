@@ -1,8 +1,40 @@
 
 @main("Home", nav="hm") {
-   	
+	<style>
+	.carousel.carousel-fade .item {
+	  -webkit-transition: opacity 2s ease-in-out;
+	  -moz-transition: opacity 2s ease-in-out;
+	  -ms-transition: opacity 2s ease-in-out;
+	  -o-transition: opacity 2s ease-in-out;
+	  transition: opacity 2s ease-in-out;
+	}
+	.carousel.carousel-fade .active.left,
+	.carousel.carousel-fade .active.right {
+	  left: 0;
+	  z-index: 2;
+	  opacity: 0;
+	  filter: alpha(opacity=0);
+	}
+	.carousel.carousel-fade .next,
+	.carousel.carousel-fade .prev {
+	  left: 0;
+	  z-index: 1;
+	}
+	
+	.carousel.carousel-fade .carousel-control {
+	  z-index: 3;
+	}
+	</style>
+	
+   	<script>
+   	$(document).ready(function(){
+	   $('.carousel').carousel({
+		  interval: 3500
+		  })	
+	   });
+   	</script>
 	<!-- Carousel -->	
-	<div id="carousel" class="carousel slide" rel="carousel">
+	<div id="carousel" class="carousel slide carousel-fade" rel="carousel">
 		<!-- Carousel items -->				
 		<div class="carousel-inner">
 			<!--<div class="item active">
@@ -33,7 +65,7 @@
 			<div class="item">
 				<img src="@routes.Assets.at("images/slider/da_cover.png")">
 				<div class="carousel-caption">
-                      			<h4>Data analysis</h4>
+                      			<h4>Data visualization</h4>
                       			<p>Instant and interactive feedback of your analysis, provided straight through your browser.</p>
                     		</div>	
 			</div>
@@ -77,6 +109,7 @@
 		<a href="@routes.Assets.at("images/sgatools_example_images.zip")" style="font-size:18px;" class="btn btn-large"><i class="icon-download"></i> Download example images</a>
 		<a href="@routes.IAcontroller.initIAForm()" style="font-size:18px;" class="btn btn-large"><i class="icon-signin"></i> Get started</a>
 	</center>
+	<br>
 	
     
 }

@@ -1,6 +1,6 @@
 
 String.prototype.parseSGAFileName = function() {
-    var sp=this.split("_");
+    var sp=this.split(new RegExp('_|\\.'));
     var pat = new RegExp("^[^_]+_[^_]+_[^_]+_\\d+([_|\.].*)?$");
     var screenType = "―";
     var queryName = "―";
@@ -22,7 +22,7 @@ String.prototype.parseSGAFileName = function() {
 
 Array.prototype.fileTableSGA = function(){
 	var r = [];
-	jQuery.each(this, function(i, fileName) {
+	jQuery.each(this.sort(), function(i, fileName) {
 		parsed = fileName.parseSGAFileName();
 		t = jQuery.each(parsed, function(j, value) {
 			if(j == 0){
@@ -39,3 +39,11 @@ Array.prototype.fileTableSGA = function(){
 	style = "<style>thead tr th{text-align:left;}</style>"
 	return head+body+style;
 };
+
+
+
+//Triggers help modal/updates content
+function labelHelpClicked(containerId){
+    $('#helpModalHeading').html('Quick help');
+    $('#helpModalBody').load('/help #'+containerId);
+}

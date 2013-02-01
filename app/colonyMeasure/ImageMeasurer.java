@@ -22,6 +22,7 @@ import ij.ImagePlus;
 import ij.gui.OvalRoi;
 import ij.measure.ResultsTable;
 import ij.measure.ResultsTablePlus;
+import ij.plugin.ContrastEnhancer;
 import ij.plugin.filter.ImageTools;
 import ij.plugin.filter.ParticleAnalyzer;
 import ij.plugin.filter.RGBStackSplitterSean;
@@ -54,6 +55,8 @@ public class ImageMeasurer {
 	boolean errorFlagBool;
 	MeasuredResults imageResults;
 	
+       
+        
 	public ImageMeasurer(ImageProcessor ip, String fn, ImageMeasurerOptions imo) throws IOException {
 		int j;
 		MeasuredResults testResults;
@@ -65,11 +68,28 @@ public class ImageMeasurer {
 		ImagePlus im=new ImagePlus("temp",ip);
 		
 		ImageProcessor red=ip;
+		ImageProcessor blue=ip;
+		ImageProcessor green=ip;
 		//ImageProcessor blue,green;
 		if (im.getBitDepth()==24) {
 			red=getRedChannel(ip);
-			//green=getGreenChannel(ip);
-			//blue=getBlueChannel(ip);
+			green=getGreenChannel(ip);
+			blue=getBlueChannel(ip);
+                        
+                        int greenSum = getSumPixels(green);
+                        int redSum = getSumPixels(red);
+                        int blueSum = getSumPixels(blue);
+                        
+                        if(blueSum > redSum && blueSum > greenSum){
+                            System.out.println("#NEW: Blue mask detected");
+                            red = blue;
+                        }else if(greenSum > redSum && greenSum > blueSum){
+                            System.out.println("#NEW: Green mask detected");
+                            //red = green;
+                        }else{
+                            System.out.println("#NEW: Red mask detected");
+                        }
+                       
 		} else {
 			red=ip.convertToByte(false);
 		}
@@ -87,7 +107,7 @@ public class ImageMeasurer {
 		//redTemp.show();
 
 		redTemp.flush(); //attempting to minimize memory wastage
-
+		
 		// *** Rotate the image to try to account for the grid slant, and then set up the grid again
 		red1=new ImagePlus("Red channel",performEstimatedRotation(red1,grid.slope));
 		redTemp=red1;  //redTemp will store the uncropped image in case we need it later
@@ -101,31 +121,64 @@ public class ImageMeasurer {
 		rtF=getParticles(grid.maskedImage,thresh,10,5000);
 		imageResults=new MeasuredResults(grid,rtF);
 		orig_grid=grid;
-
-		for (j=0;j<2;j++) {
+		
+		for (j=0;j<4;j++) {
 			ERROR_FLAG=0;
 			checkBasicErrors();		// sets errorFlagBool and flagString
 			if (errorFlagBool) { //Take a second shot at it
-				System.out.println("Taking a another try at the image - "+flagString);
-				ERROR_FLAG=1; //if it gets here twice, it will report an error, even though it might still process the image correctly
-				if (imageResults.gridExceedsImageBounds) {
-					red1 = remeasureWithExpandedGrid(red1, redTemp, thresh);
-				}
-				switch (imo.gridType) {
-					case ColonyGrid.GRID_96: grid=new ColonyGrid96(red1,rtTotal,orig_grid,j); break;
-					case ColonyGrid.GRID_384: grid=new ColonyGrid384(red1,rtTotal,orig_grid,j); break;
-					case ColonyGrid.GRID_768a: grid=new ColonyGrid768a(red1,rtTotal,orig_grid,j); break;
-					case ColonyGrid.GRID_1536: grid=new ColonyGrid1536(red1,rtTotal,orig_grid,j); break;
-				}
-				grid.applyGridMask(red1);
-				rtF=getParticles(grid.maskedImage,thresh,10,5000);
-				testResults=new MeasuredResults(grid,rtF);
-				if (testResults.isBetterThan(imageResults)) imageResults=testResults;
+
+				
+				
+
+                            System.out.println("#######################");
+                            System.out.println("Taking a another try at the image - "+flagString);
+                            int tryNum = j+1;
+                            System.out.println("#######################");
+                            System.out.println("Try #"+tryNum);
+                            
+                            //int inc = tryNum * 10;
+                            int inc = 10;
+                            System.out.println("Increasing threshold by " + inc);
+                            
+                            thresh = thresh + inc;
+                            System.out.println("New threshold is " + thresh);
+                            
+                            if(thresh > 255){
+            					System.out.println("Threshold above 255, reseting to 170");
+            					thresh = 170;
+            				}
+                            
+                            rtTotal=getParticles(red1,thresh,50,5000);
+                            createColonyGrid(imo, red1);  //sets the value of grid
+
+                            // *** Continue with analysis
+                            grid.applyGridMask(red1);
+                            rtF=getParticles(grid.maskedImage,thresh,10,5000);
+                            testResults=new MeasuredResults(grid,rtF);
+                            orig_grid=grid;
+       
+                            if (testResults.isBetterThan(imageResults)) imageResults=testResults;
+//				System.out.println("Taking a another try at the image - "+flagString);
+//				ERROR_FLAG=1; //if it gets here twice, it will report an error, even though it might still process the image correctly
+//				if (imageResults.gridExceedsImageBounds) {
+//					red1 = remeasureWithExpandedGrid(red1, redTemp, thresh);
+//				}
+//				switch (imo.gridType) {
+//					case ColonyGrid.GRID_96: grid=new ColonyGrid96(red1,rtTotal,orig_grid,j); break;
+//					case ColonyGrid.GRID_384: grid=new ColonyGrid384(red1,rtTotal,orig_grid,j); break;
+//					case ColonyGrid.GRID_768a: grid=new ColonyGrid768a(red1,rtTotal,orig_grid,j); break;
+//					case ColonyGrid.GRID_1536: grid=new ColonyGrid1536(red1,rtTotal,orig_grid,j); break;
+//				}
+//				grid.applyGridMask(red1);
+//				rtF=getParticles(grid.maskedImage,thresh,10,5000);
+//				testResults=new MeasuredResults(grid,rtF);
+//				if (testResults.isBetterThan(imageResults)) imageResults=testResults;
 			}
 			//System.out.println("Left bound = " + grid.leftBound);
 			//System.out.println("Right bound = " + grid.rightBound);
 			//System.out.println("Half space = " + grid.halfSpace);
 		}
+		
 		imageResults.exportResults(filename);
 		if (imageResults.inconsistentReplicates()) {
 			ERROR_FLAG=ColMeasureProgram.ERR_REPLICATES;
@@ -155,6 +208,19 @@ public class ImageMeasurer {
 		}
 	}
 
+        
+         
+        private int getSumPixels(ImageProcessor ip){
+            int sum = 0;
+            for(int i=0; i<ip.getWidth(); i++){
+                for(int k=0; k<ip.getHeight(); k++){
+                    sum = sum + ip.getPixel(i, k);
+                }
+            }
+            return sum;
+        }
+        
+        
 	private void checkBasicErrors() {
 		errorFlagBool=((imageResults.typicalNumSpots>1.1)) | (imageResults.numzero>(0.33*grid.numCol*grid.numRow*grid.numDup)) | (imageResults.gridExceedsImageBounds);
 		if ((imageResults.typicalNumSpots>1.1)) {

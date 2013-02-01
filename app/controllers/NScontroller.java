@@ -232,7 +232,8 @@ public class NScontroller extends Controller {
 	        }
 	        in_error.close();
 	        //#############################
-	        
+	        Logger.debug(shell_output.toString());
+	        Logger.error(shell_output_error.toString());
 	        // Zip files 
 	        Zipper.zipDir(zipFilePath, outputFilesDir.getPath());
         }catch(Exception e){

@@ -11,6 +11,23 @@ var tooltip = d3.select("body")
 	.style('box-shadow', '2px 2px 2px 2px #8b8b8b')//Adjust for cross browser later
 	.style('display','none');
 
+var tooltip = d3.select("body")
+	.attr('id', 'tooltip')
+	.append('div')
+	.style('position','absolute')
+	.style('border','1px solid #bbbbbb')
+	.style('color','black')
+	.style('background-color','white')
+	.style('box-shadow','0 2px 4px rgba(0,0,0,0.3)')
+	.style('font-family', 'Arial, Helvetical, sans-serif')
+	.style('max-width','160px')
+	.style('top',"0px")
+	.style('padding','5px')
+	.style('left',"40px")
+	.style('display','none');
+
+
+
 function pathExists(url){
     var http = new XMLHttpRequest();
     http.open('HEAD', url, false);
@@ -30,7 +47,7 @@ function drawHeatmap(paramsInput){
         'colorLow'   : 'red',		//Low color
         'colorMed'   : 'black',		//Medium color
         'colorHigh'  : 'green', 	//High color
-        'colorNA'    : '#222',		//Non-numerical color
+        'colorNA'    : 'black',		//Non-numerical color
         'heatmapContainer'   : 'body'		//Selector to which heatmap is added to
     };
     // Extend optional parameters
@@ -39,6 +56,30 @@ function drawHeatmap(paramsInput){
     //console.log(params);
 	
     d3.tsv(params.dataPath, function(sgadata){
+		sgadata = sgadata.filter(function(d,i){
+			d.query = d.query.split('_')[0];
+			d.array = d.array.split('_')[0];
+			
+			d.queryStandard = d.query;
+			d.arrayStandard = d.array;
+			
+			//Try map query and array names from systematic name to standard name
+			q = genemap[d.query];
+			a = genemap[d.array];
+			
+			if(q != undefined){
+				 d.query = d.query + " (" + q +")";
+				 d.queryStandard = q;
+			}
+			if(a != undefined){
+				d.array = d.array + " (" + a +")";
+				d.arrayStandard = a;
+			} 
+			
+			val = +d[params.columnToUse];
+			d.value = val.toFixed(2);
+			return true;
+		});
        //console.log(sgadata);
        // Clear contents of any previous heatmap
        $(params.heatmapContainer).empty()
@@ -92,10 +133,10 @@ function drawHeatmap(paramsInput){
 	   		.attr("width", function(d) { return w; })
 	   		.attr("height", function(d) { return h; })
 	   		.attr("style", "shape-rendering: crispEdges;")
-	   		.attr("stroke", "black")
-	   		.attr("stroke-width", 1)
+	   		//.attr("stroke", "black")
+	   		//.attr("stroke-width", 1)
 	   		.style("fill", function(d) { return isNaN(+d[params.columnToUse]) ? params.colorNA : colorScale(d[params.columnToUse]); });
-	   	
+	   	/*
 	   var rowLabel = svg.selectAll(".rowLabel")
 	   		.data(rowNest)
 	   		.enter().append('svg:text')
@@ -116,7 +157,7 @@ function drawHeatmap(paramsInput){
 	   		.attr("transform", function(d, i) {
 			return "rotate(90 " + ((i + 0.4) * w) + ","+(gridSize * nRows + 7)+")"; })
 			.text(function(d) {return d.key;});
-		
+		*/
 		$('#plateImage')
 				.css({ height: $('.heatmapSVG').height() - 20,
 						width: $('.heatmapSVG').width() - 20});
@@ -126,7 +167,15 @@ function drawHeatmap(paramsInput){
 		    		.attr('stroke-width',1)
 		    		.attr('stroke','yellow')
 		    	
-		    	output = d.query+ ' and '+ d.array +'<br>'+d[params.columnToUse];
+		    	
+		    	tab = '<center><table class="hm-popup-table">'+
+		    		  '<tr><td>Value</td><td>'+d.value+'</td></tr>'+
+		    		  '<tr><td>Row</td><td>'+d.row+'</td></tr>'+
+		    		  '<tr><td>Column </td><td>'+d.col+'</td></tr> </table></center>';
+		    	output = '<div style="text-align:center"><p class="hm-popup-value">'+d.query+ '</p>'+
+		    			 '<p class="hm-popup-key" style="margin:0">and</p>'+
+		    			 '<p class="hm-popup-value">'+ d.array +'</p></div>'+
+		    			 '<hr style="margin:3px">'+tab;
 		   
 		    	//var x = window.event.clientX  + $(window).scrollLeft();
 		    	//var y = window.event.clientY + $(window).scrollTop();

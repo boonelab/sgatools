@@ -20,10 +20,31 @@ function drawBarChart(settings) {
 	d3.tsv(options.dataName, function(data) {
 		//Filter data for numerical scores only - ignore NAs
 		data = data.filter(function(d,i){
-			//if(d.plateid != options.selectedPlateId) {return false;}
-			if(isNaN(d[options.columnToUse])){ return false; }
-			d.index = i
-			d.score = +d[options.columnToUse];
+			s = +( (+d[options.columnToUse]).toFixed(3) );
+			if(isNaN(s)){ return false; }
+			
+			d.index = i;
+			d.score = s;
+			
+			d.query = d.query.split('_')[0];
+			d.array = d.array.split('_')[0];
+			
+			d.queryStandard = d.query;
+			d.arrayStandard = d.array;
+			
+			//Try map query and array names from systematic name to standard name
+			q = genemap[d.query];
+			a = genemap[d.array];
+			
+			if(q != undefined){
+				 d.query = d.query + " (" + q +")";
+				 d.queryStandard = q;
+			}
+			if(a != undefined){
+				d.array = d.array + " (" + a +")";
+				d.arrayStandard = a;
+			} 
+
 			return true;
 		});
 		
@@ -48,21 +69,22 @@ function drawBarChart(settings) {
 		
 		if(options.columnToUse == "ncolonysize" || options.columnToUse == "colonysize"){
 			scores = score.group(function(d) { return Math.round(d); });
+			scores = score.group(function(d) { return Math.round(d); });
 			window.scoredData = false;
 		}else{
 			scores = score.group(function(d) { return Math.round(d*40)/40; });
 			window.scoredData = true;
 		}
 		
-		options.domainLow = Math.round(options.domainLow);
-		options.domainHigh = Math.round(options.domainHigh);
+		options.domainLow = Math.floor(options.domainLow);
+		options.domainHigh = Math.floor(options.domainHigh);
 		
 		//Data count
 		dc.dataCount(options.divDataCount)
 			.dimension(ndx) // set dimension to all data
 			.group(all); // set group to ndx.groupAll()   
 		
-		window.barChart = dc.barChart(options.divChart)
+		window.histogramChart = dc.barChart(options.divChart)
 			.width(options.chartWidth) // (optional) define chart width, :default = 200
 			.height(options.chartHeight) // (optional) define chart height, :default = 200
 			.transitionDuration(500) // (optional) define chart transition duration, :default = 500
@@ -75,12 +97,12 @@ function drawBarChart(settings) {
 		 * an optional chart group for this chart to be scoped within. When a chart belongs
 		 * to a specific group then any interaction with such chart will only trigger redraw
 		 * on other charts within the same chart group. */
-		dc.dataTable(options.divDataTable)
+		window.dataTable = dc.dataTable(options.divDataTable)
 		    // set dimension
 		    .dimension(score)
 		    // data table does not use crossfilter group but rather a closure as a grouping function
 		    .group(function(d) {
-		        return "Plate: "+d.plateid;
+		        return "Array — "+d.array;
 		    })
 		    // (optional) max number of records to be shown, :default = 25
 		    .size(options.maxDataRows)

@@ -1935,7 +1935,7 @@ dc.barChart = function(parent, chartGroup) {
             w = MIN_BAR_WIDTH;
         
         if(window.scoredData){
-	        w = 8;
+	        w = 4;
         }
         
         //w = MIN_BAR_WIDTH + 2;
@@ -2233,7 +2233,7 @@ dc.dataTable = function(parent, chartGroup) {
             .append("tbody");
         
         //Mod omar wagih
-        /*
+        
         rowGroup
             .append("tr")
             .attr("class", "group")
@@ -2242,7 +2242,9 @@ dc.dataTable = function(parent, chartGroup) {
                 .text(function(d) {
                     return _chart.keyAccessor()(d);
                 });
-                */
+                
+                
+                
         groups.exit().remove();
 
         return rowGroup;

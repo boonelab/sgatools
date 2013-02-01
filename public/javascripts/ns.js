@@ -20,6 +20,9 @@ $(document).ready(function() {
 	$('#cg-arrayDefCustomFile').hide();
 	
 	
+	//Trigger change
+	$('#arrayDefPredefined').change();
+	
 });
 
 //Show linkage when its checkbox is clicked
@@ -42,6 +45,7 @@ $('#doArrayDef').click(function(){
 $('#arrayDefPredefined').change(function(){
 	var i = $("#arrayDefPredefined").prop("selectedIndex");//selected index
 	var n = $('#arrayDefPredefined option').size()-1; //Custom file index
+	
 	//If our index is at 0 or at custom file
 	if(i == 0 || i == n){
 		//Hide plate dropdowns and view button
@@ -56,17 +60,54 @@ $('#arrayDefPredefined').change(function(){
 		$('#cg-arrayDefCustomFile').show();
 	}else{
 		//Show plate dropdown for selected one, hide the rest
-		$('[id ^='+$(this).val()+'][id $=plates]').show();
-		$('[id ^='+$(this).val()+'][id $=plates]').attr('name', 'selectedArrayDefPlate')
+		select = $('[id ^='+$(this).val()+'][id $=plates]');
+		unselect = $('[id $=plates]').not('[id ^='+$(this).val()+']');
 		
-		$('[id $=plates]').not('[id ^='+$(this).val()+']').hide();
-		$('[id $=plates]').not('[id ^='+$(this).val()+']').attr('name', '')
+		select.show();
+		select.attr('name', 'selectedArrayDefPlate')
+		
+		unselect.hide();
+		unselect.attr('name', '')
+		
 		//Show view button
-		$('#viewPlate').show();
+		var i_plate = select.prop('selectedIndex');
+		if(i_plate > 0) { 
+			$('#viewPlate').show(); 
+		}else{
+			$('#viewPlate').hide(); 
+		}
+		
 		//Hide file chooser 
 		$('#cg-arrayDefCustomFile').hide();
 	}
 });
+
+$('[id $=plates]').change(function(){
+	var i_plate = $(this).prop('selectedIndex');//index of plate
+	if(i_plate > 0){
+		$('#viewPlate').show();
+	}else{
+		$('#viewPlate').hide();
+	}
+})
+
+$('#viewPlate').click(function(){
+	arrayDefValue =  $('#arrayDefPredefined').val();
+	plateValue = $('[name=selectedArrayDefPlate]').val();
+	var link = "/assets/data/array-definitions/"+ arrayDefValue +"/"+plateValue;
+    console.log(link);
+       
+    $('#arrayDefModalHeading').html(arrayDefValue + " <small>"+plateValue+"</small>");      
+    $('#arrayDefModalBody').CSVToTable(link,
+    	{loadingText: 'Loading array definition data...',
+         startLine: 4,
+         separator: "\t",
+         tableClass:"table table-hover" }
+    );
+	
+})
+
+
 
 $('#advancedOptsBtn').click(function(){
 	$('#advancedOpts').slideToggle('fast');

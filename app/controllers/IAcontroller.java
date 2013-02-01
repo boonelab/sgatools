@@ -13,6 +13,7 @@ import ij.ImagePlus;
 import ij.io.FileSaver;
 import ij.plugin.ContrastEnhancer;
 import ij.plugin.JpegWriter;
+import ij.plugin.frame.ContrastAdjuster;
 import ij.process.ImageProcessor;
 
 import java.io.*;
@@ -171,14 +172,35 @@ public class IAcontroller extends Controller {
         		//Do image processing here
                 //Load in the image
                 ImagePlus im = new ImagePlus(plateImagePath);
+                
+                //ContrastEnhancer enh = new ContrastEnhancer();
+                //enh.stretchHistogram(im, 10);
+                //FileSaver sss = new FileSaver(im);
+                //sss.saveAsJpeg("/Users/omarwagih/Desktop/adjustedContrast.jpg");
+                
                 ImageProcessor ip = im.getProcessor();
+               	
+//                for(int i=1; i<20; i++){
+//                	ImagePlus cimage = new ImagePlus(plateImagePath);
+//                	enh = new ContrastEnhancer();
+//                    int factor = (5*i);
+//                    //enh.stretchHistogram(image, factor);
+//                    try{
+//                    		enh.stretchHistogram(cimage, factor);
+//                    	 sss = new FileSaver(cimage);
+//                         sss.saveAsJpeg("/Users/omarwagih/Desktop/contrast/contrast"+factor+".jpg");
+//                    }catch(Exception e){
+//                    	Logger.error("FAILED CONTRAST ADJUSTER:"+e.getMessage());
+//                    }
+//                   
+//                }
+               
                 
                 //Run image measurer and save .dat file
                 String datFileName = plateImageName + ".dat";
                 String datOutputPath = outputFilesDir + datFileName;
                 ImageMeasurerOptions imo=new ImageMeasurerOptions(gridType, cropType, showOption);
                 ImageMeasurer imM=new ImageMeasurer(ip,datOutputPath,imo);
-                
                 //Save masked out image
                 String maskedImgOutputPath = outputImagesDir + "masked_"+plateImageName;
                 ImagePlus maskedImage = imM.grid.maskedImage;

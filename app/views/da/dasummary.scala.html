@@ -2,7 +2,7 @@
 
 @import play.libs.Scala._
 @import play.Logger;
-@main(title="Data analysis", nav="da") {
+@main(title="Data visualization", nav="da") {
 	
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/d3.v2.js")"></script>
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/sgatools.heatmap.js")"></script>
@@ -14,7 +14,9 @@
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.js")"></script>
 	<link type="text/css" rel="stylesheet" href="@routes.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.css")" />
 	
-	<h2>Data analysis</h2>
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/yeast.genemap.json")"></script>
+	
+	<h2>Data visualization</h2>
 	<hr>
 	
 	<div class="well">
@@ -38,6 +40,26 @@
 			.span3c{
 				width:195px;
 			}
+			
+			.hm-popup-key{
+				color:#949494;
+				font-size: 14px;
+			}
+			.hm-popup-table tr td:first-child{
+				color:#949494;
+				text-align: right;
+				font-size: 14px;
+			}
+			.hm-popup-table tr td:nth-child(2), .hm-popup-value{
+				font-weight: bold;
+				font-size: 16px;
+				margin: 0px;
+			}
+			
+			.dc-table-group{
+				background-color: #D9EDF7;
+			}
+			
 		</style>
 			
 		<div class="container">
@@ -101,6 +123,8 @@
 				});
 			</script>
 			
+			
+			
 		</div>
 		</div>
 			
@@ -117,10 +141,15 @@
 				<div id="heatmapContents" class="span6" ></div>
 			</div>
 			
-			</center>
+			
 			<hr><!--Separator-->
 			
+			<button id="gprofilerBtn" class="btn btn-large">Functional enrichment for selected genes <i class="icon-external-link"></i></button>
 			
+
+			</center>
+			
+						
 			<style>
 				#data-table tbody{
 					height:150px;
@@ -131,24 +160,74 @@
 			
 			<div class="row span12">
 				<div id="bar-chart">
-					
+					<span class="pull-right hide">Show 
+			    			<select style="height:20px; width:55px; margin-top:5px;">
+			    				<option>20</option>
+			    				<option>50</option>
+			    				<option>100</option>
+			    				<option>All</option>
+			    			</select> records 
+			    	</span>
+			    	
 			    	<div id="data-count">
-			    		<span class="filter-count"></span> selected out of <span class="total-count"></span>
-			    		<a class="reset" href="javascript:barChart.filterAll();dc.redrawAll();">reset</a>
+			    		<span class="filter-count"></span> selected out of <span class="total-count"></span> | 
+			    		<a class="reset" href="javascript:histogramChart.filterAll();dc.redrawAll();">Reset all</a>
 			    	</div>
 			    	<div id="bar-chart-contents">
 			    	</div>
 			    </div>
-				<table id="data-table" class="table table-hover table-condensed" style="margin-bottom:100px">
-				    <thead><tr class="row"><th>Row</th><th>Column</th><th>Query</th><th>Array</th><th>Score</th></tr>
-				    </thead>
-			    </table>    
+				<table id="data-table" class="table table-hover" style="margin-bottom:100px">
+				    
+				    <thead>
+				        <tr class="header">
+				            <th>Row</th>
+				            <th>Column</th>
+				            <th>Query</th>
+				            <th>Array</th>
+				            <th>Value</th>
+				        </tr>
+			        </thead>
+			    </table>  
 			</div>
 			
 			
 			</div>
 			
 	<script type="text/javascript">
+			
+			$('#gprofilerBtn').click(function(){
+				
+				//Get query based on selected window in histogram
+				var selectedEntries = histogramChart.dimension().top(Infinity);
+				querySet = [];
+				for(i = 0; i<selectedEntries.length; i++){
+					querySet.push(selectedEntries[i].arrayStandard);
+				}
+				querySet = jQuery.unique(querySet);
+				
+				if(querySet.length == 0){
+					alert('Please select at least one gene in the histogram');
+					return;
+				}
+				
+				//Get background genes (all genes on the plate)
+				var allEntries = dataTable.dimension().top(Infinity);
+				bgSet = []
+				for(i = 0; i<allEntries.length; i++){
+					bgSet.push(allEntries[i].arrayStandard);
+				}
+				bgSet = bgSet.join(' ');
+
+				params = {'organism':'scerevisiae', 
+						  'query': querySet.join(' '),
+						  'custbg': '',
+						  'custbg_cb':'on',
+						  'advanced_options_on': '0'
+				}
+				uri = 'http://biit.cs.ut.ee/gprofiler/index.cgi?' + jQuery.param(params); 
+				window.open(uri);
+				console.log(uri);
+			});
 			var maxHeatmapWidth = 460;
 			
 			$('.domainInput').change(function(){
