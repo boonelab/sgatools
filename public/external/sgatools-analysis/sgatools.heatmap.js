@@ -133,10 +133,10 @@ function drawHeatmap(paramsInput){
 	   		.attr("width", function(d) { return w; })
 	   		.attr("height", function(d) { return h; })
 	   		.attr("style", "shape-rendering: crispEdges;")
-	   		//.attr("stroke", "black")
-	   		//.attr("stroke-width", 1)
+	   		.attr("stroke", "black")
+	   		.attr("stroke-width", 1)
 	   		.style("fill", function(d) { return isNaN(+d[params.columnToUse]) ? params.colorNA : colorScale(d[params.columnToUse]); });
-	   	/*
+	   	
 	   var rowLabel = svg.selectAll(".rowLabel")
 	   		.data(rowNest)
 	   		.enter().append('svg:text')
@@ -157,7 +157,7 @@ function drawHeatmap(paramsInput){
 	   		.attr("transform", function(d, i) {
 			return "rotate(90 " + ((i + 0.4) * w) + ","+(gridSize * nRows + 7)+")"; })
 			.text(function(d) {return d.key;});
-		*/
+		
 		$('#plateImage')
 				.css({ height: $('.heatmapSVG').height() - 20,
 						width: $('.heatmapSVG').width() - 20});
