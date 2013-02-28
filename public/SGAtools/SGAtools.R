@@ -137,7 +137,7 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
     
     if(file.name.metadata$is.valid){
       # If our file has a valid array plate id, match it to its array definition file path
-      ind = which(file.name.metadata$arrayplateid %in% ap.ids)[1]
+      ind = which(file.name.metadata$arrayplateid == ap.ids)[1]
     }
     
     # Read in corresponding array definition file - handle 5 lines?
