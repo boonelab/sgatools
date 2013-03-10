@@ -87,10 +87,42 @@ if(args$score){
 # Set working directory to output directory
 setwd(args$outputdir)
 
+comment.ns = paste('# Normalized and scored by SGAtools',SGATOOLS_VERSION,'on', Sys.time())
+if(!args$score) comment.ns = gsub(pattern='and scored ', '', comment.ns)
+
+# For aggregating files
+aggr.function <- function(x){
+  t = class(x)[1]
+  if(t == "numeric" | t == "integer")
+    return(mean(x, na.rm=T))
+  if(t == "character")
+    return(paste(unique(x[!is.na(x)]), collapse=","))
+  else
+    return(NA)
+}
+
 # Write generated files
 for(i in 1:length(sgadata.ns)){
   savename = args$savename[i]
+  savename.collapsed = paste0('avg_',savename)
+  
+  comments = comment(sgadata.r[[i]])
+  comments = c(comment.ns, comments)
+  # Write comments
+  writeLines(comments, savename)
+  
+  # Write plate data
   plate.data = sgadata.ns[[i]]
-  write.table(plate.data, savename, quote=F, row.names=F, col.names=T, sep="\t")
+  
+  write.table(plate.data, savename, quote=F, row.names=F, col.names=T, sep="\t", append=T)
+  
+  # Collapse 
+  collapsed = aggregate(plate.data, by=list(array=plate.data$array), aggr.function)[,-1]
+  collapsed$row = NA
+  collapsed$col = NA
+  # Must fix issue with reading non collapsed files only on front end
+  # write.table(collapsed, savename.collapsed, quote=F, row.names=F, col.names=T, sep="\t")
 }
+
+
 

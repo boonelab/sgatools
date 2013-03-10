@@ -27,9 +27,13 @@ public class Zipper
         byte[] tmpBuf = new byte[1024];
 
         for (int i = 0; i < files.length; i++) {
+        	
             if (files[i].isDirectory()) {
                 addDir(files[i], out);
                 continue;
+            }else if(files[i].getName().startsWith(".")){
+            	//Hidden file in osx, ignore
+            	continue;
             }
             FileInputStream in = new FileInputStream(files[i].getAbsolutePath());
             System.out.println(" Adding: " + files[i].getAbsolutePath());

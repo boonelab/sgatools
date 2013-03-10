@@ -175,9 +175,11 @@ public class NScontroller extends Controller {
         
         StringBuilder inputfiles = new StringBuilder();
         StringBuilder savenames = new StringBuilder();
+        List<String> savenamesList = new ArrayList();
         for(Entry<String,File> e: plateFilesMap.entrySet()){
         	inputfiles.append(e.getValue().getPath() + ":");
         	savenames.append(e.getKey() + ":");
+        	savenamesList.add(e.getKey());
         }
         String ninputfiles =  inputfiles.substring(0, inputfiles.lastIndexOf(":")) ;
         String nsavenames = savenames.substring(0, savenames.lastIndexOf(":"));
@@ -253,6 +255,7 @@ public class NScontroller extends Controller {
         
         Map<String, String> outputFilesMap = new HashMap();
         for(File of: outputFilesDir.listFiles()){
+        	
         	outputFilesMap.put(of.getName(), of.getPath());
         }
         

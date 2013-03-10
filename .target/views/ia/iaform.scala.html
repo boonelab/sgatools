@@ -8,10 +8,38 @@
    @helper.form(action = routes.IAcontroller.submit(), 'enctype -> "multipart/form-data", 'id -> "imageprocessingForm", 'class->"form-horizontal") {
 		<h2>Image analysis</h2>
 		<hr>
-		<p>File name format: <code>username_orf_arrayplateid_...</code> where ORF begins with <code>wt</code> for control plates
-		<br>
-		Example: <code>bob_wt-YDL108W_13_boonelab.jpg</code>
-		</p>
+		
+		<!--TIPS START-->
+		<script>
+			$(document).ready(function() {
+				if( $.cookie('tip-filename') == null){
+					$('#tip-filename').show();
+				}if( $.cookie('tip-labelhelp') == null){
+					$('#tip-labelhelp').show();
+				}
+			})
+		</script>
+		
+		
+		<div class="alert alert-info hide" id="tip-labelhelp" style="margin-bottom:5px">
+		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 30 });">&times;</button>
+		  <div class="tip-content">
+			  <strong>Quick help tip! </strong>clicking labels with <abbr title="">dotted underlines</abbr> will provide you with additional help
+		  </div>
+		</div>
+		
+		<div class="alert alert-info hide" id="tip-filename">
+		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-filename', true, { expires : 30 });">&times;</button>
+		  <div class="tip-content" style="cursor: hand; cursor: pointer;" onclick="labelHelpClicked('file-naming-help')" data-target="#helpModal" data-toggle="modal">
+			  <strong>File naming tip! </strong>In order to properly score your data and utilize array layout files, 
+			  it is recommended that input files and images are named using a specific format. Click this alert box to see the details
+		  </div>
+		</div>
+		
+		
+		
+		
+		<!--TIPS END-->
 		
 		<h3 style="margin-bottom:10px">Data input</h3>
 		
@@ -23,7 +51,8 @@
 	        '_label -> "Plate images(s)",
 	        'multiple -> "",
 	        'accept -> "image/gif, image/jpeg, image/png",
-	    	'uploadwidget -> "Select image(s)"
+	    	'uploadwidget -> "Select image(s)",
+	    	'helpModal -> "ia-plate-files"
 	    )
 	    
 	    
@@ -33,7 +62,8 @@
             options = options(ComboboxOpts.plateFormat),
             '_label -> "Plate format",
             '_showConstraints -> false,
-            'style -> "width:350px"
+            'style -> "width:350px",
+            'helpModal -> "ia-plate-format"
         )
         
 	    <!--Crop option - best left at index 0-->
@@ -42,7 +72,8 @@
             options = options(ComboboxOpts.cropOption),
             '_label -> "Crop option",
             '_showConstraints -> false,
-            'style -> "width:350px"
+            'style -> "width:350px",
+            'helpModal -> "ia-crop-option"
         )
         
 		</fieldset>

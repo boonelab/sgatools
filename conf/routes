@@ -24,8 +24,9 @@ GET		/normalizationscoring/:jobid				controllers.NScontroller.showJob(jobid: Str
 POST	/preloaded-normalizationscoring				controllers.NScontroller.initPreloadedNSform()
 GET		/preloaded-normalizationscoring/:jobid		controllers.NScontroller.redirectPreloadedNSform(jobid: String)
 
-#Normalization & Scoring
+#Data analysis
 GET		/preloaded-dataanalysis/:jobid		controllers.DAcontroller.initPreloadedDA(jobid: String)
+POST	/download/	 							controllers.DAcontroller.submit()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

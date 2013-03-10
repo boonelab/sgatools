@@ -1,4 +1,4 @@
-@(job: NSjob)
+@(job: NSjob, daForm: Form[DAjob])
 
 @import play.libs.Scala._
 @import play.Logger;
@@ -16,24 +16,11 @@
 	
 	<script type="text/javascript" src="@routes.Assets.at("javascripts/yeast.genemap.json")"></script>
 	
-	<h2>Data visualization</h2>
-	<hr>
 	
-	<div class="well">
-		<select id="dataCombobox" class="input-xlarge">
-		@for((key,value) <- job.outputFilesMap){
-			<option image-path="/assets/jobs/@job.jobid/ia/input_images/@key.substring(0,key.length-4)" 
-					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
-					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
-		}
-		</select>
-		<select id="viewType" class="input-medium">
-			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0>Raw colony sizes</option>
-			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
-			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1 selected>Scored data</option> }
-		</select>
-		
-		<style>
+	<script type="text/javascript" src="@routes.Assets.at("external/downloadify/js/swfobject.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("external/downloadify/js/downloadify.min.js")"></script>
+	
+	<style>
 			.input-prepend .add-on{
 				margin-right:-4px;
 			}
@@ -60,8 +47,25 @@
 				background-color: #D9EDF7;
 			}
 			
-		</style>
-			
+	</style>
+	
+	<h2>Data visualization</h2>
+	<hr>
+	
+	<div class="well">
+		<select id="dataCombobox" class="input-xlarge">
+		@for((key,value) <- job.outputFilesMap){
+			<option image-path="/assets/jobs/@job.jobid/ia/input_images/@key.substring(0,key.length-4)" 
+					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
+					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
+		}
+		</select>
+		<select id="viewType" class="input-medium">
+			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0>Raw colony sizes</option>
+			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
+			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1 selected>Scored data</option> }
+		</select>
+		
 		<div class="container">
 		<div class="row" style="margin-left:-18px">
 			<div class="input-prepend span3c">
@@ -99,6 +103,46 @@
 				</div>
 			</div>
 			
+			
+			@helper.form( action = routes.DAcontroller.submit(), 'target->"_blank", 'id -> "export-graphics-form", 'enctype -> "multipart/form-data") {
+			
+			<div class="span6">
+				<label for="downHM" class="">Export graphics</label>
+				<div class="row">
+					<div class="span2">
+						<select class="span2" name="saveType" id="saveType">
+							<option value="SVG">SVG</option>
+							<option value="PDF">PDF</option>
+							<option value="PNG">PNG</option>
+						</select>
+					</div>
+					<div class="span2" style="margin-left:10px">
+						<input id="exportHmap" class="btn" type="submit" value="Download heatmap">
+						<input name="inputHmap" id="inputHmap" class="btn" type="hidden">
+					</div>
+					<div class="span2" style="margin-left:6px">
+						<input id="exportHist" class="btn hide" type="button" value="Download histogram">
+						<input name="inputHist" id="inputHist" class="btn" type="hidden">
+					</div>
+				</div>
+			</div>
+			
+			}
+			
+			<script>
+				function popitup(url) {
+					newwindow=window.open(url,'name','height=300,width=500');
+					if (window.focus) {newwindow.focus()}
+					return false;
+				}
+				
+				$('#exportHmap').click(function(){
+					$('.heatmapSVG').attr('xmlns', 'http://www.w3.org/2000/svg');
+					svg_text = $('<div>').append($('.heatmapSVG').clone()).html();
+					$('#inputHmap').val(svg_text);
+					$('#export-graphics-form').submit();
+				});
+			</script>			
 			
 			<script>
 				$('#griddedImage').change(function(){
@@ -228,6 +272,7 @@
 				window.open(uri);
 				console.log(uri);
 			});
+			
 			var maxHeatmapWidth = 460;
 			
 			$('.domainInput').change(function(){

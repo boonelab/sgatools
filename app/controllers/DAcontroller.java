@@ -46,14 +46,36 @@ import java.io.*;
 import java.nio.charset.Charset;
 
 public class DAcontroller extends Controller {
-	//final static Form<NSjob> nsForm = form(NSjob.class);
+	final static Form<DAjob> daform = form(DAjob.class);
 	
 	public static Result initPreloadedDA(String jobid){
 		NSjob nsjob = NScontroller.getJobFromJsonFile(jobid);
-		return ok(dasummary.render(nsjob));
+		Form<DAjob> dajob = daform.fill(new DAjob());
+		
+		return ok(dasummary.render(nsjob, dajob));
 	}
 	
-	
-	
+	public static Result submit(){	
+		String path = System.getProperty("java.io.tmpdir")+"download.svg";
+		
+		Form<DAjob> filledForm = daform.bindFromRequest();
+		
+		DAjob job = filledForm.get();
+		if(!job.saveType.equals("SVG")){
+			return ok(job.saveType + " generation is not yet implemented");
+		}
+		
+		Logger.debug("GRAPHICS_PATH="+path);
+		
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter(path));
+			out.write(job.inputHmap);
+			out.close();
+		}catch (IOException e){
+			return TODO;		
+		}
+		
+		return ok(new java.io.File(path));
+	}
 }
 

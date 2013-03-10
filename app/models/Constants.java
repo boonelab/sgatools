@@ -3,8 +3,8 @@ package models;
 import java.io.File;
 
 public class Constants {
-	public final static String VERSION = "1.0.0";
-	public final static String IA_NAME = "HT colony grid analyzer";
+	public final static String SGATOOLS_VERSION = "1.0.0";
+	public final static String IA_VERSION = "1.1.7";
 	
 	/*
 	 

@@ -22,9 +22,9 @@ library(logging)    # For log file
 library(stringr)    # For regex matching functions
 library(bootstrap)  # For jackknife function
 
+SGATOOLS_VERSION = '1.0.0'
 ####################################################################################
 # Reading section
-
 readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, replicates=4){
   print(file.names)
   # Length of vectors
@@ -121,7 +121,6 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
   print(paste0('ad.paths=',ad.paths))
   # If we have array definition files - i.e they are not all NA
   if(! all(is.na(ad.paths))){
-    
     loginfo('* Mapping array definition: number of array definition files = %d', length(ad.paths))
     
     # Get file names of paths
@@ -139,16 +138,20 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
       # If our file has a valid array plate id, match it to its array definition file path
       ind = which(file.name.metadata$arrayplateid == ap.ids)[1]
     }
+    print(paste0('ind=', ind))
     
-    # Read in corresponding array definition file - handle 5 lines?
-    ad.data = read.table(ad.paths[ind], sep='\t', skip=5, header=F, stringsAsFactors=F)
-    names(ad.data)[1:3] = c('c', 'r', 'Gene')
-    m=data.frame(r=rdbl, c=cdbl)
-    i = apply(m, 1, function(x){
-      intersect(which(x[1] == ad.data$r), which(x[2] == ad.data$c))[1]
-    })
-    good.ind = !is.na(i)
-    array.vals[good.ind] = ad.data$Gene[i][good.ind]
+    if(!is.na(ind)){
+      # Read in corresponding array definition file - handle 5 lines?
+      ad.data = read.table(ad.paths[ind], sep='\t', skip=5, header=F, stringsAsFactors=F)
+      names(ad.data)[1:3] = c('c', 'r', 'Gene')
+      m=data.frame(r=rdbl, c=cdbl)
+      i = apply(m, 1, function(x){
+        intersect(which(x[1] == ad.data$r), which(x[2] == ad.data$c))[1]
+      })
+      good.ind = !is.na(i)
+      array.vals[good.ind] = ad.data$Gene[i][good.ind]
+    }
+    
   }else{
     loginfo('* Not mapping array definition: no array definition files')
   }

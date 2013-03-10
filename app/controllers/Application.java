@@ -20,5 +20,7 @@ public class Application extends Controller {
   public static Result renderContactPage() {
 	return ok(contact.render());
   }
+  
+  
 
 }

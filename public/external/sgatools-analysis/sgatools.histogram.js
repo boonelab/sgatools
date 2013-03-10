@@ -17,7 +17,11 @@ function drawBarChart(settings) {
 	
 	console.log(options);
 	
-	d3.tsv(options.dataName, function(data) {
+	// Replaced d3.tsv(options.dataName, function(data)
+	d3.text(options.dataName, 'text/tsv',function(tsv){	
+		tsv = tsv.replace(/^[#@][^\r\n]+[\r\n]+/mg, '');
+		data = d3.tsv.parse(tsv);
+		
 		//Filter data for numerical scores only - ignore NAs
 		data = data.filter(function(d,i){
 			s = +( (+d[options.columnToUse]).toFixed(3) );

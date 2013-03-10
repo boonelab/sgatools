@@ -8,7 +8,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+
+import models.Constants;
+
 import ij.measure.ResultsTablePlus;
 import ij.ImagePlus;
 
@@ -110,7 +115,10 @@ public class MeasuredResults {
 			for (k=0;k<numDup;k++) {
 				line=line+"  MedInt-"+(k+1);
 			}
-			writeln(bw,"#"+line);
+			SimpleDateFormat fmt = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+			
+			writeln(bw,"# Image analyzed by HT colony grid analyzer "+Constants.IA_VERSION+" on " + fmt.format(new Date()));
+			//writeln(bw,"# "+line);
 			for (i=0;i<numRow;i++) {
 				for (j=0;j<numCol;j++) {
 					line=(i+1)+" "+(j+1);

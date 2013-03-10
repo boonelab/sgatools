@@ -55,7 +55,11 @@ function drawHeatmap(paramsInput){
     
     //console.log(params);
 	
-    d3.tsv(params.dataPath, function(sgadata){
+	//Replaced d3.tsv(params.dataPath, sgatools)
+    d3.text(params.dataPath, 'text/tsv',function(tsv){
+    	tsv = tsv.replace(/^[#@][^\r\n]+[\r\n]+/mg, '');
+    	
+    	sgadata = d3.tsv.parse(tsv);
 		sgadata = sgadata.filter(function(d,i){
 			d.query = d.query.split('_')[0];
 			d.array = d.array.split('_')[0];
@@ -150,6 +154,7 @@ function drawHeatmap(paramsInput){
 	   var columnLabel = svg.selectAll(".colLabel")
 	   		.data(colNest)
 	   		.enter().append('svg:text')
+	   		.attr("font-size", "5px")
 	   		.attr('x', function(d,i) {return ((i+0.4) * w);})
 	   		.attr('y', gridSize * nRows + 7)
 	   		.attr('class','label')
