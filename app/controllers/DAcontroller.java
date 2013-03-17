@@ -26,8 +26,10 @@ public class DAcontroller extends Controller {
 		return ok(dasummary.render(nsjob, dajob));
 	}
 	
-	public static Result submit(){	
-		String path = System.getProperty("java.io.tmpdir")+"download.svg";
+	public static Result submit() throws IOException{	
+		//String path = System.getProperty("java.io.tmpdir")+"download.svg";
+		
+		File svgFile = File.createTempFile("download", ".svg");
 		Form<DAjob> filledForm = daform.bindFromRequest();
 		
 		DAjob job = filledForm.get();
@@ -35,17 +37,19 @@ public class DAcontroller extends Controller {
 //			return ok(job.saveType + " generation is not yet implemented");
 //		}
 		
-		Logger.debug("GRAPHICS_PATH="+path);
 		
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter(path));
+			Logger.info("writing svg to file: "+svgFile.getPath());
+			BufferedWriter out = new BufferedWriter(new FileWriter(svgFile.getPath()));
 			out.write(job.inputHmap);
 			out.close();
 		}catch (IOException e){
+			e.printStackTrace();
+			Logger.error(e.getMessage());
 			return TODO;		
 		}
 		
-		File svgFile = new java.io.File(path);
+		//File svgFile = new java.io.File(tempFile.);
 		
 		if(!job.saveType.equals("SVG")){
 			//Convert the SVG into PDF
@@ -70,7 +74,7 @@ public class DAcontroller extends Controller {
 					//.as("image/x-png");
 		}
 		
-		return ok(new java.io.File(path));
+		return ok(svgFile);
 	}
 	
 	public static void test(){
