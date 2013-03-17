@@ -1,27 +1,86 @@
-2013-03-16 20:33:08,359 - [INFO] - from play in main 
-Listening for HTTP on port 8080...
+2013-03-17 15:25:47,744 - [INFO] - from play in main 
+Listening for HTTP on port 8000...
 
-2013-03-16 20:33:32,703 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
+2013-03-17 15:26:50,739 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
 Application has started
 
-2013-03-16 20:33:32,710 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
+2013-03-17 15:26:50,742 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
 Application started (Dev)
 
-2013-03-16 20:33:47,714 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-11 
-GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
+2013-03-17 15:27:00,285 - [INFO] - from application in play-akka.actor.actions-dispatcher-1 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/da16db15-9e51-492b-b0ca-48717f0269aa/
 
-2013-03-16 20:34:18,273 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
-Application shutdown...
+2013-03-17 15:27:14,495 - [INFO] - from application in play-akka.actor.actions-dispatcher-1 
+sJOB ID:da16db15-9e51-492b-b0ca-48717f0269aa
 
-2013-03-16 20:34:18,291 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
-Application has started
+2013-03-17 15:27:14,495 - [INFO] - from application in play-akka.actor.actions-dispatcher-1 
+selected for NS JSON:["plate.jpg.dat"]
 
-2013-03-16 20:34:18,292 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
-Application started (Dev)
+2013-03-17 15:27:20,346 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+{replicates=4, linkageCutoff=200, scoringFunction=1, jobid=da16db15-9e51-492b-b0ca-48717f0269aa, arrayDefPredefined=― Predefined arrays ―}
 
-2013-03-16 20:34:26,154 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-10 
-GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
+2013-03-17 15:27:20,347 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@5509ced8
 
-2013-03-16 20:34:45,073 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-10 
+2013-03-17 15:27:20,347 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+JOBid = da16db15-9e51-492b-b0ca-48717f0269aa
+
+2013-03-17 15:27:20,347 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+Files preloaded from IA, populating plate file map:
+
+2013-03-17 15:27:20,367 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+selectedForNS = ["plate.jpg.dat"]
+
+2013-03-17 15:27:20,396 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+	plate.jpg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/da16db15-9e51-492b-b0ca-48717f0269aa/ia/output_files/plate.jpg.dat
+
+2013-03-17 15:27:20,398 - [INFO] - from application in play-akka.actor.actions-dispatcher-9 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/da16db15-9e51-492b-b0ca-48717f0269aa/ia/output_files/plate.jpg.dat, --savenames, plate.jpg.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/da16db15-9e51-492b-b0ca-48717f0269aa/nsoutput_files, --replicates, 4, --linkagecutoff, 200]
+
+2013-03-17 15:27:24,227 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools"
+$inputfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/da16db15-9e51-492b-b0ca-48717f0269aa/ia/output_files/plate.jpg.dat"
+
+$adfiles
+[1] NA
+
+$outputdir
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/da16db15-9e51-492b-b0ca-48717f0269aa/nsoutput_files"
+
+$savenames
+[1] "plate.jpg.dat"
+
+$linkagecutoff
+[1] 200
+
+$replicates
+[1] 4
+
+$score
+[1] FALSE
+
+$sfunction
+[1] 1
+
+$nignore
+[1] ""
+
+$help
+[1] FALSE
+
+
+
+2013-03-17 15:27:24,228 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
+Loading required package: methods
+Warning message:
+In write.table(plate.data, savename, quote = F, row.names = F, col.names = T,  :
+  appending column names to file
+Warning message:
+In write.table(do.call(rbind, combined), "combined_data.dat", quote = F,  :
+  appending column names to file
+
+
+2013-03-17 15:27:32,399 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
 GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
 
