@@ -255,8 +255,8 @@ public class NScontroller extends Controller {
         
         Map<String, String> outputFilesMap = new HashMap();
         for(File of: outputFilesDir.listFiles()){
-        	
-        	outputFilesMap.put(of.getName(), of.getPath());
+        	if(!of.getName().startsWith("combined"))
+        		outputFilesMap.put(of.getName(), of.getPath());
         }
         
         //Save some objects

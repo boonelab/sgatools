@@ -19,10 +19,10 @@ $(document).ready(function() {
 	//Hide array definition stuff !!!!!!! If !checkedTODO..
 	$('#cg-arrayDefCustomFile').hide();
 	
-	
 	//Trigger change
 	$('#arrayDefPredefined').change();
 	
+
 });
 
 //Show linkage when its checkbox is clicked
@@ -33,7 +33,6 @@ $('#doLinkage').click(function(){
 //Show scoring function when its checkbox is clicked
 $('#doScoring').click(function(){
 	$('#cg-scoringFunction').slideToggle('fast');
-	
 	//Modify submit button text
 	$('#doScoring').is(':checked') ? $("#nssubmit").html('Normalize and score') : $("#nssubmit").html('Normalize');
 });

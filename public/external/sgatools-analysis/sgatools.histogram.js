@@ -54,9 +54,9 @@ function drawBarChart(settings) {
 		
 		//If we have no data (most likely wt screens)
 		if(data.length == 0){
-			$(options.divChart).html('<div id="no-data-error" class="span12 muted" style="padding:50px 0 120px 0"> \
-									<h1><i class="icon-exclamation-sign" style="/*color:#B94A48*/"></i> No data</h1> \
-									<h3>Please check to make sure data points are available for your selected options and try again</h3></div>');
+			$(options.divChart).html('<center><div id="no-data-error" class="span12 muted" style="padding:50px 0 120px 0"> \
+									<h1><i class="icon-exclamation-sign" style="/*color:#B94A48*/"></i> No scores</h1> \
+									<h3>No scores were found for this screen</h3></div></center>');
 			$(options.divDataTable).hide();
 			$(options.divDataCount).hide();
 			return;

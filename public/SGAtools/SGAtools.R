@@ -26,7 +26,7 @@ SGATOOLS_VERSION = '1.0.0'
 ####################################################################################
 # Reading section
 readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, replicates=4){
-  print(file.names)
+  
   # Length of vectors
   n1 = length(file.paths)
   n2 = length(file.names)
@@ -62,8 +62,6 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     num.rows = max(sga.data[[1]])
     num.cols = max(sga.data[[2]])
     
-    print(num.rows)
-    print(class(num.rows))
     loginfo('* Column classes = %s', sapply(sga.data, class))
     loginfo('* Number rows = %d', num.rows)
     loginfo('* Number cols = %d', num.cols)
@@ -118,7 +116,6 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
 }
 
 mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.paths){
-  print(paste0('ad.paths=',ad.paths))
   # If we have array definition files - i.e they are not all NA
   if(! all(is.na(ad.paths))){
     loginfo('* Mapping array definition: number of array definition files = %d', length(ad.paths))
@@ -138,7 +135,6 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
       # If our file has a valid array plate id, match it to its array definition file path
       ind = which(file.name.metadata$arrayplateid == ap.ids)[1]
     }
-    print(paste0('ind=', ind))
     
     if(!is.na(ind)){
       # Read in corresponding array definition file - handle 5 lines?
@@ -263,10 +259,19 @@ normalizeSGA <- function(plate.data,
   
   # Cap normalized colony size at 1000
   field = 'ncolonysize'
-  plate.data[[field]][ plate.data[[field]] > 1000 ] = 1000
+  cp = plate.data[[field]] > 1000
+  names(cp) = NA
+  names(cp)[cp == T] = rep('CP', sum(cp)) 
+  
+  plate.data[[field]][ cp ] = 1000
   # Set NAs for ignored rows 
   ign = which(ignore.ind)
   plate.data[[field]][ ign ] = NA 
+  
+  # Add cp after we set NA
+  ignore.ind = mergeLogicalNames(cp, ignore.ind)
+  ign = which(ignore.ind)
+  
   # Add status codes to KVPs
   status.kvp = sapply(names(ign), function(v){
     names(v) = 'status'
@@ -430,7 +435,7 @@ kvpMapAsString <- function(kvp.map){
   kv = sapply(names(kvp.map), function(key){
     paste0(key, '=', kvp.map[[key]])
   })
-  return(paste0('{', paste0(kv, collapse=','), '}'))
+  return(paste0('', paste0(kv, collapse=','), ''))
 }
 
 # Linkage filter: check if query and array are within close proximity on the same chromosome
@@ -661,18 +666,21 @@ jackknifeFilter <- function(plate.data, field.to.filter){
   
   # Get all unique arrays
   uniq.array = unique(plate.data$array)
+  uniq.spots = unique(plate.data$spots)
+  
   # Remove HIS3 from arrays
   uniq.array = uniq.array[ ! grepl('YOR202W', uniq.array, ignore.case=T) ]
+  uniq.spots = uniq.spots[ ! grepl('YOR202W', uniq.array, ignore.case=T) ]
   
   # Function used for jackknife function (sd, ignoring NA)
   theta <- function(x){sd(x, na.rm=T)}
   
-  jk.ignore = lapply(uniq.array, function(curr.array){
+  jk.ignore = lapply(uniq.spots, function(curr.spot){
     
     # Ignore HIS3 from arrays
-    if( grepl('YOR202W', curr.array, ignore.case=T) ) NULL
+    # if( grepl('YOR202W', curr.array, ignore.case=T) ) NULL
     
-    curr.ind = which(plate.data$array == curr.array)
+    curr.ind = which(plate.data$spot == curr.spot)
     # Get indices of our current array
     vals = plate.data[[field.to.filter]][curr.ind]
     # Get NA values

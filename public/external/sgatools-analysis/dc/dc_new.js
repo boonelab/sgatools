@@ -2169,6 +2169,10 @@ dc.barChart = function(parent, chartGroup) {
 
         if (isNaN(w) || w < MIN_BAR_WIDTH)
             w = MIN_BAR_WIDTH;
+            
+        if(window.scoredData){
+	        w = 7;
+        }
 
         return w;
     }

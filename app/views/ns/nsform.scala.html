@@ -50,13 +50,23 @@
 		            	$(document).ready(function(){
 		            		$('#cg-plateFiles').hide(); 
 		            		$('#loadedFilesHeader').text('Preloaded files');
-		            		var preloaded = JSON.parse('@Html(selectedFromIA)');
+		            		window.preloaded = JSON.parse('@Html(selectedFromIA)');
 		            		$('#loadedFilesTable').html(preloaded.fileTableSGA());
 		            		$('#loadedFilesBox').show();
 		            		$('#plateFiles').attr('valid', 'true');
 		            		$('#nssubmit').removeAttr('disabled');
 		            	});
-		            	
+		            	$(window).load(function() {
+ 							// executes when complete page is fully loaded, including all frames, objects and images
+ 							for(var i=0; i<preloaded.length; i++){
+								screenType = preloaded[i].parseSGAFileName()[1];
+								if(/Control/i.test(screenType)){
+									$('#doScoring').prop('checked', true);
+									$('#cg-scoringFunction').slideDown('fast');
+									$("#nssubmit").html('Normalize and score');
+								}
+							}
+						});
 	            	</script>
             	}
             </div>

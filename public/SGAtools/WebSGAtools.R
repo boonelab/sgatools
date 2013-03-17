@@ -1,5 +1,6 @@
 library(optparse)
 library(logging)
+library(plyr)
 
 # /home/sgatools/sgatools/public/SGAtools
 setwd('/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/')
@@ -90,17 +91,6 @@ setwd(args$outputdir)
 comment.ns = paste('# Normalized and scored by SGAtools',SGATOOLS_VERSION,'on', Sys.time())
 if(!args$score) comment.ns = gsub(pattern='and scored ', '', comment.ns)
 
-# For aggregating files
-aggr.function <- function(x){
-  t = class(x)[1]
-  if(t == "numeric" | t == "integer")
-    return(mean(x, na.rm=T))
-  if(t == "character")
-    return(paste(unique(x[!is.na(x)]), collapse=","))
-  else
-    return(NA)
-}
-
 # Write generated files
 for(i in 1:length(sgadata.ns)){
   savename = args$savename[i]
@@ -117,12 +107,50 @@ for(i in 1:length(sgadata.ns)){
   write.table(plate.data, savename, quote=F, row.names=F, col.names=T, sep="\t", append=T)
   
   # Collapse 
-  collapsed = aggregate(plate.data, by=list(array=plate.data$array), aggr.function)[,-1]
-  collapsed$row = NA
-  collapsed$col = NA
+  # collapsed = aggregate(plate.data, by=list(array=plate.data$array), aggr.function)[,-1]
+  # collapsed$row = NA
+  # collapsed$col = NA
   # Must fix issue with reading non collapsed files only on front end
   # write.table(collapsed, savename.collapsed, quote=F, row.names=F, col.names=T, sep="\t")
 }
 
+combined = lapply(sgadata.ns, function(plate.data){
+  df = plate.data
+  df$row = ceiling(df$row/sqrt(args$replicates))
+  df$col = ceiling(df$col/sqrt(args$replicates))
+  
+  collapsed = ddply(df, c("row", "col"), function(df) { 
+    c( mean(df$colonysize, na.rm=T) , 
+       paste0(unique(df$plateid), collapse=';') , 
+       paste0(unique(df$query), collapse=';') , 
+       paste0(unique(df$array), collapse=';') , 
+       mean(df$ncolonysize, na.rm=T), 
+       mean(df$score, na.rm=T),
+       paste0(unique(df$kvp[!is.na(df$kvp)], na.rm=T), collapse=';'),
+       sd(df$score, na.rm=T)
+    ) 
+  })
+  names(collapsed) = c('row', 'col', 'colonysize', 'plateid', 
+                       'query', 'array', 'ncolonysize', 'score', 'kvp', 'sd')
+  
+  collapsed$kvp[collapsed$kvp == ""] = NA
+  collapsed$ncolonysize[collapsed$ncolonysize == "NaN"] = NA
+  collapsed$score[collapsed$score == "NaN"] = NA
+  
+  ind = !is.na(collapsed$sd)
+  t = round(as.numeric(collapsed$sd), digits=3)
+  sd.kvp = paste0('sd=', t)
+  ind1 = ind & !is.na(collapsed$kvp)
+  ind2 = ind & is.na(collapsed$kvp)
+  collapsed$kvp[ind1] = paste0(collapsed$kvp[ind1], ';', sd.kvp[ind1])
+  collapsed$kvp[ind2] = sd.kvp[ind2]
+  
+  collapsed = collapsed[,-ncol(collapsed)]
+  
+  collapsed
+})
+
+# Combined data
+write.table(do.call(rbind, combined), "combined_data.dat", quote=F, row.names=F, col.names=T, sep="\t", append=T)
 
 

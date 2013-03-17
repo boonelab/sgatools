@@ -1,9 +1,27 @@
-2013-03-10 15:00:33,176 - [INFO] - from play in main 
+2013-03-16 20:33:08,359 - [INFO] - from play in main 
 Listening for HTTP on port 8080...
 
-2013-03-10 15:03:23,016 - [INFO] - from application in play-akka.actor.default-dispatcher-1 
+2013-03-16 20:33:32,703 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
 Application has started
 
-2013-03-10 15:03:23,020 - [INFO] - from play in play-akka.actor.default-dispatcher-1 
+2013-03-16 20:33:32,710 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
 Application started (Dev)
+
+2013-03-16 20:33:47,714 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-11 
+GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
+
+2013-03-16 20:34:18,273 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+Application shutdown...
+
+2013-03-16 20:34:18,291 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+Application has started
+
+2013-03-16 20:34:18,292 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
+Application started (Dev)
+
+2013-03-16 20:34:26,154 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-10 
+GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
+
+2013-03-16 20:34:45,073 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-10 
+GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
 

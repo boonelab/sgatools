@@ -12,13 +12,14 @@ String.prototype.parseSGAFileName = function() {
     	if(/^(wt|ctrl)/i.test(sp[1])){
     		screenType = "Control";
     	}else{
-    		screenType = "Double mutant"
+    		screenType = "Case"
     	}
     }
     toReturn = [this.toString(),screenType, queryName, arrayPlateId];
     
     return toReturn;
 };
+
 
 Array.prototype.fileTableSGA = function(){
 	var r = [];

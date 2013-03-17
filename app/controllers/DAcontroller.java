@@ -2,48 +2,19 @@ package controllers;
 
 
 import play.Logger;
-import play.libs.Akka;
-import play.libs.F.*;
-import play.libs.Json;
-import play.mvc.Http.MultipartFormData;
-import play.mvc.Http.MultipartFormData.FilePart;
-
-import ij.ImagePlus;
-import ij.io.FileSaver;
-import ij.plugin.ContrastEnhancer;
-import ij.plugin.JpegWriter;
-import ij.process.ImageProcessor;
 
 import java.io.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.concurrent.Callable;
 
-import org.apache.commons.io.FileUtils;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.node.ObjectNode;
+import org.apache.batik.apps.rasterizer.DestinationType;
+import org.apache.batik.apps.rasterizer.SVGConverter;
 
-import colonyMeasure.ColonyGrid;
-import colonyMeasure.ImageMeasurer;
-import colonyMeasure.ImageMeasurerOptions;
-
-import com.google.common.io.Files;
 
 import models.*;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.mvc.Http.MultipartFormData.FilePart;
-import views.html.*;
-import views.html.ia.iasummary;
-import views.html.ns.*;
 import views.html.da.*;
 
-
-import java.io.*;
-import java.nio.charset.Charset;
 
 public class DAcontroller extends Controller {
 	final static Form<DAjob> daform = form(DAjob.class);
@@ -57,13 +28,12 @@ public class DAcontroller extends Controller {
 	
 	public static Result submit(){	
 		String path = System.getProperty("java.io.tmpdir")+"download.svg";
-		
 		Form<DAjob> filledForm = daform.bindFromRequest();
 		
 		DAjob job = filledForm.get();
-		if(!job.saveType.equals("SVG")){
-			return ok(job.saveType + " generation is not yet implemented");
-		}
+//		if(!job.saveType.equals("SVG")){
+//			return ok(job.saveType + " generation is not yet implemented");
+//		}
 		
 		Logger.debug("GRAPHICS_PATH="+path);
 		
@@ -75,7 +45,39 @@ public class DAcontroller extends Controller {
 			return TODO;		
 		}
 		
+		File svgFile = new java.io.File(path);
+		
+		if(!job.saveType.equals("SVG")){
+			//Convert the SVG into PDF
+			File outputFile = null;
+			try {
+				outputFile = File.createTempFile("result-", "."+job.saveType.toLowerCase());
+				SVGConverter converter = new SVGConverter();
+				if(job.saveType.equals("PDF"))
+					converter.setDestinationType(DestinationType.PDF);
+				if(job.saveType.equals("PNG"))
+					converter.setDestinationType(DestinationType.PNG);
+				converter.setWidth(1000);
+				converter.setSources(new String[] { svgFile.toString() });
+				converter.setDst(outputFile);
+				converter.execute();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				Logger.info("FAILED");
+			}
+			return ok(outputFile);
+					//.as("image/x-png");
+		}
+		
 		return ok(new java.io.File(path));
+	}
+	
+	public static void test(){
+		
+		
+		
+		
 	}
 }
 

@@ -8,8 +8,8 @@
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/sgatools.heatmap.js")"></script>
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/sgatools.histogram.js")"></script>
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/crossfilter.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/dc/dc.js")"></script>
-	<link type="text/css" rel="stylesheet" href="@routes.Assets.at("external/sgatools-analysis/dc/dc.css")" />
+	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/dc/dc_new.js")"></script>
+	<link type="text/css" rel="stylesheet" href="@routes.Assets.at("external/sgatools-analysis/dc/dc_old.css")" />
 	
 	<script type="text/javascript" src="@routes.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.js")"></script>
 	<link type="text/css" rel="stylesheet" href="@routes.Assets.at("external/sgatools-analysis/color_picker/jquery.miniColors.css")" />
@@ -25,7 +25,7 @@
 				margin-right:-4px;
 			}
 			.span3c{
-				width:195px;
+				width:200px;
 			}
 			
 			.hm-popup-key{
@@ -61,9 +61,9 @@
 		}
 		</select>
 		<select id="viewType" class="input-medium">
-			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0>Raw colony sizes</option>
+			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0 selected>Raw colony sizes</option>
 			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
-			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1 selected>Scored data</option> }
+			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1>Scored data</option> }
 		</select>
 		
 		<div class="container">
@@ -279,15 +279,22 @@
 				$('#dataCombobox').trigger('change');
 			});
 			
-			$('#viewType').change(function(){
+			
+			function updateViewTypeValues() {
 				var viewtype = $('#viewType option:selected');
 				
 				$('#domainLowInput').val(viewtype.attr('domainLow'));
 				$('#domainMedInput').val(viewtype.attr('domainMed'));
 				$('#domainHighInput').val(viewtype.attr('domainHigh'));
+			}
+			
+			$('#viewType').change(function(){
+				updateViewTypeValues();
 				
 				$('#dataCombobox').trigger('change');
 			});
+			
+			
 			
 			$(".color-picker").miniColors({
 			    change: function(hex, rgb) { 
@@ -296,13 +303,32 @@
 			});
 			
 			$(document).ready(function() {
-				$('#viewType').trigger('change');
+				//$('#viewType').trigger('change');
+				updateViewTypeValues();
 				$('#dataCombobox').trigger('change');
 			});
 			
 		    $('#dataCombobox').change(function() {
 		    	var viewtype = $('#viewType option:selected');
 		    	var plate = $('#dataCombobox option:selected');
+		    	
+		    	//If user selects control screen
+		    	scoreOpt = $('#viewType option[name="score"]');
+		    	if(/Control/i.test(plate.text().parseSGAFileName()[1])){
+		    		scoreOpt.attr('disabled', true);
+		    		if(viewtype.attr('name') == "score"){
+		    			alert('No scores available for control screens');
+		    			viewtype.removeAttr('selected');
+		    			newViewtype = $('#viewType option[name="colonysize"]');
+		    			newViewtype.attr('selected', 'selected');
+		    			viewtype = newViewtype;
+		    			updateViewTypeValues();
+		    		}
+		    	}else{
+		    		scoreOpt.attr('disabled', false);
+		    	}
+		    	
+		    	$('option.hide').attr('disabled', true);
 		    	
 				drawHeatmap({
 					heatmapContainer : '#heatmapContents',
