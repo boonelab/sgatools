@@ -260,6 +260,7 @@ normalizeSGA <- function(plate.data,
   # Cap normalized colony size at 1000
   field = 'ncolonysize'
   cp = plate.data[[field]] > 1000
+  cp[is.na(cp)] = FALSE
   names(cp) = NA
   names(cp)[cp == T] = rep('CP', sum(cp)) 
   
