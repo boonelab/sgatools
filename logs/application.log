@@ -1,12 +1,240 @@
-2013-03-17 16:28:38,531 - [INFO] - from play in main 
+2013-03-23 21:25:53,035 - [INFO] - from play in main 
 Listening for HTTP on port 8000...
 
-2013-03-17 16:29:41,991 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
+2013-03-23 21:27:00,404 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
 Application has started
 
-2013-03-17 16:29:41,994 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
+2013-03-23 21:27:00,406 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
 Application started (Dev)
 
-2013-03-17 16:29:49,317 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
-GRAPHICS_PATH=/var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download.svg
+2013-03-23 21:32:00,638 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+Application shutdown...
+
+2013-03-23 21:32:00,648 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+Application has started
+
+2013-03-23 21:32:00,648 - [INFO] - from play in play-akka.actor.default-dispatcher-6 
+Application started (Dev)
+
+2013-03-23 21:32:21,648 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+Application shutdown...
+
+2013-03-23 21:32:21,658 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+Application has started
+
+2013-03-23 21:32:21,658 - [INFO] - from play in play-akka.actor.default-dispatcher-6 
+Application started (Dev)
+
+2013-03-23 21:33:25,654 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
+Application shutdown...
+
+2013-03-23 21:33:25,670 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
+Application has started
+
+2013-03-23 21:33:25,671 - [INFO] - from play in play-akka.actor.default-dispatcher-11 
+Application started (Dev)
+
+2013-03-23 21:33:45,960 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
+Application shutdown...
+
+2013-03-23 21:33:45,969 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
+Application has started
+
+2013-03-23 21:33:45,970 - [INFO] - from play in play-akka.actor.default-dispatcher-11 
+Application started (Dev)
+
+2013-03-23 21:36:43,086 - [INFO] - from application in play-akka.actor.default-dispatcher-15 
+Application shutdown...
+
+2013-03-23 21:36:43,111 - [INFO] - from application in play-akka.actor.default-dispatcher-15 
+Application has started
+
+2013-03-23 21:36:43,111 - [INFO] - from play in play-akka.actor.default-dispatcher-15 
+Application started (Dev)
+
+2013-03-23 21:38:04,287 - [INFO] - from application in play-akka.actor.default-dispatcher-16 
+Application shutdown...
+
+2013-03-23 21:38:04,295 - [INFO] - from application in play-akka.actor.default-dispatcher-16 
+Application has started
+
+2013-03-23 21:38:04,295 - [INFO] - from play in play-akka.actor.default-dispatcher-16 
+Application started (Dev)
+
+2013-03-23 21:38:18,107 - [INFO] - from application in play-akka.actor.default-dispatcher-19 
+Application shutdown...
+
+2013-03-23 21:38:18,119 - [INFO] - from application in play-akka.actor.default-dispatcher-19 
+Application has started
+
+2013-03-23 21:38:18,119 - [INFO] - from play in play-akka.actor.default-dispatcher-19 
+Application started (Dev)
+
+2013-03-23 21:39:00,687 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application shutdown...
+
+2013-03-23 21:39:00,696 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application has started
+
+2013-03-23 21:39:00,697 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+Application started (Dev)
+
+2013-03-23 21:39:10,919 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application shutdown...
+
+2013-03-23 21:39:10,934 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application has started
+
+2013-03-23 21:39:10,935 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+Application started (Dev)
+
+2013-03-23 21:39:23,687 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application shutdown...
+
+2013-03-23 21:39:23,702 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application has started
+
+2013-03-23 21:39:23,702 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+Application started (Dev)
+
+2013-03-23 21:39:49,681 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application shutdown...
+
+2013-03-23 21:39:49,696 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+Application has started
+
+2013-03-23 21:39:49,697 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+Application started (Dev)
+
+2013-03-23 21:40:18,253 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
+Application shutdown...
+
+2013-03-23 21:40:18,260 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
+Application has started
+
+2013-03-23 21:40:18,260 - [INFO] - from play in play-akka.actor.default-dispatcher-26 
+Application started (Dev)
+
+2013-03-23 21:40:51,979 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
+Application shutdown...
+
+2013-03-23 21:40:52,040 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
+Application has started
+
+2013-03-23 21:40:52,040 - [INFO] - from play in play-akka.actor.default-dispatcher-26 
+Application started (Dev)
+
+2013-03-23 21:41:25,164 - [INFO] - from application in play-akka.actor.default-dispatcher-31 
+Application shutdown...
+
+2013-03-23 21:41:25,266 - [INFO] - from application in play-akka.actor.default-dispatcher-31 
+Application has started
+
+2013-03-23 21:41:25,266 - [INFO] - from play in play-akka.actor.default-dispatcher-31 
+Application started (Dev)
+
+2013-03-23 21:42:52,197 - [INFO] - from application in play-akka.actor.actions-dispatcher-21 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/424d43d9-e871-4165-b834-0972f75c6d75/
+
+2013-03-23 21:43:37,040 - [INFO] - from application in play-akka.actor.actions-dispatcher-21 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b259e8b1-9efa-4e07-b795-54faf924e267/
+
+2013-03-23 21:47:14,783 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/727da711-1703-4ba4-9eb3-5a700b83fdbb/
+
+2013-03-23 21:47:32,129 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+sJOB ID:727da711-1703-4ba4-9eb3-5a700b83fdbb
+
+2013-03-23 21:47:32,129 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+selected for NS JSON:["plate.jpg.dat"]
+
+2013-03-23 21:47:55,614 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+{replicates=4, linkageCutoff=200, scoringFunction=1, selectedArrayDefPlate=All plates, jobid=727da711-1703-4ba4-9eb3-5a700b83fdbb, arrayDefPredefined=sga-array-ver2-1536, doArrayDef=true}
+
+2013-03-23 21:47:55,614 - [ERROR] - from application in play-akka.actor.actions-dispatcher-25 
+play.core.j.JavaParsers$DefaultRequestBody$$anonfun$asMultipartFormData$1$$anon$1@50a146bd
+
+2013-03-23 21:47:55,614 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+JOBid = 727da711-1703-4ba4-9eb3-5a700b83fdbb
+
+2013-03-23 21:47:55,614 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+Files preloaded from IA, populating plate file map:
+
+2013-03-23 21:47:55,630 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+selectedForNS = ["plate.jpg.dat"]
+
+2013-03-23 21:47:55,640 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+	plate.jpg.dat -> /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/727da711-1703-4ba4-9eb3-5a700b83fdbb/ia/output_files/plate.jpg.dat
+
+2013-03-23 21:47:55,641 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+#####[Rscript, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/WebSGAtools.R, --inputfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/727da711-1703-4ba4-9eb3-5a700b83fdbb/ia/output_files/plate.jpg.dat, --savenames, plate.jpg.dat, --outputdir, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/727da711-1703-4ba4-9eb3-5a700b83fdbb/nsoutput_files, --replicates, 4, --linkagecutoff, 200, --adfiles, /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14]
+
+2013-03-23 21:48:01,358 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-25 
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools"
+$inputfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/727da711-1703-4ba4-9eb3-5a700b83fdbb/ia/output_files/plate.jpg.dat"
+
+$adfiles
+ [1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1" 
+ [2] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2" 
+ [3] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3" 
+ [4] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4" 
+ [5] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5" 
+ [6] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6" 
+ [7] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7" 
+ [8] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8" 
+ [9] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9" 
+[10] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10"
+[11] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11"
+[12] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12"
+[13] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13"
+[14] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14"
+
+$outputdir
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/727da711-1703-4ba4-9eb3-5a700b83fdbb/nsoutput_files"
+
+$savenames
+[1] "plate.jpg.dat"
+
+$linkagecutoff
+[1] 200
+
+$replicates
+[1] 4
+
+$score
+[1] FALSE
+
+$sfunction
+[1] 1
+
+$nignore
+[1] ""
+
+$help
+[1] FALSE
+
+
+
+2013-03-23 21:48:01,364 - [ERROR] - from application in play-akka.actor.actions-dispatcher-25 
+Loading required package: methods
+Warning message:
+In write.table(plate.data, savename, quote = F, row.names = F, col.names = T,  :
+  appending column names to file
+Warning message:
+In write.table(do.call(rbind, combined), "combined_data.dat", quote = F,  :
+  appending column names to file
+
+
+2013-03-23 22:07:05,000 - [INFO] - from application in play-akka.actor.actions-dispatcher-33 
+writing svg to file: /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/download2911306964485735584.svg
+
+2013-03-23 22:45:43,159 - [INFO] - from application in play-akka.actor.default-dispatcher-79 
+Application shutdown...
+
+2013-03-23 22:45:43,245 - [INFO] - from application in play-akka.actor.default-dispatcher-79 
+Application has started
+
+2013-03-23 22:45:43,245 - [INFO] - from play in play-akka.actor.default-dispatcher-79 
+Application started (Dev)
 

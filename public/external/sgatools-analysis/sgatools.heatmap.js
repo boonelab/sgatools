@@ -81,7 +81,7 @@ function drawHeatmap(paramsInput){
 			} 
 			
 			val = +d[params.columnToUse];
-			d.value = val.toFixed(2);
+			d.value = +val.toFixed(2);
 			return true;
 		});
        //console.log(sgadata);
@@ -106,11 +106,20 @@ function drawHeatmap(paramsInput){
 	   var h = gridSize,
 	   	   w = gridSize;
 	   
-	   	  
-	   
 	   var width = (gridSize * nCols)+20,
 	   	   height = (gridSize * nRows)+20;
 
+	  //Adjust color scale to be low/med/high
+	  maxVal = d3.max(sgadata, function(d) { return d.value; });
+	  minVal = d3.min(sgadata, function(d) { return d.value; });
+	  medVal = d3.median(sgadata, function(d) { return d.value; });
+	  console.log(medVal);
+	  params.domainLow = Math.floor( minVal );
+	  params.domainMed = Math.floor( medVal );
+	  params.domainHigh = Math.floor( maxVal );
+	  $('#domainLowInput').val(params.domainLow);
+	  $('#domainMedInput').val(params.domainMed);
+	  $('#domainHighInput').val(params.domainHigh);
 	  
 	   // Define color scale
 	   var colorScale = d3.scale.linear()

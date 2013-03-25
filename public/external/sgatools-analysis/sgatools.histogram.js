@@ -80,8 +80,14 @@ function drawBarChart(settings) {
 			window.scoredData = true;
 		}
 		
-		options.domainLow = Math.floor(options.domainLow);
-		options.domainHigh = Math.floor(options.domainHigh);
+		maxVal = d3.max(data, function(d) { return d.score; })	
+		minVal = d3.min(data, function(d) { return d.score; })
+		options.domainLow = Math.floor(minVal);
+		options.domainHigh = Math.floor(maxVal);
+		$('#domainLowInput').val(options.domainLow)
+		$('#domainHighInput').val(options.domainHigh)
+		//options.domainLow = Math.floor(options.domainLow);
+		//options.domainHigh = Math.floor(options.domainHigh);
 		
 		//Data count
 		dc.dataCount(options.divDataCount)

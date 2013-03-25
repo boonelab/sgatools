@@ -31,6 +31,14 @@
 		<script>
 		$(document).ready(function(){
 			$('.toggle-button').toggleButtons();
+			
+			if (window.File && window.FileReader && window.FileList && window.Blob) {
+			  // Great success! All the File APIs are supported.
+			} else {
+			  //alert('The File APIs are not fully supported in this browser.');
+			  $('#main-content').hide();
+			  $('#browser-error').show();
+			}
 		});
 		</script>
 		
@@ -80,7 +88,20 @@
 
 		<!-- Content -->
 		<div class="container" style="padding-top:90px">
+			
+			<script>
+			
+			</script>
+			
+			<div class="alert alert-block alert-error hide" id="browser-error" style="margin-bottom:15px; font-size:17px">
+			  <div class="tip-content">
+				  <strong>Warning </strong> Your browser does not support the latest version of HTML for you to be able to use SGAtools. Please update your browser to the latest version and try again.
+			  </div>
+			</div>
+			
+			<div id="main-content">
 			@content
+			</div>
 			
 			<div id="push"></div>
 	    </div>

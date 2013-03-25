@@ -36,12 +36,19 @@ function handleFileSelect(evt) {
 			// Render thumbnail
 		    var fileName = decodeURIComponent(theFile.name);
 		    var parsed = fileName.parseSGAFileName();
+		    /**************
 		    var rowc = ['<td style="height:170px; width:250px; vertical-align:middle">',
 		    			'<div class="thumbnail"><img style="height:170px; width:250px;" src="', e.target.result , '" title="' ,
 		    			escape(theFile.name) , ' "/></div></td>'];
-		    
+		    ***************/
+		    var rowc = ['<tdvertical-align:middle"></td>'];
+		    rowc = [];
 		    jQuery.each(parsed, function(i, val) {
-		      rowc.push('<td style="vertical-align:middle;">' + val + '</td>');
+		       if(i == 0){
+		       	rowc.push('<td style="vertical-align:middle;"><i class="icon-picture"></i> ' + val + '</td>');
+		       }else{
+		       	rowc.push('<td style="vertical-align:middle;">' + val + '</td>');
+		       }
 		    });
 		    
 		    $('#loaded-table tbody').append('<tr>' + rowc.join('') + '</tr>');
