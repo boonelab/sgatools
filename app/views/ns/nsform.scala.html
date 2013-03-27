@@ -58,13 +58,25 @@
 		            	});
 		            	$(window).load(function() {
  							// executes when complete page is fully loaded, including all frames, objects and images
+ 							var nctrl = 0, ncase = 0;
+ 							
  							for(var i=0; i<preloaded.length; i++){
 								screenType = preloaded[i].parseSGAFileName()[1];
 								if(/Control/i.test(screenType)){
-									$('#doScoring').prop('checked', true);
-									$('#cg-scoringFunction').slideDown('fast');
-									$("#nssubmit").html('Normalize and score');
+									nctrl++;
+								}if(/Case/i.test(screenType)){
+									ncase++;
 								}
+							}
+							console.log('ctrl#'+nctrl)
+							console.log('case#'+ncase)
+							if(nctrl > 0 && ncase > 0){
+								$('#doScoring').prop('checked', true);
+								$('#cg-scoringFunction').slideDown('fast');
+								$("#nssubmit").html('Normalize and score');
+							}else{
+								$('#doScoring').prop('disabled', true);
+								$('#doScoring').parent().find('span').html('Must have at least one control screen and one case screen to score')
 							}
 						});
 	            	</script>

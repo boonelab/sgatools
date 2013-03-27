@@ -11,8 +11,16 @@
 	
 var currList = document.getElementById('loaded-table');
 function handleFileSelect(evt) {
+	console.log($('#plateImages').prop('files'))
+	evt.stopPropagation();
+    evt.preventDefault();
 	var files = evt.target.files; // FileList object
-	
+	if(files == undefined){
+		files = evt.dataTransfer.files;
+		$('#plateImages').prop('files', files);
+		$('#drop_zone h2').text(files.length + ' files dropped')
+		return;
+	}
 	if(files.length == 0){ 
 		$('#loaded-plates').hide();
 		$('#iasubmit').attr('disabled', 'disabled');
@@ -22,12 +30,14 @@ function handleFileSelect(evt) {
 	$('#iasubmit').removeAttr('disabled');
 	$('#loaded-plates').show();
 	$('#loaded-table tbody').html('');
-		
+	
 	// Loop through the FileList and render image files as thumbnails.
+	
+	passed = 0;
 	for (var i = 0, f; f = files[i]; i++) {
 		// Only process image files.
 		if (!f.type.match('image.*')) { continue; }
-		
+		passed++;
 		var reader = new FileReader();
 		
 		// Closure to capture the file information.
@@ -58,9 +68,21 @@ function handleFileSelect(evt) {
 		// Read in the image file as a data URL.
 		reader.readAsDataURL(f);
 	}
+	if(passed == 0){
+		$('#loaded-plates').hide();
+		$('#iasubmit').attr('disabled', 'disabled');
+	}
 }
 	
 	  
+/*
+For drag and drop
+*/
+function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+}
 
 
 /*!

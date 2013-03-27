@@ -4,7 +4,19 @@
 @import helper.twitterBootstrap._
 @implicitFieldConstructor = @{ FieldConstructor(extra.twitterBootstrapInput.f) }
 @main("Image analysis", nav="ia") {
-    
+   <style>
+	    #drop_zone {
+			border: 2px dashed #bbb;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			padding: 25px;
+			text-align: center;
+			color: #bbb;
+			margin-top:10px;
+			}
+	    </style>
+	    
    @helper.form(action = routes.IAcontroller.submit(), 'enctype -> "multipart/form-data", 'id -> "imageprocessingForm", 'class->"form-horizontal") {
 		<h2>Image analysis</h2>
 		<hr>
@@ -45,6 +57,8 @@
 		
 		<fieldset>
 		
+	    <!--<div id="drop_zone"><h2>Drop files here</h2></div>-->
+	    
 		<!--Images select button-->
 		  @inputFile(
 	        iaForm("plateImages"),
@@ -54,6 +68,7 @@
 	    	'uploadwidget -> "Select image(s)",
 	    	'helpModal -> "ia-plate-files"
 	    )
+	    
 	    
 	    
 	    <!--Plate format of the screen images-->
@@ -108,6 +123,10 @@
     <script>
     	$(document).ready(function(){
     		$('#iasubmit').attr('disabled', 'disabled');
+    		$('#cg-plateImages.control-group .controls').append('<div id="drop_zone"><h2>Drop files here</h2></div>');
+    		var dropZone = document.getElementById('drop_zone');
+  			dropZone.addEventListener('dragover', handleDragOver, false);
+  			dropZone.addEventListener('drop', handleFileSelect, false);
     	});
     	// Submit click
     	$("#iasubmit").click(function() {
@@ -117,5 +136,8 @@
 		});
     	
 		$('#plateImages').change(handleFileSelect);
+		
+		
+		
     </script>
 }

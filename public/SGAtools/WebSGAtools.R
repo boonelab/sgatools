@@ -4,6 +4,9 @@ library(plyr)
 
 # /home/sgatools/sgatools/public/SGAtools
 setwd('/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/')
+
+readMeLines = readLines('README_NS.txt')
+
 print(getwd())
 source('SGAtools.R')
 option_list <- list(
@@ -94,7 +97,6 @@ if(!args$score) comment.ns = gsub(pattern='and scored ', '', comment.ns)
 # Write generated files
 for(i in 1:length(sgadata.ns)){
   savename = args$savename[i]
-  savename.collapsed = paste0('avg_',savename)
   
   comments = comment(sgadata.r[[i]])
   comments = c(comment.ns, comments)
@@ -106,12 +108,6 @@ for(i in 1:length(sgadata.ns)){
   
   write.table(plate.data, savename, quote=F, row.names=F, col.names=T, sep="\t", append=T)
   
-  # Collapse 
-  # collapsed = aggregate(plate.data, by=list(array=plate.data$array), aggr.function)[,-1]
-  # collapsed$row = NA
-  # collapsed$col = NA
-  # Must fix issue with reading non collapsed files only on front end
-  # write.table(collapsed, savename.collapsed, quote=F, row.names=F, col.names=T, sep="\t")
 }
 
 combined = lapply(sgadata.ns, function(plate.data){
@@ -151,6 +147,10 @@ combined = lapply(sgadata.ns, function(plate.data){
 })
 
 # Combined data
-write.table(do.call(rbind, combined), "combined_data.dat", quote=F, row.names=F, col.names=T, sep="\t", append=T)
+savename =  "combined_data.dat"
+comments = c('# Combined data file', comment.ns)
+writeLines(comments, savename)
+write.table(do.call(rbind, combined), savename, quote=F, row.names=F, col.names=T, sep="\t", append=T)
 
-
+# README
+writeLines(readMeLines, 'README.txt')

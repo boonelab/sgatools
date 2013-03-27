@@ -223,7 +223,14 @@ function readAndValidate(evt) {
 				    	}
 				    	if(!linePat.test(line)) { 
 				    		//console.log('Found invalid line');
-				    		var a = " Invalid file format in <strong>" +f.name + "</strong> on line <strong>" + (i+1) + "</strong>";
+				    		var a = " Invalid file format in <strong>" +f.name + "</strong> on line <strong>" + (i+1) + ":</strong> <code>" + line +"</code> ";
+				    		if(inputId == 'arrayDefCustomFile'){
+				    			a += 'expected <code>column{tab}row{tab}gene name</code><br>';
+				    		}if(inputId == 'plateFiles'){
+				    			a += 'expected <code>row{tab}column{tab}colony size</code><br>'
+				    		}
+				    		a += 'For more information on how to format your plate layout files, please see the <a href="/help" target="_blank">normalization & scoring section of the help</a>';
+				    		
 				    		
 				    		$('#cg-'+inputId).addClass('error');
 				    		$('#'+inputId).attr('valid', 'false');
@@ -258,7 +265,8 @@ $(document).ready(function() {
 		{ errorId: "ad-error", 
 		  inputId: "arrayDefCustomFile",
 		  commentPat: "^#|^@", linePat: "^(\\d+)(\\s+)(\\d+)(\\s+)([^\\s]+)$", 
-		  ifSkip:{regex:"^(ID)(\\s+)(\\d+)$", skip:5} 
+		  ifSkip:{regex:"^(ID)", skip:5} 
+		  //ifSkip:{regex:"^(ID)(\\s+)(\\d+)$", skip:5} 
 		},
 		readAndValidate);
 	

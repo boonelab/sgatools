@@ -255,7 +255,7 @@ public class NScontroller extends Controller {
         
         Map<String, String> outputFilesMap = new HashMap();
         for(File of: outputFilesDir.listFiles()){
-        	if(!of.getName().startsWith("combined"))
+        	if(!of.getName().startsWith("combined") && !of.getName().startsWith("README"))
         		outputFilesMap.put(of.getName(), of.getPath());
         }
         

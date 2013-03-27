@@ -21,9 +21,10 @@ public class DAcontroller extends Controller {
 	
 	public static Result initPreloadedDA(String jobid){
 		NSjob nsjob = NScontroller.getJobFromJsonFile(jobid);
+		IAjob iajob = IAcontroller.getJobFromJsonFile(jobid);
 		Form<DAjob> dajob = daform.fill(new DAjob());
 		
-		return ok(dasummary.render(nsjob, dajob));
+		return ok(dasummary.render(iajob, nsjob, dajob));
 	}
 	
 	public static Result submit() throws IOException{	

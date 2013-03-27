@@ -1,4 +1,4 @@
-@(job: NSjob, daForm: Form[DAjob])
+@(iajob: IAjob, job: NSjob, daForm: Form[DAjob])
 
 @import play.libs.Scala._
 @import play.Logger;
@@ -50,6 +50,14 @@
 	</style>
 	
 	<h2>Data visualization</h2>
+	<hr>
+	
+	<center>
+		<h2 id="currently_viewing" style="margin-bottom:5px">Hello world</h2>
+	
+		@if(iajob != null){ <a class="btn btn-large" href="@routes.Assets.at(iajob.downloadZipPath)"><i class="icon-download-alt"></i> Download image analysis results</a> }
+		<a class="btn btn-large" href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download-alt"></i> Download normalized results</a>
+	</center>
 	<hr>
 	
 	<div class="well">
@@ -311,6 +319,8 @@
 		    $('#dataCombobox').change(function() {
 		    	var viewtype = $('#viewType option:selected');
 		    	var plate = $('#dataCombobox option:selected');
+		    	
+		    	$('#currently_viewing').html('Currently viewing: <u>'+ viewtype.text().toLowerCase() + '</u> for <u>' + plate.text() + '</u>')
 		    	
 		    	//If user selects control screen
 		    	scoreOpt = $('#viewType option[name="score"]');
