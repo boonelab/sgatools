@@ -1,6 +1,37 @@
 /*!
 * Scripts for normalization/scoring page: form
 */
+//On window load
+$(window).load(function() {
+	// executes when complete page is fully loaded, including all frames, objects and images
+	var nctrl = 0, ncase = 0, nvalid=0;
+	var isExample = false;
+	for(var i=0; i<preloaded.length; i++){
+		pname = preloaded[i].parseSGAFileName();
+		screenType = pname[1];
+		filename = pname[0];
+		if(/^sgatools/i.test(filename)) isExample = true;
+		if(screenType != '―') nvalid++;
+		if(/Control/i.test(screenType)) nctrl++;
+		if(/Case/i.test(screenType)) ncase++;
+	}
+	
+	if(nvalid > 0 && $('#doArrayDef').prop('checked') == false)
+		$('#doArrayDef').trigger('click');
+	if(isExample)
+		$('option:contains("sga-array-ver2-1536")').prop('selected',true);
+	
+	
+	if(nctrl > 0 && ncase > 0){
+		$('#doScoring').prop('checked', true);
+		$('#cg-scoringFunction').slideDown('fast');
+		$("#nssubmit").html('Normalize and score');
+	}else{
+		$('#doScoring').prop('disabled', true);
+		$('#doScoring').parent().find('span').html('Must have at least one control screen and one case screen to score')
+	}
+});
+
 
 //Initialize stuff
 $(document).ready(function() {
@@ -226,10 +257,11 @@ function readAndValidate(evt) {
 				    		var a = " Invalid file format in <strong>" +f.name + "</strong> on line <strong>" + (i+1) + ":</strong> <code>" + line +"</code> ";
 				    		if(inputId == 'arrayDefCustomFile'){
 				    			a += 'expected <code>column{tab}row{tab}gene name</code><br>';
+				    			a += 'For more information on how to format your plate layout files, please see the <a href="/help" target="_blank">normalization & scoring section of the help</a>';
 				    		}if(inputId == 'plateFiles'){
-				    			a += 'expected <code>row{tab}column{tab}colony size</code><br>'
+				    			a += 'expected <code>row{tab}column{tab}colony size</code><br>';
+				    			a += 'For more information on how to format your plate files, please see the <a href="/help" target="_blank">normalization & scoring section of the help</a>';
 				    		}
-				    		a += 'For more information on how to format your plate layout files, please see the <a href="/help" target="_blank">normalization & scoring section of the help</a>';
 				    		
 				    		
 				    		$('#cg-'+inputId).addClass('error');

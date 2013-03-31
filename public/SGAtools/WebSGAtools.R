@@ -1,17 +1,19 @@
 library(optparse)
 library(logging)
 library(plyr)
+options(warn=-1) #suppress warnings
 
 # /home/sgatools/sgatools/public/SGAtools
 setwd('/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/')
 
 readMeLines = readLines('README_NS.txt')
+linkage.file = paste0(getwd(), "/data/chrom_coordinates.Rdata")
 
-print(getwd())
 source('SGAtools.R')
 option_list <- list(
   make_option(c("-i", "--inputfiles"), help="Input plate files (required): containing colony sizes to be normalized (comma separated for multiple files or a zip file with all input files)" ),
   make_option(c("-a", "--adfiles"), help="Array definition file paths (optional): files containing array layout of plate (comma separated for multiple files)", default=NA, type="character"),
+make_option(c("-y", "--adname"), help="Array definition summary", default=NA, type="character"),
   make_option(c("-o", "--outputdir"), help="Output directory (optional): where the normalized/scored results are saved [default %default]", default=getwd(), type="character"),
   make_option(c("-n", "--savenames"), help="Save names (optional): for input files if any different (comma separated, in same order as inputfiles)", default=NA, type="character"),
   make_option(c("-l", "--linkagecutoff"), help="Linkage cutoff (optional): specified in KB, if -1 no linkage correction is applied [default %default]", default=-1, type="integer"),
@@ -77,11 +79,12 @@ if(! args$sfunction %in% c(1,2) & !is.na(args$sfunction)){
   stop(paste0(args$sfunction, ' is an inavlid scoring function, must be 1 or 2'))
 }
 
-print(args)
+#print(args)
+
 
 # Run normalization/scoring
 sgadata.r = readSGA(args$inputfiles, args$savenames, args$adfiles, args$replicates)
-sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, linkage.cutoff=args$linkagecutoff)
+sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file)
 
 # Score data if requested
 if(args$score){
@@ -91,22 +94,41 @@ if(args$score){
 # Set working directory to output directory
 setwd(args$outputdir)
 
+# Do header comments
+lk = '# Linkage correction applied: '
+if(args$linkagecutoff > 0){
+    lk = paste0(lk, 'Yes', '(', args$linkagecutoff,'KB)')
+}else{
+    lk = paste0(lk, 'No')
+}
+
+ad = '# Plate layout applied: '
+if(all(is.na(args$adfiles))){
+    ad = paste0(ad, 'No')
+}else{
+    ad = paste0(ad, args$adname)
+}
+
+rep = paste0('# Replicates: ', args$replicates)
+
 comment.ns = paste('# Normalized and scored by SGAtools',SGATOOLS_VERSION,'on', Sys.time())
 if(!args$score) comment.ns = gsub(pattern='and scored ', '', comment.ns)
+col.header = '# (1) Rows (2) Columns (3) Raw colony size (4) Plate id / file name (5) Query (6) Array (7) Normalized colony size (8) Score (9) Additional information'
+comment.ns = c(comment.ns, ad, rep, lk, col.header)
 
 # Write generated files
 for(i in 1:length(sgadata.ns)){
   savename = args$savename[i]
   
   comments = comment(sgadata.r[[i]])
-  comments = c(comment.ns, comments)
+  comments = c(comments, comment.ns)
   # Write comments
   writeLines(comments, savename)
   
   # Write plate data
   plate.data = sgadata.ns[[i]]
   
-  write.table(plate.data, savename, quote=F, row.names=F, col.names=T, sep="\t", append=T)
+  write.table(plate.data, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
   
 }
 

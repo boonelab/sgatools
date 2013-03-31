@@ -22,6 +22,9 @@ library(logging)    # For log file
 library(stringr)    # For regex matching functions
 library(bootstrap)  # For jackknife function
 
+addHandler(writeToConsole)
+
+
 SGATOOLS_VERSION = '1.0.0'
 ####################################################################################
 # Reading section
@@ -112,6 +115,7 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
   })
   
   loginfo('Done reading all files')
+  loginfo('-----------------------------------------------')
   return(sga.data.list)
 }
 
@@ -212,7 +216,8 @@ normalizeSGA <- function(plate.data,
                          linkage.cutoff=200,
                          overall.plate.median=510, 
                          max.colony.size=1.5*overall.plate.median, 
-                         intermediate.data=F){
+                         intermediate.data=F,
+                         linkage.file=''){
   
   loginfo('Normalizing plate: replicates = %d, overall.plate.median = %d, max.colony.size = %d', 
           replicates, overall.plate.median, max.colony.size)
@@ -230,7 +235,7 @@ normalizeSGA <- function(plate.data,
   names(ignore.ind) = NA
   
   ########## (F1) Linkage effect filter ##########
-  linkage.ign = linkageFilter(plate.data, linkage.cutoff)
+  linkage.ign = linkageFilter(plate.data, linkage.cutoff, linkage.file)
   ignore.ind = mergeLogicalNames(linkage.ign, ignore.ind)
   
   ########## (N1) Plate normalization ##########
@@ -443,13 +448,13 @@ kvpMapAsString <- function(kvp.map){
 # @param plate.data: SGA formatted data frame
 # @param linkage.cutoff: in KB, If witin this value of eachother on same chromosome they will be ignored
 # @return linkage.ignore: logical array with TRUE for rows to ignore. Status code as name
-linkageFilter <- function(plate.data, linkage.cutoff=200){
+linkageFilter <- function(plate.data, linkage.cutoff=200, linkage.file=''){
   
   loginfo('# Applying linkage filter, linkage.cutoff = %d', linkage.cutoff)
   status.code = 'LK'
   
   # Load linkage files named: chromosome_coordinates.Rdata(R.data?)
-  if(file.exists('data/chrom_coordinates.Rdata')){
+  if(file.exists(linkage.file)){
     loginfo('Loading chromosome coordinates file')
     load('data/chrom_coordinates.Rdata')
   }else{
@@ -463,6 +468,12 @@ linkageFilter <- function(plate.data, linkage.cutoff=200){
   query = match(toupper(plate.data$query), chrom_coordinates[[1]])
   array = match(toupper(array), chrom_coordinates[[1]])
   
+  CAN1 = chrom_coordinates[chrom_coordinates[[1]] == 'YEL063C',]
+    CAN1.ch = CAN1[[2]]
+    CAN1.end = CAN1[[4]]
+  LYP1 = chrom_coordinates[chrom_coordinates[[1]] == 'YNL268W',]
+    LYP1.ch = LYP1[[2]]
+    LYP1.end = LYP1[[4]]
   # Get indicies for which row:query/array on same chromsome and within < cutoff
   linked = sapply(1:length(query), function(i){
     
@@ -473,10 +484,14 @@ linkageFilter <- function(plate.data, linkage.cutoff=200){
       # We have a match, ensure they are on the same chromosome and are within the linkage cutoff
       q.ch = chrom_coordinates[[2]][query[i]]
       a.ch = chrom_coordinates[[2]][array[i]]
-      
+            
       a.start = chrom_coordinates[[3]][array[i]]
       q.end = chrom_coordinates[[3]][query[i]]
-      (q.ch == a.ch) & abs( a.start - q.end ) < (linkage.cutoff * 1e3)
+      a = (q.ch == a.ch) & abs( a.start - q.end ) < (linkage.cutoff * 1e3)
+      b = (CAN1.ch == a.ch) & abs( a.start - CAN1.end ) < (linkage.cutoff * 1e3)
+      c = (LYP1.ch == a.ch) & abs( a.start - LYP1.end ) < (linkage.cutoff * 1e3)
+      
+      a|b|c
     }
     
   })

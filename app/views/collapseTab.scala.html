@@ -1,0 +1,14 @@
+@(id: String, parentId: String, title: String, content: String)
+
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#@parentId" href="#@id">
+        @title
+      </a>
+    </div>
+    <div id="@id" class="accordion-body collapse">
+      <div class="accordion-inner">
+        @Html(content)
+      </div>
+    </div>
+</div>

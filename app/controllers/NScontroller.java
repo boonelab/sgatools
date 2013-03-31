@@ -63,8 +63,8 @@ public class NScontroller extends Controller {
 		Form<NSjob> filledForm = nsForm.bindFromRequest();
 		NSjob job = filledForm.get();
 		
-		Logger.info("sJOB ID:"+job.jobid);
-		Logger.info("selected for NS JSON:"+job.jsonSelectedForNS);
+		//Logger.info("sJOB ID:"+job.jobid);
+		//Logger.info("selected for NS JSON:"+job.jsonSelectedForNS);
 		
 		IAjob iajob = IAcontroller.getJobFromJsonFile(job.jobid);
 		iajob.jsonSelectedForNS = job.jsonSelectedForNS;
@@ -78,7 +78,7 @@ public class NScontroller extends Controller {
 		//Get form
 		Form<NSjob> filledForm = nsForm.bindFromRequest();
 		
-		Logger.info(filledForm.data().toString());
+		//Logger.info(filledForm.data().toString());
 		
 		//Process submission
 		long submissionStartTime = new Date().getTime(); //start time
@@ -94,26 +94,26 @@ public class NScontroller extends Controller {
 		// Check if we have an array definition file
 		FilePart arrayDefCustomFile = body.getFile("arrayDefCustomFile");
 		
-		Logger.error(body.toString());
-		Logger.info("JOBid = "+job.jobid);
+		//Logger.error(body.toString());
+		//Logger.info("JOBid = "+job.jobid);
 		
 		if(job.jobid == null | job.jobid.isEmpty()){
-			Logger.info("Files uploaded, populating plate file map:");
+			//Logger.info("Files uploaded, populating plate file map:");
 			List<FilePart> plateFiles = body.getFiles();
 	        for(FilePart fp : plateFiles){
 	        	File f = fp.getFile();
-	        	Logger.info("--> "+f.getPath() + "\t"+f.exists());
+	        	//Logger.info("--> "+f.getPath() + "\t"+f.exists());
 				plateFilesMap.put(fp.getFilename(), fp.getFile());
 	        }
 		}else{
-			Logger.info("Files preloaded from IA, populating plate file map:");
+			//Logger.info("Files preloaded from IA, populating plate file map:");
 			IAjob iajob = IAcontroller.getJobFromJsonFile(job.jobid);
-			Logger.info("selectedForNS = "+iajob.jsonSelectedForNS);
+			//Logger.info("selectedForNS = "+iajob.jsonSelectedForNS);
 			List<String> preloadedList = Json.fromJson(Json.parse(iajob.jsonSelectedForNS), List.class);
 			for(String fileName: preloadedList){
 				File file = new File(Constants.JOB_OUTPUT_DIR + File.separator + 
 									job.jobid+"/ia/output_files/"+fileName);
-				Logger.info("\t"+fileName+" -> " + file.getPath());
+				//Logger.info("\t"+fileName+" -> " + file.getPath());
 				plateFilesMap.put(fileName, file);
 			}
 		}
@@ -122,10 +122,11 @@ public class NScontroller extends Controller {
         List<String> adList = ComboboxOpts.arrayDef();
         StringBuilder adfiles = new StringBuilder();
         String summaryAD = "Not applied";
+		
         if(job.doArrayDef){
 			//Custom file -ERROR HERE FILE NOT UPLOADING
 			if(adList.indexOf(job.arrayDefPredefined) == adList.size()-1){
-				Logger.info("Found array definition file");
+				//Logger.info("Found array definition file");
 				//Remove extra non plate files
 	        	plateFilesMap.remove(arrayDefCustomFile.getFilename());
 				adfiles.append(arrayDefCustomFile.getFile().getPath());
@@ -134,7 +135,7 @@ public class NScontroller extends Controller {
 			//Predefined array def
 			else if(job.selectedArrayDefPlate != null){
 				String arrayDefDir = Constants.ARRAY_DEF_PATH + "/" + job.arrayDefPredefined;
-				summaryAD = job.arrayDefPredefined + ": ";
+				summaryAD = job.arrayDefPredefined + " (";
 				List<String> adPlatesList = ComboboxOpts.arrayDefPlates(job.arrayDefPredefined);
 				if(adPlatesList.indexOf(job.selectedArrayDefPlate) == 0){
 					//All plates
@@ -148,14 +149,14 @@ public class NScontroller extends Controller {
 					adfiles.append(arrayDefDir + File.separator + job.selectedArrayDefPlate);
 					summaryAD += job.selectedArrayDefPlate;
 				}
-				
+				summaryAD += ")";
 			}
 		}
         
         //Make directories for output
         if(job.jobid.isEmpty() || job.jobid == null){
         	job.jobid = UUID.randomUUID().toString();
-        	Logger.info("Generated new UUID: "+job.jobid);
+        	//Logger.info("Generated new UUID: "+job.jobid);
         }
         
         File outputDir = new File(Constants.JOB_OUTPUT_DIR + File.separator + job.jobid + File.separator);
@@ -184,6 +185,8 @@ public class NScontroller extends Controller {
         String ninputfiles =  inputfiles.substring(0, inputfiles.lastIndexOf(":")) ;
         String nsavenames = savenames.substring(0, savenames.lastIndexOf(":"));
         
+        if(!job.doLinkage) job.linkageCutoff = "-1";
+        
         // Prepare arguments
         List<String> c = new ArrayList();
         c.add("Rscript"); 			c.add(Constants.RSCRIPT_PATH);
@@ -195,12 +198,13 @@ public class NScontroller extends Controller {
         
         if(!adfiles.toString().isEmpty()){ 
         	c.add("--adfiles"); c.add(adfiles.toString()); 
+        	c.add("--adname"); c.add(summaryAD);
         }
         if(job.doScoring){ 
         	c.add("--score"); 
         	c.add("--sfunction"); c.add(job.scoringFunction); 
         }
-        Logger.info("#####"+c );
+        //Logger.info("#####"+c );
         
         String[] cmd = new String[c.size()];
         c.toArray(cmd);
@@ -216,7 +220,6 @@ public class NScontroller extends Controller {
         try{
 	        //Try execute and read
 	        Process p = Runtime.getRuntime().exec(cmd);
-	        
 	        
 	        //Read in output returned from shell
 	        //#########FOR DEBUG ONLY######
@@ -235,7 +238,7 @@ public class NScontroller extends Controller {
 	        in_error.close();
 	        //#############################
 	        Logger.debug(shell_output.toString());
-	        Logger.error(shell_output_error.toString());
+	        //Logger.error(shell_output_error.toString());
 	        // Zip files 
 	        Zipper.zipDir(zipFilePath, outputFilesDir.getPath());
         }catch(Exception e){

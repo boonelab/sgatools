@@ -1,3 +1,5 @@
+window.firstCallHm = [];
+
 // Popup
 var tooltip = d3.select("body")
 	.attr('id', 'tooltip')
@@ -58,7 +60,7 @@ function drawHeatmap(paramsInput){
 	//Replaced d3.tsv(params.dataPath, sgatools)
     d3.text(params.dataPath, 'text/tsv',function(tsv){
     	tsv = tsv.replace(/^[#@][^\r\n]+[\r\n]+/mg, '');
-    	
+    	tsv = "row	col	colonysize	plateid	query	array	ncolonysize	score	kvp\n" + tsv;
     	sgadata = d3.tsv.parse(tsv);
 		sgadata = sgadata.filter(function(d,i){
 			d.query = d.query.split('_')[0];
@@ -110,13 +112,16 @@ function drawHeatmap(paramsInput){
 	   	   height = (gridSize * nRows)+20;
 
 	  //Adjust color scale to be low/med/high
-	  maxVal = d3.max(sgadata, function(d) { return d.value; });
-	  minVal = d3.min(sgadata, function(d) { return d.value; });
-	  medVal = d3.median(sgadata, function(d) { return d.value; });
-	  console.log(medVal);
-	  params.domainLow = Math.floor( minVal );
-	  params.domainMed = Math.floor( medVal );
-	  params.domainHigh = Math.floor( maxVal );
+	  t = params.dataPath + "_" + params.columnToUse;
+	  if($.inArray(t, firstCallHm) < 0){
+	  	maxVal = d3.max(sgadata, function(d) { return d.value; });
+	  	minVal = d3.min(sgadata, function(d) { return d.value; });
+	  	medVal = d3.median(sgadata, function(d) { return d.value; });
+	  	params.domainLow = Math.floor( minVal );
+	  	params.domainMed = Math.floor( medVal );
+	  	params.domainHigh = Math.floor( maxVal );
+	  	firstCallHm.push(t);
+	  }
 	  $('#domainLowInput').val(params.domainLow);
 	  $('#domainMedInput').val(params.domainMed);
 	  $('#domainHighInput').val(params.domainHigh);

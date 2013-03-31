@@ -62,7 +62,7 @@
 		<!--Images select button-->
 		  @inputFile(
 	        iaForm("plateImages"),
-	        '_label -> "Plate images(s)",
+	        '_label -> "Plate image(s)",
 	        'multiple -> "",
 	        'accept -> "image/gif, image/jpeg, image/png",
 	    	'uploadwidget -> "Select image(s)",
@@ -123,10 +123,10 @@
     <script>
     	$(document).ready(function(){
     		$('#iasubmit').attr('disabled', 'disabled');
-    		$('#cg-plateImages.control-group .controls').append('<div id="drop_zone"><h2>Drop files here</h2></div>');
-    		var dropZone = document.getElementById('drop_zone');
-  			dropZone.addEventListener('dragover', handleDragOver, false);
-  			dropZone.addEventListener('drop', handleFileSelect, false);
+    		//$('#cg-plateImages.control-group .controls').append('<div id="drop_zone"><h2>Drop files here</h2></div>');
+    		//var dropZone = document.getElementById('drop_zone');
+  			//dropZone.addEventListener('dragover', handleDragOver, false);
+  			//dropZone.addEventListener('drop', handleFileSelect, false);
     	});
     	// Submit click
     	$("#iasubmit").click(function() {

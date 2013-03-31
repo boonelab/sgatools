@@ -1,4 +1,4 @@
-
+window.firstCallHs = []
 //dataName, divChart, divDataTable, maxDataRows, chartWidth, chartHeight
 function drawBarChart(settings) {
 	var ndx, all, score, scores;
@@ -20,6 +20,7 @@ function drawBarChart(settings) {
 	// Replaced d3.tsv(options.dataName, function(data)
 	d3.text(options.dataName, 'text/tsv',function(tsv){	
 		tsv = tsv.replace(/^[#@][^\r\n]+[\r\n]+/mg, '');
+    	tsv = "row	col	colonysize	plateid	query	array	ncolonysize	score	kvp\n" + tsv;
 		data = d3.tsv.parse(tsv);
 		
 		//Filter data for numerical scores only - ignore NAs
@@ -80,10 +81,17 @@ function drawBarChart(settings) {
 			window.scoredData = true;
 		}
 		
-		maxVal = d3.max(data, function(d) { return d.score; })	
-		minVal = d3.min(data, function(d) { return d.score; })
-		options.domainLow = Math.floor(minVal);
-		options.domainHigh = Math.floor(maxVal);
+		t = options.dataName + "_" + options.columnToUse
+		if($.inArray(t, firstCallHs) < 0){
+			maxVal = d3.max(data, function(d) { return d.score; })	
+			minVal = d3.min(data, function(d) { return d.score; })
+			options.domainLow = Math.floor(minVal);
+			options.domainHigh = Math.floor(maxVal);
+			firstCallHs.push(t);
+			console.log("pushed into firstCall");
+			console.log(firstCallHs);
+		}
+		
 		$('#domainLowInput').val(options.domainLow)
 		$('#domainHighInput').val(options.domainHigh)
 		//options.domainLow = Math.floor(options.domainLow);

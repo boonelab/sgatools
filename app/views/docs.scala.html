@@ -12,13 +12,62 @@
         <li><a href="#gs" data-toggle="tab"><i class="icon-bookmark"></i> Getting started</a></li>
         <li><a href="#fn" data-toggle="tab"><i class="icon-bookmark"></i> File naming</a></li>
         <li><a href="#ia" data-toggle="tab"><i class="icon-bookmark"></i> Image analysis</a></li>
-        <li><a href="#ns" data-toggle="tab"><i class="icon-bookmark"></i> Normalization & Scoring</a></li>
+        <li><a href="#ns" data-toggle="tab" id="nsTab"><i class="icon-bookmark"></i> Normalization & Scoring</a></li>
         <li><a href="#da" data-toggle="tab"><i class="icon-bookmark"></i> Data analysis</a></li>
         <!--<li><a href="#fa" data-toggle="tab"><i class="icon-bookmark"></i> FAQs</a></li>-->
       </ul>
 	
       <div class="tab-content">
         <div class="tab-pane active" id="fq">
+        
+        <h2>Image analysis</h2>
+        <div class="accordion" id="faqCollapse">
+        	@collapseTab("ia1", "faqCollapse", "What should the image filenames look like?", 
+        		"Image file names should have the following format: <code>{username}_{screentype}_{query}_{arrayplateid}...</code>. </li>"+
+        		 "<ul><li><code>username</code> is the name of the person who carried out the experiment," +
+        		 "<li><code>screentype</code> is the type of screen carried, where <code>wt</code> or <code>ctrl</code> denotes a control screen, and any other value represents a case screen.</li>"+
+        		 "<li><code>query</code> is the name of the query used in the experiment</li>"+
+        		 "<li><code>arrayplateid</code>a value indicating the array plate id, used to map the file to its plate layout file. In a typical SGA yeast screen, this value ranges from 1-14</li></ul>"+
+        		 "<strong>Note:</strong> it is not required that your file names follow this format. However, in order to map the query/array coordinates to their ORF name and group control/case experiments by array plate id for scoring, proper file naming must be used.")
+        	@collapseTab("ia2", "faqCollapse", "How do I select multiple files from different directories?", "This is currently not possible. Images must be selected from one directory")
+        	@collapseTab("ia3", "faqCollapse", "Segmentation failed, or the segmented images look weird. What should I do?", "Image analysis requires that your plate to have defined plate edges. Plates must also have at least one colony in each row and column for proper segmentation. If both these requirements are met, and segmented images still look weird, please contact the developers with your image."+
+        		"<br><br>Below are some examples which would fail segmentation<br>"+
+        		"<ul class='thumbnails'><li class='span4'><div class='thumbnail'><img src='assets/images/help/missing_edges.jpg'> <h5>No defined plate edges</h5> </div></li>"+
+        		"<li class='span4'><div class='thumbnail'><img src='assets/images/help/missing_rows.jpg'> <h5>Missing rows/columns</h5> </div></li> </ul>")
+        	@collapseTab("ia4", "faqCollapse", "Can I use SGAtools with spotted colonies?", "SGAtools was developed primarily for pinned colonies. Depending on your plate, it might work. However, we recommend analyzing your spotted colony images with a separate image analysis software and normalizing/scoring with SGAtools ")
+        	@collapseTab("ia5", "faqCollapse", "Image analysis takes a long time. Is everything ok?", "Yes. Images must first be uploaded to the web server, which can take some time depending on the size of your images. Image analysis will also take some time processing each image.")
+        </div>
+        
+        <h2>Normalization & scoring</h2>
+        <div class="accordion" id="faqCollapse2">
+        	@collapseTab("ns1", "faqCollapse2", "What should the plate filenames look like?", "File names should have the same format as images")
+        	@collapseTab("ns2", "faqCollapse2", "What does the output mean?", "To see the details of what each column means, see the <a href='#' onclick=\"$('#nsTab').click()\">normalization & scoring</a> tab in the help section or see the <code>README</code> file provided in the output.")
+        	@collapseTab("ns3", "faqCollapse2", "The output file has numbers instead of gene names. Where are the gene names?", "Proper file naming is required to provide the query name and the array plate id which is used to map the plate to a plate layout. If proper file naming was not used, the query column will have a value of 1 and the array column will contain numbers, such that each number represents a group of replicates.<br>"+
+        		"If proper file naming was used, then an appropriate array layout was not selected.")
+        	@collapseTab("ns4", "faqCollapse2", "How do I tell SGAtools what strains are on my plates?", "This is done using plate layouts. Plate layouts map the coordinates of your plate to a name. For your convenience, pre-defined array layout files are provided. However, you can upload your own. For details on how to format array layout files, see the <a href='#' onclick=\"$('#nsTab').click()\">normalization & scoring</a> tab")
+        	@collapseTab("ns5", "faqCollapse2", "I want to score my plates, but the option is disabled. Why?", "Plates can only be scored if proper file naming is used. Without proper file naming, SGAtools cannot match up control and case plates using array plate ids.")
+        	@collapseTab("ns6", "faqCollapse2", "What linkage cutoff should I use?", "200KB is the recommended cutoff")
+        	@collapseTab("ns7", "faqCollapse2", "How do I interpret the scores? What does the p-value mean?", "TODO")
+        </div>
+        
+        <h2>Data analysis</h2>
+        <div class="accordion" id="faqCollapse3">
+        	@collapseTab("da1", "faqCollapse3", "I want to analyze previously saved data. How do I do it?", "TODO")
+        	@collapseTab("da2", "faqCollapse3", "I want to analyze my selected genes for GO enrichment, but it's disabled. Why?", 
+        		"This is because plate coordinates were not mapped to a gene name. This could be because of incorrect file naming or not selecting an appropriate plate layout file")
+        </div>
+        
+        <h2>General</h2>
+        <div class="accordion" id="faqCollapse4">
+        	@collapseTab("ge1", "faqCollapse4", "How do I share my results with a colleague or collaborator?", "Simply share the link in your address bar after each step of analysis. For example, after image analysis, you would share a link which looks something like<br>"+
+        		"<code>http://www.sgatools.ccbr.utoronto.ca/imageanalysis/48f3b5f6-5f0e-494f-b528-e48ca57d06ae</code><br><br>"+
+        		"<strong>Note:</strong> data is only saved on our server for 30 days. After that time period, results will no longer be available")
+        	@collapseTab("ge2", "faqCollapse4", "I get a message saying I should use a newer browser. Why is that?", "SGAtools uses new technology to do some data pre-processing and validation prior to ensure correct data formats prior to uploading files to the web server. <br>"+
+        		"Such technology is provided through the latest browsers. We have tested SGAtools on the latest versions of <a href='http://www.google.com/chrome/' target='_blank'>Chrome</a> and <a href='http://www.mozilla.org/en-US/firefox/new/' target='_blank'>Firefox</a> extensively. Please ensure your browser is updated before using SGAtools")
+        	@collapseTab("ge3", "faqCollapse4", "I want to use the normalization in R offline. How do I do that and what are the requirements?", "SGAtools normalization and scoring was developed in R. You can download R from <a href='http://www.r-project.org/' target='blank_'>here</a>. The SGAtools code can be found in <a href='https://github.com/boonelab/sgatools/tree/master/public/SGAtools/SGAtools.R' target='blank_'><code>SGAtools.R</code></a> and has sufficient commenting to get you started. ")
+        	@collapseTab("ge4", "faqCollapse4", "How does SGAtools compare with other similar programs?", "TODO")
+        </div>
+        
         </div>
        <div class="tab-pane" id="gs">
 	       	<div class="page-header">
@@ -293,9 +342,10 @@
 	        	<!--End plate files -->
 	        	<hr>
 	        	<div id="ns-array-layout-file">
-				  <dt><h4>2. Array layout file</h4></dt>
+				  <dt><h4>2. Plate layout file</h4></dt>
 				  <dd>
-				  	<p>This file allows a mapping from row and columns to a gene name so that results are more meaningful. <br>
+				  	<p>This file allows a mapping from row and columns to a gene name. If an array layout file is not selected the array column in results will contain numbers, such that each number represents a group of replicates. <br>
+				  	
 				  	There are two ways of selecting an array layout file:</p>
 				  	
 				  	<dl>
@@ -315,17 +365,22 @@
 			    				<li>Gene name</li>
 			    			</ol>
 			    			
+			    			A name is assigned to each replicate group. Below an example shows the head section of an array layout file along with a graphical representation.
 			    			<div class="bs-docs-example">
 			    			<pre><comment style="color:#990000"># This is a comment line and is ignored		    			
 # c	r	Gene</comment>
-1	1	YDL227C_SN851
-2	1	YGR083C_TSQ1941
-3	1	YCR035C_TSQ1723
-4	1	YBR160W_TSQ1502
-5	1	YNL188W_TSQ2267
-6	1	YPL210C_TSQ2401
+1	1	HIS3
+1	2	HIS3
+1	3	HIS3
+2	1	HIS3
+2	2	RKM3
+2	3	YPK3
+3	1	HIS3
+3	2	TPS1
+3	3	GAL1
 ...
     						</pre>
+    						<img class="thumbnail" style="width:100%" src="@routes.Assets.at("images/help/array_layout_example.jpg")"/>
 			    			</div>
     			
 	        			</dd>

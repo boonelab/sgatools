@@ -13,16 +13,23 @@
 		<!--TIPS START-->
 		<script>
 			$(document).ready(function() {
-				if( $.cookie('tip-labelhelp') == null){
+				if( $.cookie('tip-labelhelp') == null)
 					$('#tip-labelhelp').show();
-				}
+				if( $.cookie('tip-adhelp') == null)
+					$('#tip-adhelp').show();
 			})
 		</script>
 
 		<div class="alert alert-info hide" id="tip-labelhelp">
-		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 10 });">&times;</button>
+		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 30 });">&times;</button>
 		  <div class="tip-content">
 			  <strong>Quick help tip! </strong>clicking labels with <abbr title="">dotted underlines</abbr> will provide you with additional help
+		  </div>
+		</div>
+		<div class="alert alert-info hide" id="tip-adhelp" style="margin-top:-10px">
+		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-adhelp', true, { expires : 30 });">&times;</button>
+		  <div class="tip-content">
+			  <strong>Note! </strong> to map row/column coordinates to gene names, a plate layout must be selected. Plate layouts are also required for GO term enrichment in the data analysis section.
 		  </div>
 		</div>
 		
@@ -56,29 +63,7 @@
 		            		$('#plateFiles').attr('valid', 'true');
 		            		$('#nssubmit').removeAttr('disabled');
 		            	});
-		            	$(window).load(function() {
- 							// executes when complete page is fully loaded, including all frames, objects and images
- 							var nctrl = 0, ncase = 0;
- 							
- 							for(var i=0; i<preloaded.length; i++){
-								screenType = preloaded[i].parseSGAFileName()[1];
-								if(/Control/i.test(screenType)){
-									nctrl++;
-								}if(/Case/i.test(screenType)){
-									ncase++;
-								}
-							}
-							console.log('ctrl#'+nctrl)
-							console.log('case#'+ncase)
-							if(nctrl > 0 && ncase > 0){
-								$('#doScoring').prop('checked', true);
-								$('#cg-scoringFunction').slideDown('fast');
-								$("#nssubmit").html('Normalize and score');
-							}else{
-								$('#doScoring').prop('disabled', true);
-								$('#doScoring').parent().find('span').html('Must have at least one control screen and one case screen to score')
-							}
-						});
+		            	
 	            	</script>
             	}
             </div>
@@ -104,7 +89,7 @@
            	){ (id, name, value, args) =>
 			<label class="checkbox">
 				<input id="@id" name="@name" @toHtmlArgs(args) type="checkbox" value="true">
-					<span>&nbsp;Define plate layout</span>
+					<span>&nbsp;Define the a map of row/column coordinates to gene name</span>
 					</label>
 			}
 			
