@@ -17,10 +17,10 @@ public class ComboboxOpts {
 	public static List<String> plateFormat(){
 		List<String> tmp = new ArrayList();
 
-		tmp.add("96 colonies");
-		tmp.add("384 colonies");
-		tmp.add("768 colonies - diagonal replicates");
-		tmp.add("1536 colonies");
+		tmp.add("96 colonies (8 × 12)");
+		tmp.add("384 colonies (16 × 24)");
+		tmp.add("768 colonies - diagonal replicates (16 × 24)");
+		tmp.add("1536 colonies (32 × 48)");
 		return tmp;
 	}
 	

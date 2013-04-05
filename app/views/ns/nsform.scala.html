@@ -29,7 +29,7 @@
 		<div class="alert alert-info hide" id="tip-adhelp" style="margin-top:-10px">
 		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-adhelp', true, { expires : 30 });">&times;</button>
 		  <div class="tip-content">
-			  <strong>Note! </strong> to map row/column coordinates to gene names, a plate layout must be selected. Plate layouts are also required for GO term enrichment in the data analysis section.
+			  <strong>Note! </strong> Plate layout must be defined to map row and column coordinates to gene names, and use the GO enrichment analysis tool.
 		  </div>
 		</div>
 		
@@ -89,7 +89,7 @@
            	){ (id, name, value, args) =>
 			<label class="checkbox">
 				<input id="@id" name="@name" @toHtmlArgs(args) type="checkbox" value="true">
-					<span>&nbsp;Define the a map of row/column coordinates to gene name</span>
+					<span>&nbsp;Define the a map of row/column coordinates to gene names</span>
 					</label>
 			}
 			

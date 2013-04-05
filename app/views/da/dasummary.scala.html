@@ -67,28 +67,32 @@
 	<h2>Data visualization</h2>
 	<hr>
 	
-	<center>
-		<h2 id="currently_viewing" style="margin-bottom:5px">Hello world</h2>
-	
-		@if(iajob != null){ <a class="btn btn-large" href="@routes.Assets.at(iajob.downloadZipPath)"><i class="icon-download-alt"></i> Download image analysis results</a> }
-		<a class="btn btn-large" href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download-alt"></i> Download normalized results</a>
-	</center>
-	<hr>
-	
-	<div class="well">
-		<select id="dataCombobox" class="input-xlarge">
+	<div id="mainPanel" style="margin-bottom:10px">
+		<h4 style="display:inline">Viewing</h4> 
+		<select id="viewType" class="input-medium" style="margin-top:10px">
+			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0 selected>Raw colony sizes</option>
+			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
+			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1>Scored data</option> }
+		</select>
+		<h4 style="display:inline"> for plate file </h4> 
+		<select id="dataCombobox" class="input-xlarge" style="margin-top:10px">
 		@for((key,value) <- job.outputFilesMap){
 			<option image-path="/assets/jobs/@job.jobid/ia/input_images/@key.substring(0,key.length-4)" 
 					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
 					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
 		}
 		</select>
-		<select id="viewType" class="input-medium">
-			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0 selected>Raw colony sizes</option>
-			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
-			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1>Scored data</option> }
-		</select>
 		
+		<div style="display:inline">
+			@if(iajob != null){ <a class="btn" href="@routes.Assets.at(iajob.downloadZipPath)"><i class="icon-download"></i> Image analysis results</a> }
+			<a class="btn" href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download"></i> Normalized results</a>
+		</div>
+	
+	</div>
+	<div class="well">
+		
+		
+		<!--<hr style="margin-top: 5px; margin-bottom: 15px;">-->
 		<div class="container">
 		<div class="row" style="margin-left:-18px">
 			<div class="input-prepend span3c">
@@ -214,23 +218,6 @@
 			<hr><!--Separator-->
 			
 			
-			@if(job.doArrayDef){
-				<button id="gprofilerBtn" class="btn btn-large">
-				Functional enrichment for selected genes <i class="icon-external-link"></i>
-				</button>
-			}else{
-				<button id="noFuncEnr" class="btn btn-large disabled">
-				Functional enrichment for selected genes <i class="icon-external-link"></i>
-				</button>
-				<br>
-				<p class="muted">To enable functional enrichment, ensure a plate layout was chosen at the normalization & scoring step</p>
-				<br>
-				<br>
-			}
-			
-			
-
-			</center>
 			
 						
 			<style>
@@ -259,10 +246,33 @@
 			    	</div>
 			    	
 			    	<center><h4 id="histTitle">Raw colony size vs. frequency</h4></center>
+			    	<br>
+			    	<div style="display:block" class="pull-left">
+			    	
+				@if(job.doArrayDef){
+					<button id="gprofilerBtn" class="btn">
+					Functional enrichment for selected genes <i class="icon-external-link"></i>
+					</button>
+				}else{
+					<button id="noFuncEnr" class="btn disabled pull-left">
+					Functional enrichment for selected genes <i class="icon-external-link"></i>
+					</button>
+					<br><br>
+					<p class="muted">To enable functional enrichment, ensure a plate layout was chosen at the normalization & scoring step</p>
+					
+				}
+			    	</div>
 		    		<div style="display:inline" id="bar-chart-contents">
 		    		
 		    		</div>
 			    </div>
+			    
+			    
+			
+				<div class="pull-right">
+			    
+			    </div>
+			    
 				<table id="data-table" class="table table-hover" style="margin-bottom:100px">
 				    
 				    <thead>
@@ -325,8 +335,6 @@
 			
 			function updateViewTypeValues() {
 				var viewtype = $('#viewType option:selected');
-				
-				$('#histTitle').text(viewtype.text() + ' vs. frequency')
 				$('#domainLowInput').val(viewtype.attr('domainLow'));
 				$('#domainMedInput').val(viewtype.attr('domainMed'));
 				$('#domainHighInput').val(viewtype.attr('domainHigh'));
@@ -359,7 +367,10 @@
 		    	var plate = $('#dataCombobox option:selected');
 		    	var nrows = +$('#showRecords option:selected').val()
 		    	
-		    	$('#currently_viewing').html('Currently viewing: <i>'+ viewtype.text().toLowerCase() + '</i> for <i>' + plate.text() + '</i>')
+		    	
+				//Histogram of <data type> for <plate name or "all plates">
+				$('#histTitle').text('Histogram of ' + viewtype.text().toLowerCase() + ' for ' + plate.text())
+		    	//$('#currently_viewing').html('Currently viewing: <i>'+ viewtype.text().toLowerCase() + '</i> for <i>' + plate.text() + '</i>')
 		    	
 		    	//If user selects control screen
 		    	scoreOpt = $('#viewType option[name="score"]');
