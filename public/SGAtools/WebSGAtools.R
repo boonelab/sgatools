@@ -111,9 +111,14 @@ if(all(is.na(args$adfiles))){
 
 rep = paste0('# Replicates: ', args$replicates)
 
-comment.ns = paste('# Normalized and scored by SGAtools',SGATOOLS_VERSION,'on', Sys.time())
-if(!args$score) comment.ns = gsub(pattern='and scored ', '', comment.ns)
-col.header = '# (1) Rows (2) Columns (3) Raw colony size (4) Plate id / file name (5) Query (6) Array (7) Normalized colony size (8) Score (9) Additional information'
+comment.ns = paste('# Normalized by SGAtools',SGATOOLS_VERSION,'on', Sys.time())
+if(args$score){
+  comment.ns = paste('# Normalized and scored by SGAtools',SGATOOLS_VERSION,'on', Sys.time())
+  sf = 'Cij - CiCj'
+  if(args$sfunction == 2) sf = 'Cij / CiCj'
+  comment.ns = c(comment.ns, paste0('# Scoring function: ', sf)) 
+}
+col.header = '# Contents of the rest of the file:\n# (1) Row (2) Column (3) Raw colony size (4) Plate id / file name (5) Query (6) Array (7) Normalized colony size (8) Score (9) Additional information'
 comment.ns = c(comment.ns, ad, rep, lk, col.header)
 
 # Write generated files
@@ -127,6 +132,8 @@ for(i in 1:length(sgadata.ns)){
   
   # Write plate data
   plate.data = sgadata.ns[[i]]
+  plate.data$ncolonysize = signif(plate.data$ncolonysize,3)
+  plate.data$score = signif(plate.data$score,3)
   
   write.table(plate.data, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
   
@@ -154,6 +161,10 @@ combined = lapply(sgadata.ns, function(plate.data){
   collapsed$kvp[collapsed$kvp == ""] = NA
   collapsed$ncolonysize[collapsed$ncolonysize == "NaN"] = NA
   collapsed$score[collapsed$score == "NaN"] = NA
+  print(class(collapsed$ncolonysize[1]))
+  
+  collapsed$ncolonysize = signif(as.numeric(collapsed$ncolonysize),3)
+  collapsed$score = signif(as.numeric(collapsed$score),3)
   
   ind = !is.na(collapsed$sd)
   t = round(as.numeric(collapsed$sd), digits=3)

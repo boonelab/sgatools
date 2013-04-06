@@ -85,7 +85,7 @@
 		
 		<div style="display:inline">
 			@if(iajob != null){ <a class="btn" href="@routes.Assets.at(iajob.downloadZipPath)"><i class="icon-download"></i> Image analysis results</a> }
-			<a class="btn" href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download"></i> Normalized results</a>
+			<a class="btn" href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download"></i> Normalized/scored results</a>
 		</div>
 	
 	</div>
@@ -291,6 +291,21 @@
 			</div>
 			
 	<script type="text/javascript">
+		$(document).ready(function() {
+			d3.text('/assets/jobs/@job.jobid/nsoutput_files/combined_data.dat', 'text/tsv',function(tsv){
+    			tsv = tsv.replace(/^[#@@][^\r\n]+[\r\n]+/mg, '');
+    			combinedData = d3.tsv.parse(tsv);
+    			window.globalArrays = [];
+				jQuery.each(combinedData, function(i,v){
+					globalArrays.push(v.array.split('_')[0]);
+				});
+				globalArrays = jQuery.unique(globalArrays);
+			});
+		
+		})
+	
+			
+    	
 			
 			$('#gprofilerBtn').click(function(){
 				
@@ -308,16 +323,18 @@
 				}
 				
 				//Get background genes (all genes on the plate)
-				var allEntries = dataTable.dimension().top(Infinity);
-				bgSet = []
-				for(i = 0; i<allEntries.length; i++){
-					bgSet.push(allEntries[i].arrayStandard);
-				}
-				bgSet = bgSet.join(' ');
-
+				//var allEntries = dataTable.dimension().top(Infinity);
+				//bgSet = []
+				//for(i = 0; i<allEntries.length; i++){
+				//	bgSet.push(allEntries[i].arrayStandard);
+				//}
+				//bgSet = bgSet.join(' ');
+				bgSet = jQuery.unique(globalArrays).join(' ');
+				
+				
 				params = {'organism':'scerevisiae', 
 						  'query': querySet.join(' '),
-						  'custbg': '',
+						  'custbg': bgSet,
 						  'custbg_cb':'on',
 						  'advanced_options_on': '0'
 				}

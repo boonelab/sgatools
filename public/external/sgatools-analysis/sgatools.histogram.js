@@ -72,28 +72,50 @@ function drawBarChart(settings) {
 		all = ndx.groupAll(),
 		score = ndx.dimension(function(d) { return d.score; });
 		
+		maxVal = d3.max(data, function(d) { return d.score; });
+		minVal = d3.min(data, function(d) { return d.score; });
+		
+		
+		if(minVal < 0) 
+			minVal = Math.floor(minVal);
+		else
+			minVal = Math.ceil(minVal);
+			
+		if(maxVal < 0) 
+			maxVal = Math.floor(maxVal);
+		else
+			maxVal = Math.ceil(maxVal);
+		
+		console.log('maxVal='+maxVal);
+		console.log('minVal='+minVal);
+		sub = maxVal - minVal;
+		console.log('max-min:'+sub);
+		
+		if(sub < 1) sub = 2
+		sub = sub/120;
+		console.log('sub='+sub);
+		
 		if(options.columnToUse == "ncolonysize" || options.columnToUse == "colonysize"){
-			scores = score.group(function(d) { return Math.round(d); });
-			scores = score.group(function(d) { return Math.round(d); });
-			window.scoredData = false;
+			scores = score.group(function(d) { return Math.round(d/sub)*sub; });
+			//scores = score.group(function(d) { return Math.round(d*sub)/sub; });
+			//window.scoredData = false;
+			window.scoredData = true;
 		}else{
-			scores = score.group(function(d) { return Math.round(d*40)/40; });
+			scores = score.group(function(d) { return Math.round(d/sub)*sub; });
 			window.scoredData = true;
 		}
 		
-		t = options.dataName + "_" + options.columnToUse
-		if($.inArray(t, firstCallHs) < 0){
-			maxVal = d3.max(data, function(d) { return d.score; })	
-			minVal = d3.min(data, function(d) { return d.score; })
-			options.domainLow = Math.floor(minVal);
-			options.domainHigh = Math.floor(maxVal);
-			firstCallHs.push(t);
-			console.log("pushed into firstCall");
-			console.log(firstCallHs);
-		}
+		//t = options.dataName + "_" + options.columnToUse
+		//if($.inArray(t, firstCallHs) < 0){
+		options.domainLow = minVal;
+		options.domainHigh = maxVal;
+			//firstCallHs.push(t);
+			//console.log("pushed into firstCall");
+			//console.log(firstCallHs);
+		//}
 		
-		$('#domainLowInput').val(options.domainLow)
-		$('#domainHighInput').val(options.domainHigh)
+		//$('#domainLowInput').val(options.domainLow)
+		//$('#domainHighInput').val(options.domainHigh)
 		//options.domainLow = Math.floor(options.domainLow);
 		//options.domainHigh = Math.floor(options.domainHigh);
 		

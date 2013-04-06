@@ -2171,7 +2171,7 @@ dc.barChart = function(parent, chartGroup) {
             w = MIN_BAR_WIDTH;
             
         if(window.scoredData){
-	        w = 7;
+	        w = 5;
         }
 
         return w;

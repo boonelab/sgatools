@@ -29,18 +29,21 @@ ______________________________________________________________________
 5. Query gene name/ORF: Name of the query ORF if image/dat files follow conventional file naming (see file naming in help). If they do not, a value of '1' is placed as the query ORF
 ______________________________________________________________________
 
-6. Array gene name/ORF: Name of the array ORF if image/dat files follow conventional file naming (see file naming in help). If they do not, a unique value is assigned to each group of replicate arrays 
+6. Array gene name/ORF: Name of the array ORF if plate layout file supplied. If not, a unique value is assigned to each group of replicate arrays 
 ______________________________________________________________________
 
 7. Normalized colony size: the raw colony size after normalization
 ______________________________________________________________________
 
-8. Score: the colony fitness score computed using the normalized colony size (7) and the corresponding normalized colony size in the control screen.
+8. Score: the colony fitness score computed using the normalized colony size (7) and the corresponding normalized colony size in the control screen
 ______________________________________________________________________
 
 9. Additional information as key-value pairs
-	* SD: standard deviation of scores (in the combined file)
+	* SD: Standard deviation of scores (in the combined file)
+	* LK: Linkage effect- the array exists too close to the query on the chromosome
 	* JK: Jackknife filter- This colony induces too much variance in the sizes of other colonies in the replicate group
 	* BG: Big replicates- At least three colonies of this replicate are too large. The whole replicate is excluded
 	* CP: Cap- Normalized colony size was too large (> 1000) and was capped at 1000
+
+For more help, see SGAtools help page at http://sgatools.ccbr.utoronto.ca/help
 

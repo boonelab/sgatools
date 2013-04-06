@@ -2,6 +2,7 @@
 * Scripts for normalization/scoring page: form
 */
 //On window load
+/*
 $(window).load(function() {
 	// executes when complete page is fully loaded, including all frames, objects and images
 	var nctrl = 0, ncase = 0, nvalid=0;
@@ -31,7 +32,7 @@ $(window).load(function() {
 		$('#doScoring').parent().find('span').html('Must have at least one control screen and one case screen to score')
 	}
 });
-
+*/
 
 //Initialize stuff
 $(document).ready(function() {

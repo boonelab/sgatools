@@ -1,585 +1,430 @@
-2013-04-04 22:45:02,670 - [INFO] - from play in main 
+2013-04-06 12:53:00,659 - [INFO] - from play in main 
 Listening for HTTP on port 9000...
 
-2013-04-04 22:46:41,002 - [INFO] - from application in play-akka.actor.default-dispatcher-1 
+2013-04-06 12:54:26,685 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
 Application has started
 
-2013-04-04 22:46:41,013 - [INFO] - from play in play-akka.actor.default-dispatcher-1 
+2013-04-06 12:54:26,690 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
 Application started (Dev)
 
-2013-04-04 22:46:42,719 - [ERROR] - from play in play-akka.actor.promises-dispatcher-2 
-Cannot invoke the action, eventually got an error: Thrown(akka.pattern.AskTimeoutException: Timed out)
+2013-04-06 12:55:28,276 - [INFO] - from application in play-akka.actor.actions-dispatcher-13 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/
 
-2013-04-04 22:47:12,109 - [INFO] - from application in play-akka.actor.actions-dispatcher-1 
-outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/acfc813c-bcde-4269-ace0-d943e864bdde/
+2013-04-06 12:56:56,150 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
+2013-04-06 12:56:53 INFO::Reading input files
+2013-04-06 12:56:53 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
+2013-04-06 12:56:53 INFO::* Done reading
+2013-04-06 12:56:53 INFO::* Column classes = integer,integer,integer
+2013-04-06 12:56:53 INFO::* Number rows = 32
+2013-04-06 12:56:53 INFO::* Number cols = 48
+2013-04-06 12:56:53 INFO::* Data dimension = 1536,3
+2013-04-06 12:56:53 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 12:56:53 INFO::* Mapping array definition: number of array definition files = 1
+2013-04-06 12:56:53 INFO::* Mapping array definition: IDs of array plate files = NA
+2013-04-06 12:56:53 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
+2013-04-06 12:56:53 INFO::* Done reading
+2013-04-06 12:56:53 INFO::* Column classes = integer,integer,integer
+2013-04-06 12:56:53 INFO::* Number rows = 32
+2013-04-06 12:56:53 INFO::* Number cols = 48
+2013-04-06 12:56:53 INFO::* Data dimension = 1536,3
+2013-04-06 12:56:53 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 12:56:53 INFO::* Mapping array definition: number of array definition files = 1
+2013-04-06 12:56:53 INFO::* Mapping array definition: IDs of array plate files = NA
+2013-04-06 12:56:53 INFO::Done reading all files
+2013-04-06 12:56:53 INFO::-----------------------------------------------
+2013-04-06 12:56:53 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 12:56:53 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 12:56:53 INFO::Loading chromosome coordinates file
+2013-04-06 12:56:53 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 12:56:54 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 12:56:54 INFO::Done plate normalization
+2013-04-06 12:56:54 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 12:56:54 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 12:56:54 INFO::# Normalizing for spatial effect
+2013-04-06 12:56:54 INFO::# Normalizing for row column effect
+2013-04-06 12:56:54 INFO::# Applying jackknife filter
+2013-04-06 12:56:54 INFO::Done jackknife filter, total ignored = 132
+2013-04-06 12:56:54 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 12:56:54 INFO::Done plate normalization
+2013-04-06 12:56:54 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 12:56:54 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 12:56:54 INFO::Loading chromosome coordinates file
+2013-04-06 12:56:54 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 12:56:54 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 12:56:54 INFO::Done plate normalization
+2013-04-06 12:56:54 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 12:56:54 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 12:56:55 INFO::# Normalizing for spatial effect
+2013-04-06 12:56:55 INFO::# Normalizing for row column effect
+2013-04-06 12:56:55 INFO::# Applying jackknife filter
+2013-04-06 12:56:55 INFO::Done jackknife filter, total ignored = 144
+2013-04-06 12:56:55 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 12:56:55 INFO::Done plate normalization
 
-2013-04-04 22:48:45,987 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+
+2013-04-06 13:00:10,789 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
+2013-04-06 13:00:07 INFO::Reading input files
+2013-04-06 13:00:07 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
+2013-04-06 13:00:07 INFO::* Done reading
+2013-04-06 13:00:07 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:00:07 INFO::* Number rows = 32
+2013-04-06 13:00:07 INFO::* Number cols = 48
+2013-04-06 13:00:07 INFO::* Data dimension = 1536,3
+2013-04-06 13:00:07 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:00:07 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:00:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:00:08 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
+2013-04-06 13:00:08 INFO::* Done reading
+2013-04-06 13:00:08 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:00:08 INFO::* Number rows = 32
+2013-04-06 13:00:08 INFO::* Number cols = 48
+2013-04-06 13:00:08 INFO::* Data dimension = 1536,3
+2013-04-06 13:00:08 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:00:08 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:00:08 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:00:08 INFO::Done reading all files
+2013-04-06 13:00:08 INFO::-----------------------------------------------
+2013-04-06 13:00:08 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:00:08 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:00:08 INFO::Loading chromosome coordinates file
+2013-04-06 13:00:08 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:00:08 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:08 INFO::Done plate normalization
+2013-04-06 13:00:08 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:00:08 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:00:08 INFO::# Normalizing for spatial effect
+2013-04-06 13:00:09 INFO::# Normalizing for row column effect
+2013-04-06 13:00:09 INFO::# Applying jackknife filter
+2013-04-06 13:00:09 INFO::Done jackknife filter, total ignored = 132
+2013-04-06 13:00:09 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:09 INFO::Done plate normalization
+2013-04-06 13:00:09 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:00:09 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:00:09 INFO::Loading chromosome coordinates file
+2013-04-06 13:00:09 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:00:09 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:09 INFO::Done plate normalization
+2013-04-06 13:00:09 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:00:09 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:00:09 INFO::# Normalizing for spatial effect
+2013-04-06 13:00:09 INFO::# Normalizing for row column effect
+2013-04-06 13:00:09 INFO::# Applying jackknife filter
+2013-04-06 13:00:10 INFO::Done jackknife filter, total ignored = 144
+2013-04-06 13:00:10 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:10 INFO::Done plate normalization
+[1] "character"
+
+
+2013-04-06 13:00:43,131 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
+2013-04-06 13:00:40 INFO::Reading input files
+2013-04-06 13:00:40 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
+2013-04-06 13:00:40 INFO::* Done reading
+2013-04-06 13:00:40 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:00:40 INFO::* Number rows = 32
+2013-04-06 13:00:40 INFO::* Number cols = 48
+2013-04-06 13:00:40 INFO::* Data dimension = 1536,3
+2013-04-06 13:00:40 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:00:40 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:00:40 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:00:40 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
+2013-04-06 13:00:40 INFO::* Done reading
+2013-04-06 13:00:40 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:00:40 INFO::* Number rows = 32
+2013-04-06 13:00:40 INFO::* Number cols = 48
+2013-04-06 13:00:40 INFO::* Data dimension = 1536,3
+2013-04-06 13:00:40 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:00:40 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:00:40 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:00:40 INFO::Done reading all files
+2013-04-06 13:00:40 INFO::-----------------------------------------------
+2013-04-06 13:00:40 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:00:40 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:00:40 INFO::Loading chromosome coordinates file
+2013-04-06 13:00:40 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:00:40 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:40 INFO::Done plate normalization
+2013-04-06 13:00:40 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:00:40 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:00:40 INFO::# Normalizing for spatial effect
+2013-04-06 13:00:41 INFO::# Normalizing for row column effect
+2013-04-06 13:00:41 INFO::# Applying jackknife filter
+2013-04-06 13:00:41 INFO::Done jackknife filter, total ignored = 132
+2013-04-06 13:00:41 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:41 INFO::Done plate normalization
+2013-04-06 13:00:41 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:00:41 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:00:41 INFO::Loading chromosome coordinates file
+2013-04-06 13:00:41 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:00:41 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:41 INFO::Done plate normalization
+2013-04-06 13:00:41 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:00:41 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:00:41 INFO::# Normalizing for spatial effect
+2013-04-06 13:00:42 INFO::# Normalizing for row column effect
+2013-04-06 13:00:42 INFO::# Applying jackknife filter
+2013-04-06 13:00:42 INFO::Done jackknife filter, total ignored = 144
+2013-04-06 13:00:42 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:00:42 INFO::Done plate normalization
+[1] "character"
+[1] "character"
+
+
+2013-04-06 13:01:27,512 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-18 
+2013-04-06 13:01:24 INFO::Reading input files
+2013-04-06 13:01:24 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
+2013-04-06 13:01:24 INFO::* Done reading
+2013-04-06 13:01:24 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:01:24 INFO::* Number rows = 32
+2013-04-06 13:01:24 INFO::* Number cols = 48
+2013-04-06 13:01:24 INFO::* Data dimension = 1536,3
+2013-04-06 13:01:24 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:01:24 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:01:24 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:01:24 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
+2013-04-06 13:01:24 INFO::* Done reading
+2013-04-06 13:01:24 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:01:24 INFO::* Number rows = 32
+2013-04-06 13:01:24 INFO::* Number cols = 48
+2013-04-06 13:01:24 INFO::* Data dimension = 1536,3
+2013-04-06 13:01:24 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:01:24 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:01:24 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:01:24 INFO::Done reading all files
+2013-04-06 13:01:24 INFO::-----------------------------------------------
+2013-04-06 13:01:24 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:01:24 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:01:24 INFO::Loading chromosome coordinates file
+2013-04-06 13:01:25 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:01:25 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:01:25 INFO::Done plate normalization
+2013-04-06 13:01:25 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:01:25 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:01:25 INFO::# Normalizing for spatial effect
+2013-04-06 13:01:25 INFO::# Normalizing for row column effect
+2013-04-06 13:01:25 INFO::# Applying jackknife filter
+2013-04-06 13:01:25 INFO::Done jackknife filter, total ignored = 132
+2013-04-06 13:01:25 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:01:25 INFO::Done plate normalization
+2013-04-06 13:01:25 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:01:25 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:01:25 INFO::Loading chromosome coordinates file
+2013-04-06 13:01:26 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:01:26 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:01:26 INFO::Done plate normalization
+2013-04-06 13:01:26 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:01:26 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:01:26 INFO::# Normalizing for spatial effect
+2013-04-06 13:01:26 INFO::# Normalizing for row column effect
+2013-04-06 13:01:26 INFO::# Applying jackknife filter
+2013-04-06 13:01:26 INFO::Done jackknife filter, total ignored = 144
+2013-04-06 13:01:26 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:01:26 INFO::Done plate normalization
+[1] "character"
+[1] "character"
+
+
+2013-04-06 13:13:49,473 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-25 
+2013-04-06 13:13:46 INFO::Reading input files
+2013-04-06 13:13:46 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
+2013-04-06 13:13:46 INFO::* Done reading
+2013-04-06 13:13:46 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:13:46 INFO::* Number rows = 32
+2013-04-06 13:13:46 INFO::* Number cols = 48
+2013-04-06 13:13:46 INFO::* Data dimension = 1536,3
+2013-04-06 13:13:46 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:13:46 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:13:46 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:13:46 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
+2013-04-06 13:13:46 INFO::* Done reading
+2013-04-06 13:13:46 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:13:46 INFO::* Number rows = 32
+2013-04-06 13:13:46 INFO::* Number cols = 48
+2013-04-06 13:13:46 INFO::* Data dimension = 1536,3
+2013-04-06 13:13:46 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:13:46 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:13:46 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:13:46 INFO::Done reading all files
+2013-04-06 13:13:46 INFO::-----------------------------------------------
+2013-04-06 13:13:46 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:13:46 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:13:46 INFO::Loading chromosome coordinates file
+2013-04-06 13:13:46 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:13:46 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:13:46 INFO::Done plate normalization
+2013-04-06 13:13:46 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:13:46 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:13:47 INFO::# Normalizing for spatial effect
+2013-04-06 13:13:47 INFO::# Normalizing for row column effect
+2013-04-06 13:13:47 INFO::# Applying jackknife filter
+2013-04-06 13:13:47 INFO::Done jackknife filter, total ignored = 132
+2013-04-06 13:13:47 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:13:47 INFO::Done plate normalization
+2013-04-06 13:13:47 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:13:47 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-06 13:13:47 INFO::Loading chromosome coordinates file
+2013-04-06 13:13:47 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:13:48 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:13:48 INFO::Done plate normalization
+2013-04-06 13:13:48 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:13:48 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:13:48 INFO::# Normalizing for spatial effect
+2013-04-06 13:13:48 INFO::# Normalizing for row column effect
+2013-04-06 13:13:48 INFO::# Applying jackknife filter
+2013-04-06 13:13:48 INFO::Done jackknife filter, total ignored = 144
+2013-04-06 13:13:48 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:13:48 INFO::Done plate normalization
+[1] "character"
+[1] "character"
+
+
+2013-04-06 13:16:27,880 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c522c4bd-8228-4411-8948-f5b4fb3681a6/
+
+2013-04-06 13:18:50,748 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-25 
+2013-04-06 13:18:47 INFO::Reading input files
+2013-04-06 13:18:47 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
+2013-04-06 13:18:47 INFO::* Done reading
+2013-04-06 13:18:47 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:18:47 INFO::* Number rows = 32
+2013-04-06 13:18:47 INFO::* Number cols = 48
+2013-04-06 13:18:47 INFO::* Data dimension = 1536,3
+2013-04-06 13:18:47 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:18:47 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:18:47 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:18:47 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
+2013-04-06 13:18:47 INFO::* Done reading
+2013-04-06 13:18:47 INFO::* Column classes = integer,integer,integer
+2013-04-06 13:18:47 INFO::* Number rows = 32
+2013-04-06 13:18:47 INFO::* Number cols = 48
+2013-04-06 13:18:47 INFO::* Data dimension = 1536,3
+2013-04-06 13:18:47 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-06 13:18:47 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-06 13:18:47 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-06 13:18:47 INFO::Done reading all files
+2013-04-06 13:18:47 INFO::-----------------------------------------------
+2013-04-06 13:18:47 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:18:47 INFO::# Applying linkage filter, linkage.cutoff = 500
+2013-04-06 13:18:47 INFO::Loading chromosome coordinates file
+2013-04-06 13:18:48 INFO::Linkage filter applied, total ignored = 0
+2013-04-06 13:18:48 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:18:48 INFO::Done plate normalization
+2013-04-06 13:18:48 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:18:48 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:18:48 INFO::# Normalizing for spatial effect
+2013-04-06 13:18:48 INFO::# Normalizing for row column effect
+2013-04-06 13:18:48 INFO::# Applying jackknife filter
+2013-04-06 13:18:48 INFO::Done jackknife filter, total ignored = 132
+2013-04-06 13:18:48 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:18:48 INFO::Done plate normalization
+2013-04-06 13:18:48 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-06 13:18:48 INFO::# Applying linkage filter, linkage.cutoff = 500
+2013-04-06 13:18:48 INFO::Loading chromosome coordinates file
+2013-04-06 13:18:49 INFO::Linkage filter applied, total ignored = 304
+2013-04-06 13:18:49 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:18:49 INFO::Done plate normalization
+2013-04-06 13:18:49 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-06 13:18:49 INFO::Done big replicates filter, total ignored = 0
+2013-04-06 13:18:49 INFO::# Normalizing for spatial effect
+2013-04-06 13:18:49 INFO::# Normalizing for row column effect
+2013-04-06 13:18:49 INFO::# Applying jackknife filter
+2013-04-06 13:18:49 INFO::Done jackknife filter, total ignored = 125
+2013-04-06 13:18:49 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-06 13:18:49 INFO::Done plate normalization
+[1] "character"
+[1] "character"
+
+
+2013-04-06 13:40:06,825 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /preloaded-dataanalysis/5b710f91-1211-4d14-9054-efd1cb05df44] ->
+
+sbt.PlayExceptions$TemplateCompilationException: Compilation error [`identifier' expected but `]' found]
+	at sbt.PlayCommands$$anonfun$53.apply(PlayCommands.scala:466) ~[na:na]
+	at sbt.PlayCommands$$anonfun$53.apply(PlayCommands.scala:442) ~[na:na]
+	at sbt.Scoped$$anonfun$hf4$1.apply(Structure.scala:475) ~[na:na]
+	at sbt.Scoped$$anonfun$hf4$1.apply(Structure.scala:475) ~[na:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:41) ~[scala-library.jar:0.11.3]
+	at sbt.Scoped$Reduced$$anonfun$combine$1$$anonfun$apply$11.apply(Structure.scala:295) ~[na:na]
+	at sbt.Scoped$Reduced$$anonfun$combine$1$$anonfun$apply$11.apply(Structure.scala:295) ~[na:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40) ~[na:na]
+	at sbt.std.Transform$$anon$5.work(System.scala:67) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:221) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:221) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:227) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:221) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:221) ~[na:na]
+	at sbt.CompletionService$$anon$1$$anon$2.call(CompletionService.scala:26) ~[na:na]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) ~[na:1.6.0_43]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) ~[na:1.6.0_43]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) ~[na:1.6.0_43]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) ~[na:1.6.0_43]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) ~[na:1.6.0_43]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
+
+2013-04-06 13:40:43,407 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
 Application shutdown...
 
-2013-04-04 22:48:46,009 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+2013-04-06 13:40:43,417 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
 Application has started
 
-2013-04-04 22:48:46,011 - [INFO] - from play in play-akka.actor.default-dispatcher-10 
+2013-04-06 13:40:43,417 - [INFO] - from play in play-akka.actor.default-dispatcher-38 
 Application started (Dev)
 
-2013-04-04 22:51:36,059 - [INFO] - from application in play-akka.actor.default-dispatcher-13 
+2013-04-06 13:40:50,502 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
 Application shutdown...
 
-2013-04-04 22:51:36,079 - [INFO] - from application in play-akka.actor.default-dispatcher-13 
+2013-04-06 13:40:50,511 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
 Application has started
 
-2013-04-04 22:51:36,080 - [INFO] - from play in play-akka.actor.default-dispatcher-13 
+2013-04-06 13:40:50,511 - [INFO] - from play in play-akka.actor.default-dispatcher-38 
 Application started (Dev)
 
-2013-04-04 22:55:13,317 - [INFO] - from application in play-akka.actor.default-dispatcher-14 
+2013-04-06 13:41:51,274 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
 Application shutdown...
 
-2013-04-04 22:55:13,355 - [INFO] - from application in play-akka.actor.default-dispatcher-14 
+2013-04-06 13:41:51,283 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
 Application has started
 
-2013-04-04 22:55:13,356 - [INFO] - from play in play-akka.actor.default-dispatcher-14 
+2013-04-06 13:41:51,284 - [INFO] - from play in play-akka.actor.default-dispatcher-43 
 Application started (Dev)
 
-2013-04-04 22:55:26,095 - [INFO] - from application in play-akka.actor.actions-dispatcher-12 
-outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/cef373da-4c29-4a4b-a940-3ccbedd0c18f/
-
-2013-04-04 22:56:07,809 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-12 
-2013-04-04 22:56:06 INFO::Reading input files
-2013-04-04 22:56:06 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/cef373da-4c29-4a4b-a940-3ccbedd0c18f/ia/output_files/plate.jpg.dat
-2013-04-04 22:56:06 INFO::* Done reading
-2013-04-04 22:56:06 INFO::* Column classes = integer,integer,integer
-2013-04-04 22:56:06 INFO::* Number rows = 32
-2013-04-04 22:56:06 INFO::* Number cols = 48
-2013-04-04 22:56:06 INFO::* Data dimension = 1536,3
-2013-04-04 22:56:06 INFO::* Obtaining file name metadata: valid = FALSE
-2013-04-04 22:56:06 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-04 22:56:06 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-04 22:56:06 INFO::Done reading all files
-2013-04-04 22:56:06 INFO::-----------------------------------------------
-2013-04-04 22:56:06 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-04 22:56:06 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-04 22:56:06 INFO::Loading chromosome coordinates file
-2013-04-04 22:56:06 INFO::Linkage filter applied, total ignored = 0
-2013-04-04 22:56:06 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-04 22:56:06 INFO::Done plate normalization
-2013-04-04 22:56:06 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-04 22:56:06 INFO::Done big replicates filter, total ignored = 0
-2013-04-04 22:56:06 INFO::# Normalizing for spatial effect
-2013-04-04 22:56:06 INFO::# Normalizing for row column effect
-2013-04-04 22:56:06 INFO::# Applying jackknife filter
-2013-04-04 22:56:07 INFO::Done jackknife filter, total ignored = 97
-2013-04-04 22:56:07 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-04 22:56:07 INFO::Done plate normalization
-
-
-2013-04-04 22:56:50,396 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:44:01,306 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
 Application shutdown...
 
-2013-04-04 22:56:50,409 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:44:01,324 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
 Application has started
 
-2013-04-04 22:56:50,409 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:44:01,324 - [INFO] - from play in play-akka.actor.default-dispatcher-43 
 Application started (Dev)
 
-2013-04-04 22:57:06,265 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:45:44,000 - [INFO] - from application in play-akka.actor.default-dispatcher-48 
 Application shutdown...
 
-2013-04-04 22:57:06,275 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:45:44,039 - [INFO] - from application in play-akka.actor.default-dispatcher-48 
 Application has started
 
-2013-04-04 22:57:06,275 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:45:44,039 - [INFO] - from play in play-akka.actor.default-dispatcher-48 
 Application started (Dev)
 
-2013-04-04 22:58:41,682 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:46:05,499 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
 Application shutdown...
 
-2013-04-04 22:58:41,716 - [INFO] - from application in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:46:05,517 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
 Application has started
 
-2013-04-04 22:58:41,716 - [INFO] - from play in play-akka.actor.default-dispatcher-21 
+2013-04-06 13:46:05,517 - [INFO] - from play in play-akka.actor.default-dispatcher-50 
 Application started (Dev)
 
-2013-04-04 23:00:09,147 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
+2013-04-06 13:46:52,465 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
 Application shutdown...
 
-2013-04-04 23:00:09,158 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
+2013-04-06 13:46:52,478 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
 Application has started
 
-2013-04-04 23:00:09,158 - [INFO] - from play in play-akka.actor.default-dispatcher-29 
-Application started (Dev)
-
-2013-04-04 23:06:10,389 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
-Application shutdown...
-
-2013-04-04 23:06:10,416 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
-Application has started
-
-2013-04-04 23:06:10,416 - [INFO] - from play in play-akka.actor.default-dispatcher-29 
-Application started (Dev)
-
-2013-04-04 23:07:18,063 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
-Application shutdown...
-
-2013-04-04 23:07:18,079 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
-Application has started
-
-2013-04-04 23:07:18,080 - [INFO] - from play in play-akka.actor.default-dispatcher-29 
-Application started (Dev)
-
-2013-04-04 23:08:18,408 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
-Application shutdown...
-
-2013-04-04 23:08:18,429 - [INFO] - from application in play-akka.actor.default-dispatcher-29 
-Application has started
-
-2013-04-04 23:08:18,430 - [INFO] - from play in play-akka.actor.default-dispatcher-29 
-Application started (Dev)
-
-2013-04-04 23:11:05,761 - [INFO] - from application in play-akka.actor.default-dispatcher-35 
-Application shutdown...
-
-2013-04-04 23:11:05,792 - [INFO] - from application in play-akka.actor.default-dispatcher-35 
-Application has started
-
-2013-04-04 23:11:05,792 - [INFO] - from play in play-akka.actor.default-dispatcher-35 
-Application started (Dev)
-
-2013-04-04 23:11:54,585 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application shutdown...
-
-2013-04-04 23:11:54,606 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application has started
-
-2013-04-04 23:11:54,606 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
-Application started (Dev)
-
-2013-04-04 23:12:34,651 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application shutdown...
-
-2013-04-04 23:12:34,693 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application has started
-
-2013-04-04 23:12:34,694 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
-Application started (Dev)
-
-2013-04-04 23:13:02,190 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application shutdown...
-
-2013-04-04 23:13:02,200 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application has started
-
-2013-04-04 23:13:02,200 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
-Application started (Dev)
-
-2013-04-04 23:13:57,357 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application shutdown...
-
-2013-04-04 23:13:57,391 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application has started
-
-2013-04-04 23:13:57,392 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
-Application started (Dev)
-
-2013-04-04 23:14:33,775 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application shutdown...
-
-2013-04-04 23:14:33,785 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application has started
-
-2013-04-04 23:14:33,785 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
-Application started (Dev)
-
-2013-04-04 23:14:44,688 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application shutdown...
-
-2013-04-04 23:14:44,696 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
-Application has started
-
-2013-04-04 23:14:44,696 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
-Application started (Dev)
-
-2013-04-04 23:15:08,729 - [INFO] - from application in play-akka.actor.default-dispatcher-47 
-Application shutdown...
-
-2013-04-04 23:15:08,737 - [INFO] - from application in play-akka.actor.default-dispatcher-47 
-Application has started
-
-2013-04-04 23:15:08,739 - [INFO] - from play in play-akka.actor.default-dispatcher-47 
-Application started (Dev)
-
-2013-04-04 23:26:18,450 - [ERROR] - from application in New I/O  worker #1 
-
-
-! Internal server error, for request [GET /help] ->
-
-sbt.PlayExceptions$CompilationException: Compilation error [')' expected but string literal found.]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
-	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
-	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
-	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
-	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
-
-2013-04-04 23:26:42,044 - [INFO] - from application in play-akka.actor.default-dispatcher-51 
-Application shutdown...
-
-2013-04-04 23:26:42,055 - [INFO] - from application in play-akka.actor.default-dispatcher-51 
-Application has started
-
-2013-04-04 23:26:42,056 - [INFO] - from play in play-akka.actor.default-dispatcher-51 
-Application started (Dev)
-
-2013-04-04 23:28:56,027 - [INFO] - from application in play-akka.actor.default-dispatcher-54 
-Application shutdown...
-
-2013-04-04 23:28:56,050 - [INFO] - from application in play-akka.actor.default-dispatcher-54 
-Application has started
-
-2013-04-04 23:28:56,050 - [INFO] - from play in play-akka.actor.default-dispatcher-54 
-Application started (Dev)
-
-2013-04-04 23:36:40,825 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
-Application shutdown...
-
-2013-04-04 23:36:40,848 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
-Application has started
-
-2013-04-04 23:36:40,848 - [INFO] - from play in play-akka.actor.default-dispatcher-56 
-Application started (Dev)
-
-2013-04-04 23:38:03,769 - [INFO] - from application in play-akka.actor.default-dispatcher-60 
-Application shutdown...
-
-2013-04-04 23:38:03,808 - [INFO] - from application in play-akka.actor.default-dispatcher-60 
-Application has started
-
-2013-04-04 23:38:03,809 - [INFO] - from play in play-akka.actor.default-dispatcher-60 
-Application started (Dev)
-
-2013-04-04 23:38:45,492 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
-Application shutdown...
-
-2013-04-04 23:38:45,499 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
-Application has started
-
-2013-04-04 23:38:45,500 - [INFO] - from play in play-akka.actor.default-dispatcher-61 
-Application started (Dev)
-
-2013-04-04 23:39:09,014 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
-Application shutdown...
-
-2013-04-04 23:39:09,024 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
-Application has started
-
-2013-04-04 23:39:09,024 - [INFO] - from play in play-akka.actor.default-dispatcher-61 
-Application started (Dev)
-
-2013-04-04 23:43:04,533 - [ERROR] - from application in New I/O  worker #3 
-
-
-! Internal server error, for request [GET /help] ->
-
-sbt.PlayExceptions$CompilationException: Compilation error [value Define is not a member of java.lang.String]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
-	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
-	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
-	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
-	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
-	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
-
-2013-04-04 23:43:52,915 - [INFO] - from application in play-akka.actor.default-dispatcher-65 
-Application shutdown...
-
-2013-04-04 23:43:52,926 - [INFO] - from application in play-akka.actor.default-dispatcher-65 
-Application has started
-
-2013-04-04 23:43:52,927 - [INFO] - from play in play-akka.actor.default-dispatcher-65 
-Application started (Dev)
-
-2013-04-04 23:49:29,161 - [INFO] - from application in play-akka.actor.default-dispatcher-68 
-Application shutdown...
-
-2013-04-04 23:49:29,207 - [INFO] - from application in play-akka.actor.default-dispatcher-68 
-Application has started
-
-2013-04-04 23:49:29,207 - [INFO] - from play in play-akka.actor.default-dispatcher-68 
-Application started (Dev)
-
-2013-04-04 23:50:21,505 - [INFO] - from application in play-akka.actor.default-dispatcher-68 
-Application shutdown...
-
-2013-04-04 23:50:21,528 - [INFO] - from application in play-akka.actor.default-dispatcher-68 
-Application has started
-
-2013-04-04 23:50:21,528 - [INFO] - from play in play-akka.actor.default-dispatcher-68 
-Application started (Dev)
-
-2013-04-04 23:51:19,086 - [INFO] - from application in play-akka.actor.default-dispatcher-74 
-Application shutdown...
-
-2013-04-04 23:51:19,094 - [INFO] - from application in play-akka.actor.default-dispatcher-74 
-Application has started
-
-2013-04-04 23:51:19,094 - [INFO] - from play in play-akka.actor.default-dispatcher-74 
-Application started (Dev)
-
-2013-04-04 23:56:26,858 - [INFO] - from application in play-akka.actor.default-dispatcher-76 
-Application shutdown...
-
-2013-04-04 23:56:26,869 - [INFO] - from application in play-akka.actor.default-dispatcher-76 
-Application has started
-
-2013-04-04 23:56:26,869 - [INFO] - from play in play-akka.actor.default-dispatcher-76 
-Application started (Dev)
-
-2013-04-05 00:01:17,940 - [INFO] - from application in play-akka.actor.default-dispatcher-76 
-Application shutdown...
-
-2013-04-05 00:01:17,956 - [INFO] - from application in play-akka.actor.default-dispatcher-76 
-Application has started
-
-2013-04-05 00:01:17,956 - [INFO] - from play in play-akka.actor.default-dispatcher-76 
-Application started (Dev)
-
-2013-04-05 00:03:45,632 - [INFO] - from application in play-akka.actor.default-dispatcher-76 
-Application shutdown...
-
-2013-04-05 00:03:45,640 - [INFO] - from application in play-akka.actor.default-dispatcher-76 
-Application has started
-
-2013-04-05 00:03:45,640 - [INFO] - from play in play-akka.actor.default-dispatcher-76 
-Application started (Dev)
-
-2013-04-05 00:04:18,405 - [INFO] - from application in play-akka.actor.default-dispatcher-81 
-Application shutdown...
-
-2013-04-05 00:04:18,429 - [INFO] - from application in play-akka.actor.default-dispatcher-81 
-Application has started
-
-2013-04-05 00:04:18,430 - [INFO] - from play in play-akka.actor.default-dispatcher-81 
-Application started (Dev)
-
-2013-04-05 00:04:42,592 - [INFO] - from application in play-akka.actor.default-dispatcher-81 
-Application shutdown...
-
-2013-04-05 00:04:42,649 - [INFO] - from application in play-akka.actor.default-dispatcher-81 
-Application has started
-
-2013-04-05 00:04:42,650 - [INFO] - from play in play-akka.actor.default-dispatcher-81 
-Application started (Dev)
-
-2013-04-05 00:05:43,186 - [INFO] - from application in play-akka.actor.default-dispatcher-86 
-Application shutdown...
-
-2013-04-05 00:05:43,194 - [INFO] - from application in play-akka.actor.default-dispatcher-86 
-Application has started
-
-2013-04-05 00:05:43,194 - [INFO] - from play in play-akka.actor.default-dispatcher-86 
-Application started (Dev)
-
-2013-04-05 00:06:06,831 - [INFO] - from application in play-akka.actor.default-dispatcher-88 
-Application shutdown...
-
-2013-04-05 00:06:06,846 - [INFO] - from application in play-akka.actor.default-dispatcher-88 
-Application has started
-
-2013-04-05 00:06:06,847 - [INFO] - from play in play-akka.actor.default-dispatcher-88 
-Application started (Dev)
-
-2013-04-05 00:07:01,388 - [INFO] - from application in play-akka.actor.default-dispatcher-88 
-Application shutdown...
-
-2013-04-05 00:07:01,396 - [INFO] - from application in play-akka.actor.default-dispatcher-88 
-Application has started
-
-2013-04-05 00:07:01,396 - [INFO] - from play in play-akka.actor.default-dispatcher-88 
-Application started (Dev)
-
-2013-04-05 00:08:09,107 - [INFO] - from application in play-akka.actor.default-dispatcher-88 
-Application shutdown...
-
-2013-04-05 00:08:09,115 - [INFO] - from application in play-akka.actor.default-dispatcher-88 
-Application has started
-
-2013-04-05 00:08:09,115 - [INFO] - from play in play-akka.actor.default-dispatcher-88 
-Application started (Dev)
-
-2013-04-05 00:09:07,220 - [INFO] - from application in play-akka.actor.default-dispatcher-94 
-Application shutdown...
-
-2013-04-05 00:09:07,227 - [INFO] - from application in play-akka.actor.default-dispatcher-94 
-Application has started
-
-2013-04-05 00:09:07,227 - [INFO] - from play in play-akka.actor.default-dispatcher-94 
-Application started (Dev)
-
-2013-04-05 00:09:26,882 - [INFO] - from application in play-akka.actor.default-dispatcher-95 
-Application shutdown...
-
-2013-04-05 00:09:26,902 - [INFO] - from application in play-akka.actor.default-dispatcher-95 
-Application has started
-
-2013-04-05 00:09:26,903 - [INFO] - from play in play-akka.actor.default-dispatcher-95 
-Application started (Dev)
-
-2013-04-05 00:09:42,662 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application shutdown...
-
-2013-04-05 00:09:42,677 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application has started
-
-2013-04-05 00:09:42,677 - [INFO] - from play in play-akka.actor.default-dispatcher-97 
-Application started (Dev)
-
-2013-04-05 00:10:48,420 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application shutdown...
-
-2013-04-05 00:10:48,431 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application has started
-
-2013-04-05 00:10:48,431 - [INFO] - from play in play-akka.actor.default-dispatcher-97 
-Application started (Dev)
-
-2013-04-05 00:11:58,768 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application shutdown...
-
-2013-04-05 00:11:58,779 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application has started
-
-2013-04-05 00:11:58,780 - [INFO] - from play in play-akka.actor.default-dispatcher-97 
-Application started (Dev)
-
-2013-04-05 00:12:19,198 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application shutdown...
-
-2013-04-05 00:12:19,216 - [INFO] - from application in play-akka.actor.default-dispatcher-97 
-Application has started
-
-2013-04-05 00:12:19,216 - [INFO] - from play in play-akka.actor.default-dispatcher-97 
-Application started (Dev)
-
-2013-04-05 00:13:02,188 - [INFO] - from application in play-akka.actor.default-dispatcher-104 
-Application shutdown...
-
-2013-04-05 00:13:02,202 - [INFO] - from application in play-akka.actor.default-dispatcher-104 
-Application has started
-
-2013-04-05 00:13:02,202 - [INFO] - from play in play-akka.actor.default-dispatcher-104 
-Application started (Dev)
-
-2013-04-05 00:14:36,928 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-53 
-2013-04-05 00:14:35 INFO::Reading input files
-2013-04-05 00:14:35 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/cef373da-4c29-4a4b-a940-3ccbedd0c18f/ia/output_files/plate.jpg.dat
-2013-04-05 00:14:35 INFO::* Done reading
-2013-04-05 00:14:35 INFO::* Column classes = integer,integer,integer
-2013-04-05 00:14:35 INFO::* Number rows = 32
-2013-04-05 00:14:35 INFO::* Number cols = 48
-2013-04-05 00:14:35 INFO::* Data dimension = 1536,3
-2013-04-05 00:14:35 INFO::* Obtaining file name metadata: valid = FALSE
-2013-04-05 00:14:35 INFO::* Not mapping array definition: no array definition files
-2013-04-05 00:14:35 INFO::Done reading all files
-2013-04-05 00:14:35 INFO::-----------------------------------------------
-2013-04-05 00:14:35 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-05 00:14:35 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-05 00:14:35 INFO::Loading chromosome coordinates file
-2013-04-05 00:14:35 INFO::Linkage filter applied, total ignored = 0
-2013-04-05 00:14:35 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-05 00:14:35 INFO::Done plate normalization
-2013-04-05 00:14:35 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-05 00:14:35 INFO::Done big replicates filter, total ignored = 0
-2013-04-05 00:14:35 INFO::# Normalizing for spatial effect
-2013-04-05 00:14:36 INFO::# Normalizing for row column effect
-2013-04-05 00:14:36 INFO::# Applying jackknife filter
-2013-04-05 00:14:36 INFO::Done jackknife filter, total ignored = 97
-2013-04-05 00:14:36 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-05 00:14:36 INFO::Done plate normalization
-
-
-2013-04-05 00:15:39,194 - [INFO] - from application in play-akka.actor.default-dispatcher-110 
-Application shutdown...
-
-2013-04-05 00:15:39,224 - [INFO] - from application in play-akka.actor.default-dispatcher-110 
-Application has started
-
-2013-04-05 00:15:39,224 - [INFO] - from play in play-akka.actor.default-dispatcher-110 
-Application started (Dev)
-
-2013-04-05 00:16:13,335 - [INFO] - from application in play-akka.actor.default-dispatcher-110 
-Application shutdown...
-
-2013-04-05 00:16:13,413 - [INFO] - from application in play-akka.actor.default-dispatcher-110 
-Application has started
-
-2013-04-05 00:16:13,413 - [INFO] - from play in play-akka.actor.default-dispatcher-110 
-Application started (Dev)
-
-2013-04-05 00:16:28,650 - [INFO] - from application in play-akka.actor.default-dispatcher-113 
-Application shutdown...
-
-2013-04-05 00:16:28,680 - [INFO] - from application in play-akka.actor.default-dispatcher-113 
-Application has started
-
-2013-04-05 00:16:28,680 - [INFO] - from play in play-akka.actor.default-dispatcher-113 
-Application started (Dev)
-
-2013-04-05 00:16:40,350 - [INFO] - from application in play-akka.actor.default-dispatcher-116 
-Application shutdown...
-
-2013-04-05 00:16:40,358 - [INFO] - from application in play-akka.actor.default-dispatcher-116 
-Application has started
-
-2013-04-05 00:16:40,358 - [INFO] - from play in play-akka.actor.default-dispatcher-116 
-Application started (Dev)
-
-2013-04-05 00:16:58,243 - [INFO] - from application in play-akka.actor.default-dispatcher-116 
-Application shutdown...
-
-2013-04-05 00:16:58,252 - [INFO] - from application in play-akka.actor.default-dispatcher-116 
-Application has started
-
-2013-04-05 00:16:58,252 - [INFO] - from play in play-akka.actor.default-dispatcher-116 
-Application started (Dev)
-
-2013-04-05 00:17:36,774 - [INFO] - from application in play-akka.actor.default-dispatcher-118 
-Application shutdown...
-
-2013-04-05 00:17:36,781 - [INFO] - from application in play-akka.actor.default-dispatcher-118 
-Application has started
-
-2013-04-05 00:17:36,781 - [INFO] - from play in play-akka.actor.default-dispatcher-118 
+2013-04-06 13:46:52,478 - [INFO] - from play in play-akka.actor.default-dispatcher-50 
 Application started (Dev)
 
