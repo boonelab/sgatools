@@ -9,6 +9,7 @@ GET     /                           controllers.Application.index()
 GET		/help								controllers.Application.renderHelpPage()
 GET		/about								controllers.Application.renderAboutPage()
 GET		/contact							controllers.Application.renderContactPage()
+GET		/dataanalysis/						controllers.Application.renderDaPage()
 
 #Image analysis
 GET		/imageanalysis						controllers.IAcontroller.initIAForm()

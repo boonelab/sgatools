@@ -246,7 +246,7 @@ public class NScontroller extends Controller {
         	Logger.error("===============================");
         	Logger.error(shell_output_error.toString());
         	//Fatal error
-        	filledForm.reject("plateFiles", "Fatal error, please contact developers "+ e.getMessage());
+        	filledForm.reject("plateFiles", "Fatal error, no output files were produced. If this problem persists, please contact the developers with your input files");
         	return badRequest(nsform.render(filledForm, "", ""));
         }        
         

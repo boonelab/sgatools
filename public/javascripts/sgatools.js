@@ -24,6 +24,7 @@ String.prototype.parseSGAFileName = function() {
 Array.prototype.fileTableSGA = function(){
 	var r = [];
 	var nctrl = 0, ncase = 0, nvalid=0;
+	var isExample = false;
 	jQuery.each(this.sort(), function(i, fileName) {
 		parsed = fileName.parseSGAFileName();
 		
@@ -47,9 +48,10 @@ Array.prototype.fileTableSGA = function(){
 	
 	console.log($('#doArrayDef').prop('checked'))
 	//////////////
-	if(nvalid > 0 && $('#doArrayDef').prop('checked') == false)
+	if(nvalid > 0 && $('#doArrayDef').prop('checked') == false){
 		$('#doArrayDef').prop('checked', true);
 		$('#arrDefOpts').slideDown('fast');
+	}
 	if(isExample){
 		$('option:contains("sga-array-ver2-1536")').prop('selected',true);
 		$('option:contains("sga-array-ver2-1536")').parent().change();

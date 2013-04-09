@@ -1,430 +1,834 @@
-2013-04-06 12:53:00,659 - [INFO] - from play in main 
+2013-04-08 23:55:09,810 - [INFO] - from play in main 
 Listening for HTTP on port 9000...
 
-2013-04-06 12:54:26,685 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
+2013-04-08 23:56:28,813 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
 Application has started
 
-2013-04-06 12:54:26,690 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
+2013-04-08 23:56:28,818 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
 Application started (Dev)
 
-2013-04-06 12:55:28,276 - [INFO] - from application in play-akka.actor.actions-dispatcher-13 
-outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/
-
-2013-04-06 12:56:56,150 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-2013-04-06 12:56:53 INFO::Reading input files
-2013-04-06 12:56:53 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-06 12:56:53 INFO::* Done reading
-2013-04-06 12:56:53 INFO::* Column classes = integer,integer,integer
-2013-04-06 12:56:53 INFO::* Number rows = 32
-2013-04-06 12:56:53 INFO::* Number cols = 48
-2013-04-06 12:56:53 INFO::* Data dimension = 1536,3
-2013-04-06 12:56:53 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 12:56:53 INFO::* Mapping array definition: number of array definition files = 1
-2013-04-06 12:56:53 INFO::* Mapping array definition: IDs of array plate files = NA
-2013-04-06 12:56:53 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-06 12:56:53 INFO::* Done reading
-2013-04-06 12:56:53 INFO::* Column classes = integer,integer,integer
-2013-04-06 12:56:53 INFO::* Number rows = 32
-2013-04-06 12:56:53 INFO::* Number cols = 48
-2013-04-06 12:56:53 INFO::* Data dimension = 1536,3
-2013-04-06 12:56:53 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 12:56:53 INFO::* Mapping array definition: number of array definition files = 1
-2013-04-06 12:56:53 INFO::* Mapping array definition: IDs of array plate files = NA
-2013-04-06 12:56:53 INFO::Done reading all files
-2013-04-06 12:56:53 INFO::-----------------------------------------------
-2013-04-06 12:56:53 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 12:56:53 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 12:56:53 INFO::Loading chromosome coordinates file
-2013-04-06 12:56:53 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 12:56:54 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 12:56:54 INFO::Done plate normalization
-2013-04-06 12:56:54 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 12:56:54 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 12:56:54 INFO::# Normalizing for spatial effect
-2013-04-06 12:56:54 INFO::# Normalizing for row column effect
-2013-04-06 12:56:54 INFO::# Applying jackknife filter
-2013-04-06 12:56:54 INFO::Done jackknife filter, total ignored = 132
-2013-04-06 12:56:54 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 12:56:54 INFO::Done plate normalization
-2013-04-06 12:56:54 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 12:56:54 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 12:56:54 INFO::Loading chromosome coordinates file
-2013-04-06 12:56:54 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 12:56:54 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 12:56:54 INFO::Done plate normalization
-2013-04-06 12:56:54 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 12:56:54 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 12:56:55 INFO::# Normalizing for spatial effect
-2013-04-06 12:56:55 INFO::# Normalizing for row column effect
-2013-04-06 12:56:55 INFO::# Applying jackknife filter
-2013-04-06 12:56:55 INFO::Done jackknife filter, total ignored = 144
-2013-04-06 12:56:55 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 12:56:55 INFO::Done plate normalization
-
-
-2013-04-06 13:00:10,789 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-2013-04-06 13:00:07 INFO::Reading input files
-2013-04-06 13:00:07 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-06 13:00:07 INFO::* Done reading
-2013-04-06 13:00:07 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:00:07 INFO::* Number rows = 32
-2013-04-06 13:00:07 INFO::* Number cols = 48
-2013-04-06 13:00:07 INFO::* Data dimension = 1536,3
-2013-04-06 13:00:07 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:00:07 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:00:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:00:08 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-06 13:00:08 INFO::* Done reading
-2013-04-06 13:00:08 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:00:08 INFO::* Number rows = 32
-2013-04-06 13:00:08 INFO::* Number cols = 48
-2013-04-06 13:00:08 INFO::* Data dimension = 1536,3
-2013-04-06 13:00:08 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:00:08 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:00:08 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:00:08 INFO::Done reading all files
-2013-04-06 13:00:08 INFO::-----------------------------------------------
-2013-04-06 13:00:08 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:00:08 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:00:08 INFO::Loading chromosome coordinates file
-2013-04-06 13:00:08 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:00:08 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:08 INFO::Done plate normalization
-2013-04-06 13:00:08 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:00:08 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:00:08 INFO::# Normalizing for spatial effect
-2013-04-06 13:00:09 INFO::# Normalizing for row column effect
-2013-04-06 13:00:09 INFO::# Applying jackknife filter
-2013-04-06 13:00:09 INFO::Done jackknife filter, total ignored = 132
-2013-04-06 13:00:09 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:09 INFO::Done plate normalization
-2013-04-06 13:00:09 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:00:09 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:00:09 INFO::Loading chromosome coordinates file
-2013-04-06 13:00:09 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:00:09 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:09 INFO::Done plate normalization
-2013-04-06 13:00:09 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:00:09 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:00:09 INFO::# Normalizing for spatial effect
-2013-04-06 13:00:09 INFO::# Normalizing for row column effect
-2013-04-06 13:00:09 INFO::# Applying jackknife filter
-2013-04-06 13:00:10 INFO::Done jackknife filter, total ignored = 144
-2013-04-06 13:00:10 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:10 INFO::Done plate normalization
-[1] "character"
-
-
-2013-04-06 13:00:43,131 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-2013-04-06 13:00:40 INFO::Reading input files
-2013-04-06 13:00:40 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-06 13:00:40 INFO::* Done reading
-2013-04-06 13:00:40 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:00:40 INFO::* Number rows = 32
-2013-04-06 13:00:40 INFO::* Number cols = 48
-2013-04-06 13:00:40 INFO::* Data dimension = 1536,3
-2013-04-06 13:00:40 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:00:40 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:00:40 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:00:40 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-06 13:00:40 INFO::* Done reading
-2013-04-06 13:00:40 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:00:40 INFO::* Number rows = 32
-2013-04-06 13:00:40 INFO::* Number cols = 48
-2013-04-06 13:00:40 INFO::* Data dimension = 1536,3
-2013-04-06 13:00:40 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:00:40 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:00:40 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:00:40 INFO::Done reading all files
-2013-04-06 13:00:40 INFO::-----------------------------------------------
-2013-04-06 13:00:40 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:00:40 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:00:40 INFO::Loading chromosome coordinates file
-2013-04-06 13:00:40 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:00:40 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:40 INFO::Done plate normalization
-2013-04-06 13:00:40 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:00:40 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:00:40 INFO::# Normalizing for spatial effect
-2013-04-06 13:00:41 INFO::# Normalizing for row column effect
-2013-04-06 13:00:41 INFO::# Applying jackknife filter
-2013-04-06 13:00:41 INFO::Done jackknife filter, total ignored = 132
-2013-04-06 13:00:41 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:41 INFO::Done plate normalization
-2013-04-06 13:00:41 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:00:41 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:00:41 INFO::Loading chromosome coordinates file
-2013-04-06 13:00:41 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:00:41 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:41 INFO::Done plate normalization
-2013-04-06 13:00:41 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:00:41 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:00:41 INFO::# Normalizing for spatial effect
-2013-04-06 13:00:42 INFO::# Normalizing for row column effect
-2013-04-06 13:00:42 INFO::# Applying jackknife filter
-2013-04-06 13:00:42 INFO::Done jackknife filter, total ignored = 144
-2013-04-06 13:00:42 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:00:42 INFO::Done plate normalization
-[1] "character"
-[1] "character"
-
-
-2013-04-06 13:01:27,512 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-18 
-2013-04-06 13:01:24 INFO::Reading input files
-2013-04-06 13:01:24 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-06 13:01:24 INFO::* Done reading
-2013-04-06 13:01:24 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:01:24 INFO::* Number rows = 32
-2013-04-06 13:01:24 INFO::* Number cols = 48
-2013-04-06 13:01:24 INFO::* Data dimension = 1536,3
-2013-04-06 13:01:24 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:01:24 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:01:24 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:01:24 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-06 13:01:24 INFO::* Done reading
-2013-04-06 13:01:24 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:01:24 INFO::* Number rows = 32
-2013-04-06 13:01:24 INFO::* Number cols = 48
-2013-04-06 13:01:24 INFO::* Data dimension = 1536,3
-2013-04-06 13:01:24 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:01:24 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:01:24 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:01:24 INFO::Done reading all files
-2013-04-06 13:01:24 INFO::-----------------------------------------------
-2013-04-06 13:01:24 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:01:24 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:01:24 INFO::Loading chromosome coordinates file
-2013-04-06 13:01:25 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:01:25 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:01:25 INFO::Done plate normalization
-2013-04-06 13:01:25 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:01:25 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:01:25 INFO::# Normalizing for spatial effect
-2013-04-06 13:01:25 INFO::# Normalizing for row column effect
-2013-04-06 13:01:25 INFO::# Applying jackknife filter
-2013-04-06 13:01:25 INFO::Done jackknife filter, total ignored = 132
-2013-04-06 13:01:25 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:01:25 INFO::Done plate normalization
-2013-04-06 13:01:25 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:01:25 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:01:25 INFO::Loading chromosome coordinates file
-2013-04-06 13:01:26 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:01:26 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:01:26 INFO::Done plate normalization
-2013-04-06 13:01:26 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:01:26 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:01:26 INFO::# Normalizing for spatial effect
-2013-04-06 13:01:26 INFO::# Normalizing for row column effect
-2013-04-06 13:01:26 INFO::# Applying jackknife filter
-2013-04-06 13:01:26 INFO::Done jackknife filter, total ignored = 144
-2013-04-06 13:01:26 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:01:26 INFO::Done plate normalization
-[1] "character"
-[1] "character"
-
-
-2013-04-06 13:13:49,473 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-25 
-2013-04-06 13:13:46 INFO::Reading input files
-2013-04-06 13:13:46 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-06 13:13:46 INFO::* Done reading
-2013-04-06 13:13:46 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:13:46 INFO::* Number rows = 32
-2013-04-06 13:13:46 INFO::* Number cols = 48
-2013-04-06 13:13:46 INFO::* Data dimension = 1536,3
-2013-04-06 13:13:46 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:13:46 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:13:46 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:13:46 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-06 13:13:46 INFO::* Done reading
-2013-04-06 13:13:46 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:13:46 INFO::* Number rows = 32
-2013-04-06 13:13:46 INFO::* Number cols = 48
-2013-04-06 13:13:46 INFO::* Data dimension = 1536,3
-2013-04-06 13:13:46 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:13:46 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:13:46 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:13:46 INFO::Done reading all files
-2013-04-06 13:13:46 INFO::-----------------------------------------------
-2013-04-06 13:13:46 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:13:46 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:13:46 INFO::Loading chromosome coordinates file
-2013-04-06 13:13:46 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:13:46 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:13:46 INFO::Done plate normalization
-2013-04-06 13:13:46 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:13:46 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:13:47 INFO::# Normalizing for spatial effect
-2013-04-06 13:13:47 INFO::# Normalizing for row column effect
-2013-04-06 13:13:47 INFO::# Applying jackknife filter
-2013-04-06 13:13:47 INFO::Done jackknife filter, total ignored = 132
-2013-04-06 13:13:47 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:13:47 INFO::Done plate normalization
-2013-04-06 13:13:47 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:13:47 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-06 13:13:47 INFO::Loading chromosome coordinates file
-2013-04-06 13:13:47 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:13:48 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:13:48 INFO::Done plate normalization
-2013-04-06 13:13:48 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:13:48 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:13:48 INFO::# Normalizing for spatial effect
-2013-04-06 13:13:48 INFO::# Normalizing for row column effect
-2013-04-06 13:13:48 INFO::# Applying jackknife filter
-2013-04-06 13:13:48 INFO::Done jackknife filter, total ignored = 144
-2013-04-06 13:13:48 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:13:48 INFO::Done plate normalization
-[1] "character"
-[1] "character"
-
-
-2013-04-06 13:16:27,880 - [INFO] - from application in play-akka.actor.actions-dispatcher-25 
-outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c522c4bd-8228-4411-8948-f5b4fb3681a6/
-
-2013-04-06 13:18:50,748 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-25 
-2013-04-06 13:18:47 INFO::Reading input files
-2013-04-06 13:18:47 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-06 13:18:47 INFO::* Done reading
-2013-04-06 13:18:47 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:18:47 INFO::* Number rows = 32
-2013-04-06 13:18:47 INFO::* Number cols = 48
-2013-04-06 13:18:47 INFO::* Data dimension = 1536,3
-2013-04-06 13:18:47 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:18:47 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:18:47 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:18:47 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/5b710f91-1211-4d14-9054-efd1cb05df44/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-06 13:18:47 INFO::* Done reading
-2013-04-06 13:18:47 INFO::* Column classes = integer,integer,integer
-2013-04-06 13:18:47 INFO::* Number rows = 32
-2013-04-06 13:18:47 INFO::* Number cols = 48
-2013-04-06 13:18:47 INFO::* Data dimension = 1536,3
-2013-04-06 13:18:47 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-06 13:18:47 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-06 13:18:47 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-06 13:18:47 INFO::Done reading all files
-2013-04-06 13:18:47 INFO::-----------------------------------------------
-2013-04-06 13:18:47 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:18:47 INFO::# Applying linkage filter, linkage.cutoff = 500
-2013-04-06 13:18:47 INFO::Loading chromosome coordinates file
-2013-04-06 13:18:48 INFO::Linkage filter applied, total ignored = 0
-2013-04-06 13:18:48 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:18:48 INFO::Done plate normalization
-2013-04-06 13:18:48 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:18:48 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:18:48 INFO::# Normalizing for spatial effect
-2013-04-06 13:18:48 INFO::# Normalizing for row column effect
-2013-04-06 13:18:48 INFO::# Applying jackknife filter
-2013-04-06 13:18:48 INFO::Done jackknife filter, total ignored = 132
-2013-04-06 13:18:48 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:18:48 INFO::Done plate normalization
-2013-04-06 13:18:48 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-06 13:18:48 INFO::# Applying linkage filter, linkage.cutoff = 500
-2013-04-06 13:18:48 INFO::Loading chromosome coordinates file
-2013-04-06 13:18:49 INFO::Linkage filter applied, total ignored = 304
-2013-04-06 13:18:49 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:18:49 INFO::Done plate normalization
-2013-04-06 13:18:49 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-06 13:18:49 INFO::Done big replicates filter, total ignored = 0
-2013-04-06 13:18:49 INFO::# Normalizing for spatial effect
-2013-04-06 13:18:49 INFO::# Normalizing for row column effect
-2013-04-06 13:18:49 INFO::# Applying jackknife filter
-2013-04-06 13:18:49 INFO::Done jackknife filter, total ignored = 125
-2013-04-06 13:18:49 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-06 13:18:49 INFO::Done plate normalization
-[1] "character"
-[1] "character"
-
-
-2013-04-06 13:40:06,825 - [ERROR] - from application in New I/O  worker #1 
-
-
-! Internal server error, for request [GET /preloaded-dataanalysis/5b710f91-1211-4d14-9054-efd1cb05df44] ->
-
-sbt.PlayExceptions$TemplateCompilationException: Compilation error [`identifier' expected but `]' found]
-	at sbt.PlayCommands$$anonfun$53.apply(PlayCommands.scala:466) ~[na:na]
-	at sbt.PlayCommands$$anonfun$53.apply(PlayCommands.scala:442) ~[na:na]
-	at sbt.Scoped$$anonfun$hf4$1.apply(Structure.scala:475) ~[na:na]
-	at sbt.Scoped$$anonfun$hf4$1.apply(Structure.scala:475) ~[na:na]
-	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:41) ~[scala-library.jar:0.11.3]
-	at sbt.Scoped$Reduced$$anonfun$combine$1$$anonfun$apply$11.apply(Structure.scala:295) ~[na:na]
-	at sbt.Scoped$Reduced$$anonfun$combine$1$$anonfun$apply$11.apply(Structure.scala:295) ~[na:na]
-	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40) ~[na:na]
-	at sbt.std.Transform$$anon$5.work(System.scala:67) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:221) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:221) ~[na:na]
-	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
-	at sbt.Execute.work(Execute.scala:227) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:221) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:221) ~[na:na]
-	at sbt.CompletionService$$anon$1$$anon$2.call(CompletionService.scala:26) ~[na:na]
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) ~[na:1.6.0_43]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138) ~[na:1.6.0_43]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) ~[na:1.6.0_43]
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) ~[na:1.6.0_43]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138) ~[na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-
-2013-04-06 13:40:43,407 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
+2013-04-09 00:08:12,312 - [INFO] - from application in play-akka.actor.default-dispatcher-12 
 Application shutdown...
 
-2013-04-06 13:40:43,417 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
+2013-04-09 00:08:12,325 - [INFO] - from application in play-akka.actor.default-dispatcher-12 
 Application has started
 
-2013-04-06 13:40:43,417 - [INFO] - from play in play-akka.actor.default-dispatcher-38 
+2013-04-09 00:08:12,326 - [INFO] - from play in play-akka.actor.default-dispatcher-12 
 Application started (Dev)
 
-2013-04-06 13:40:50,502 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
+2013-04-09 00:08:35,613 - [INFO] - from application in play-akka.actor.actions-dispatcher-16 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/dfb2fc21-40e0-49ca-addc-c9d5aef99e1d/
+
+2013-04-09 00:11:37,052 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
 Application shutdown...
 
-2013-04-06 13:40:50,511 - [INFO] - from application in play-akka.actor.default-dispatcher-38 
+2013-04-09 00:11:37,069 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
 Application has started
 
-2013-04-06 13:40:50,511 - [INFO] - from play in play-akka.actor.default-dispatcher-38 
+2013-04-09 00:11:37,072 - [INFO] - from play in play-akka.actor.default-dispatcher-17 
 Application started (Dev)
 
-2013-04-06 13:41:51,274 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
+2013-04-09 00:11:43,770 - [INFO] - from application in play-akka.actor.actions-dispatcher-16 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/a64c3c08-177b-41cb-ab8e-bb4c57caec66/
+
+2013-04-09 00:12:37,104 - [INFO] - from application in play-akka.actor.default-dispatcher-22 
 Application shutdown...
 
-2013-04-06 13:41:51,283 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
+2013-04-09 00:12:37,122 - [INFO] - from application in play-akka.actor.default-dispatcher-22 
 Application has started
 
-2013-04-06 13:41:51,284 - [INFO] - from play in play-akka.actor.default-dispatcher-43 
+2013-04-09 00:12:37,124 - [INFO] - from play in play-akka.actor.default-dispatcher-22 
 Application started (Dev)
 
-2013-04-06 13:44:01,306 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
+2013-04-09 00:12:46,515 - [INFO] - from application in play-akka.actor.actions-dispatcher-20 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b73a35e8-b854-45c9-9f96-7c0162a23e1d/
+
+2013-04-09 00:13:18,194 - [INFO] - from application in play-akka.actor.default-dispatcher-24 
 Application shutdown...
 
-2013-04-06 13:44:01,324 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
+2013-04-09 00:13:18,208 - [INFO] - from application in play-akka.actor.default-dispatcher-24 
 Application has started
 
-2013-04-06 13:44:01,324 - [INFO] - from play in play-akka.actor.default-dispatcher-43 
+2013-04-09 00:13:18,209 - [INFO] - from play in play-akka.actor.default-dispatcher-24 
 Application started (Dev)
 
-2013-04-06 13:45:44,000 - [INFO] - from application in play-akka.actor.default-dispatcher-48 
+2013-04-09 00:13:37,089 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-20 
+2013-04-09 00:13:35 INFO::Reading input files
+2013-04-09 00:13:35 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/b73a35e8-b854-45c9-9f96-7c0162a23e1d/ia/output_files/plate.jpg.dat
+2013-04-09 00:13:35 INFO::* Done reading
+2013-04-09 00:13:35 INFO::* Column classes = integer,integer,integer
+2013-04-09 00:13:35 INFO::* Number rows = 32
+2013-04-09 00:13:35 INFO::* Number cols = 48
+2013-04-09 00:13:35 INFO::* Data dimension = 1536,3
+2013-04-09 00:13:35 INFO::* Obtaining file name metadata: valid = FALSE
+2013-04-09 00:13:35 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-09 00:13:35 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-09 00:13:35 INFO::Done reading all files
+2013-04-09 00:13:35 INFO::-----------------------------------------------
+2013-04-09 00:13:35 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-09 00:13:35 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-04-09 00:13:35 INFO::Loading chromosome coordinates file
+2013-04-09 00:13:35 INFO::Linkage filter applied, total ignored = 0
+2013-04-09 00:13:35 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:13:35 INFO::Done plate normalization
+2013-04-09 00:13:35 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-09 00:13:35 INFO::Done big replicates filter, total ignored = 0
+2013-04-09 00:13:35 INFO::# Normalizing for spatial effect
+2013-04-09 00:13:36 INFO::# Normalizing for row column effect
+2013-04-09 00:13:36 INFO::# Applying jackknife filter
+2013-04-09 00:13:36 INFO::Done jackknife filter, total ignored = 97
+2013-04-09 00:13:36 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:13:36 INFO::Done plate normalization
+[1] "character"
+
+
+2013-04-09 00:18:23,938 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
 Application shutdown...
 
-2013-04-06 13:45:44,039 - [INFO] - from application in play-akka.actor.default-dispatcher-48 
+2013-04-09 00:18:23,981 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
 Application has started
 
-2013-04-06 13:45:44,039 - [INFO] - from play in play-akka.actor.default-dispatcher-48 
+2013-04-09 00:18:23,982 - [INFO] - from play in play-akka.actor.default-dispatcher-26 
 Application started (Dev)
 
-2013-04-06 13:46:05,499 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
+2013-04-09 00:20:19,178 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-24 
+2013-04-09 00:20:17 INFO::Reading input files
+2013-04-09 00:20:17 INFO::Reading input file (1/1) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody1400824878999087941asTemporaryFile
+2013-04-09 00:20:17 INFO::* Done reading
+2013-04-09 00:20:17 INFO::* Column classes = integer,integer,integer
+2013-04-09 00:20:17 INFO::* Number rows = 32
+2013-04-09 00:20:17 INFO::* Number cols = 48
+2013-04-09 00:20:17 INFO::* Data dimension = 1536,3
+2013-04-09 00:20:17 INFO::* Obtaining file name metadata: valid = FALSE
+2013-04-09 00:20:17 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-09 00:20:17 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-09 00:20:17 INFO::Done reading all files
+2013-04-09 00:20:17 INFO::-----------------------------------------------
+2013-04-09 00:20:17 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-09 00:20:17 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-09 00:20:17 INFO::Loading chromosome coordinates file
+2013-04-09 00:20:18 INFO::Linkage filter applied, total ignored = 0
+2013-04-09 00:20:18 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:20:18 INFO::Done plate normalization
+2013-04-09 00:20:18 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-09 00:20:18 INFO::Done big replicates filter, total ignored = 0
+2013-04-09 00:20:18 INFO::# Normalizing for spatial effect
+2013-04-09 00:20:18 INFO::# Normalizing for row column effect
+2013-04-09 00:20:18 INFO::# Applying jackknife filter
+2013-04-09 00:20:18 INFO::Done jackknife filter, total ignored = 97
+2013-04-09 00:20:18 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:20:18 INFO::Done plate normalization
+[1] "character"
+
+
+2013-04-09 00:20:22,928 - [ERROR] - from application in play-akka.actor.actions-dispatcher-24 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:21:58,206 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
 Application shutdown...
 
-2013-04-06 13:46:05,517 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
+2013-04-09 00:21:58,219 - [INFO] - from application in play-akka.actor.default-dispatcher-37 
 Application has started
 
-2013-04-06 13:46:05,517 - [INFO] - from play in play-akka.actor.default-dispatcher-50 
+2013-04-09 00:21:58,219 - [INFO] - from play in play-akka.actor.default-dispatcher-37 
 Application started (Dev)
 
-2013-04-06 13:46:52,465 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
+2013-04-09 00:21:58,256 - [ERROR] - from application in play-akka.actor.actions-dispatcher-25 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:25:52,851 - [INFO] - from application in play-akka.actor.default-dispatcher-40 
 Application shutdown...
 
-2013-04-06 13:46:52,478 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
+2013-04-09 00:25:52,864 - [INFO] - from application in play-akka.actor.default-dispatcher-40 
 Application has started
 
-2013-04-06 13:46:52,478 - [INFO] - from play in play-akka.actor.default-dispatcher-50 
+2013-04-09 00:25:52,864 - [INFO] - from play in play-akka.actor.default-dispatcher-40 
+Application started (Dev)
+
+2013-04-09 00:25:52,906 - [ERROR] - from application in play-akka.actor.actions-dispatcher-26 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:27:30,058 - [INFO] - from application in play-akka.actor.default-dispatcher-40 
+Application shutdown...
+
+2013-04-09 00:27:30,067 - [INFO] - from application in play-akka.actor.default-dispatcher-40 
+Application has started
+
+2013-04-09 00:27:30,068 - [INFO] - from play in play-akka.actor.default-dispatcher-40 
+Application started (Dev)
+
+2013-04-09 00:27:30,115 - [ERROR] - from application in play-akka.actor.actions-dispatcher-26 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:29:12,217 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application shutdown...
+
+2013-04-09 00:29:12,239 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application has started
+
+2013-04-09 00:29:12,240 - [INFO] - from play in play-akka.actor.default-dispatcher-44 
+Application started (Dev)
+
+2013-04-09 00:29:12,389 - [ERROR] - from application in play-akka.actor.actions-dispatcher-26 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:29:56,710 - [INFO] - from application in play-akka.actor.default-dispatcher-47 
+Application shutdown...
+
+2013-04-09 00:29:56,720 - [INFO] - from application in play-akka.actor.default-dispatcher-47 
+Application has started
+
+2013-04-09 00:29:56,720 - [INFO] - from play in play-akka.actor.default-dispatcher-47 
+Application started (Dev)
+
+2013-04-09 00:29:56,772 - [ERROR] - from application in play-akka.actor.actions-dispatcher-28 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:30:41,708 - [INFO] - from application in play-akka.actor.default-dispatcher-49 
+Application shutdown...
+
+2013-04-09 00:30:41,720 - [INFO] - from application in play-akka.actor.default-dispatcher-49 
+Application has started
+
+2013-04-09 00:30:41,721 - [INFO] - from play in play-akka.actor.default-dispatcher-49 
+Application started (Dev)
+
+2013-04-09 00:30:41,769 - [ERROR] - from application in play-akka.actor.actions-dispatcher-29 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/8baa8b2e-d51e-4f16-8726-390a0c421161/ia/8baa8b2e-d51e-4f16-8726-390a0c421161.json (No such file or directory)
+
+2013-04-09 00:31:29,759 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-29 
+2013-04-09 00:31:25 INFO::Reading input files
+2013-04-09 00:31:25 INFO::Reading input file (1/2) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody8553476419662854662asTemporaryFile
+2013-04-09 00:31:25 INFO::* Done reading
+2013-04-09 00:31:25 INFO::* Column classes = integer,integer,integer
+2013-04-09 00:31:25 INFO::* Number rows = 32
+2013-04-09 00:31:25 INFO::* Number cols = 48
+2013-04-09 00:31:25 INFO::* Data dimension = 1536,3
+2013-04-09 00:31:25 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-09 00:31:25 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-09 00:31:25 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-09 00:31:26 INFO::Reading input file (2/2) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody5242709338759248358asTemporaryFile
+2013-04-09 00:31:26 INFO::* Done reading
+2013-04-09 00:31:26 INFO::* Column classes = integer,integer,integer
+2013-04-09 00:31:26 INFO::* Number rows = 32
+2013-04-09 00:31:26 INFO::* Number cols = 48
+2013-04-09 00:31:26 INFO::* Data dimension = 1536,3
+2013-04-09 00:31:26 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-09 00:31:26 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-09 00:31:26 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-09 00:31:26 INFO::Done reading all files
+2013-04-09 00:31:26 INFO::-----------------------------------------------
+2013-04-09 00:31:26 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-09 00:31:26 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-09 00:31:26 INFO::Loading chromosome coordinates file
+2013-04-09 00:31:26 INFO::Linkage filter applied, total ignored = 0
+2013-04-09 00:31:26 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:31:26 INFO::Done plate normalization
+2013-04-09 00:31:26 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-09 00:31:26 INFO::Done big replicates filter, total ignored = 0
+2013-04-09 00:31:26 INFO::# Normalizing for spatial effect
+2013-04-09 00:31:26 INFO::# Normalizing for row column effect
+2013-04-09 00:31:26 INFO::# Applying jackknife filter
+2013-04-09 00:31:27 INFO::Done jackknife filter, total ignored = 132
+2013-04-09 00:31:27 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:31:27 INFO::Done plate normalization
+2013-04-09 00:31:27 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-09 00:31:27 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-09 00:31:27 INFO::Loading chromosome coordinates file
+2013-04-09 00:31:27 INFO::Linkage filter applied, total ignored = 0
+2013-04-09 00:31:27 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:31:27 INFO::Done plate normalization
+2013-04-09 00:31:27 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-09 00:31:27 INFO::Done big replicates filter, total ignored = 0
+2013-04-09 00:31:27 INFO::# Normalizing for spatial effect
+2013-04-09 00:31:28 INFO::# Normalizing for row column effect
+2013-04-09 00:31:28 INFO::# Applying jackknife filter
+2013-04-09 00:31:28 INFO::Done jackknife filter, total ignored = 144
+2013-04-09 00:31:28 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 00:31:28 INFO::Done plate normalization
+[1] "character"
+[1] "character"
+
+
+2013-04-09 00:31:34,456 - [ERROR] - from application in play-akka.actor.actions-dispatcher-29 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/63d98fbc-11c8-4929-b7fe-49d9a0a38b20/ia/63d98fbc-11c8-4929-b7fe-49d9a0a38b20.json (No such file or directory)
+
+2013-04-09 00:33:37,129 - [INFO] - from application in play-akka.actor.default-dispatcher-54 
+Application shutdown...
+
+2013-04-09 00:33:37,151 - [INFO] - from application in play-akka.actor.default-dispatcher-54 
+Application has started
+
+2013-04-09 00:33:37,151 - [INFO] - from play in play-akka.actor.default-dispatcher-54 
+Application started (Dev)
+
+2013-04-09 00:45:51,755 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
+Application shutdown...
+
+2013-04-09 00:45:51,782 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
+Application has started
+
+2013-04-09 00:45:51,782 - [INFO] - from play in play-akka.actor.default-dispatcher-56 
+Application started (Dev)
+
+2013-04-09 00:45:51,872 - [ERROR] - from application in play-akka.actor.actions-dispatcher-30 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/63d98fbc-11c8-4929-b7fe-49d9a0a38b20/ia/63d98fbc-11c8-4929-b7fe-49d9a0a38b20.json (No such file or directory)
+
+2013-04-09 00:50:15,403 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
+Application shutdown...
+
+2013-04-09 00:50:15,425 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
+Application has started
+
+2013-04-09 00:50:15,426 - [INFO] - from play in play-akka.actor.default-dispatcher-56 
+Application started (Dev)
+
+2013-04-09 00:50:15,618 - [ERROR] - from application in play-akka.actor.actions-dispatcher-30 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/63d98fbc-11c8-4929-b7fe-49d9a0a38b20/ia/63d98fbc-11c8-4929-b7fe-49d9a0a38b20.json (No such file or directory)
+
+2013-04-09 00:50:22,308 - [ERROR] - from application in play-akka.actor.actions-dispatcher-30 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 00:50:22,309 - [ERROR] - from application in play-akka.actor.actions-dispatcher-30 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 00:50:22,391 - [ERROR] - from application in play-akka.actor.actions-dispatcher-30 
+
+
+! @6e061d3lo - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:501) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 00:50:41,677 - [ERROR] - from application in play-akka.actor.actions-dispatcher-32 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 00:50:41,677 - [ERROR] - from application in play-akka.actor.actions-dispatcher-32 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 00:50:41,683 - [ERROR] - from application in play-akka.actor.actions-dispatcher-32 
+
+
+! @6e061d3lp - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:501) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 00:51:59,472 - [INFO] - from application in play-akka.actor.default-dispatcher-62 
+Application shutdown...
+
+2013-04-09 00:51:59,483 - [INFO] - from application in play-akka.actor.default-dispatcher-62 
+Application has started
+
+2013-04-09 00:51:59,484 - [INFO] - from play in play-akka.actor.default-dispatcher-62 
+Application started (Dev)
+
+2013-04-09 00:51:59,558 - [ERROR] - from application in play-akka.actor.actions-dispatcher-32 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/63d98fbc-11c8-4929-b7fe-49d9a0a38b20/ia/63d98fbc-11c8-4929-b7fe-49d9a0a38b20.json (No such file or directory)
+
+2013-04-09 00:52:21,762 - [INFO] - from application in play-akka.actor.default-dispatcher-62 
+Application shutdown...
+
+2013-04-09 00:52:21,785 - [INFO] - from application in play-akka.actor.default-dispatcher-62 
+Application has started
+
+2013-04-09 00:52:21,785 - [INFO] - from play in play-akka.actor.default-dispatcher-62 
+Application started (Dev)
+
+2013-04-09 00:52:21,852 - [ERROR] - from application in play-akka.actor.actions-dispatcher-34 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 00:52:21,854 - [ERROR] - from application in play-akka.actor.actions-dispatcher-34 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 00:52:21,918 - [ERROR] - from application in play-akka.actor.actions-dispatcher-34 
+
+
+! @6e061d3m0 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:501) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 00:54:06,186 - [INFO] - from application in play-akka.actor.default-dispatcher-62 
+Application shutdown...
+
+2013-04-09 00:54:06,207 - [INFO] - from application in play-akka.actor.default-dispatcher-62 
+Application has started
+
+2013-04-09 00:54:06,208 - [INFO] - from play in play-akka.actor.default-dispatcher-62 
+Application started (Dev)
+
+2013-04-09 00:54:06,293 - [ERROR] - from application in play-akka.actor.actions-dispatcher-35 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/63d98fbc-11c8-4929-b7fe-49d9a0a38b20/ia/63d98fbc-11c8-4929-b7fe-49d9a0a38b20.json (No such file or directory)
+
+2013-04-09 00:54:17,430 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 00:54:17,430 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 00:54:17,439 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+
+
+! @6e061d3m1 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:503) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 00:54:35,318 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 00:54:35,319 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 00:54:35,325 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+
+
+! @6e061d3m2 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:503) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 00:54:44,503 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 00:54:44,503 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 00:54:44,509 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+
+
+! @6e061d3m3 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:503) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 01:12:19,802 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-37 
+2013-04-09 01:12:17 INFO::Reading input files
+2013-04-09 01:12:17 INFO::Reading input file (1/1) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody2521189198393823943asTemporaryFile
+2013-04-09 01:12:17 INFO::* Done reading
+2013-04-09 01:12:17 INFO::* Column classes = integer,integer,integer
+2013-04-09 01:12:17 INFO::* Number rows = 32
+2013-04-09 01:12:17 INFO::* Number cols = 48
+2013-04-09 01:12:17 INFO::* Data dimension = 1536,3
+2013-04-09 01:12:17 INFO::* Obtaining file name metadata: valid = TRUE
+2013-04-09 01:12:17 INFO::* Mapping array definition: number of array definition files = 14
+2013-04-09 01:12:17 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-04-09 01:12:18 INFO::Done reading all files
+2013-04-09 01:12:18 INFO::-----------------------------------------------
+2013-04-09 01:12:18 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-04-09 01:12:18 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-04-09 01:12:18 INFO::Loading chromosome coordinates file
+2013-04-09 01:12:18 INFO::Linkage filter applied, total ignored = 0
+2013-04-09 01:12:18 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 01:12:18 INFO::Done plate normalization
+2013-04-09 01:12:18 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-04-09 01:12:18 INFO::Done big replicates filter, total ignored = 0
+2013-04-09 01:12:18 INFO::# Normalizing for spatial effect
+2013-04-09 01:12:18 INFO::# Normalizing for row column effect
+2013-04-09 01:12:18 INFO::# Applying jackknife filter
+2013-04-09 01:12:19 INFO::Done jackknife filter, total ignored = 144
+2013-04-09 01:12:19 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-04-09 01:12:19 INFO::Done plate normalization
+[1] "character"
+
+
+2013-04-09 01:12:29,892 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/786b5ca6-8360-4332-bb71-854a7e03f860/ia/786b5ca6-8360-4332-bb71-854a7e03f860.json (No such file or directory)
+
+2013-04-09 01:12:37,276 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 01:12:37,276 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 01:12:37,283 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+
+
+! @6e061d3m4 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:503) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 01:12:57,396 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 01:12:57,397 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 01:12:57,403 - [ERROR] - from application in play-akka.actor.actions-dispatcher-37 
+
+
+! @6e061d3m5 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:503) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$25$$anonfun$apply$26.apply(routes_routing.scala:180) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 01:22:35,561 - [ERROR] - from application in New I/O  worker #4 
+
+
+! Internal server error, for request [GET /] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [unclosed character literal]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-04-09 01:23:18,657 - [INFO] - from application in play-akka.actor.default-dispatcher-72 
+Application shutdown...
+
+2013-04-09 01:23:18,680 - [INFO] - from application in play-akka.actor.default-dispatcher-72 
+Application has started
+
+2013-04-09 01:23:18,680 - [INFO] - from play in play-akka.actor.default-dispatcher-72 
+Application started (Dev)
+
+2013-04-09 01:23:34,355 - [INFO] - from application in play-akka.actor.default-dispatcher-74 
+Application shutdown...
+
+2013-04-09 01:23:34,367 - [INFO] - from application in play-akka.actor.default-dispatcher-74 
+Application has started
+
+2013-04-09 01:23:34,367 - [INFO] - from play in play-akka.actor.default-dispatcher-74 
+Application started (Dev)
+
+2013-04-09 01:23:59,477 - [INFO] - from application in play-akka.actor.default-dispatcher-72 
+Application shutdown...
+
+2013-04-09 01:23:59,533 - [INFO] - from application in play-akka.actor.default-dispatcher-72 
+Application has started
+
+2013-04-09 01:23:59,533 - [INFO] - from play in play-akka.actor.default-dispatcher-72 
+Application started (Dev)
+
+2013-04-09 01:24:20,906 - [INFO] - from application in play-akka.actor.default-dispatcher-72 
+Application shutdown...
+
+2013-04-09 01:24:20,922 - [INFO] - from application in play-akka.actor.default-dispatcher-72 
+Application has started
+
+2013-04-09 01:24:20,923 - [INFO] - from play in play-akka.actor.default-dispatcher-72 
+Application started (Dev)
+
+2013-04-09 01:24:32,994 - [INFO] - from application in play-akka.actor.default-dispatcher-77 
+Application shutdown...
+
+2013-04-09 01:24:33,005 - [INFO] - from application in play-akka.actor.default-dispatcher-77 
+Application has started
+
+2013-04-09 01:24:33,006 - [INFO] - from play in play-akka.actor.default-dispatcher-77 
+Application started (Dev)
+
+2013-04-09 01:25:34,811 - [INFO] - from application in play-akka.actor.default-dispatcher-79 
+Application shutdown...
+
+2013-04-09 01:25:34,827 - [INFO] - from application in play-akka.actor.default-dispatcher-79 
+Application has started
+
+2013-04-09 01:25:34,837 - [INFO] - from play in play-akka.actor.default-dispatcher-79 
+Application started (Dev)
+
+2013-04-09 01:25:50,236 - [INFO] - from application in play-akka.actor.default-dispatcher-81 
+Application shutdown...
+
+2013-04-09 01:25:50,246 - [INFO] - from application in play-akka.actor.default-dispatcher-81 
+Application has started
+
+2013-04-09 01:25:50,246 - [INFO] - from play in play-akka.actor.default-dispatcher-81 
+Application started (Dev)
+
+2013-04-09 01:26:16,015 - [ERROR] - from application in play-akka.actor.actions-dispatcher-38 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+
+2013-04-09 01:26:16,016 - [ERROR] - from application in play-akka.actor.actions-dispatcher-38 
+/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+
+2013-04-09 01:26:16,047 - [ERROR] - from application in play-akka.actor.actions-dispatcher-38 
+
+
+! @6e061d3m6 - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+
+play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
+	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
+	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
+Caused by: java.lang.NullPointerException: null
+	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
+	at views.html.da.dasummary$.render(dasummary.template.scala:503) ~[classes/:na]
+	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
+	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
+	at Routes$$anonfun$routes$1$$anonfun$apply$27$$anonfun$apply$28.apply(routes_routing.scala:192) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$apply$27$$anonfun$apply$28.apply(routes_routing.scala:192) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
+	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
+	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
+	... 11 common frames omitted
+
+2013-04-09 01:42:50,855 - [INFO] - from application in play-akka.actor.default-dispatcher-84 
+Application shutdown...
+
+2013-04-09 01:42:50,863 - [INFO] - from application in play-akka.actor.default-dispatcher-84 
+Application has started
+
+2013-04-09 01:42:50,863 - [INFO] - from play in play-akka.actor.default-dispatcher-84 
 Application started (Dev)
 

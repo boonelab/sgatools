@@ -105,32 +105,33 @@ public class MeasuredResults {
 		outFile=new File(filename);
 		try {
 			bw = new BufferedWriter(new FileWriter(outFile));
-			line="row  column";
+			line="(1) row (2) column";
 			for (k=0;k<numDup;k++) {
-				line=line+"  size-"+(k+1);
+				line=line+" (3) colony size";
+			//+(k+1);
 			}
 			for (k=0;k<numDup;k++) {
-				line=line+"  circ-"+(k+1);
+				line=line+" (4) circularity";//+(k+1);
 			}
-			for (k=0;k<numDup;k++) {
-				line=line+"  MedInt-"+(k+1);
-			}
+//			for (k=0;k<numDup;k++) {
+//				line=line+"  MedInt-"+(k+1);
+//			}
 			SimpleDateFormat fmt = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
 			
 			writeln(bw,"# Image analyzed by HT colony grid analyzer "+Constants.IA_VERSION+" on " + fmt.format(new Date()));
-			//writeln(bw,"# "+line);
+			writeln(bw,"# "+line);
 			for (i=0;i<numRow;i++) {
 				for (j=0;j<numCol;j++) {
-					line=(i+1)+" "+(j+1);
+					line=(i+1)+"\t"+(j+1);
 					for (k=0;k<numDup;k++) {
-						line=line+" "+Math.round(area[i][j][k]);
+						line=line+"\t"+Math.round(area[i][j][k]);
 					}
 					for (k=0;k<numDup;k++) {
-						line=line+ " " +circ[i][j][k];
+						line=line+ "\t" +circ[i][j][k];
 					}				
-					for (k=0;k<numDup;k++) {
-						line=line+ " " +Math.round(medInt[i][j][k]);
-					}				
+//					for (k=0;k<numDup;k++) {
+//						line=line+ " " +Math.round(medInt[i][j][k]);
+//					}				
 					writeln(bw,line);
 				}
 			}

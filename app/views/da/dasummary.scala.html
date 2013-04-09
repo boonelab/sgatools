@@ -81,6 +81,8 @@
 					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
 					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
 		}
+			<option value="combined" image-path="NA" data-path="/assets/jobs/@job.jobid/nsoutput_files/combined_data.dat">
+				Combined data</option>
 		</select>
 		
 		<div style="display:inline">
@@ -89,7 +91,7 @@
 		</div>
 	
 	</div>
-	<div class="well">
+	<div class="well" id="heatmapControls">
 		
 		
 		<!--<hr style="margin-top: 5px; margin-bottom: 15px;">-->
@@ -118,7 +120,7 @@
 		</div>	
 		
 		<div class="row">
-			<div class="span2">
+			<div class="span2 @if(iajob == null){hide}">
 				<label for="griddedImage" class="">Gridded image</label>
 				<div class="toggle-button">
 					 <input id="griddedImage" type="checkbox" value="value1">
@@ -126,11 +128,20 @@
 			</div>
 			
 			
-			<div class="span2">
+			<div class="span2 @if(iajob == null){hide}" >
 				<label for="hideImage" class="">Hide plate image</label>
 				<div class="toggle-button">
 					 <input id="hideImage" type="checkbox" value="value1">
 				</div>
+				@if(iajob == null){
+				<script>
+					$(document).ready(function() {
+					//	$('#hideImage').change();
+						$('#plateImage').hide();
+						maxHeatmapWidth = 920;
+					});
+				</script>
+				}
 			</div>
 			
 			
@@ -210,7 +221,7 @@
 			
 			<!--Heatmap & Image-->
 			<center>
-			<div class="row">
+			<div class="row" id="heatmapRow">
 				<div id="plateImageContents" class="span6" ><img id="plateImage"></div>
 				<div id="heatmapContents" class="span6" ></div>
 			</div>
@@ -384,6 +395,13 @@
 		    	var plate = $('#dataCombobox option:selected');
 		    	var nrows = +$('#showRecords option:selected').val()
 		    	
+		    	if(plate.val() == 'combined'){
+		    		$('#heatmapRow').hide();
+		    		$('#heatmapControls').hide();
+		    	}else{
+		    		$('#heatmapRow').show();
+		    		$('#heatmapControls').show();
+		    	}
 		    	
 				//Histogram of <data type> for <plate name or "all plates">
 				$('#histTitle').text('Histogram of ' + viewtype.text().toLowerCase() + ' for ' + plate.text())

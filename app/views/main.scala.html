@@ -73,7 +73,7 @@
 						<ul class="nav">
 							<li class="@("active".when(nav == "ia"))"><a href="@routes.IAcontroller.initIAForm()">Image analysis</a></li>
 							<li class="@("active".when(nav == "ns"))"><a href="@routes.NScontroller.initNSform()">Normalization & scoring</a></li>
-							<li class="@("active".when(nav == "da"))"><a href="#">Data visualization</a></li>
+							<li class="@("active".when(nav == "da"))"><a href="@if(nav=="da"){#}else{@routes.Application.renderDaPage()}">Data visualization</a></li>
 							
 						</ul>
 						<ul class="nav pull-right">

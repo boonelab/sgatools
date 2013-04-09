@@ -43,8 +43,10 @@
 		<div class="alert alert-info hide" id="tip-filename">
 		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-filename', true, { expires : 30 });">&times;</button>
 		  <div class="tip-content" style="cursor: hand; cursor: pointer;" onclick="labelHelpClicked('file-naming-help')" data-target="#helpModal" data-toggle="modal">
-			  <strong>File naming tip! </strong>In order to properly score your data and utilize array layout files, 
-			  it is recommended that input files and images are named using a specific format. Click this alert box to see the details
+			  <strong>File naming tip! </strong>
+			  If you want to score your data after image analysis and normalization, the file names need to follow a pattern. For example, for the control plate of query YER103W crossed into plate 12 of the array should be named like <code>username_ctrl_YER103W_12_...jpg</code>, and double mutant file as <code>username_dm_YER103W_12_...jpg</code>.  The parsed plate type, query name, and plate number are updated in a table below.
+			  <br>
+			  Click this alert box to see further details
 		  </div>
 		</div>
 		
