@@ -398,14 +398,15 @@
 		    	if(plate.val() == 'combined'){
 		    		$('#heatmapRow').hide();
 		    		$('#heatmapControls').hide();
+		    		window.isCombined = true;
 		    	}else{
 		    		$('#heatmapRow').show();
 		    		$('#heatmapControls').show();
+		    		window.isCombined = false;
 		    	}
 		    	
 				//Histogram of <data type> for <plate name or "all plates">
 				$('#histTitle').text('Histogram of ' + viewtype.text().toLowerCase() + ' for ' + plate.text())
-		    	//$('#currently_viewing').html('Currently viewing: <i>'+ viewtype.text().toLowerCase() + '</i> for <i>' + plate.text() + '</i>')
 		    	
 		    	//If user selects control screen
 		    	scoreOpt = $('#viewType option[name="score"]');

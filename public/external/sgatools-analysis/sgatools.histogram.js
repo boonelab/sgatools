@@ -27,13 +27,17 @@ function drawBarChart(settings) {
 		data = data.filter(function(d,i){
 			s = +( (+d[options.columnToUse]).toFixed(3) );
 			if(isNaN(s)){ return false; }
-			
 			d.index = i;
 			d.score = s;
 			
 			d.query = d.query.split('_')[0];
 			d.array = d.array.split('_')[0];
 			
+			if(isCombined){
+				d.groupTable = 'combined data';
+			}else{
+				d.groupTable = d.array;
+			}
 			d.queryStandard = d.query;
 			d.arrayStandard = d.array;
 			
@@ -142,7 +146,7 @@ function drawBarChart(settings) {
 		    .dimension(score)
 		    // data table does not use crossfilter group but rather a closure as a grouping function
 		    .group(function(d) {
-		        return "Array — "+d.array;
+		        return "Array — "+d.groupTable;
 		    })
 		    // (optional) max number of records to be shown, :default = 25
 		    .size(options.maxDataRows)

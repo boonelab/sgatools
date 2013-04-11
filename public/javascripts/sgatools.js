@@ -48,7 +48,7 @@ Array.prototype.fileTableSGA = function(){
 	
 	console.log($('#doArrayDef').prop('checked'))
 	//////////////
-	if(nvalid > 0 && $('#doArrayDef').prop('checked') == false){
+	if(nvalid == this.length && $('#doArrayDef').prop('checked') == false){
 		$('#doArrayDef').prop('checked', true);
 		$('#arrDefOpts').slideDown('fast');
 	}
@@ -58,13 +58,13 @@ Array.prototype.fileTableSGA = function(){
 	}
 		
 	
-	if(nctrl > 0 && ncase > 0){
+	if(nctrl > 0 && ncase > 0 && nvalid == this.length){
 		$('#doScoring').prop('checked', true);
 		$('#cg-scoringFunction').slideDown('fast');
 		$("#nssubmit").html('Normalize and score');
 	}else{
 		$('#doScoring').prop('disabled', true);
-		$('#doScoring').parent().find('span').html('Must have at least one control screen and one case screen to score')
+		$('#doScoring').parent().find('span').html('There must be at least one control screen and one case screen to score')
 	}
 	nsFormValid();
 	//////////////

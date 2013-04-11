@@ -183,7 +183,7 @@ combined = lapply(sgadata.ns, function(plate.data){
 savename =  "combined_data.dat"
 comments = c('# Combined data file', comment.ns)
 writeLines(comments, savename)
-write.table(do.call(rbind, combined), savename, quote=F, row.names=F, col.names=T, sep="\t", append=T)
+write.table(do.call(rbind, combined), savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
 
 # README
 writeLines(readMeLines, 'README.txt')

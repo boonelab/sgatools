@@ -84,6 +84,12 @@ function drawHeatmap(paramsInput){
 			
 			val = +d[params.columnToUse];
 			d.value = +val.toFixed(2);
+			
+			if(d.kvp == "NA"){
+				d.kvp = "";
+			}else{
+				d.kvp = d.kvp.split('=')[1];
+			}
 			return true;
 		});
        //console.log(sgadata);
@@ -190,12 +196,19 @@ function drawHeatmap(paramsInput){
 		    	tab = '<center><table class="hm-popup-table">'+
 		    		  '<tr><td>Value</td><td>'+d.value+'</td></tr>'+
 		    		  '<tr><td>Row</td><td>'+d.row+'</td></tr>'+
-		    		  '<tr><td>Column </td><td>'+d.col+'</td></tr> </table></center>';
-		    	output = '<div style="text-align:center"><p class="hm-popup-value">'+d.query+ '</p>'+
+		    		  '<tr><td>Column</td><td>'+d.col+'</td></tr>';
+		    	
+		    	if(d.kvp != ""){
+		    		tab = tab+'<tr><td>Status code</td><td>'+d.kvp+'</td></tr>';
+		    	}
+		    	
+		    	tab = tab+'</table></center>';
+		    	output = '<div style="text-align:center"><p class="hm-popup-value">'+
+		    			 d.query+ '</p>'+
 		    			 '<p class="hm-popup-key" style="margin:0">and</p>'+
 		    			 '<p class="hm-popup-value">'+ d.array +'</p></div>'+
 		    			 '<hr style="margin:3px">'+tab;
-		   
+		    	
 		    	//var x = window.event.clientX  + $(window).scrollLeft();
 		    	//var y = window.event.clientY + $(window).scrollTop();
 		    	var m = d3.mouse(d3.select('html')[0][0]);

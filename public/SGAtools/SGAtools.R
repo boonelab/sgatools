@@ -284,6 +284,7 @@ normalizeSGA <- function(plate.data,
     kvpMapAsString(v)
   })
   plate.data$kvp[ign] = status.kvp
+  #plate.data$ncolonysize = plate.data$ncolonysize/overall.plate.median
   
   # LOL we're done, whew! return our data (minus extra cols generated)!
   if(!intermediate.data){
