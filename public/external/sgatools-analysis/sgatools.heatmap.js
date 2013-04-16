@@ -123,9 +123,9 @@ function drawHeatmap(paramsInput){
 	  	maxVal = d3.max(sgadata, function(d) { return d.value; });
 	  	minVal = d3.min(sgadata, function(d) { return d.value; });
 	  	medVal = d3.median(sgadata, function(d) { return d.value; });
-	  	params.domainLow = Math.floor( minVal );
-	  	params.domainMed = Math.floor( medVal );
-	  	params.domainHigh = Math.floor( maxVal );
+	  	params.domainLow = minVal;
+	  	params.domainMed = medVal;
+	  	params.domainHigh = maxVal;
 	  	firstCallHm.push(t);
 	  }
 	  $('#domainLowInput').val(params.domainLow);
