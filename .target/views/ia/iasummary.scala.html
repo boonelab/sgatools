@@ -6,7 +6,11 @@
 @import play.libs.Scala._
 @import play.Logger;
 @main(title="Images processed!", nav="ia") {
-	
+	<style>
+		.table tbody tr.error > td {
+			background-color: #f2dede;
+		}
+	</style>
 	<div id="errorDiv"></div>
 	
 	<!--Buttons to download/repeat analysis or proceed to normalization-->
@@ -73,7 +77,7 @@
 					<td id="array-plate-id"></td>
 					<td>
 						<div class="plateData" id="@passedFile.plateImageName" data-path="@passedFile.outputDatName">
-						<div class="btn-group" data-toggle="buttons-radio" style="display:inline; margin-right:5px">
+						<div class="btn-group" data-toggle="buttons-radio">
 						<button onclick="selectPlateClicked(this)" id="@passedFile.plateImageName" name="includeicon" 
 							type="button" class="btn btn-small btn-success active" value="1"><i class="icon-ok icon-white"></i></button>
 						<button onclick="selectPlateClicked(this)" id="@passedFile.plateImageName" name="includeicon" 
@@ -82,15 +86,24 @@
 					</td>
 				</tr>
 			}
+			@for(failedFile <- job.failedFiles){
+				<tr class="failedRow error" image-name="@failedFile.plateImageName">
+					<td style="width:300px"><i class="icon-picture stamp"></i> @failedFile.plateImageName</td>
+					<td>Failed</td>
+					<td id="screen-type"></td>
+					<td id="query"></td>
+					<td id="array-plate-id"></td>
+					<td>―</td>
+				</tr>
+			}
 			
 			<script>
-				$('.passedRow').each(function(i,v){
+				$('.passedRow,.failedRow').each(function(i,v){
 					var parsed = $(this).attr('image-name').parseSGAFileName();
 					$(this).find("#screen-type").html(parsed[1]);
 					$(this).find("#query").html(parsed[2]);
 					$(this).find("#array-plate-id").html(parsed[3]);
 				});
-			
 			</script>
 			
 			</table>

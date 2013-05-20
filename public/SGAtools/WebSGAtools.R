@@ -7,7 +7,9 @@ options(warn=-1) #suppress warnings
 setwd('/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/')
 
 readMeLines = readLines('README_NS.txt')
-linkage.file = paste0(getwd(), "/data/chrom_coordinates.Rdata")
+linkage.file = file.path(getwd(), "data", "chrom_coordinates.Rdata")
+genemap.file = file.path(getwd(), "data", "genemap.Rdata")
+
 
 source('SGAtools.R')
 option_list <- list(
@@ -17,6 +19,7 @@ make_option(c("-y", "--adname"), help="Array definition summary", default=NA, ty
   make_option(c("-o", "--outputdir"), help="Output directory (optional): where the normalized/scored results are saved [default %default]", default=getwd(), type="character"),
   make_option(c("-n", "--savenames"), help="Save names (optional): for input files if any different (comma separated, in same order as inputfiles)", default=NA, type="character"),
   make_option(c("-l", "--linkagecutoff"), help="Linkage cutoff (optional): specified in KB, if -1 no linkage correction is applied [default %default]", default=-1, type="integer"),
+  make_option(c("-g", "--linkagegenes"), help="Linkage genes (optional): arrays within the linkage cutoff of these genes are removed [default %default]", default="", type="character"),
   make_option(c("-r", "--replicates"), help="Replicates (optional): value indicating number of replicates in the screen  [default %default]", default=4, type="integer"),
   make_option(c("-s", "--score"), help="Score normalized results(optional): include to score normalized results [default %default]", action="store_true", default=FALSE),
   make_option(c("-f", "--sfunction"), help="Score function used(optional): '1' for subtraction, '2' for dividing [default %default]", type="integer", default=1),
@@ -26,6 +29,19 @@ make_option(c("-y", "--adname"), help="Array definition summary", default=NA, ty
 # Parse the agruments
 args=parse_args(OptionParser(option_list = option_list))
 
+# Load rdata Object: genemap
+load(genemap.file)
+if(args$linkagecutoff == -1){
+  args$linkagegenes = character(0)
+  linkage.genes = character(0)
+}else{
+  linkage.genes = unlist(strsplit(args$linkagegenes, ','))
+  z = names(genemap)
+  names(z) = genemap
+  ind = linkage.genes %in% names(z)
+  linkage.genes[ind] = z[linkage.genes[ind]]
+  linkage.genes = toupper(linkage.genes)
+}
 # Split by colon (illegal character for filenames)
 args$inputfiles = unlist(strsplit(args$inputfiles, ':'))
 args$savenames = unlist(strsplit(args$savenames, ':'))
@@ -79,12 +95,17 @@ if(! args$sfunction %in% c(1,2) & !is.na(args$sfunction)){
   stop(paste0(args$sfunction, ' is an inavlid scoring function, must be 1 or 2'))
 }
 
-#print(args)
-
+# Make sort to make CTRL data come last
+z = grepl('_ctrl|_wt',args$savenames)
+if(sum(z) > 0){
+  args$inputfiles = c(args$inputfiles[!z],args$inputfiles[z]) 
+  args$savenames = c(args$savenames[!z],args$savenames[z]) 
+}
 
 # Run normalization/scoring
 sgadata.r = readSGA(args$inputfiles, args$savenames, args$adfiles, args$replicates)
-sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file)
+sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, 
+                    linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file, linkage.genes=linkage.genes)
 
 # Score data if requested
 if(args$score){
@@ -97,7 +118,7 @@ setwd(args$outputdir)
 # Do header comments
 lk = '# Linkage correction applied: '
 if(args$linkagecutoff > 0){
-    lk = paste0(lk, 'Yes', '(', args$linkagecutoff,'KB)')
+    lk = paste0(lk, 'Yes', '(', args$linkagecutoff,'KB), linkage genes:', args$linkagegenes)
 }else{
     lk = paste0(lk, 'No')
 }
@@ -118,7 +139,7 @@ if(args$score){
   if(args$sfunction == 2) sf = 'Cij / CiCj'
   comment.ns = c(comment.ns, paste0('# Scoring function: ', sf)) 
 }
-col.header = '# Contents of the rest of the file:\n# (1) Row (2) Column (3) Raw colony size (4) Plate id / file name (5) Query (6) Array (7) Normalized colony size (8) Score (9) Additional information'
+col.header = '# (1)Row\t(2)Column\t(3)Raw colony size\t(4)Plate id / file name\t(5)Query\t(6)Array\t(7)Normalized colony size\t(8)Score\t(9)Additional information'
 comment.ns = c(comment.ns, ad, rep, lk, col.header)
 
 # Write generated files
@@ -132,19 +153,28 @@ for(i in 1:length(sgadata.ns)){
   
   # Write plate data
   plate.data = sgadata.ns[[i]]
-  plate.data$ncolonysize = signif(plate.data$ncolonysize,3)
-  plate.data$score = signif(plate.data$score,3)
+  plate.data$ncolonysize = round(plate.data$ncolonysize,5)
+  plate.data$score = round(plate.data$score,5)
   
   write.table(plate.data, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
   
 }
 
+tt <- function(x){
+  x=x[!is.na(x)]
+  if(length(x) <2 | all(x == x[1])){
+    return(NA)
+  }else{
+    return( t.test(x)$p.value )
+  }
+}
 combined = lapply(sgadata.ns, function(plate.data){
   df = plate.data
-  df$row = ceiling(df$row/sqrt(args$replicates))
-  df$col = ceiling(df$col/sqrt(args$replicates))
+  #df$row = ceiling(df$row/sqrt(args$replicates))
+  #df$col = ceiling(df$col/sqrt(args$replicates))
   
-  collapsed = ddply(df, c("row", "col"), function(df) { 
+  
+  collapsed = ddply(df, c("query", "array"), function(df) { 
     c( mean(df$colonysize, na.rm=T) , 
        paste0(unique(df$plateid), collapse=';') , 
        paste0(unique(df$query), collapse=';') , 
@@ -152,38 +182,69 @@ combined = lapply(sgadata.ns, function(plate.data){
        mean(df$ncolonysize, na.rm=T), 
        mean(df$score, na.rm=T),
        paste0(unique(df$kvp[!is.na(df$kvp)], na.rm=T), collapse=';'),
-       sd(df$score, na.rm=T)
+       sd(df$score, na.rm=T),
+       tt(df$ncolonysize)
     ) 
   })
   names(collapsed) = c('row', 'col', 'colonysize', 'plateid', 
-                       'query', 'array', 'ncolonysize', 'score', 'kvp', 'sd')
+                       'query', 'array', 'ncolonysize', 'score', 'kvp', 'sd', 'pvalue')
   
   collapsed$kvp[collapsed$kvp == ""] = NA
   collapsed$ncolonysize[collapsed$ncolonysize == "NaN"] = NA
   collapsed$score[collapsed$score == "NaN"] = NA
-  print(class(collapsed$ncolonysize[1]))
-  
-  collapsed$ncolonysize = signif(as.numeric(collapsed$ncolonysize),3)
-  collapsed$score = signif(as.numeric(collapsed$score),3)
-  
-  ind = !is.na(collapsed$sd)
-  t = round(as.numeric(collapsed$sd), digits=3)
-  sd.kvp = paste0('sd=', t)
-  ind1 = ind & !is.na(collapsed$kvp)
-  ind2 = ind & is.na(collapsed$kvp)
-  collapsed$kvp[ind1] = paste0(collapsed$kvp[ind1], ';', sd.kvp[ind1])
-  collapsed$kvp[ind2] = sd.kvp[ind2]
-  
-  collapsed = collapsed[,-ncol(collapsed)]
+  collapsed$colonysize = round(as.numeric(collapsed$colonysize), 2)
+  collapsed$ncolonysize = round(as.numeric(collapsed$ncolonysize), 5)
+  collapsed$score = round(as.numeric(collapsed$score), 5)
   
   collapsed
 })
+
+combined = do.call(rbind, combined)
+
+ind = !is.na(combined$sd)
+combined$sd = round(as.numeric(combined$sd), digits=3)
+combined$pvalue = round(as.numeric(combined$pvalue), digits=5)
+z = paste0('sd=', combined$sd)
+ind1 = ind & !is.na(combined$kvp)
+ind2 = ind & is.na(combined$kvp)
+combined$kvp[ind1] = paste0(combined$kvp[ind1], ';', z[ind1])
+combined$kvp[ind2] = z[ind2]
+
+z = paste0('pv=', combined$pvalue)
+ind = !is.na(combined$pvalue)
+ind1 = ind & !is.na(combined$kvp)
+ind2 = ind & is.na(combined$kvp)
+combined$kvp[ind1] = paste0(combined$kvp[ind1], ';', z[ind1])
+combined$kvp[ind2] = z[ind2]
+
+combined.new = combined[ ,-c(10,11)]
+
 
 # Combined data
 savename =  "combined_data.dat"
 comments = c('# Combined data file', comment.ns)
 writeLines(comments, savename)
-write.table(do.call(rbind, combined), savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
+write.table(combined.new, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
+
+if(args$score){
+  # Scores only file
+  savename =  "scores.dat"
+  comments = c('# Scores only file', comment.ns)
+  comments[length(comments)] = '# (1)ORF\t(2)Score\t(3)Standard deviation\t(4)P-value'
+  writeLines(comments, savename)
+  sc = combined[,c('array', 'score', 'sd', 'pvalue')]
+  sc = sc[!is.na(sc[[2]]),]
+  
+  # Map orf to gene name
+  ind = sc[[1]] %in% names(genemap)
+  sc[[1]][ind] = genemap[sc[[1]][ind]]
+  
+  # Write
+  write.table(sc, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
+}
 
 # README
 writeLines(readMeLines, 'README.txt')
+
+
+print(linkage.file)

@@ -34,9 +34,10 @@ function drawBarChart(settings) {
 			d.array = d.array.split('_')[0];
 			
 			if(isCombined){
-				d.groupTable = 'combined data';
+				d.groupTable = 'Combined data';
 			}else{
 				d.groupTable = d.array;
+				d.groupTable = 'Data table';
 			}
 			d.queryStandard = d.query;
 			d.arrayStandard = d.array;
@@ -80,7 +81,7 @@ function drawBarChart(settings) {
 		minVal = d3.min(data, function(d) { return d.score; });
 		
 		
-		if(minVal < 0) 
+		if(minVal < 0.5) 
 			minVal = Math.floor(minVal);
 		else
 			minVal = Math.ceil(minVal);
@@ -146,7 +147,7 @@ function drawBarChart(settings) {
 		    .dimension(score)
 		    // data table does not use crossfilter group but rather a closure as a grouping function
 		    .group(function(d) {
-		        return "Array — "+d.groupTable;
+		        return d.groupTable;
 		    })
 		    // (optional) max number of records to be shown, :default = 25
 		    .size(options.maxDataRows)

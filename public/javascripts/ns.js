@@ -39,6 +39,7 @@ $(document).ready(function() {
 	// Handler for .ready() called.
 	if(!$('#doLinkage').is(":checked")){
 		$('#cg-linkageCutoff').addClass('hide');
+		$('#cg-linkageGenes').addClass('hide');
 	}
 	if(!$('#doArrayDef').is(":checked")){
 		//AD options hide toggle
@@ -47,7 +48,6 @@ $(document).ready(function() {
 	if(!$('#doScoring').is(":checked")){
 		$('#cg-scoringFunction').toggleClass('hide');
 	}
-	
 	//Hide array definition stuff !!!!!!! If !checkedTODO..
 	$('#cg-arrayDefCustomFile').hide();
 	
@@ -60,6 +60,7 @@ $(document).ready(function() {
 //Show linkage when its checkbox is clicked
 $('#doLinkage').click(function(){
 	$('#cg-linkageCutoff').slideToggle('fast');
+	$('#cg-linkageGenes').slideToggle('fast');
 });
 
 //Show scoring function when its checkbox is clicked

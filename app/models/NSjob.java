@@ -24,6 +24,7 @@ public class NSjob {
 	public Integer replicates;
 	public Boolean doLinkage;
 	public String linkageCutoff;
+	public String linkageGenes;
 	
 	//Specific to scoring
 	public Boolean doScoring;
@@ -45,9 +46,10 @@ public class NSjob {
 		this.replicates = 4;
 		this.doLinkage = false;
 		this.linkageCutoff = "200";
+		this.linkageGenes = "CAN1, LYP1";
 		
 		this.doScoring = false;
-		this.scoringFunction = ComboboxOpts.scoringFunctions().get(0);
+		this.scoringFunction = ComboboxOpts.scoringFunctions().get(1);
 	}
 	
 }

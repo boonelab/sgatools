@@ -64,8 +64,15 @@ Array.prototype.fileTableSGA = function(){
 		$("#nssubmit").html('Normalize and score');
 	}else{
 		$('#doScoring').prop('disabled', true);
-		$('#doScoring').parent().find('span').html('There must be at least one control screen and one case screen to score')
+		$('#doScoring').parent().find('span').html('There must be at least one control screen and one case screen to score');
+		$('#doScoring').parent().find('span').css({'color': '#3a87ad'})
 	}
+	
+	//Once more for linkage
+	if(nvalid != this.length){
+		$('#linkageMessage').text('The query ORF from your filename(s) was not detected. If you want to filter for linkage to the query, please enter its ORF name (e.g. YER053C) in the text box');
+	}
+	
 	nsFormValid();
 	//////////////
 	

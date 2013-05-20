@@ -4,7 +4,19 @@
 @import helper.twitterBootstrap._
 @implicitFieldConstructor = @{ FieldConstructor(extra.twitterBootstrapInput.f) }
 @main("Image analysis", nav="ia") {
-    
+   <style>
+	    #drop_zone {
+			border: 2px dashed #bbb;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			padding: 25px;
+			text-align: center;
+			color: #bbb;
+			margin-top:10px;
+			}
+	    </style>
+	    
    @helper.form(action = routes.IAcontroller.submit(), 'enctype -> "multipart/form-data", 'id -> "imageprocessingForm", 'class->"form-horizontal") {
 		<h2>Image analysis</h2>
 		<hr>
@@ -31,8 +43,10 @@
 		<div class="alert alert-info hide" id="tip-filename">
 		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-filename', true, { expires : 30 });">&times;</button>
 		  <div class="tip-content" style="cursor: hand; cursor: pointer;" onclick="labelHelpClicked('file-naming-help')" data-target="#helpModal" data-toggle="modal">
-			  <strong>File naming tip! </strong>In order to properly score your data and utilize array layout files, 
-			  it is recommended that input files and images are named using a specific format. Click this alert box to see the details
+			  <strong>File naming tip! </strong>
+			  If you want to score your data after image analysis and normalization, the file names need to follow a pattern. For example, for the control plate of query YER103W crossed into plate 12 of the array should be named like <code>username_ctrl_YER103W_12_...jpg</code>, and double mutant file as <code>username_dm_YER103W_12_...jpg</code>.  The parsed plate type, query name, and plate number are updated in a table below.
+			  <br>
+			  Click this alert box to see further details
 		  </div>
 		</div>
 		
@@ -45,15 +59,18 @@
 		
 		<fieldset>
 		
+	    <!--<div id="drop_zone"><h2>Drop files here</h2></div>-->
+	    
 		<!--Images select button-->
 		  @inputFile(
 	        iaForm("plateImages"),
-	        '_label -> "Plate images(s)",
+	        '_label -> "Plate image(s)",
 	        'multiple -> "",
 	        'accept -> "image/gif, image/jpeg, image/png",
 	    	'uploadwidget -> "Select image(s)",
 	    	'helpModal -> "ia-plate-files"
 	    )
+	    
 	    
 	    
 	    <!--Plate format of the screen images-->
@@ -80,10 +97,13 @@
 		
 	    <!--Loaded plates only visible when images selected (done via JS)-->
 	    <div id="loaded-plates" style="display:none">
-			<h3 id="loaded-label" style="margin-bottom:10px">Loaded plates</h3>
+			<h3 id="loaded-label" style="margin-bottom:10px">Loaded image file(s)</h3>
 			<fieldset>
 				<table id="loaded-table" class="table table-condensed">
-				<thead><tr><th>Plate image</th><th>File name</th><th>Screen type</th><th>Query name</th><th>Array plate id</th></tr></thead>
+				<thead><tr>
+				
+				<!--<th>Plate image</th>-->
+				<th>File name</th><th>Screen type</th><th>Query name</th><th>Array plate id</th></tr></thead>
 				<tbody></tbody>
 				</table>
 			</fieldset>
@@ -105,6 +125,10 @@
     <script>
     	$(document).ready(function(){
     		$('#iasubmit').attr('disabled', 'disabled');
+    		//$('#cg-plateImages.control-group .controls').append('<div id="drop_zone"><h2>Drop files here</h2></div>');
+    		//var dropZone = document.getElementById('drop_zone');
+  			//dropZone.addEventListener('dragover', handleDragOver, false);
+  			//dropZone.addEventListener('drop', handleFileSelect, false);
     	});
     	// Submit click
     	$("#iasubmit").click(function() {
@@ -114,5 +138,8 @@
 		});
     	
 		$('#plateImages').change(handleFileSelect);
+		
+		
+		
     </script>
 }

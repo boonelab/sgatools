@@ -1,183 +1,845 @@
-2013-04-16 16:55:56,522 - [INFO] - from play in main 
+2013-05-20 12:05:56,537 - [INFO] - from play in main 
 Listening for HTTP on port 9000...
 
-2013-04-16 16:56:17,613 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
+2013-05-20 12:06:25,481 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /normalizationscoring] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [not found: value id]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-05-20 12:06:45,296 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /normalizationscoring] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [not found: value id]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-05-20 12:07:13,300 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /normalizationscoring] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [missing arguments for method apply in object input;
+follow this method with `_' if you want to treat it as a partially applied function]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-05-20 12:07:22,714 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /normalizationscoring] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [missing arguments for method apply in object input;
+follow this method with `_' if you want to treat it as a partially applied function]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-05-20 12:07:44,715 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /normalizationscoring] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [missing arguments for method apply in object input;
+follow this method with `_' if you want to treat it as a partially applied function]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-05-20 12:07:50,663 - [ERROR] - from application in New I/O  worker #1 
+
+
+! Internal server error, for request [GET /normalizationscoring] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error [missing arguments for method apply in object input;
+follow this method with `_' if you want to treat it as a partially applied function]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12$$anonfun$apply$13.apply(PlayReloader.scala:236) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:236) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4$$anonfun$apply$12.apply(PlayReloader.scala:233) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:233) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3$$anonfun$4.apply(PlayReloader.scala:231) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:183) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:231) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$3.apply(PlayReloader.scala:226) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:226) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+
+2013-05-20 12:08:34,258 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
 Application has started
 
-2013-04-16 16:56:17,621 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
+2013-05-20 12:08:34,262 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
 Application started (Dev)
 
-2013-04-16 16:59:03,501 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+2013-05-20 12:10:19,403 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
 Application shutdown...
 
-2013-04-16 16:59:03,515 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+2013-05-20 12:10:19,416 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
 Application has started
 
-2013-04-16 16:59:03,515 - [INFO] - from play in play-akka.actor.default-dispatcher-6 
+2013-05-20 12:10:19,416 - [INFO] - from play in play-akka.actor.default-dispatcher-6 
 Application started (Dev)
 
-2013-04-16 17:02:14,554 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+2013-05-20 12:10:33,370 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
 Application shutdown...
 
-2013-04-16 17:02:14,575 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+2013-05-20 12:10:33,384 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
 Application has started
 
-2013-04-16 17:02:14,575 - [INFO] - from play in play-akka.actor.default-dispatcher-10 
+2013-05-20 12:10:33,384 - [INFO] - from play in play-akka.actor.default-dispatcher-9 
 Application started (Dev)
 
-2013-04-16 17:05:24,173 - [INFO] - from application in play-akka.actor.actions-dispatcher-10 
-outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/13b2dc5e-2e85-4878-b2f6-4f4e79dbb869/
+2013-05-20 12:10:44,903 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Application shutdown...
 
-2013-04-16 17:05:57,909 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-12 
-2013-04-16 17:05:55 INFO::Reading input files
-2013-04-16 17:05:55 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/13b2dc5e-2e85-4878-b2f6-4f4e79dbb869/ia/output_files/sgatools_dm_YDL108W_1_boonelab.JPG.dat
-2013-04-16 17:05:55 INFO::* Done reading
-2013-04-16 17:05:55 INFO::* Column classes = integer,integer,integer
-2013-04-16 17:05:55 INFO::* Number rows = 32
-2013-04-16 17:05:55 INFO::* Number cols = 48
-2013-04-16 17:05:55 INFO::* Data dimension = 1536,3
-2013-04-16 17:05:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-16 17:05:55 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-16 17:05:55 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-16 17:05:55 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/13b2dc5e-2e85-4878-b2f6-4f4e79dbb869/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.JPG.dat
-2013-04-16 17:05:55 INFO::* Done reading
-2013-04-16 17:05:55 INFO::* Column classes = integer,integer,integer
-2013-04-16 17:05:55 INFO::* Number rows = 32
-2013-04-16 17:05:55 INFO::* Number cols = 48
-2013-04-16 17:05:55 INFO::* Data dimension = 1536,3
-2013-04-16 17:05:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-16 17:05:55 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-16 17:05:55 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-16 17:05:55 INFO::Done reading all files
-2013-04-16 17:05:55 INFO::-----------------------------------------------
-2013-04-16 17:05:55 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-16 17:05:55 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-16 17:05:55 INFO::Loading chromosome coordinates file
-2013-04-16 17:05:55 INFO::Linkage filter applied, total ignored = 0
-2013-04-16 17:05:55 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:05:55 INFO::Done plate normalization
-2013-04-16 17:05:55 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-16 17:05:55 INFO::Done big replicates filter, total ignored = 0
-2013-04-16 17:05:55 INFO::# Normalizing for spatial effect
-2013-04-16 17:05:56 INFO::# Normalizing for row column effect
-2013-04-16 17:05:56 INFO::# Applying jackknife filter
-2013-04-16 17:05:56 INFO::Done jackknife filter, total ignored = 132
-2013-04-16 17:05:56 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:05:56 INFO::Done plate normalization
-2013-04-16 17:05:56 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-16 17:05:56 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-16 17:05:56 INFO::Loading chromosome coordinates file
-2013-04-16 17:05:56 INFO::Linkage filter applied, total ignored = 0
-2013-04-16 17:05:56 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:05:56 INFO::Done plate normalization
-2013-04-16 17:05:56 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-16 17:05:56 INFO::Done big replicates filter, total ignored = 0
-2013-04-16 17:05:56 INFO::# Normalizing for spatial effect
-2013-04-16 17:05:56 INFO::# Normalizing for row column effect
-2013-04-16 17:05:56 INFO::# Applying jackknife filter
-2013-04-16 17:05:57 INFO::Done jackknife filter, total ignored = 144
-2013-04-16 17:05:57 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:05:57 INFO::Done plate normalization
-[1] "character"
-[1] "character"
+2013-05-20 12:10:44,916 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Application has started
 
+2013-05-20 12:10:44,924 - [INFO] - from play in play-akka.actor.default-dispatcher-9 
+Application started (Dev)
 
-2013-04-16 17:06:48,912 - [ERROR] - from application in play-akka.actor.actions-dispatcher-12 
-/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ns/NA.json (No such file or directory)
+2013-05-20 12:12:36,412 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Application shutdown...
 
-2013-04-16 17:06:48,912 - [ERROR] - from application in play-akka.actor.actions-dispatcher-12 
-/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/NA/ia/NA.json (No such file or directory)
+2013-05-20 12:12:36,436 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Application has started
 
-2013-04-16 17:06:48,966 - [ERROR] - from application in play-akka.actor.actions-dispatcher-12 
+2013-05-20 12:12:36,436 - [INFO] - from play in play-akka.actor.default-dispatcher-9 
+Application started (Dev)
+
+2013-05-20 12:38:53,327 - [INFO] - from application in play-akka.actor.default-dispatcher-14 
+Application shutdown...
+
+2013-05-20 12:38:53,357 - [INFO] - from application in play-akka.actor.default-dispatcher-14 
+Application has started
+
+2013-05-20 12:38:53,358 - [INFO] - from play in play-akka.actor.default-dispatcher-14 
+Application started (Dev)
+
+2013-05-20 12:39:05,595 - [INFO] - from application in play-akka.actor.actions-dispatcher-19 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/
+
+2013-05-20 12:39:53,739 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-21 
+LINKAGE GENES = CAN1,LYP1,,omar,wagih,,hi
+
+2013-05-20 12:39:59,048 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-21 
+2013-05-20 12:39:56 INFO::Reading input files
+2013-05-20 12:39:56 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat
+2013-05-20 12:39:56 INFO::* Done reading
+2013-05-20 12:39:56 INFO::* Column classes = integer,integer,integer
+2013-05-20 12:39:56 INFO::* Number rows = 32
+2013-05-20 12:39:56 INFO::* Number cols = 48
+2013-05-20 12:39:56 INFO::* Data dimension = 1536,3
+2013-05-20 12:39:56 INFO::* Obtaining file name metadata: valid = TRUE
+2013-05-20 12:39:56 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 12:39:56 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 12:39:57 INFO::Done reading all files
+2013-05-20 12:39:57 INFO::-----------------------------------------------
+2013-05-20 12:39:57 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 12:39:57 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 12:39:57 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 12:39:57 INFO::Loading chromosome coordinates file
+2013-05-20 12:39:57 INFO::Linkage filter applied, total ignored = 0
+2013-05-20 12:39:57 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 12:39:57 INFO::Done plate normalization
+2013-05-20 12:39:57 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 12:39:57 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 12:39:57 INFO::# Normalizing for spatial effect
+2013-05-20 12:39:57 INFO::# Normalizing for row column effect
+2013-05-20 12:39:57 INFO::# Applying jackknife filter
+2013-05-20 12:39:58 INFO::Done jackknife filter, total ignored = 141
+2013-05-20 12:39:58 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 12:39:58 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
 
 
-! @6e2a30d8p - Internal server error, for request [GET /preloaded-dataanalysis/NA] ->
+2013-05-20 12:39:59,049 - [ERROR] - from application in play-akka.actor.actions-dispatcher-21 
+Loading required package: methods
 
-play.core.ActionInvoker$$anonfun$receive$1$$anon$1: Execution exception [[NullPointerException: null]]
-	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:134) [play_2.9.1.jar:2.0.4]
-	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:115) [play_2.9.1.jar:2.0.4]
-	at akka.actor.Actor$class.apply(Actor.scala:318) [akka-actor.jar:2.0.2]
-	at play.core.ActionInvoker.apply(Invoker.scala:113) [play_2.9.1.jar:2.0.4]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:626) [akka-actor.jar:2.0.2]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:197) [akka-actor.jar:2.0.2]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:179) [akka-actor.jar:2.0.2]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:516) [akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) [akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) [akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) [akka-actor.jar:2.0.2]
-	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) [akka-actor.jar:2.0.2]
-Caused by: java.lang.NullPointerException: null
-	at views.html.da.dasummary$.apply(dasummary.template.scala:105) ~[classes/:na]
-	at views.html.da.dasummary$.render(dasummary.template.scala:504) ~[classes/:na]
-	at views.html.da.dasummary.render(dasummary.template.scala) ~[classes/:na]
-	at controllers.DAcontroller.initPreloadedDA(DAcontroller.java:27) ~[classes/:2.0.4]
-	at Routes$$anonfun$routes$1$$anonfun$apply$27$$anonfun$apply$28.apply(routes_routing.scala:192) ~[classes/:na]
-	at Routes$$anonfun$routes$1$$anonfun$apply$27$$anonfun$apply$28.apply(routes_routing.scala:192) ~[classes/:na]
-	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.invocation(Router.scala:1090) ~[play_2.9.1.jar:2.0.4]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:33) ~[play_2.9.1.jar:2.0.4]
-	at play.GlobalSettings$1.call(GlobalSettings.java:57) ~[play_2.9.1.jar:2.0.4]
-	at play.core.j.JavaAction$class.apply(JavaAction.scala:74) ~[play_2.9.1.jar:2.0.4]
-	at play.core.Router$HandlerInvoker$$anon$5$$anon$1.apply(Router.scala:1089) ~[play_2.9.1.jar:2.0.4]
-	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
-	at play.core.ActionInvoker$$anonfun$receive$1$$anonfun$6.apply(Invoker.scala:126) ~[play_2.9.1.jar:2.0.4]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:17) ~[play_2.9.1.jar:2.0.4]
-	at play.core.ActionInvoker$$anonfun$receive$1.apply(Invoker.scala:125) [play_2.9.1.jar:2.0.4]
-	... 11 common frames omitted
 
-2013-04-16 17:07:47,946 - [INFO] - from application in play-akka.actor.actions-dispatcher-12 
-outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/7485cc3d-de71-4eaf-941f-366e9b50135c/
+2013-05-20 12:42:16,370 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Application shutdown...
 
-2013-04-16 17:08:18,367 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-12 
-2013-04-16 17:08:16 INFO::Reading input files
-2013-04-16 17:08:16 INFO::Reading input file (1/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/7485cc3d-de71-4eaf-941f-366e9b50135c/ia/output_files/cln1cln2M_case_Y13096_1_mini.jpeg.dat
-2013-04-16 17:08:16 INFO::* Done reading
-2013-04-16 17:08:16 INFO::* Column classes = integer,integer,integer
-2013-04-16 17:08:16 INFO::* Number rows = 32
-2013-04-16 17:08:16 INFO::* Number cols = 48
-2013-04-16 17:08:16 INFO::* Data dimension = 1536,3
-2013-04-16 17:08:16 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-16 17:08:16 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-16 17:08:16 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-16 17:08:16 INFO::Reading input file (2/2) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/7485cc3d-de71-4eaf-941f-366e9b50135c/ia/output_files/cln1cln2M_wt_SN-CLN1_1_mini.jpeg.dat
-2013-04-16 17:08:16 INFO::* Done reading
-2013-04-16 17:08:16 INFO::* Column classes = integer,integer,integer
-2013-04-16 17:08:16 INFO::* Number rows = 32
-2013-04-16 17:08:16 INFO::* Number cols = 48
-2013-04-16 17:08:16 INFO::* Data dimension = 1536,3
-2013-04-16 17:08:16 INFO::* Obtaining file name metadata: valid = TRUE
-2013-04-16 17:08:16 INFO::* Mapping array definition: number of array definition files = 14
-2013-04-16 17:08:16 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-04-16 17:08:16 INFO::Done reading all files
-2013-04-16 17:08:16 INFO::-----------------------------------------------
-2013-04-16 17:08:16 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-16 17:08:16 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-16 17:08:16 INFO::Loading chromosome coordinates file
-2013-04-16 17:08:16 INFO::Linkage filter applied, total ignored = 0
-2013-04-16 17:08:16 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:08:16 INFO::Done plate normalization
-2013-04-16 17:08:16 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-16 17:08:16 INFO::Done big replicates filter, total ignored = 0
-2013-04-16 17:08:16 INFO::# Normalizing for spatial effect
-2013-04-16 17:08:16 INFO::# Normalizing for row column effect
-2013-04-16 17:08:16 INFO::# Applying jackknife filter
-2013-04-16 17:08:16 INFO::Done jackknife filter, total ignored = 83
-2013-04-16 17:08:16 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:08:16 INFO::Done plate normalization
-2013-04-16 17:08:17 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-04-16 17:08:17 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-04-16 17:08:17 INFO::Loading chromosome coordinates file
-2013-04-16 17:08:17 INFO::Linkage filter applied, total ignored = 0
-2013-04-16 17:08:17 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:08:17 INFO::Done plate normalization
-2013-04-16 17:08:17 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-04-16 17:08:17 INFO::Done big replicates filter, total ignored = 0
-2013-04-16 17:08:17 INFO::# Normalizing for spatial effect
-2013-04-16 17:08:17 INFO::# Normalizing for row column effect
-2013-04-16 17:08:17 INFO::# Applying jackknife filter
-2013-04-16 17:08:17 INFO::Done jackknife filter, total ignored = 97
-2013-04-16 17:08:17 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-04-16 17:08:17 INFO::Done plate normalization
-[1] "character"
-[1] "character"
+2013-05-20 12:42:16,380 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Application has started
 
+2013-05-20 12:42:16,382 - [INFO] - from play in play-akka.actor.default-dispatcher-17 
+Application started (Dev)
+
+2013-05-20 12:42:16,584 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-21 
+LINKAGE GENES = CAN1,LYP1,omar,wagih,hi
+
+2013-05-20 12:42:19,910 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-21 
+2013-05-20 12:42:17 INFO::Reading input files
+2013-05-20 12:42:17 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat
+2013-05-20 12:42:17 INFO::* Done reading
+2013-05-20 12:42:17 INFO::* Column classes = integer,integer,integer
+2013-05-20 12:42:17 INFO::* Number rows = 32
+2013-05-20 12:42:17 INFO::* Number cols = 48
+2013-05-20 12:42:17 INFO::* Data dimension = 1536,3
+2013-05-20 12:42:17 INFO::* Obtaining file name metadata: valid = TRUE
+2013-05-20 12:42:17 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 12:42:17 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 12:42:18 INFO::Done reading all files
+2013-05-20 12:42:18 INFO::-----------------------------------------------
+2013-05-20 12:42:18 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 12:42:18 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 12:42:18 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 12:42:18 INFO::Loading chromosome coordinates file
+2013-05-20 12:42:18 INFO::Linkage filter applied, total ignored = 0
+2013-05-20 12:42:18 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 12:42:18 INFO::Done plate normalization
+2013-05-20 12:42:18 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 12:42:18 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 12:42:18 INFO::# Normalizing for spatial effect
+2013-05-20 12:42:19 INFO::# Normalizing for row column effect
+2013-05-20 12:42:19 INFO::# Applying jackknife filter
+2013-05-20 12:42:19 INFO::Done jackknife filter, total ignored = 141
+2013-05-20 12:42:19 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 12:42:19 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 12:42:19,911 - [ERROR] - from application in play-akka.actor.actions-dispatcher-21 
+Loading required package: methods
+
+
+2013-05-20 13:22:11,789 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Application shutdown...
+
+2013-05-20 13:22:11,815 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Application has started
+
+2013-05-20 13:22:11,816 - [INFO] - from play in play-akka.actor.default-dispatcher-17 
+Application started (Dev)
+
+2013-05-20 14:00:04,505 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+LINKAGE GENES = CAN1,LYP1
+
+2013-05-20 14:00:08,451 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+2013-05-20 14:00:07 INFO::Reading input files
+2013-05-20 14:00:07 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat
+2013-05-20 14:00:07 INFO::* Done reading
+2013-05-20 14:00:07 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:00:07 INFO::* Number rows = 32
+2013-05-20 14:00:07 INFO::* Number cols = 48
+2013-05-20 14:00:07 INFO::* Data dimension = 1536,3
+2013-05-20 14:00:07 INFO::* Obtaining file name metadata: valid = TRUE
+2013-05-20 14:00:07 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:00:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:00:08 INFO::Done reading all files
+2013-05-20 14:00:08 INFO::-----------------------------------------------
+2013-05-20 14:00:08 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:00:08 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:00:08 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:00:08 INFO::Loading chromosome coordinates file
+
+
+2013-05-20 14:00:08,452 - [ERROR] - from application in play-akka.actor.actions-dispatcher-23 
+Loading required package: methods
+Error in sprintf("# Linkage genes including query = %d", "YOR102W,") : 
+  invalid format '%d'; use format %s for character objects
+Calls: lapply ... loginfo -> levellog -> <Anonymous> -> do.call -> sprintf
+Execution halted
+
+
+2013-05-20 14:01:46,288 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+LINKAGE GENES = CAN1,LYP1
+
+2013-05-20 14:01:54,917 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+2013-05-20 14:01:48 INFO::Reading input files
+2013-05-20 14:01:48 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat
+2013-05-20 14:01:48 INFO::* Done reading
+2013-05-20 14:01:48 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:01:48 INFO::* Number rows = 32
+2013-05-20 14:01:48 INFO::* Number cols = 48
+2013-05-20 14:01:48 INFO::* Data dimension = 1536,3
+2013-05-20 14:01:48 INFO::* Obtaining file name metadata: valid = TRUE
+2013-05-20 14:01:48 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:01:48 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:01:48 INFO::Done reading all files
+2013-05-20 14:01:48 INFO::-----------------------------------------------
+2013-05-20 14:01:48 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:01:48 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:01:48 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:01:48 INFO::Loading chromosome coordinates file
+2013-05-20 14:01:49 INFO::# Linkage genes including query = YOR102W,
+2013-05-20 14:01:49 INFO::# Linkage genes found in coords table = YOR102W
+2013-05-20 14:01:53 INFO::Linkage filter applied, total ignored = 0
+2013-05-20 14:01:53 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:01:53 INFO::Done plate normalization
+2013-05-20 14:01:53 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 14:01:53 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 14:01:53 INFO::# Normalizing for spatial effect
+2013-05-20 14:01:53 INFO::# Normalizing for row column effect
+2013-05-20 14:01:53 INFO::# Applying jackknife filter
+2013-05-20 14:01:54 INFO::Done jackknife filter, total ignored = 141
+2013-05-20 14:01:54 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:01:54 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 14:01:54,988 - [ERROR] - from application in play-akka.actor.actions-dispatcher-23 
+Loading required package: methods
+
+
+2013-05-20 14:07:17,708 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+LINKAGE GENES = CAN1,LYP1
+
+2013-05-20 14:07:34,662 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+$inputfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat"
+
+$adfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14"
+
+$adname
+[1] "sga-array-ver2-1536 (All plates)"
+
+$outputdir
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ns/output_files"
+
+$savenames
+[1] "sgatools_ctrl_YOR102W_1_boonelab.jpg.dat"
+
+$linkagecutoff
+[1] 200
+
+$linkagegenes
+[1] "CAN1,LYP1"
+
+$replicates
+[1] 4
+
+$score
+[1] FALSE
+
+$sfunction
+[1] 1
+
+$nignore
+[1] ""
+
+$help
+[1] FALSE
+
+2013-05-20 14:07:21 INFO::Reading input files
+2013-05-20 14:07:21 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat
+2013-05-20 14:07:21 INFO::* Done reading
+2013-05-20 14:07:21 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:07:21 INFO::* Number rows = 32
+2013-05-20 14:07:21 INFO::* Number cols = 48
+2013-05-20 14:07:21 INFO::* Data dimension = 1536,3
+2013-05-20 14:07:21 INFO::* Obtaining file name metadata: valid = TRUE
+2013-05-20 14:07:21 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:07:21 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:07:21 INFO::Done reading all files
+2013-05-20 14:07:21 INFO::-----------------------------------------------
+2013-05-20 14:07:21 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:07:21 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:07:21 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:07:21 INFO::Loading chromosome coordinates file
+2013-05-20 14:07:21 INFO::# Linkage genes including query = YOR102W, YEL063C, YNL268W
+2013-05-20 14:07:21 INFO::# Linkage genes found in coords table = YOR102W, YEL063C, YNL268W
+2013-05-20 14:07:33 INFO::Linkage filter applied, total ignored = 0
+2013-05-20 14:07:33 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:07:33 INFO::Done plate normalization
+2013-05-20 14:07:33 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 14:07:33 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 14:07:33 INFO::# Normalizing for spatial effect
+2013-05-20 14:07:33 INFO::# Normalizing for row column effect
+2013-05-20 14:07:33 INFO::# Applying jackknife filter
+2013-05-20 14:07:33 INFO::Done jackknife filter, total ignored = 141
+2013-05-20 14:07:33 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:07:33 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 14:07:34,733 - [ERROR] - from application in play-akka.actor.actions-dispatcher-23 
+Loading required package: methods
+
+
+2013-05-20 14:08:23,755 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+LINKAGE GENES = CAN1,LYP1,YOR203W
+
+2013-05-20 14:08:42,399 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-23 
+$inputfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat"
+
+$adfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14"
+
+$adname
+[1] "sga-array-ver2-1536 (All plates)"
+
+$outputdir
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ns/output_files"
+
+$savenames
+[1] "sgatools_ctrl_YOR102W_1_boonelab.jpg.dat"
+
+$linkagecutoff
+[1] 200
+
+$linkagegenes
+[1] "CAN1,LYP1,YOR203W"
+
+$replicates
+[1] 4
+
+$score
+[1] FALSE
+
+$sfunction
+[1] 1
+
+$nignore
+[1] ""
+
+$help
+[1] FALSE
+
+2013-05-20 14:08:25 INFO::Reading input files
+2013-05-20 14:08:25 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c7ecde1f-b970-4b20-b9e2-0c8d86eb18d4/ia/output_files/sgatools_ctrl_YOR102W_1_boonelab.jpg.dat
+2013-05-20 14:08:25 INFO::* Done reading
+2013-05-20 14:08:25 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:08:25 INFO::* Number rows = 32
+2013-05-20 14:08:25 INFO::* Number cols = 48
+2013-05-20 14:08:25 INFO::* Data dimension = 1536,3
+2013-05-20 14:08:26 INFO::* Obtaining file name metadata: valid = TRUE
+2013-05-20 14:08:26 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:08:26 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:08:26 INFO::Done reading all files
+2013-05-20 14:08:26 INFO::-----------------------------------------------
+2013-05-20 14:08:26 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:08:26 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:08:26 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:08:26 INFO::Loading chromosome coordinates file
+2013-05-20 14:08:26 INFO::# Linkage genes including query = YOR102W, YEL063C, YNL268W, YOR203W
+2013-05-20 14:08:26 INFO::# Linkage genes found in coords table = YOR102W, YEL063C, YNL268W, YOR203W
+2013-05-20 14:08:40 INFO::Linkage filter applied, total ignored = 304
+2013-05-20 14:08:40 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:08:40 INFO::Done plate normalization
+2013-05-20 14:08:40 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 14:08:40 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 14:08:40 INFO::# Normalizing for spatial effect
+2013-05-20 14:08:41 INFO::# Normalizing for row column effect
+2013-05-20 14:08:41 INFO::# Applying jackknife filter
+2013-05-20 14:08:41 INFO::Done jackknife filter, total ignored = 125
+2013-05-20 14:08:41 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:08:41 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 14:08:42,401 - [ERROR] - from application in play-akka.actor.actions-dispatcher-23 
+Loading required package: methods
+
+
+2013-05-20 14:15:47,024 - [INFO] - from application in play-akka.actor.actions-dispatcher-26 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/14c71111-27b9-450b-806f-c9ac097d9343/
+
+2013-05-20 14:16:46,508 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-27 
+LINKAGE GENES = CAN1,LYP1
+
+2013-05-20 14:16:59,841 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-27 
+$inputfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/14c71111-27b9-450b-806f-c9ac097d9343/ia/output_files/plate.jpg.dat"
+
+$adfiles
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate1:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate2:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate3:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate4:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate5:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate6:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate7:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate8:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate9:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate10:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate11:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate12:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate13:/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/data/array-definitions/sga-array-ver2-1536/plate14"
+
+$adname
+[1] "sga-array-ver2-1536 (All plates)"
+
+$outputdir
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/14c71111-27b9-450b-806f-c9ac097d9343/ns/output_files"
+
+$savenames
+[1] "plate.jpg.dat"
+
+$linkagecutoff
+[1] 200
+
+$linkagegenes
+[1] "CAN1,LYP1"
+
+$replicates
+[1] 4
+
+$score
+[1] FALSE
+
+$sfunction
+[1] 1
+
+$nignore
+[1] ""
+
+$help
+[1] FALSE
+
+2013-05-20 14:16:49 INFO::Reading input files
+2013-05-20 14:16:49 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/14c71111-27b9-450b-806f-c9ac097d9343/ia/output_files/plate.jpg.dat
+2013-05-20 14:16:49 INFO::* Done reading
+2013-05-20 14:16:49 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:16:49 INFO::* Number rows = 32
+2013-05-20 14:16:49 INFO::* Number cols = 48
+2013-05-20 14:16:49 INFO::* Data dimension = 1536,3
+2013-05-20 14:16:49 INFO::* Obtaining file name metadata: valid = FALSE
+2013-05-20 14:16:49 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:16:49 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:16:49 INFO::Done reading all files
+2013-05-20 14:16:49 INFO::-----------------------------------------------
+2013-05-20 14:16:49 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:16:49 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:16:49 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:16:49 INFO::Loading chromosome coordinates file
+2013-05-20 14:16:49 INFO::# Linkage genes including query = 1, YEL063C, YNL268W
+2013-05-20 14:16:49 INFO::# Linkage genes found in coords table = YEL063C, YNL268W
+2013-05-20 14:16:58 INFO::Linkage filter applied, total ignored = 0
+2013-05-20 14:16:58 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:16:58 INFO::Done plate normalization
+2013-05-20 14:16:58 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 14:16:58 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 14:16:58 INFO::# Normalizing for spatial effect
+2013-05-20 14:16:58 INFO::# Normalizing for row column effect
+2013-05-20 14:16:58 INFO::# Applying jackknife filter
+2013-05-20 14:16:58 INFO::Done jackknife filter, total ignored = 97
+2013-05-20 14:16:58 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:16:58 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 14:16:59,843 - [ERROR] - from application in play-akka.actor.actions-dispatcher-27 
+Loading required package: methods
+
+
+2013-05-20 14:17:41,250 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-27 
+LINKAGE GENES = 
+
+2013-05-20 14:17:44,922 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-27 
+2013-05-20 14:17:42 INFO::Reading input files
+2013-05-20 14:17:42 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/14c71111-27b9-450b-806f-c9ac097d9343/ia/output_files/plate.jpg.dat
+2013-05-20 14:17:42 INFO::* Done reading
+2013-05-20 14:17:42 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:17:42 INFO::* Number rows = 32
+2013-05-20 14:17:42 INFO::* Number cols = 48
+2013-05-20 14:17:42 INFO::* Data dimension = 1536,3
+2013-05-20 14:17:42 INFO::* Obtaining file name metadata: valid = FALSE
+2013-05-20 14:17:42 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:17:42 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:17:42 INFO::Done reading all files
+2013-05-20 14:17:42 INFO::-----------------------------------------------
+2013-05-20 14:17:42 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:17:42 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:17:42 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:17:42 INFO::Loading chromosome coordinates file
+2013-05-20 14:17:42 INFO::# Linkage genes including query = 1
+2013-05-20 14:17:42 INFO::# Linkage genes found in coords table =
+2013-05-20 14:17:43 INFO::Linkage filter applied, total ignored = 0
+2013-05-20 14:17:43 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:17:43 INFO::Done plate normalization
+2013-05-20 14:17:43 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 14:17:43 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 14:17:43 INFO::# Normalizing for spatial effect
+2013-05-20 14:17:44 INFO::# Normalizing for row column effect
+2013-05-20 14:17:44 INFO::# Applying jackknife filter
+2013-05-20 14:17:44 INFO::Done jackknife filter, total ignored = 97
+2013-05-20 14:17:44 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:17:44 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 14:17:44,924 - [ERROR] - from application in play-akka.actor.actions-dispatcher-27 
+Loading required package: methods
+
+
+2013-05-20 14:19:45,661 - [INFO] - from application in play-akka.actor.default-dispatcher-34 
+Application shutdown...
+
+2013-05-20 14:19:45,709 - [INFO] - from application in play-akka.actor.default-dispatcher-34 
+Application has started
+
+2013-05-20 14:19:45,709 - [INFO] - from play in play-akka.actor.default-dispatcher-34 
+Application started (Dev)
+
+2013-05-20 14:21:01,439 - [INFO] - from application in play-akka.actor.default-dispatcher-39 
+Application shutdown...
+
+2013-05-20 14:21:01,459 - [INFO] - from application in play-akka.actor.default-dispatcher-39 
+Application has started
+
+2013-05-20 14:21:01,460 - [INFO] - from play in play-akka.actor.default-dispatcher-39 
+Application started (Dev)
+
+2013-05-20 14:21:16,532 - [INFO] - from application in play-akka.actor.default-dispatcher-39 
+Application shutdown...
+
+2013-05-20 14:21:16,585 - [INFO] - from application in play-akka.actor.default-dispatcher-39 
+Application has started
+
+2013-05-20 14:21:16,585 - [INFO] - from play in play-akka.actor.default-dispatcher-39 
+Application started (Dev)
+
+2013-05-20 14:22:00,582 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-29 
+LINKAGE GENES = YOR203W
+
+2013-05-20 14:22:10,767 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-29 
+2013-05-20 14:22:03 INFO::Reading input files
+2013-05-20 14:22:03 INFO::Reading input file (1/1) path = /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/14c71111-27b9-450b-806f-c9ac097d9343/ia/output_files/plate.jpg.dat
+2013-05-20 14:22:03 INFO::* Done reading
+2013-05-20 14:22:03 INFO::* Column classes = integer,integer,integer
+2013-05-20 14:22:03 INFO::* Number rows = 32
+2013-05-20 14:22:03 INFO::* Number cols = 48
+2013-05-20 14:22:03 INFO::* Data dimension = 1536,3
+2013-05-20 14:22:03 INFO::* Obtaining file name metadata: valid = FALSE
+2013-05-20 14:22:03 INFO::* Mapping array definition: number of array definition files = 14
+2013-05-20 14:22:03 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+2013-05-20 14:22:03 INFO::Done reading all files
+2013-05-20 14:22:03 INFO::-----------------------------------------------
+2013-05-20 14:22:03 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-05-20 14:22:03 INFO::# Applying linkage filter, linkage.cutoff = 200
+2013-05-20 14:22:03 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-05-20 14:22:03 INFO::Loading chromosome coordinates file
+2013-05-20 14:22:03 INFO::# Linkage genes including query = 1, YOR203W
+2013-05-20 14:22:03 INFO::# Linkage genes found in coords table = YOR203W
+2013-05-20 14:22:08 INFO::Linkage filter applied, total ignored = 304
+2013-05-20 14:22:08 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:22:08 INFO::Done plate normalization
+2013-05-20 14:22:08 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-05-20 14:22:08 INFO::Done big replicates filter, total ignored = 0
+2013-05-20 14:22:09 INFO::# Normalizing for spatial effect
+2013-05-20 14:22:09 INFO::# Normalizing for row column effect
+2013-05-20 14:22:09 INFO::# Applying jackknife filter
+2013-05-20 14:22:09 INFO::Done jackknife filter, total ignored = 74
+2013-05-20 14:22:09 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-05-20 14:22:09 INFO::Done plate normalization
+[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
+
+
+2013-05-20 14:22:10,768 - [ERROR] - from application in play-akka.actor.actions-dispatcher-29 
+Loading required package: methods
+
+
+2013-05-20 14:24:33,915 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application shutdown...
+
+2013-05-20 14:24:33,947 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application has started
+
+2013-05-20 14:24:33,947 - [INFO] - from play in play-akka.actor.default-dispatcher-44 
+Application started (Dev)
+
+2013-05-20 14:26:13,139 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application shutdown...
+
+2013-05-20 14:26:13,149 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application has started
+
+2013-05-20 14:26:13,149 - [INFO] - from play in play-akka.actor.default-dispatcher-44 
+Application started (Dev)
+
+2013-05-20 14:27:36,852 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application shutdown...
+
+2013-05-20 14:27:36,880 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application has started
+
+2013-05-20 14:27:36,881 - [INFO] - from play in play-akka.actor.default-dispatcher-44 
+Application started (Dev)
+
+2013-05-20 14:28:34,470 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application shutdown...
+
+2013-05-20 14:28:34,491 - [INFO] - from application in play-akka.actor.default-dispatcher-44 
+Application has started
+
+2013-05-20 14:28:34,491 - [INFO] - from play in play-akka.actor.default-dispatcher-44 
+Application started (Dev)
+
+2013-05-20 14:31:36,486 - [INFO] - from application in play-akka.actor.default-dispatcher-48 
+Application shutdown...
+
+2013-05-20 14:31:36,496 - [INFO] - from application in play-akka.actor.default-dispatcher-48 
+Application has started
+
+2013-05-20 14:31:36,496 - [INFO] - from play in play-akka.actor.default-dispatcher-48 
+Application started (Dev)
+
+2013-05-20 14:34:01,027 - [INFO] - from application in play-akka.actor.default-dispatcher-49 
+Application shutdown...
+
+2013-05-20 14:34:01,047 - [INFO] - from application in play-akka.actor.default-dispatcher-49 
+Application has started
+
+2013-05-20 14:34:01,048 - [INFO] - from play in play-akka.actor.default-dispatcher-49 
+Application started (Dev)
+
+2013-05-20 14:41:35,446 - [INFO] - from application in play-akka.actor.default-dispatcher-51 
+Application shutdown...
+
+2013-05-20 14:41:35,476 - [INFO] - from application in play-akka.actor.default-dispatcher-51 
+Application has started
+
+2013-05-20 14:41:35,476 - [INFO] - from play in play-akka.actor.default-dispatcher-51 
+Application started (Dev)
+
+2013-05-20 14:42:18,493 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application shutdown...
+
+2013-05-20 14:42:18,519 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application has started
+
+2013-05-20 14:42:18,519 - [INFO] - from play in play-akka.actor.default-dispatcher-52 
+Application started (Dev)
+
+2013-05-20 14:45:02,937 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application shutdown...
+
+2013-05-20 14:45:02,986 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application has started
+
+2013-05-20 14:45:02,987 - [INFO] - from play in play-akka.actor.default-dispatcher-52 
+Application started (Dev)
+
+2013-05-20 14:45:21,981 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application shutdown...
+
+2013-05-20 14:45:21,990 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application has started
+
+2013-05-20 14:45:21,990 - [INFO] - from play in play-akka.actor.default-dispatcher-52 
+Application started (Dev)
+
+2013-05-20 14:51:07,718 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application shutdown...
+
+2013-05-20 14:51:07,726 - [INFO] - from application in play-akka.actor.default-dispatcher-52 
+Application has started
+
+2013-05-20 14:51:07,727 - [INFO] - from play in play-akka.actor.default-dispatcher-52 
+Application started (Dev)
+
+2013-05-20 14:52:10,896 - [INFO] - from application in play-akka.actor.actions-dispatcher-40 
+outputDir=/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/jobs/c104b833-fc48-4e6e-a37d-f5646010528d/
 

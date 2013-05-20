@@ -86,6 +86,11 @@ public class NScontroller extends Controller {
 		//Get job
 		NSjob job = filledForm.get();
 		
+		job.linkageGenes = job.linkageGenes.replaceAll("\n|\r", ",");
+		job.linkageGenes = job.linkageGenes.replaceAll("\\s", "");
+		
+		Logger.debug("LINKAGE GENES = "+job.linkageGenes);
+		
 		Map<String, File> plateFilesMap = new HashMap<String, File>();
 		
 		//Get file(s) uploaded
@@ -161,8 +166,8 @@ public class NScontroller extends Controller {
         
         File outputDir = new File(Constants.JOB_OUTPUT_DIR + File.separator + job.jobid + File.separator);
         File nsDir = new File( outputDir.getPath() + File.separator + "ns" + File.separator);
-        File outputFilesDir = new File(nsDir + "output_files"+	File.separator);
-        File inputFilesDir = new File(nsDir + "input_files"+	File.separator);
+        File outputFilesDir = new File(nsDir.getPath() + File.separator + "output_files"+	File.separator);
+        File inputFilesDir = new File(nsDir.getPath() + File.separator +"input_files"+	File.separator);
         
         //Remove any ns directory if it exists
         if(nsDir.exists()){
@@ -195,6 +200,7 @@ public class NScontroller extends Controller {
         c.add("--outputdir"); 		c.add(outputFilesDir.getPath());
         c.add("--replicates"); 		c.add(job.replicates.toString());
         c.add("--linkagecutoff"); 	c.add(job.linkageCutoff.toString());
+        c.add("--linkagegenes"); 	c.add(job.linkageGenes.toString());
         
         if(!adfiles.toString().isEmpty()){ 
         	c.add("--adfiles"); c.add(adfiles.toString()); 
@@ -202,7 +208,8 @@ public class NScontroller extends Controller {
         }
         if(job.doScoring){ 
         	c.add("--score"); 
-        	c.add("--sfunction"); c.add(job.scoringFunction); 
+        	//c.add("--sfunction"); c.add(job.scoringFunction); 
+        	c.add("--sfunction"); c.add("1"); 
         }
         //Logger.info("#####"+c );
         
@@ -238,7 +245,7 @@ public class NScontroller extends Controller {
 	        in_error.close();
 	        //#############################
 	        Logger.debug(shell_output.toString());
-	        //Logger.error(shell_output_error.toString());
+	        Logger.error(shell_output_error.toString());
 	        // Zip files 
 	        Zipper.zipDir(zipFilePath, outputFilesDir.getPath());
         }catch(Exception e){
@@ -258,7 +265,7 @@ public class NScontroller extends Controller {
         
         Map<String, String> outputFilesMap = new HashMap();
         for(File of: outputFilesDir.listFiles()){
-        	if(!of.getName().startsWith("combined") && !of.getName().startsWith("README"))
+        	if(!of.getName().startsWith("combined") && !of.getName().startsWith("README") && !of.getName().startsWith("scores"))
         		outputFilesMap.put(of.getName(), of.getPath());
         }
         

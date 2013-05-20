@@ -13,16 +13,23 @@
 		<!--TIPS START-->
 		<script>
 			$(document).ready(function() {
-				if( $.cookie('tip-labelhelp') == null){
+				if( $.cookie('tip-labelhelp') == null)
 					$('#tip-labelhelp').show();
-				}
+				if( $.cookie('tip-adhelp') == null)
+					$('#tip-adhelp').show();
 			})
 		</script>
 
 		<div class="alert alert-info hide" id="tip-labelhelp">
-		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 10 });">&times;</button>
+		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 30 });">&times;</button>
 		  <div class="tip-content">
 			  <strong>Quick help tip! </strong>clicking labels with <abbr title="">dotted underlines</abbr> will provide you with additional help
+		  </div>
+		</div>
+		<div class="alert alert-info hide" id="tip-adhelp" style="margin-top:-10px">
+		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-adhelp', true, { expires : 30 });">&times;</button>
+		  <div class="tip-content">
+			  <strong>Note! </strong> Plate layout must be defined to map row and column coordinates to gene names, and use the GO enrichment analysis tool.
 		  </div>
 		</div>
 		
@@ -56,21 +63,10 @@
 		            		$('#plateFiles').attr('valid', 'true');
 		            		$('#nssubmit').removeAttr('disabled');
 		            	});
-		            	$(window).load(function() {
- 							// executes when complete page is fully loaded, including all frames, objects and images
- 							for(var i=0; i<preloaded.length; i++){
-								screenType = preloaded[i].parseSGAFileName()[1];
-								if(/Control/i.test(screenType)){
-									$('#doScoring').prop('checked', true);
-									$('#cg-scoringFunction').slideDown('fast');
-									$("#nssubmit").html('Normalize and score');
-								}
-							}
-						});
+		            	
 	            	</script>
             	}
             </div>
-            
             
             
             @inputFile(
@@ -80,7 +76,6 @@
 	            	'uploadwidget -> "Select file(s)",
 	            	'helpModal -> "ns-plate-files"
 	        )
-          	
           	
             
 			<!--Include array definition checkbox-->
@@ -92,7 +87,7 @@
            	){ (id, name, value, args) =>
 			<label class="checkbox">
 				<input id="@id" name="@name" @toHtmlArgs(args) type="checkbox" value="true">
-					<span>&nbsp;Define plate layout</span>
+					<span>&nbsp;Define the a map of row/column coordinates to gene names</span>
 					</label>
 			}
 			
@@ -142,13 +137,25 @@
 			<fieldset>
 			
 			
-            @select(
+            <!--@@select(
                 nsForm("replicates"), 
                 options = options(ComboboxOpts.replicates),
                 '_label -> "Replicates",
                 '_showConstraints -> false,
 				'helpModal -> "ns-replicates"
-            )
+            )-->
+            @helper.input(
+           		nsForm("replicates"),
+           		'_label -> "Replicates",
+           		'_showConstraints -> false
+           	){ (id, name, value, args) =>
+           		<select id="@id" name="@name">
+           			@for(r <- ComboboxOpts.replicates){
+           				<option value="@r">@if(r == "4"){4 (2 × 2)}else{1 (1 × 1)}</option>
+           			}
+				</select>
+           		
+			}
             
           	@helper.input(
            		nsForm("doLinkage"),
@@ -159,7 +166,7 @@
            	){ (id, name, value, args) =>
            		<label class="checkbox">
 					<input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-					<span>&nbsp;Remove genes with a specific proximity to one another from the analysis</span>
+					<span>&nbsp;Remove genes linked to they query</span>
 				</label>
 			}
 			
@@ -175,6 +182,18 @@
       			</div>
 			}
 			
+			@helper.input(
+           		nsForm("linkageGenes"),
+           		'_label -> "Linkage genes",
+           		'_showConstraints -> false
+           	){ (id, name, value, args) =>
+           		<textarea rows="2" id="@id" name="@name" @toHtmlArgs(args) >@value</textarea>
+           		<div style="margin:6px;width: 450px;">
+           			<span id="linkageMessage" style="color:#3a87ad"></span>
+           		</div>
+           		
+			}
+			
 				
 			@helper.input(
            		nsForm("doScoring"),
@@ -188,6 +207,8 @@
 					 <span>&nbsp;Scores the normalized output</span>
 				</label>
 			}
+			
+			@*
 			@helper.input(
            		nsForm("scoringFunction"),
            		'_label -> "Scoring function",
@@ -195,11 +216,13 @@
            	){ (id, name, value, args) =>
            		<select id="@id" name="@name">
            			@for(scoringFunction <- ComboboxOpts.scoringFunctions){
-           				<option value="@(ComboboxOpts.scoringFunctions.indexOf(scoringFunction)+1)">@Html(scoringFunction)</option>
+           				<option @if(ComboboxOpts.scoringFunctions.indexOf(scoringFunction)+1 == 2){selected} 
+           				value="@(ComboboxOpts.scoringFunctions.indexOf(scoringFunction)+1)">@Html(scoringFunction)</option>
            			}
 				</select>
            		
 			}
+			*@
 				
 			</fieldset>
 			

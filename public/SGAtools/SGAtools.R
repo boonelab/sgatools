@@ -144,6 +144,7 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
       # Read in corresponding array definition file - handle 5 lines?
       ad.data = read.table(ad.paths[ind], sep='\t', skip=5, header=F, stringsAsFactors=F)
       names(ad.data)[1:3] = c('c', 'r', 'Gene')
+      
       m=data.frame(r=rdbl, c=cdbl)
       i = apply(m, 1, function(x){
         intersect(which(x[1] == ad.data$r), which(x[2] == ad.data$c))[1]
@@ -156,7 +157,9 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
     loginfo('* Not mapping array definition: no array definition files')
   }
   
-  return(as.character(array.vals))
+  ret = as.character(array.vals)
+  ret = unlist( lapply(strsplit(ret, '_'), function(i) i[1]) )
+  return(ret)
 }
 
 # Get metadata encoded in file name
@@ -217,7 +220,8 @@ normalizeSGA <- function(plate.data,
                          overall.plate.median=510, 
                          max.colony.size=1.5*overall.plate.median, 
                          intermediate.data=F,
-                         linkage.file=''){
+                         linkage.file='',
+                         linkage.genes=character(0)){
   
   loginfo('Normalizing plate: replicates = %d, overall.plate.median = %d, max.colony.size = %d', 
           replicates, overall.plate.median, max.colony.size)
@@ -235,7 +239,7 @@ normalizeSGA <- function(plate.data,
   names(ignore.ind) = NA
   
   ########## (F1) Linkage effect filter ##########
-  linkage.ign = linkageFilter(plate.data, linkage.cutoff, linkage.file)
+  linkage.ign = linkageFilter(plate.data, linkage.cutoff, linkage.file, linkage.genes)
   ignore.ind = mergeLogicalNames(linkage.ign, ignore.ind)
   
   ########## (N1) Plate normalization ##########
@@ -284,7 +288,9 @@ normalizeSGA <- function(plate.data,
     kvpMapAsString(v)
   })
   plate.data$kvp[ign] = status.kvp
-  #plate.data$ncolonysize = plate.data$ncolonysize/overall.plate.median
+  
+  # Make scale of normalized sizes 0-1
+  plate.data$ncolonysize = plate.data$ncolonysize/overall.plate.median
   
   # LOL we're done, whew! return our data (minus extra cols generated)!
   if(!intermediate.data){
@@ -449,9 +455,11 @@ kvpMapAsString <- function(kvp.map){
 # @param plate.data: SGA formatted data frame
 # @param linkage.cutoff: in KB, If witin this value of eachother on same chromosome they will be ignored
 # @return linkage.ignore: logical array with TRUE for rows to ignore. Status code as name
-linkageFilter <- function(plate.data, linkage.cutoff=200, linkage.file=''){
+linkageFilter <- function(plate.data, linkage.cutoff=200, linkage.file='', linkage.genes=''){
   
   loginfo('# Applying linkage filter, linkage.cutoff = %d', linkage.cutoff)
+  
+  loginfo('Linkage file is at: %s', linkage.file)
   status.code = 'LK'
   
   # Load linkage files named: chromosome_coordinates.Rdata(R.data?)
@@ -463,38 +471,32 @@ linkageFilter <- function(plate.data, linkage.cutoff=200, linkage.file=''){
     chrom_coordinates = as.data.frame(matrix(NA, 0, 4))
   }
   
-  # Get array and query names
-  array = sapply( strsplit(plate.data$array, '_'), function(a){  a[1] })
   
-  query = match(toupper(plate.data$query), chrom_coordinates[[1]])
-  array = match(toupper(array), chrom_coordinates[[1]])
+  mid.map = apply(chrom_coordinates[,3:4], 1, mean)
+  names(mid.map) = chrom_coordinates[[1]]
   
-  CAN1 = chrom_coordinates[chrom_coordinates[[1]] == 'YEL063C',]
-    CAN1.ch = CAN1[[2]]
-    CAN1.end = CAN1[[4]]
-  LYP1 = chrom_coordinates[chrom_coordinates[[1]] == 'YNL268W',]
-    LYP1.ch = LYP1[[2]]
-    LYP1.end = LYP1[[4]]
+  chr.map = chrom_coordinates[[2]]
+  names(chr.map) = chrom_coordinates[[1]]
+  
+  linkage.genes = unique(c(plate.data$query, linkage.genes))
+  loginfo('# Linkage genes including query = %s', paste0(linkage.genes, collapse=', '))
+  linkage.genes = linkage.genes[ linkage.genes %in% chrom_coordinates[[1]] ]
+  loginfo('# Linkage genes found in coords table = %s', paste0(linkage.genes, collapse=', '))
+  
   # Get indicies for which row:query/array on same chromsome and within < cutoff
-  linked = sapply(1:length(query), function(i){
-    
-    # If any of query or array dont match, return FALSE
-    if(is.na(query[i]) | is.na(array[i])){
+  linked = sapply(plate.data$array, function(ar){
+    if(length(linkage.genes) == 0 | ! ar %in% chrom_coordinates[[1]] | linkage.genes[1] == ''){
       FALSE
     }else{
-      # We have a match, ensure they are on the same chromosome and are within the linkage cutoff
-      q.ch = chrom_coordinates[[2]][query[i]]
-      a.ch = chrom_coordinates[[2]][array[i]]
-            
-      a.start = chrom_coordinates[[3]][array[i]]
-      q.end = chrom_coordinates[[3]][query[i]]
-      a = (q.ch == a.ch) & abs( a.start - q.end ) < (linkage.cutoff * 1e3)
-      b = (CAN1.ch == a.ch) & abs( a.start - CAN1.end ) < (linkage.cutoff * 1e3)
-      c = (LYP1.ch == a.ch) & abs( a.start - LYP1.end ) < (linkage.cutoff * 1e3)
-      
-      a|b|c
+      t = sapply(linkage.genes, function(g){
+        (chr.map[g] == chr.map[ar]) & (abs( mid.map[g] - mid.map[ar] ) < (linkage.cutoff * 1e3))
+      })
+      if(is.na(t)){
+        FALSE
+      }else{
+        any(t)
+      }
     }
-    
   })
   
   # Set status code

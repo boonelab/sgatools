@@ -62,6 +62,10 @@
 			    width: auto;
 			}
 			
+			.dc-table-label{
+				display:none;
+			}
+			
 	</style>
 	
 	<h2>Data visualization</h2>
@@ -71,7 +75,7 @@
 		<h4 style="display:inline">Viewing</h4> 
 		<select id="viewType" class="input-medium" style="margin-top:10px">
 			<option name="colonysize" domainHigh=3000 domainMed=1500 domainLow=0 selected>Raw colony sizes</option>
-			<option name="ncolonysize" domainHigh=900 domainMed=510 domainLow=100>Normalized colony sizes</option>
+			<option name="ncolonysize" domainHigh=2 domainMed=1 domainLow=-1>Normalized colony sizes</option>
 			@if(job.doScoring) {<option name="score" domainHigh=1 domainMed=0 domainLow=-1>Scored data</option> }
 		</select>
 		<h4 style="display:inline"> for plate file </h4> 
@@ -171,6 +175,11 @@
 			}
 			
 			<script>
+				$(window).load(function () {
+				  firstCallHm=[];
+				  firstCallHs=[];
+				});
+			
 				function popitup(url) {
 					newwindow=window.open(url,'name','height=300,width=500');
 					if (window.focus) {newwindow.focus()}
@@ -302,10 +311,13 @@
 			</div>
 			
 	<script type="text/javascript">
+		window.test = null;
 		$(document).ready(function() {
 			d3.text('/assets/jobs/@job.jobid/nsoutput_files/combined_data.dat', 'text/tsv',function(tsv){
     			tsv = tsv.replace(/^[#@@][^\r\n]+[\r\n]+/mg, '');
+    			tsv = "row	col	colonysize	plateid	query	array	ncolonysize	score	kvp\n" + tsv;
     			combinedData = d3.tsv.parse(tsv);
+    			test = combinedData;
     			window.globalArrays = [];
 				jQuery.each(combinedData, function(i,v){
 					globalArrays.push(v.array.split('_')[0]);
@@ -313,46 +325,35 @@
 				globalArrays = jQuery.unique(globalArrays);
 			});
 		
-		})
+		});
 	
+		$('#gprofilerBtn').click(function(){
 			
-    	
+			//Get query based on selected window in histogram
+			var selectedEntries = histogramChart.dimension().top(Infinity);
+			querySet = [];
+			for(i = 0; i<selectedEntries.length; i++){
+				querySet.push(selectedEntries[i].arrayStandard);
+			}
+			querySet = jQuery.unique(querySet);
 			
-			$('#gprofilerBtn').click(function(){
-				
-				//Get query based on selected window in histogram
-				var selectedEntries = histogramChart.dimension().top(Infinity);
-				querySet = [];
-				for(i = 0; i<selectedEntries.length; i++){
-					querySet.push(selectedEntries[i].arrayStandard);
-				}
-				querySet = jQuery.unique(querySet);
-				
-				if(querySet.length == 0){
-					alert('Please select at least one gene in the histogram');
-					return;
-				}
-				
-				//Get background genes (all genes on the plate)
-				//var allEntries = dataTable.dimension().top(Infinity);
-				//bgSet = []
-				//for(i = 0; i<allEntries.length; i++){
-				//	bgSet.push(allEntries[i].arrayStandard);
-				//}
-				//bgSet = bgSet.join(' ');
-				bgSet = jQuery.unique(globalArrays).join(' ');
-				
-				
-				params = {'organism':'scerevisiae', 
-						  'query': querySet.join(' '),
-						  'custbg': bgSet,
-						  'custbg_cb':'on',
-						  'advanced_options_on': '0'
-				}
-				uri = 'http://biit.cs.ut.ee/gprofiler/index.cgi?' + jQuery.param(params); 
-				window.open(uri);
-				console.log(uri);
-			});
+			if(querySet.length == 0){
+				alert('Please select at least one gene in the histogram');
+				return;
+			}
+			
+			bgSet = jQuery.unique(globalArrays).join(' ');
+			
+			params = {'organism':'scerevisiae', 
+					  'query': querySet.join(' '),
+					  'custbg': bgSet,
+					  'custbg_cb':'on',
+					  'advanced_options_on': '0'
+			}
+			uri = 'http://biit.cs.ut.ee/gprofiler/index.cgi?' + jQuery.param(params); 
+			window.open(uri);
+			console.log(uri);
+		});
 			
 			var maxHeatmapWidth = 460;
 			

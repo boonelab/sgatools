@@ -31,6 +31,14 @@
 		<script>
 		$(document).ready(function(){
 			$('.toggle-button').toggleButtons();
+			
+			if (window.File && window.FileReader && window.FileList && window.Blob) {
+			  // Great success! All the File APIs are supported.
+			} else {
+			  //alert('The File APIs are not fully supported in this browser.');
+			  $('#main-content').hide();
+			  $('#browser-error').show();
+			}
 		});
 		</script>
 		
@@ -64,8 +72,8 @@
 					<div class="nav-collapse">
 						<ul class="nav">
 							<li class="@("active".when(nav == "ia"))"><a href="@routes.IAcontroller.initIAForm()">Image analysis</a></li>
-							<li class="@("active".when(nav == "ns"))"><a href="@routes.NScontroller.initNSform()">Normalization & Scoring</a></li>
-							<li class="@("active".when(nav == "da"))"><a href="#">Data visualization</a></li>
+							<li class="@("active".when(nav == "ns"))"><a href="@routes.NScontroller.initNSform()">Normalization & scoring</a></li>
+							<li class="@("active".when(nav == "da"))"><a href="@if(nav=="da"){#}else{@routes.Application.renderDaPage()}">Data visualization</a></li>
 							
 						</ul>
 						<ul class="nav pull-right">
@@ -80,7 +88,23 @@
 
 		<!-- Content -->
 		<div class="container" style="padding-top:90px">
+			
+			<script>
+			
+			</script>
+			
+			<div class="alert alert-block alert-error hide" id="browser-error" style="margin-bottom:15px; font-size:17px">
+			  <div class="tip-content">
+				  <strong>Warning </strong> Your browser does not support the latest version of HTML for you to be able to use SGAtools.
+				  Please update your browser.<br><br> For SGAtools, We recommend the latest versions of 
+				  Chrome (<a target="blank_" href="https://www.google.com/chrome">download here</a>) 
+				  or Firefox(<a target="blank_" href="http://www.mozilla.org/en-US/firefox/new/">download here</a>).
+			  </div>
+			</div>
+			
+			<div id="main-content">
 			@content
+			</div>
 			
 			<div id="push"></div>
 	    </div>
