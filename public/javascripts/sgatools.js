@@ -23,6 +23,7 @@ String.prototype.parseSGAFileName = function() {
 
 Array.prototype.fileTableSGA = function(){
 	var r = [];
+	validQueries = [];
 	var nctrl = 0, ncase = 0, nvalid=0;
 	var isExample = false;
 	jQuery.each(this.sort(), function(i, fileName) {
@@ -31,7 +32,12 @@ Array.prototype.fileTableSGA = function(){
 		screenType = parsed[1];
 		filename = parsed[0];
 		if(/^sgatools/i.test(filename)) isExample = true;
-		if(screenType != '―') nvalid++;
+		if(screenType != '―'){
+			nvalid++;
+			if(parsed[2] != '―'){
+				validQueries.push(parsed[2]);
+			}
+		}
 		if(/Control/i.test(screenType)) nctrl++;
 		if(/Case/i.test(screenType)) ncase++;
 		
@@ -58,7 +64,7 @@ Array.prototype.fileTableSGA = function(){
 	}
 		
 	
-	if(nctrl > 0 && ncase > 0 && nvalid == this.length){
+	if(nctrl > 0 && ncase > 0 && nvalid >0){
 		$('#doScoring').prop('checked', true);
 		$('#cg-scoringFunction').slideDown('fast');
 		$("#nssubmit").html('Normalize and score');
@@ -70,9 +76,13 @@ Array.prototype.fileTableSGA = function(){
 	
 	//Once more for linkage
 	if(nvalid != this.length){
-		$('#linkageMessage').text('The query ORF from your filename(s) was not detected. If you want to filter for linkage to the query, please enter its ORF name (e.g. YER053C) in the text box');
+		$('#linkageMessage').text('One or more query ORF from your filename(s) was not detected. If you want to filter for linkage to the query, please enter its ORF name (e.g. YER053C) in the text box');
 	}
 	
+	if(validQueries.length > 0){
+		validQueries = validQueries.join(', ');
+		$('#linkageGenes').val('CAN1, LYP1, '+validQueries);
+	}	
 	nsFormValid();
 	//////////////
 	

@@ -515,7 +515,9 @@
 		    				<li>Query gene name/ORF: Name of the query ORF if image/dat files follow conventional file naming (see file naming in help). 
 		    				If they do not, a value of '1' is placed as the query ORF</li>
 		    				<li>Array gene name/ORF: Name of the array ORF if plate layout file supplied. If not, a unique value is assigned to each group of replicate arrays</li>
-		    				<li>Normalized colony size: the raw colony size after normalization</li>
+		    				<li>Normalized colony size: the raw colony size after normalization.  The size is relative to plate median colony size, and a proxy for fitness. 
+		    				Normalized value of 1 is as fit as the average strain, 1.3 means it is 30% fitter than the average strain, and 0.4 
+		    				that it's 40% as fit as the average strain.</li>
 		    				<li>Score: the colony fitness score computed using the normalized colony size (7) and the corresponding normalized colony size in the control screen</li>
 		    				<li>Additional information as key-value pairs</li>
 		    			</ol>

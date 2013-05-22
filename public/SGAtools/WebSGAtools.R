@@ -186,6 +186,7 @@ combined = lapply(sgadata.ns, function(plate.data){
        tt(df$ncolonysize)
     ) 
   })
+  collapsed[,1:2] = NA
   names(collapsed) = c('row', 'col', 'colonysize', 'plateid', 
                        'query', 'array', 'ncolonysize', 'score', 'kvp', 'sd', 'pvalue')
   
@@ -230,14 +231,16 @@ if(args$score){
   # Scores only file
   savename =  "scores.dat"
   comments = c('# Scores only file', comment.ns)
-  comments[length(comments)] = '# (1)ORF\t(2)Score\t(3)Standard deviation\t(4)P-value'
+  comments[length(comments)] = '# (1)Query ORF\t(2)Array ORF\t(3)Score\t(4)Standard deviation\t(5)P-value'
   writeLines(comments, savename)
-  sc = combined[,c('array', 'score', 'sd', 'pvalue')]
-  sc = sc[!is.na(sc[[2]]),]
+  sc = combined[,c('query','array', 'score', 'sd', 'pvalue')]
+  sc = sc[!is.na(sc[[3]]),]
   
   # Map orf to gene name
   ind = sc[[1]] %in% names(genemap)
   sc[[1]][ind] = genemap[sc[[1]][ind]]
+  ind = sc[[2]] %in% names(genemap)
+  sc[[2]][ind] = genemap[sc[[2]][ind]]
   
   # Write
   write.table(sc, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)

@@ -85,7 +85,7 @@
 					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
 					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
 		}
-			<option value="combined" image-path="NA" data-path="/assets/jobs/@job.jobid/nsoutput_files/combined_data.dat">
+			<option value="combined" image-path="NA" data-path="/assets/jobs/@job.jobid/ns/output_files/combined_data.dat">
 				Combined data</option>
 		</select>
 		
@@ -313,7 +313,7 @@
 	<script type="text/javascript">
 		window.test = null;
 		$(document).ready(function() {
-			d3.text('/assets/jobs/@job.jobid/nsoutput_files/combined_data.dat', 'text/tsv',function(tsv){
+			d3.text('/assets/jobs/@job.jobid/ns/output_files/combined_data.dat', 'text/tsv',function(tsv){
     			tsv = tsv.replace(/^[#@@][^\r\n]+[\r\n]+/mg, '');
     			tsv = "row	col	colonysize	plateid	query	array	ncolonysize	score	kvp\n" + tsv;
     			combinedData = d3.tsv.parse(tsv);

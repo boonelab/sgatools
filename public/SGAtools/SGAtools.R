@@ -484,20 +484,30 @@ linkageFilter <- function(plate.data, linkage.cutoff=200, linkage.file='', linka
   loginfo('# Linkage genes found in coords table = %s', paste0(linkage.genes, collapse=', '))
   
   # Get indicies for which row:query/array on same chromsome and within < cutoff
-  linked = sapply(plate.data$array, function(ar){
-    if(length(linkage.genes) == 0 | ! ar %in% chrom_coordinates[[1]] | linkage.genes[1] == ''){
-      FALSE
-    }else{
-      t = sapply(linkage.genes, function(g){
-        (chr.map[g] == chr.map[ar]) & (abs( mid.map[g] - mid.map[ar] ) < (linkage.cutoff * 1e3))
-      })
-      if(is.na(t)){
-        FALSE
-      }else{
-        any(t)
-      }
-    }
+  #ind = plate.data$array %in% chrom_coordinates[[1]] 
+  ar = plate.data$array
+  
+  linked = sapply(linkage.genes, function(g){
+    (chr.map[g] == chr.map[ar]) & (abs( mid.map[g] - mid.map[ar] ) < (linkage.cutoff * 1e3))
   })
+  
+  linked = apply(linked, 1, any)
+  linked[is.na(linked)] = FALSE
+  
+#   linked = sapply(plate.data$array, function(ar){
+#     if(length(linkage.genes) == 0 | ! ar %in% chrom_coordinates[[1]] | linkage.genes[1] == ''){
+#       FALSE
+#     }else{
+#       t = sapply(linkage.genes, function(g){
+#         (chr.map[g] == chr.map[ar]) & (abs( mid.map[g] - mid.map[ar] ) < (linkage.cutoff * 1e3))
+#       })
+#       if(any(is.na(t) | is.null(t))){
+#         FALSE
+#       }else{
+#         any(t)
+#       }
+#     }
+#   })
   
   # Set status code
   names(linked) = NA
