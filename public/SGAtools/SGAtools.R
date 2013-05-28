@@ -471,6 +471,13 @@ linkageFilter <- function(plate.data, linkage.cutoff=200, linkage.file='', linka
     chrom_coordinates = as.data.frame(matrix(NA, 0, 4))
   }
   
+  if(linkage.cutoff < 0){
+    loginfo('Skipping linkage correction...')
+    linked = rep(FALSE, nrow(plate.data))
+    names(linked) = NA
+    return(linked)
+  }
+  
   
   mid.map = apply(chrom_coordinates[,3:4], 1, mean)
   names(mid.map) = chrom_coordinates[[1]]
