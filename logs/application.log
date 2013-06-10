@@ -1,392 +1,119 @@
-2013-05-28 15:17:52,681 - [INFO] - from play in main 
-Listening for HTTP on port 9000...
+2013-06-10 16:28:24,461 - [INFO] - from play in main 
+Listening for HTTP on port 8080...
 
-2013-05-28 15:18:31,304 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
+2013-06-10 16:29:23,510 - [INFO] - from application in play-akka.actor.default-dispatcher-1 
 Application has started
 
-2013-05-28 15:18:31,322 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
+2013-06-10 16:29:23,514 - [INFO] - from play in play-akka.actor.default-dispatcher-1 
 Application started (Dev)
 
-2013-05-28 15:19:51,974 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
-LINKAGE GENES = CAN1,LYP1,YOL012C-4KQ,YOL012C-4KR,YOL012C
+2013-06-10 16:29:37,235 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-8 
+LINKAGE GENES = CAN1,LYP1,YBL154C
 
-2013-05-28 15:19:56,110 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
-2013-05-28 15:19:55 INFO::Reading input files
-2013-05-28 15:19:55 INFO::Reading input file (1/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody528986913556403591asTemporaryFile
-2013-05-28 15:19:55 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:19:55 INFO::* Done reading
-2013-05-28 15:19:55 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:19:55 INFO::* Number rows = 32
-2013-05-28 15:19:55 INFO::* Number cols = 48
-2013-05-28 15:19:55 INFO::* Data dimension = 1536,3
-2013-05-28 15:19:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:19:55 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:19:55 INFO::Reading input file (2/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody4251901331083797298asTemporaryFile
-2013-05-28 15:19:55 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:19:55 INFO::* Done reading
-2013-05-28 15:19:55 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:19:55 INFO::* Number rows = 32
-2013-05-28 15:19:55 INFO::* Number cols = 48
-2013-05-28 15:19:55 INFO::* Data dimension = 1536,3
-2013-05-28 15:19:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:19:55 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:19:55 INFO::Reading input file (3/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody5242568495721326846asTemporaryFile
-2013-05-28 15:19:55 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:19:55 INFO::* Done reading
-2013-05-28 15:19:55 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:19:55 INFO::* Number rows = 32
-2013-05-28 15:19:55 INFO::* Number cols = 48
-2013-05-28 15:19:55 INFO::* Data dimension = 1536,3
-2013-05-28 15:19:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:19:55 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:19:55 INFO::Done reading all files
-2013-05-28 15:19:55 INFO::-----------------------------------------------
-2013-05-28 15:19:55 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:19:55 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:19:55 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:19:55 INFO::Loading chromosome coordinates file
-2013-05-28 15:19:56 INFO::# Linkage genes including query = YOL012C-4KR
-2013-05-28 15:19:56 INFO::# Linkage genes found in coords table =
+2013-06-10 16:29:39,176 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-8 
+2013-06-10 16:29:38 INFO::Reading input files
+2013-06-10 16:29:38 INFO::Reading input file (1/1) path = /var/folders/xl/q0tvf_yx0k5fxn7g09phk0z00000gq/T/multipartBody967336866345165549asTemporaryFile
+2013-06-10 16:29:38 INFO::* Done reading
+2013-06-10 16:29:38 INFO::* Column classes = integer,integer,integer
+2013-06-10 16:29:38 INFO::* Number rows = 32
+2013-06-10 16:29:38 INFO::* Number cols = 48
+2013-06-10 16:29:38 INFO::* Data dimension = 1536,3
+2013-06-10 16:29:38 INFO::* Obtaining file name metadata: valid = TRUE
+2013-06-10 16:29:38 INFO::* Mapping array definition: number of array definition files = 19
+2013-06-10 16:29:38 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+2013-06-10 16:29:38 INFO::Done reading all files
+2013-06-10 16:29:38 INFO::-----------------------------------------------
+2013-06-10 16:29:38 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-06-10 16:29:38 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-06-10 16:29:38 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-06-10 16:29:38 INFO::Loading chromosome coordinates file
+2013-06-10 16:29:38 INFO::Skipping linkage correction...
+2013-06-10 16:29:38 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-06-10 16:29:38 INFO::Done plate normalization
+2013-06-10 16:29:38 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-06-10 16:29:38 INFO::Done big replicates filter, total ignored = 468
+2013-06-10 16:29:38 INFO::# Normalizing for spatial effect
+2013-06-10 16:29:39 INFO::# Normalizing for row column effect
 
 
-2013-05-28 15:19:56,135 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
+2013-06-10 16:29:39,177 - [ERROR] - from application in play-akka.actor.actions-dispatcher-8 
 Loading required package: methods
-Error in apply(linked, 1, any) : dim(X) must have a positive length
-Calls: lapply -> FUN -> linkageFilter -> apply
+Error in lowess_smoothed[["y"]] : subscript out of bounds
+Calls: lapply ... FUN -> rowcolNormalization -> rowcolNormalizationHelper
 Execution halted
 
 
-2013-05-28 15:19:56,164 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
-2013-05-28 15:19:55 INFO::Reading input files
-2013-05-28 15:19:55 INFO::Reading input file (1/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody528986913556403591asTemporaryFile
-2013-05-28 15:19:55 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:19:55 INFO::* Done reading
-2013-05-28 15:19:55 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:19:55 INFO::* Number rows = 32
-2013-05-28 15:19:55 INFO::* Number cols = 48
-2013-05-28 15:19:55 INFO::* Data dimension = 1536,3
-2013-05-28 15:19:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:19:55 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:19:55 INFO::Reading input file (2/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody4251901331083797298asTemporaryFile
-2013-05-28 15:19:55 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:19:55 INFO::* Done reading
-2013-05-28 15:19:55 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:19:55 INFO::* Number rows = 32
-2013-05-28 15:19:55 INFO::* Number cols = 48
-2013-05-28 15:19:55 INFO::* Data dimension = 1536,3
-2013-05-28 15:19:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:19:55 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:19:55 INFO::Reading input file (3/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody5242568495721326846asTemporaryFile
-2013-05-28 15:19:55 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:19:55 INFO::* Done reading
-2013-05-28 15:19:55 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:19:55 INFO::* Number rows = 32
-2013-05-28 15:19:55 INFO::* Number cols = 48
-2013-05-28 15:19:55 INFO::* Data dimension = 1536,3
-2013-05-28 15:19:55 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:19:55 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:19:55 INFO::Done reading all files
-2013-05-28 15:19:55 INFO::-----------------------------------------------
-2013-05-28 15:19:55 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:19:55 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:19:55 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:19:55 INFO::Loading chromosome coordinates file
-2013-05-28 15:19:56 INFO::# Linkage genes including query = YOL012C-4KR
-2013-05-28 15:19:56 INFO::# Linkage genes found in coords table =
+2013-06-10 16:29:39,180 - [ERROR] - from application in play-akka.actor.actions-dispatcher-8 
+2013-06-10 16:29:38 INFO::Reading input files
+2013-06-10 16:29:38 INFO::Reading input file (1/1) path = /var/folders/xl/q0tvf_yx0k5fxn7g09phk0z00000gq/T/multipartBody967336866345165549asTemporaryFile
+2013-06-10 16:29:38 INFO::* Done reading
+2013-06-10 16:29:38 INFO::* Column classes = integer,integer,integer
+2013-06-10 16:29:38 INFO::* Number rows = 32
+2013-06-10 16:29:38 INFO::* Number cols = 48
+2013-06-10 16:29:38 INFO::* Data dimension = 1536,3
+2013-06-10 16:29:38 INFO::* Obtaining file name metadata: valid = TRUE
+2013-06-10 16:29:38 INFO::* Mapping array definition: number of array definition files = 19
+2013-06-10 16:29:38 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+2013-06-10 16:29:38 INFO::Done reading all files
+2013-06-10 16:29:38 INFO::-----------------------------------------------
+2013-06-10 16:29:38 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-06-10 16:29:38 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-06-10 16:29:38 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-06-10 16:29:38 INFO::Loading chromosome coordinates file
+2013-06-10 16:29:38 INFO::Skipping linkage correction...
+2013-06-10 16:29:38 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-06-10 16:29:38 INFO::Done plate normalization
+2013-06-10 16:29:38 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-06-10 16:29:38 INFO::Done big replicates filter, total ignored = 468
+2013-06-10 16:29:38 INFO::# Normalizing for spatial effect
+2013-06-10 16:29:39 INFO::# Normalizing for row column effect
 
 
-2013-05-28 15:19:56,223 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
+2013-06-10 16:29:39,180 - [ERROR] - from application in play-akka.actor.actions-dispatcher-8 
 ===============================
 
-2013-05-28 15:19:56,224 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
+2013-06-10 16:29:39,180 - [ERROR] - from application in play-akka.actor.actions-dispatcher-8 
 Loading required package: methods
-Error in apply(linked, 1, any) : dim(X) must have a positive length
-Calls: lapply -> FUN -> linkageFilter -> apply
+Error in lowess_smoothed[["y"]] : subscript out of bounds
+Calls: lapply ... FUN -> rowcolNormalization -> rowcolNormalizationHelper
 Execution halted
 
 
-2013-05-28 15:20:23,168 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
-LINKAGE GENES = CAN1,LYP1,YOL012C-4KQ,YOL012C-4KR,YOL012C
+2013-06-10 16:31:22,742 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-11 
+LINKAGE GENES = CAN1,LYP1,YBL154C
 
-2013-05-28 15:20:35,170 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-9 
-2013-05-28 15:20:25 INFO::Reading input files
-2013-05-28 15:20:25 INFO::Reading input file (1/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody7489756446031997054asTemporaryFile
-2013-05-28 15:20:25 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:20:25 INFO::* Done reading
-2013-05-28 15:20:25 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:20:25 INFO::* Number rows = 32
-2013-05-28 15:20:25 INFO::* Number cols = 48
-2013-05-28 15:20:25 INFO::* Data dimension = 1536,3
-2013-05-28 15:20:25 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:20:25 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:20:25 INFO::Reading input file (2/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody1025814715190495608asTemporaryFile
-2013-05-28 15:20:25 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:20:25 INFO::* Done reading
-2013-05-28 15:20:25 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:20:25 INFO::* Number rows = 32
-2013-05-28 15:20:25 INFO::* Number cols = 48
-2013-05-28 15:20:25 INFO::* Data dimension = 1536,3
-2013-05-28 15:20:25 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:20:25 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:20:25 INFO::Reading input file (3/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody8787285901896516246asTemporaryFile
-2013-05-28 15:20:25 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:20:25 INFO::* Done reading
-2013-05-28 15:20:25 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:20:25 INFO::* Number rows = 32
-2013-05-28 15:20:25 INFO::* Number cols = 48
-2013-05-28 15:20:25 INFO::* Data dimension = 1536,3
-2013-05-28 15:20:25 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:20:25 INFO::* Not mapping array definition: no array definition files
-2013-05-28 15:20:25 INFO::Done reading all files
-2013-05-28 15:20:25 INFO::-----------------------------------------------
-2013-05-28 15:20:25 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:20:25 INFO::# Applying linkage filter, linkage.cutoff = 200
-2013-05-28 15:20:25 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:20:25 INFO::Loading chromosome coordinates file
-2013-05-28 15:20:25 INFO::# Linkage genes including query = YOL012C-4KR, YEL063C, YNL268W, YOL012C-4KQ, YOL012C
-2013-05-28 15:20:25 INFO::# Linkage genes found in coords table = YEL063C, YNL268W, YOL012C
-2013-05-28 15:20:25 INFO::Linkage filter applied, total ignored = 0
-2013-05-28 15:20:25 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:20:26 INFO::Done plate normalization
-2013-05-28 15:20:26 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-05-28 15:20:26 INFO::Done big replicates filter, total ignored = 0
-2013-05-28 15:20:26 INFO::# Normalizing for spatial effect
-2013-05-28 15:20:26 INFO::# Normalizing for row column effect
-2013-05-28 15:20:26 INFO::# Applying jackknife filter
-2013-05-28 15:20:27 INFO::Done jackknife filter, total ignored = 97
-2013-05-28 15:20:27 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:20:27 INFO::Done plate normalization
-2013-05-28 15:20:27 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:20:27 INFO::# Applying linkage filter, linkage.cutoff = 200
-2013-05-28 15:20:27 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:20:27 INFO::Loading chromosome coordinates file
-2013-05-28 15:20:28 INFO::# Linkage genes including query = YOL012C-4KQ, YEL063C, YNL268W, YOL012C-4KR, YOL012C
-2013-05-28 15:20:28 INFO::# Linkage genes found in coords table = YEL063C, YNL268W, YOL012C
-2013-05-28 15:20:28 INFO::Linkage filter applied, total ignored = 0
-2013-05-28 15:20:28 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:20:28 INFO::Done plate normalization
-2013-05-28 15:20:28 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-05-28 15:20:28 INFO::Done big replicates filter, total ignored = 0
-2013-05-28 15:20:28 INFO::# Normalizing for spatial effect
-2013-05-28 15:20:29 INFO::# Normalizing for row column effect
-2013-05-28 15:20:29 INFO::# Applying jackknife filter
-2013-05-28 15:20:29 INFO::Done jackknife filter, total ignored = 79
-2013-05-28 15:20:30 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:20:30 INFO::Done plate normalization
-2013-05-28 15:20:30 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:20:30 INFO::# Applying linkage filter, linkage.cutoff = 200
-2013-05-28 15:20:30 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:20:30 INFO::Loading chromosome coordinates file
-2013-05-28 15:20:30 INFO::# Linkage genes including query = YOL012C, YEL063C, YNL268W, YOL012C-4KQ, YOL012C-4KR
-2013-05-28 15:20:30 INFO::# Linkage genes found in coords table = YOL012C, YEL063C, YNL268W
-2013-05-28 15:20:30 INFO::Linkage filter applied, total ignored = 0
-2013-05-28 15:20:30 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:20:30 INFO::Done plate normalization
-2013-05-28 15:20:30 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-05-28 15:20:30 INFO::Done big replicates filter, total ignored = 0
-2013-05-28 15:20:30 INFO::# Normalizing for spatial effect
-2013-05-28 15:20:30 INFO::# Normalizing for row column effect
-2013-05-28 15:20:30 INFO::# Applying jackknife filter
-2013-05-28 15:20:31 INFO::Done jackknife filter, total ignored = 73
-2013-05-28 15:20:31 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:20:31 INFO::Done plate normalization
+2013-06-10 16:31:25,320 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-11 
+2013-06-10 16:31:23 INFO::Reading input files
+2013-06-10 16:31:23 INFO::Reading input file (1/1) path = /var/folders/xl/q0tvf_yx0k5fxn7g09phk0z00000gq/T/multipartBody6845868473122832615asTemporaryFile
+2013-06-10 16:31:23 INFO::* Done reading
+2013-06-10 16:31:23 INFO::* Column classes = integer,integer,integer
+2013-06-10 16:31:23 INFO::* Number rows = 32
+2013-06-10 16:31:23 INFO::* Number cols = 48
+2013-06-10 16:31:23 INFO::* Data dimension = 1536,3
+2013-06-10 16:31:23 INFO::* Obtaining file name metadata: valid = TRUE
+2013-06-10 16:31:23 INFO::* Mapping array definition: number of array definition files = 19
+2013-06-10 16:31:23 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+2013-06-10 16:31:23 INFO::Done reading all files
+2013-06-10 16:31:23 INFO::-----------------------------------------------
+2013-06-10 16:31:23 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
+2013-06-10 16:31:23 INFO::# Applying linkage filter, linkage.cutoff = -1
+2013-06-10 16:31:23 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
+2013-06-10 16:31:23 INFO::Loading chromosome coordinates file
+2013-06-10 16:31:24 INFO::Skipping linkage correction...
+2013-06-10 16:31:24 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-06-10 16:31:24 INFO::Done plate normalization
+2013-06-10 16:31:24 INFO::# Applying big replicates filter, max.colony.size = 765
+2013-06-10 16:31:24 INFO::Done big replicates filter, total ignored = 468
+2013-06-10 16:31:24 INFO::# Normalizing for spatial effect
+2013-06-10 16:31:24 INFO::# Normalizing for row column effect
+2013-06-10 16:31:24 INFO::# Applying jackknife filter
+2013-06-10 16:31:24 INFO::Done jackknife filter, total ignored = 0
+2013-06-10 16:31:24 INFO::# Normalizing for plate effect, default.overall.median = 510
+2013-06-10 16:31:24 INFO::Insufficient data for plate normalization, returning
 [1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
 
 
-2013-05-28 15:20:35,172 - [ERROR] - from application in play-akka.actor.actions-dispatcher-9 
-Loading required package: methods
-
-
-2013-05-28 15:27:04,007 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-LINKAGE GENES = CAN1,LYP1,YOL012C-4KQ,YOL012C-4KR,YOL012C
-
-2013-05-28 15:27:08,017 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-2013-05-28 15:27:06 INFO::Reading input files
-2013-05-28 15:27:06 INFO::Reading input file (1/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody7951105156607717169asTemporaryFile
-2013-05-28 15:27:06 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:27:06 INFO::* Done reading
-2013-05-28 15:27:06 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:27:06 INFO::* Number rows = 32
-2013-05-28 15:27:06 INFO::* Number cols = 48
-2013-05-28 15:27:06 INFO::* Data dimension = 1536,3
-2013-05-28 15:27:06 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:27:06 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:27:06 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:27:07 INFO::Reading input file (2/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody4683971249229505432asTemporaryFile
-2013-05-28 15:27:07 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:27:07 INFO::* Done reading
-2013-05-28 15:27:07 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:27:07 INFO::* Number rows = 32
-2013-05-28 15:27:07 INFO::* Number cols = 48
-2013-05-28 15:27:07 INFO::* Data dimension = 1536,3
-2013-05-28 15:27:07 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:27:07 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:27:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:27:07 INFO::Reading input file (3/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody5389768246783807827asTemporaryFile
-2013-05-28 15:27:07 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:27:07 INFO::* Done reading
-2013-05-28 15:27:07 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:27:07 INFO::* Number rows = 32
-2013-05-28 15:27:07 INFO::* Number cols = 48
-2013-05-28 15:27:07 INFO::* Data dimension = 1536,3
-2013-05-28 15:27:07 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:27:07 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:27:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:27:07 INFO::Done reading all files
-2013-05-28 15:27:07 INFO::-----------------------------------------------
-2013-05-28 15:27:07 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:27:07 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:27:07 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:27:07 INFO::Loading chromosome coordinates file
-2013-05-28 15:27:07 INFO::# Linkage genes including query = YOL012C-4KR
-2013-05-28 15:27:07 INFO::# Linkage genes found in coords table =
-
-
-2013-05-28 15:27:08,032 - [ERROR] - from application in play-akka.actor.actions-dispatcher-16 
-Loading required package: methods
-Error in apply(linked, 1, any) : dim(X) must have a positive length
-Calls: lapply -> FUN -> linkageFilter -> apply
-Execution halted
-
-
-2013-05-28 15:27:08,037 - [ERROR] - from application in play-akka.actor.actions-dispatcher-16 
-2013-05-28 15:27:06 INFO::Reading input files
-2013-05-28 15:27:06 INFO::Reading input file (1/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody7951105156607717169asTemporaryFile
-2013-05-28 15:27:06 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:27:06 INFO::* Done reading
-2013-05-28 15:27:06 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:27:06 INFO::* Number rows = 32
-2013-05-28 15:27:06 INFO::* Number cols = 48
-2013-05-28 15:27:06 INFO::* Data dimension = 1536,3
-2013-05-28 15:27:06 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:27:06 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:27:06 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:27:07 INFO::Reading input file (2/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody4683971249229505432asTemporaryFile
-2013-05-28 15:27:07 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:27:07 INFO::* Done reading
-2013-05-28 15:27:07 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:27:07 INFO::* Number rows = 32
-2013-05-28 15:27:07 INFO::* Number cols = 48
-2013-05-28 15:27:07 INFO::* Data dimension = 1536,3
-2013-05-28 15:27:07 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:27:07 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:27:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:27:07 INFO::Reading input file (3/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody5389768246783807827asTemporaryFile
-2013-05-28 15:27:07 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:27:07 INFO::* Done reading
-2013-05-28 15:27:07 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:27:07 INFO::* Number rows = 32
-2013-05-28 15:27:07 INFO::* Number cols = 48
-2013-05-28 15:27:07 INFO::* Data dimension = 1536,3
-2013-05-28 15:27:07 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:27:07 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:27:07 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:27:07 INFO::Done reading all files
-2013-05-28 15:27:07 INFO::-----------------------------------------------
-2013-05-28 15:27:07 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:27:07 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:27:07 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:27:07 INFO::Loading chromosome coordinates file
-2013-05-28 15:27:07 INFO::# Linkage genes including query = YOL012C-4KR
-2013-05-28 15:27:07 INFO::# Linkage genes found in coords table =
-
-
-2013-05-28 15:27:08,037 - [ERROR] - from application in play-akka.actor.actions-dispatcher-16 
-===============================
-
-2013-05-28 15:27:08,037 - [ERROR] - from application in play-akka.actor.actions-dispatcher-16 
-Loading required package: methods
-Error in apply(linked, 1, any) : dim(X) must have a positive length
-Calls: lapply -> FUN -> linkageFilter -> apply
-Execution halted
-
-
-2013-05-28 15:29:12,588 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-LINKAGE GENES = CAN1,LYP1,YOL012C-4KQ,YOL012C-4KR,YOL012C
-
-2013-05-28 15:29:21,490 - [DEBUG] - from application in play-akka.actor.actions-dispatcher-16 
-2013-05-28 15:29:14 INFO::Reading input files
-2013-05-28 15:29:14 INFO::Reading input file (1/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody3286592745453041668asTemporaryFile
-2013-05-28 15:29:14 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:29:14 INFO::* Done reading
-2013-05-28 15:29:14 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:29:14 INFO::* Number rows = 32
-2013-05-28 15:29:14 INFO::* Number cols = 48
-2013-05-28 15:29:14 INFO::* Data dimension = 1536,3
-2013-05-28 15:29:14 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:29:14 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:29:14 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:29:15 INFO::Reading input file (2/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody6075384945892023510asTemporaryFile
-2013-05-28 15:29:15 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:29:15 INFO::* Done reading
-2013-05-28 15:29:15 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:29:15 INFO::* Number rows = 32
-2013-05-28 15:29:15 INFO::* Number cols = 48
-2013-05-28 15:29:15 INFO::* Data dimension = 1536,3
-2013-05-28 15:29:15 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:29:15 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:29:15 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:29:15 INFO::Reading input file (3/3) path = /var/folders/tb/6hl8frtn2qx40nbpqd08sv5h0000gn/T/multipartBody4393112332315814624asTemporaryFile
-2013-05-28 15:29:15 INFO::* Detected boone-lab format, skipping first 13 lines
-2013-05-28 15:29:15 INFO::* Done reading
-2013-05-28 15:29:15 INFO::* Column classes = integer,integer,integer
-2013-05-28 15:29:15 INFO::* Number rows = 32
-2013-05-28 15:29:15 INFO::* Number cols = 48
-2013-05-28 15:29:15 INFO::* Data dimension = 1536,3
-2013-05-28 15:29:15 INFO::* Obtaining file name metadata: valid = TRUE
-2013-05-28 15:29:15 INFO::* Mapping array definition: number of array definition files = 14
-2013-05-28 15:29:15 INFO::* Mapping array definition: IDs of array plate files = 1,2,3,4,5,6,7,8,9,10,11,12,13,14
-2013-05-28 15:29:15 INFO::Done reading all files
-2013-05-28 15:29:15 INFO::-----------------------------------------------
-2013-05-28 15:29:15 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:29:15 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:29:15 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:29:15 INFO::Loading chromosome coordinates file
-2013-05-28 15:29:15 INFO::Skipping linkage correction...
-2013-05-28 15:29:15 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:29:15 INFO::Done plate normalization
-2013-05-28 15:29:15 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-05-28 15:29:15 INFO::Done big replicates filter, total ignored = 0
-2013-05-28 15:29:15 INFO::# Normalizing for spatial effect
-2013-05-28 15:29:16 INFO::# Normalizing for row column effect
-2013-05-28 15:29:16 INFO::# Applying jackknife filter
-2013-05-28 15:29:16 INFO::Done jackknife filter, total ignored = 97
-2013-05-28 15:29:16 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:29:16 INFO::Done plate normalization
-2013-05-28 15:29:16 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:29:16 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:29:16 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:29:16 INFO::Loading chromosome coordinates file
-2013-05-28 15:29:16 INFO::Skipping linkage correction...
-2013-05-28 15:29:16 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:29:16 INFO::Done plate normalization
-2013-05-28 15:29:16 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-05-28 15:29:16 INFO::Done big replicates filter, total ignored = 0
-2013-05-28 15:29:17 INFO::# Normalizing for spatial effect
-2013-05-28 15:29:17 INFO::# Normalizing for row column effect
-2013-05-28 15:29:17 INFO::# Applying jackknife filter
-2013-05-28 15:29:17 INFO::Done jackknife filter, total ignored = 79
-2013-05-28 15:29:17 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:29:17 INFO::Done plate normalization
-2013-05-28 15:29:18 INFO::Normalizing plate: replicates = 4, overall.plate.median = 510, max.colony.size = 765
-2013-05-28 15:29:18 INFO::# Applying linkage filter, linkage.cutoff = -1
-2013-05-28 15:29:18 INFO::Linkage file is at: /Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata
-2013-05-28 15:29:18 INFO::Loading chromosome coordinates file
-2013-05-28 15:29:18 INFO::Skipping linkage correction...
-2013-05-28 15:29:18 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:29:18 INFO::Done plate normalization
-2013-05-28 15:29:18 INFO::# Applying big replicates filter, max.colony.size = 765
-2013-05-28 15:29:18 INFO::Done big replicates filter, total ignored = 0
-2013-05-28 15:29:18 INFO::# Normalizing for spatial effect
-2013-05-28 15:29:18 INFO::# Normalizing for row column effect
-2013-05-28 15:29:19 INFO::# Applying jackknife filter
-2013-05-28 15:29:19 INFO::Done jackknife filter, total ignored = 73
-2013-05-28 15:29:19 INFO::# Normalizing for plate effect, default.overall.median = 510
-2013-05-28 15:29:19 INFO::Done plate normalization
-[1] "/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/data/chrom_coordinates.Rdata"
-
-
-2013-05-28 15:29:21,509 - [ERROR] - from application in play-akka.actor.actions-dispatcher-16 
+2013-06-10 16:31:25,321 - [ERROR] - from application in play-akka.actor.actions-dispatcher-11 
 Loading required package: methods
 
 

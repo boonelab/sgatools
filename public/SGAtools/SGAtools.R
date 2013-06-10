@@ -654,13 +654,14 @@ rowcolNormalizationHelper <- function(rowcol.data, colony.size.data, num.rows, n
   # Window size to be used in lowess smoothing - currently not using it
   span = sum(vals.sorted <= 6) / (num.rows*num.cols)
   
-  if(span>0 & length(span) > 0)
+  if(span>0 & length(span) > 0){
     lowess_smoothed = lowess(rowcol.data[!ind.na][ind.sorted], colony.size.data[!ind.na][ind.sorted], f=0.09, iter=5)
-  else
+    lowess_smoothed = lowess_smoothed[['y']]
+  }else{
     lowess_smoothed = colony.size.data[!ind.na][ind.sorted]
+  }
   
   # We only care about Y values (colony size)
-  lowess_smoothed = lowess_smoothed[['y']]
   
   tmp = lowess_smoothed / mean(lowess_smoothed)
   colony.size.data[!ind.na][ind.sorted] = colony.size.data[!ind.na][ind.sorted] / tmp;
