@@ -596,14 +596,14 @@ spatialNormalization <- function(plate.data, field.to.normalize, ignore.ind) {
   t[ind.na] = filt.g[ind.na]
   
   # Apply median/average filters
-  filtered = medianfilter2d(t, 7)
+  filtered = medianfilter2d(t, 7, padding_type='replicate')
   filtered = applyfilter(filtered, average.filt, 'replicate')
   
   # Subtract the mean of the filtered data from the filtered data
-  f = filtered - mean(filtered)
+  f = filtered / mean(filtered)
   
   # Subtract filtered - mean from  
-  before.ignore = before.ignore - f[rc.mat]
+  before.ignore = before.ignore / f[rc.mat]
   
   return(before.ignore)
 }
@@ -656,15 +656,27 @@ rowcolNormalizationHelper <- function(rowcol.data, colony.size.data, num.rows, n
   
   if(span>0 & length(span) > 0){
     lowess_smoothed = lowess(rowcol.data[!ind.na][ind.sorted], colony.size.data[!ind.na][ind.sorted], f=0.09, iter=5)
-    lowess_smoothed = lowess_smoothed[['y']]
   }else{
-    lowess_smoothed = colony.size.data[!ind.na][ind.sorted]
+    lowess_smoothed = list(y=colony.size.data[!ind.na][ind.sorted])
   }
   
+#      pdf(sprintf('~/Desktop/lowess_%s_%s.pdf', max(rowcol.data, na.rm=T), i), width=18, height=18)
+#      x = rowcol.data[!ind.na][ind.sorted]
+#      y = colony.size.data[!ind.na][ind.sorted]
+#      plot(x,y)
+#      lines(lowess_smoothed, col='green')
+#      lx = lowess_smoothed$x
+  
   # We only care about Y values (colony size)
+  lowess_smoothed = lowess_smoothed[['y']]
+  
   
   tmp = lowess_smoothed / mean(lowess_smoothed)
   colony.size.data[!ind.na][ind.sorted] = colony.size.data[!ind.na][ind.sorted] / tmp;
+  
+  #    lines(x=lx, tmp, col='red')
+  #    points(x=lx, colony.size.data[!ind.na][ind.sorted] / tmp, col='blue', pch=3)
+  #    dev.off()
   
   # Fill ignored NA values
   ind.uniq.rc = which(duplicated(rowcol.data))
