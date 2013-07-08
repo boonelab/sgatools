@@ -1,21 +1,14 @@
 library(optparse)
 library(logging)
 library(plyr)
+library(xlsx)
 options(warn=-1) #suppress warnings
 
-# /home/sgatools/sgatools/public/SGAtools
-setwd('/Users/omarwagih/Desktop/boone-summer-project-2012/web/sgatools/public/SGAtools/')
-
-readMeLines = readLines('README_NS.txt')
-linkage.file = file.path(getwd(), "data", "chrom_coordinates.Rdata")
-genemap.file = file.path(getwd(), "data", "genemap.Rdata")
-
-
-source('SGAtools.R')
+wb <- createWorkbook()
 option_list <- list(
   make_option(c("-i", "--inputfiles"), help="Input plate files (required): containing colony sizes to be normalized (comma separated for multiple files or a zip file with all input files)" ),
   make_option(c("-a", "--adfiles"), help="Array definition file paths (optional): files containing array layout of plate (comma separated for multiple files)", default=NA, type="character"),
-make_option(c("-y", "--adname"), help="Array definition summary", default=NA, type="character"),
+  make_option(c("-y", "--adname"), help="Array definition summary", default=NA, type="character"),
   make_option(c("-o", "--outputdir"), help="Output directory (optional): where the normalized/scored results are saved [default %default]", default=getwd(), type="character"),
   make_option(c("-n", "--savenames"), help="Save names (optional): for input files if any different (comma separated, in same order as inputfiles)", default=NA, type="character"),
   make_option(c("-l", "--linkagecutoff"), help="Linkage cutoff (optional): specified in KB, if -1 no linkage correction is applied [default %default]", default=-1, type="integer"),
@@ -23,11 +16,26 @@ make_option(c("-y", "--adname"), help="Array definition summary", default=NA, ty
   make_option(c("-r", "--replicates"), help="Replicates (optional): value indicating number of replicates in the screen  [default %default]", default=4, type="integer"),
   make_option(c("-s", "--score"), help="Score normalized results(optional): include to score normalized results [default %default]", action="store_true", default=FALSE),
   make_option(c("-f", "--sfunction"), help="Score function used(optional): '1' for subtraction, '2' for dividing [default %default]", type="integer", default=1),
-  make_option(c("-d", "--nignore"), help="Ignore normalizations/filters (optional): comma separated normalization/filter codes to be ignored.  [default %default]", default="", type="character")
+  make_option(c("-d", "--nignore"), help="Ignore normalizations/filters (optional): comma separated normalization/filter codes to be ignored.  [default %default]", default="", type="character"),
+  make_option(c("-w", "--wd"), help="Working directory (optional): set R script working directory.  [default %default]", default="", type="character")
 )
 
 # Parse the agruments
 args=parse_args(OptionParser(option_list = option_list))
+
+# Set working directory
+if(args$wd != ""){
+  setwd(args$wd)
+}
+
+sheet <- createSheet(wb, sheetName="README")
+readMeLines = readLines('README_NS.txt')
+addDataFrame(readMeLines, sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+
+linkage.file = file.path(getwd(), "data", "chrom_coordinates.Rdata")
+genemap.file = file.path(getwd(), "data", "genemap.Rdata")
+
+source('SGAtools.R')
 
 # Load rdata Object: genemap
 load(genemap.file)
@@ -139,7 +147,7 @@ if(args$score){
   if(args$sfunction == 2) sf = 'Cij / CiCj'
   comment.ns = c(comment.ns, paste0('# Scoring function: ', sf)) 
 }
-col.header = '# (1)Row\t(2)Column\t(3)Raw colony size\t(4)Plate id / file name\t(5)Query\t(6)Array\t(7)Normalized colony size\t(8)Score\t(9)Additional information'
+col.header = '(1)Row\t(2)Column\t(3)Raw colony size\t(4)Plate id / file name\t(5)Query\t(6)Array\t(7)Normalized colony size\t(8)Score\t(9)Additional information'
 comment.ns = c(comment.ns, ad, rep, lk, col.header)
 
 # Write generated files
@@ -155,6 +163,10 @@ for(i in 1:length(sgadata.ns)){
   plate.data = sgadata.ns[[i]]
   plate.data$ncolonysize = round(plate.data$ncolonysize,5)
   plate.data$score = round(plate.data$score,5)
+  
+  sheet <- createSheet(wb, sheetName=savename)
+  addDataFrame(list("Row", "Column", "Raw colony size", "Plate id / file name", "Query", "Array", "Normalized colony size", "Score", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+  addDataFrame(plate.data, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
   
   write.table(plate.data, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
   
@@ -227,6 +239,11 @@ comments = c('# Combined data file', comment.ns)
 writeLines(comments, savename)
 write.table(combined.new, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
 
+sheet <- createSheet(wb, sheetName="Combined data")
+addDataFrame(list("Row", "Column", "Raw colony size", "Plate id / file name", "Query", "Array", "Normalized colony size", "Score", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+addDataFrame(combined.new, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
+
+
 if(args$score){
   # Scores only file
   savename =  "scores.dat"
@@ -249,5 +266,6 @@ if(args$score){
 # README
 writeLines(readMeLines, 'README.txt')
 
+saveWorkbook(wb, "test.xlsx")
 
 print(linkage.file)
