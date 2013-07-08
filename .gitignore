@@ -1,4 +1,3 @@
-logs/*
 project/project
 project/target
 target
@@ -14,3 +13,4 @@ dist
 /RUNNING_PID
 /test
 /.target
+/bin
