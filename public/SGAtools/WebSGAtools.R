@@ -1,7 +1,7 @@
-library(optparse)
-library(logging)
-library(plyr)
-library(xlsx)
+suppressPackageStartupMessages(library(optparse))
+suppressPackageStartupMessages(library(logging))
+suppressPackageStartupMessages(library(plyr))
+suppressPackageStartupMessages(library(xlsx))
 options(warn=-1) #suppress warnings
 
 wb <- createWorkbook()
