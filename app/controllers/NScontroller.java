@@ -214,6 +214,7 @@ public class NScontroller extends Controller {
         // Logger.info("#####"+c );
 
         String zipFilePath = nsDir.getPath() + "normalizationscoring-sgatools-" + job.jobid + ".zip";
+        String xlsxFilePath = Utils.joinPath(nsDir.getPath(), "output_files", "data.xlsx");
         StringBuilder shell_output = new StringBuilder();
         StringBuilder shell_output_error = new StringBuilder();
         try {
@@ -275,6 +276,7 @@ public class NScontroller extends Controller {
         // Save bound data to file
         job.plateFilesMap = plateFilesMap;
         job.downloadZipPath = zipFilePath.replace(Constants.BASE_PUBLIC_DIR, "");
+        job.downloadXlsxPath = xlsxFilePath.replace(Constants.BASE_PUBLIC_DIR, "");
         writeJsonJobToFile(job, job.jobid);
 
         // Direct to summary page

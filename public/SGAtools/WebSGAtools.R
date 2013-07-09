@@ -266,6 +266,6 @@ if(args$score){
 # README
 writeLines(readMeLines, 'README.txt')
 
-saveWorkbook(wb, "test.xlsx")
+saveWorkbook(wb, "data.xlsx")
 
 print(linkage.file)
