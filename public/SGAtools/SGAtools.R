@@ -128,7 +128,12 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
     ad.basenames = basename(ad.paths)
     
     ap.ids = str_extract(tolower(ad.paths), 'plate\\d+')
-    ap.ids = as.numeric(str_extract(ap.ids, '\\d+'))
+    if (is.na(ap.ids)) {
+        loginfo('* Cherry picker plate name malformed... assume only one plate is available')
+        ap.ids = c(file.name.metadata$arrayplateid)
+    } else {
+        ap.ids = as.numeric(str_extract(ap.ids, '\\d+'))
+    }
     
     loginfo('* Mapping array definition: IDs of array plate files = %s', ap.ids)
     
