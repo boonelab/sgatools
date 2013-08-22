@@ -7,11 +7,6 @@ public class Constants {
     public final static String SGATOOLS_VERSION = "1.0.0";
     public final static String IA_VERSION = "1.1.7";
 
-    /*
-     * 
-     * /home/sgatools/sgatools
-     */
-    
     private static final Properties prop;
     static {
         prop = new Properties();
@@ -24,7 +19,7 @@ public class Constants {
         }
     }
 
-    public final static String BASE = prop.getProperty("sgatools.base.path");
+    public final static String BASE = prop.getProperty("sgatools.base.path", "");
 
     public final static String BASE_PUBLIC_DIR = BASE + "/public";
 
