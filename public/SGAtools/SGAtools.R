@@ -58,6 +58,7 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     
     # Read in the data: we only care about the first 3 columns
     sga.data = read.table(textConnection(file.lines), stringsAsFactors=F)[1:3]
+    sga.data = sga.data[with(sga.data, order(V1, V2)), ]
     
     loginfo('* Done reading')
     

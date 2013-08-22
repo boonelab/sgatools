@@ -168,6 +168,7 @@ for(i in 1:length(sgadata.ns)){
   addDataFrame(list("Row", "Column", "Raw colony size", "Plate id / file name", "Query", "Array", "Normalized colony size", "Score", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
   addDataFrame(plate.data, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
   
+  plate.data$kvp <- sapply(plate.data$kvp, FUN=paste, collapse="-")
   write.table(plate.data, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
   
 }
