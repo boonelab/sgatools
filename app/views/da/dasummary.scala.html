@@ -344,15 +344,10 @@
 			
 			bgSet = jQuery.unique(globalArrays).join(' ');
 			
-			params = {'organism':'scerevisiae', 
-					  'query': querySet.join(' '),
-					  'custbg': bgSet,
-					  'custbg_cb':'on',
-					  'advanced_options_on': '0'
-			}
-			uri = 'http://biit.cs.ut.ee/gprofiler/index.cgi?' + jQuery.param(params); 
-			window.open(uri);
-			console.log(uri);
+			var form = $("#gprofilerform");
+			form.find("input[name=query]").attr('value', querySet.join(' '));
+			form.find("input[name=custbg]").attr('value', bgSet);
+			form.submit();
 		});
 			
 			var maxHeatmapWidth = 460;
@@ -468,5 +463,11 @@
 			
 	</script>
 	
-	
+	<form id="gprofilerform" style="display: none;" action="http://biit.cs.ut.ee/gprofiler/index.cgi" method="post" target="_blank">
+        <input name="organism" type="hidden" value="scerevisiae">
+        <input name="query" type="hidden">
+        <input name="custbg" type="hidden">
+        <input name="custbg_cb" type="hidden" value="on">
+        <input name="advanced_options_on" type="hidden" value="0">
+    </form>
 }
