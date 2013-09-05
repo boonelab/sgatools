@@ -18,7 +18,7 @@ option_list <- list(
   make_option(c("-f", "--sfunction"), help="Score function used(optional): '1' for subtraction, '2' for dividing [default %default]", type="integer", default=1),
   make_option(c("-d", "--nignore"), help="Ignore normalizations/filters (optional): comma separated normalization/filter codes to be ignored.  [default %default]", default="", type="character"),
   make_option(c("-w", "--wd"), help="Working directory (optional): set R script working directory.  [default %default]", default="", type="character"),
-  make_option(c("-L", "--keep_large_replicates"), help="Working directory (optional): set R script working directory.  [default %default]", action="store_true", default=FALSE)
+  make_option(c("-L", "--keeplarge"), help="Working directory (optional): set R script working directory.  [default %default]", action="store_true", default=FALSE)
 )
 
 # Parse the agruments
@@ -115,7 +115,7 @@ if(sum(z) > 0){
 sgadata.r = readSGA(args$inputfiles, args$savenames, args$adfiles, args$replicates)
 sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, 
                     linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file, linkage.genes=linkage.genes,
-                    keep.large=args$keep_large_replicates)
+                    keep.large=args$keeplarge)
 
 # Score data if requested
 if(args$score){

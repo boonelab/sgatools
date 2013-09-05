@@ -200,7 +200,7 @@ public class NScontroller extends Controller {
         c.add(Constants.RSCRIPT_DIR);
         
         if (job.keepLargeReplicates) {
-            c.add("--keep_large_replicates");
+            c.add("--keeplarge");
         }
 
         if (!adfiles.toString().isEmpty()) {
