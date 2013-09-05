@@ -198,6 +198,10 @@ public class NScontroller extends Controller {
         c.add(job.linkageGenes.toString());
         c.add("--wd");
         c.add(Constants.RSCRIPT_DIR);
+        
+        if (job.keepLargeReplicates) {
+            c.add("--keep_large_replicates");
+        }
 
         if (!adfiles.toString().isEmpty()) {
             c.add("--adfiles");

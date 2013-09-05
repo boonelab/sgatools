@@ -224,39 +224,54 @@
 			}
 			*@
 				
+    
 			</fieldset>
 			
-			<!--
-			<hr>
-			<h3 id="advancedOptsBtn" style="margin-bottom:10px;cursor: hand; cursor: pointer;">
-			Advanced options <i id="advancedOptsIcon" class="icon-chevron-right" style="font-size:10px; color:#0081cc"></i></h3>
-			<fieldset id="advancedOpts" class="hide">
-			<div class="alert">
-			  <button type="button" class="close" data-dismiss="alert">×</button>
-			  <strong>Warning!</strong> Changing these options could drastically affect your results. Do not modify unless necessary.
-			</div>
-			
-			<div class="row">
-				<div class="span2 offset2">
-				<strong><p>Normalizations</p></strong>
-		        <label id="advPlate"><input id="advPlate" type="checkbox" checked style="vertical-align:1px;"/> Plate-specific effect</label>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Spatial effect</label>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Row/column effect</label>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Competition effect</label>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Plate-specific effect 2</label>
-		        </div>
-		        <div class="span2">
-		        <strong><p>Filters</p></strong>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Large replicates</label>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Jackknife filter</label>
-		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Cap filter</label>
-		        </div>
-		        <div class="span2" id="advancedDesc">
-		        </div>
-		    </div>
-				
-			</fieldset>
-			-->
+			<!-- -->
+            <div style="display: block;">
+    			<hr>
+    			<h3 id="advancedOptsBtn" style="margin-bottom:10px;cursor: hand; cursor: pointer;">
+    			Advanced options <i id="advancedOptsIcon" class="icon-chevron-right" style="font-size:10px; color:#0081cc"></i></h3>
+    			<fieldset id="advancedOpts" class="hide">
+    			<div class="alert">
+    			  <button type="button" class="close" data-dismiss="alert">×</button>
+    			  <strong>Warning!</strong> Changing these options could drastically affect your results. Do not modify unless necessary.
+    			</div>
+    			
+    			<div class="row">
+    				<div class="span2 offset2">
+    				<strong><p>Normalizations</p></strong>
+    		        <label id="advPlate"><input id="advPlate" type="checkbox" checked style="vertical-align:1px;"/> Plate-specific effect</label>
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Spatial effect</label>
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Row/column effect</label>
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Competition effect</label>
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Plate-specific effect 2</label>
+    		        </div>
+    		        <div class="span2">
+    		        <strong><p>Filters</p></strong>
+                    @helper.input(
+                        nsForm("keepLargeReplicates"),
+                        '_label -> "Keep large replicates",
+                        '_showConstraints -> false
+                    ){ (id, name, value, args) =>
+                        <label class="checkbox">
+                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                             <span>&nbsp;Leaves unusually large colonies unfiltered</span>
+                        </label>
+                    }
+                    
+                    
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Large replicates</label>
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Jackknife filter</label>
+    		        <label><input type="checkbox" checked style="vertical-align:1px;"/> Cap filter</label>
+    		        </div>
+    		        <div class="span2" id="advancedDesc">
+    		        </div>
+    		    </div>
+    				
+    			</fieldset>
+            </div>
+			<!-- -->
 			
 			
 			

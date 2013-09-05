@@ -223,6 +223,7 @@ fileNameMetadata <- function(file.name){
 normalizeSGA <- function(plate.data, 
                          replicates=4, 
                          linkage.cutoff=200,
+                         keep.large=FALSE,
                          overall.plate.median=510, 
                          max.colony.size=1.5*overall.plate.median, 
                          intermediate.data=F,
@@ -252,8 +253,10 @@ normalizeSGA <- function(plate.data,
   plate.data$pnorm = plateNormalization(plate.data, 'colonysize', overall.plate.median)
   
   ########## (F2) Big replicates filter ##########
-  big.ign = bigReplicatesFilter(plate.data, 'pnorm', max.colony.size)
-  ignore.ind = mergeLogicalNames(big.ign, ignore.ind)
+  if (!keep.large) {
+    big.ign = bigReplicatesFilter(plate.data, 'pnorm', max.colony.size)
+    ignore.ind = mergeLogicalNames(big.ign, ignore.ind)
+  }
   
   ########## (N2) Spatial normalization ##########
   plate.data$snorm = spatialNormalization(plate.data, 'pnorm', ignore.ind)

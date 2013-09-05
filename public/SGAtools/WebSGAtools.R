@@ -17,7 +17,8 @@ option_list <- list(
   make_option(c("-s", "--score"), help="Score normalized results(optional): include to score normalized results [default %default]", action="store_true", default=FALSE),
   make_option(c("-f", "--sfunction"), help="Score function used(optional): '1' for subtraction, '2' for dividing [default %default]", type="integer", default=1),
   make_option(c("-d", "--nignore"), help="Ignore normalizations/filters (optional): comma separated normalization/filter codes to be ignored.  [default %default]", default="", type="character"),
-  make_option(c("-w", "--wd"), help="Working directory (optional): set R script working directory.  [default %default]", default="", type="character")
+  make_option(c("-w", "--wd"), help="Working directory (optional): set R script working directory.  [default %default]", default="", type="character"),
+  make_option(c("-L", "--keep_large_replicates"), help="Working directory (optional): set R script working directory.  [default %default]", action="store_true", default=FALSE)
 )
 
 # Parse the agruments
@@ -113,7 +114,8 @@ if(sum(z) > 0){
 # Run normalization/scoring
 sgadata.r = readSGA(args$inputfiles, args$savenames, args$adfiles, args$replicates)
 sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates, 
-                    linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file, linkage.genes=linkage.genes)
+                    linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file, linkage.genes=linkage.genes,
+                    keep.large=args$keep_large_replicates)
 
 # Score data if requested
 if(args$score){
@@ -181,11 +183,11 @@ tt <- function(x){
     return( t.test(x)$p.value )
   }
 }
+
 combined = lapply(sgadata.ns, function(plate.data){
   df = plate.data
   #df$row = ceiling(df$row/sqrt(args$replicates))
   #df$col = ceiling(df$col/sqrt(args$replicates))
-  
   
   collapsed = ddply(df, c("query", "array"), function(df) { 
     c( mean(df$colonysize, na.rm=T) , 
@@ -194,14 +196,15 @@ combined = lapply(sgadata.ns, function(plate.data){
        paste0(unique(df$array), collapse=';') , 
        mean(df$ncolonysize, na.rm=T), 
        mean(df$score, na.rm=T),
-       paste0(unique(df$kvp[!is.na(df$kvp)], na.rm=T), collapse=';'),
-       sd(df$score, na.rm=T),
+	   sd(df$score, na.rm=T),
+	   paste0(unique(df$kvp[!is.na(df$kvp)], na.rm=T), collapse=';'),
+       sd(df$ncolonysize, na.rm=T),
        tt(df$ncolonysize)
     ) 
   })
   collapsed[,1:2] = NA
   names(collapsed) = c('row', 'col', 'colonysize', 'plateid', 
-                       'query', 'array', 'ncolonysize', 'score', 'kvp', 'sd', 'pvalue')
+                       'query', 'array', 'ncolonysize', 'score', 'scoreSd', 'kvp', 'sd', 'pvalue')
   
   collapsed$kvp[collapsed$kvp == ""] = NA
   collapsed$ncolonysize[collapsed$ncolonysize == "NaN"] = NA
@@ -217,31 +220,29 @@ combined = do.call(rbind, combined)
 
 ind = !is.na(combined$sd)
 combined$sd = round(as.numeric(combined$sd), digits=3)
+combined$scoreSd = round(as.numeric(combined$scoreSd), digits=3)
 combined$pvalue = round(as.numeric(combined$pvalue), digits=5)
-z = paste0('sd=', combined$sd)
-ind1 = ind & !is.na(combined$kvp)
-ind2 = ind & is.na(combined$kvp)
-combined$kvp[ind1] = paste0(combined$kvp[ind1], ';', z[ind1])
-combined$kvp[ind2] = z[ind2]
 
-z = paste0('pv=', combined$pvalue)
-ind = !is.na(combined$pvalue)
-ind1 = ind & !is.na(combined$kvp)
-ind2 = ind & is.na(combined$kvp)
-combined$kvp[ind1] = paste0(combined$kvp[ind1], ';', z[ind1])
-combined$kvp[ind2] = z[ind2]
+# Reindex the columns
+combined.new = combined[ , c('query','array', 'ncolonysize', 'sd', 'score', 'scoreSd', 'pvalue', 'kvp')]
+ind = combined.new$query %in% names(genemap)
+combined.new$queryName <- combined.new$query
+combined.new$queryName[ind] = genemap[combined.new$queryName[ind]]
 
-combined.new = combined[ ,-c(10,11)]
-
+ind = combined.new$array %in% names(genemap)
+combined.new$arrayName <- combined.new$array
+combined.new$arrayName[ind] = genemap[combined.new$arrayName[ind]]
+combined.new = combined.new[ , c('query', 'queryName','array', 'arrayName', 'ncolonysize', 'sd', 'score', 'scoreSd', 'pvalue', 'kvp')]
 
 # Combined data
 savename =  "combined_data.dat"
 comments = c('# Combined data file', comment.ns)
+comments[length(comments)] = '# (1)Row\t(2)Column\t(3)Raw colony size\t(4)Plate id / file name\t(5)Query\t(6)Array\t(7)Normalized colony size\t(8)Normalized colony std\t(9)Score\t(10)p-Value\t(11)Additional information'
 writeLines(comments, savename)
 write.table(combined.new, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
 
 sheet <- createSheet(wb, sheetName="Combined data")
-addDataFrame(list("Row", "Column", "Raw colony size", "Plate id / file name", "Query", "Array", "Normalized colony size", "Score", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+addDataFrame(list("Query ORF", "Query Name", "Array ORF", "Array Name", "Norm. colony size", "Norm. colony stdev", "Score", "Score stdev", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
 addDataFrame(combined.new, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
 
 

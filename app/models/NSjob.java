@@ -25,7 +25,10 @@ public class NSjob {
     // Specific to scoring
     public Boolean doScoring;
     public String scoringFunction;
-
+    
+    // Specific to advanced options
+    public Boolean keepLargeReplicates;
+    
     public String downloadZipPath;
     public String downloadXlsxPath;
 
@@ -47,6 +50,8 @@ public class NSjob {
 
         this.doScoring = false;
         this.scoringFunction = ComboboxOpts.scoringFunctions().get(1);
+        
+        this.keepLargeReplicates = false;
     }
 
 }
