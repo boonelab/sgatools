@@ -228,7 +228,7 @@ writeLines(comments, savename)
 write.table(combined.new, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
 
 sheet <- createSheet(wb, sheetName="Combined data")
-addDataFrame(list("Query ORF", "Query Name", "Array ORF", "Array Name", "Norm. colony size", "Norm. colony stdev", "Norm. control size", "Norm. control stdev", "Score", "Score stdev", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+addDataFrame(list("Query ORF", "Query Name", "Array ORF", "Array Name", "Normalized colony size (EXPERIMENT)",  "Normalized colony std. dev. (EXPERIMENT)", "Normalized colony size (CONTROL)", "Normalized colony std. dev. (CONTROL)", "Score", "Score stdev", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
 addDataFrame(combined.new, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
 
 # Write generated files
