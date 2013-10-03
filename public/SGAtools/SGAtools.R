@@ -301,6 +301,10 @@ normalizeSGA <- function(plate.data,
   # Make scale of normalized sizes 0-1
   plate.data$ncolonysize = plate.data$ncolonysize/overall.plate.median
   
+  # Weird normalization effect, when normalized size is negative. 
+  # TODO: check row/col normalization to fix this
+  plate.data$ncolonysize[plate.data$ncolonysize < 0] = 0
+  
   # LOL we're done, whew! return our data (minus extra cols generated)!
   if(!intermediate.data){
     m = match(c('spots','pnorm', 'snorm', 'rcnorm', 'pnorm2'), names(plate.data))
