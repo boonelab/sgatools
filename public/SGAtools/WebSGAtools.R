@@ -117,6 +117,16 @@ sgadata.ns = lapply(sgadata.r, normalizeSGA, replicates=args$replicates,
     linkage.cutoff=args$linkagecutoff, linkage.file=linkage.file, linkage.genes=linkage.genes,
     keep.large=args$keeplarge)
 
+metadata.table = lapply(sgadata.ns, function(plate.data){
+      d = attr(plate.data, 'file.name.metadata')
+      as.data.frame(d)
+    })
+mt = do.call('rbind', metadata.table)[,4:6]
+mt = mt[mt$is.valid,]
+ctrl_apid = mt[mt[[1]] == TRUE,'arrayplateid']
+dm_apid = mt[mt[[1]] == FALSE,'arrayplateid']
+do.combined = length(intersect(dm_apid,ctrl_apid)) > 0
+
 # Score data if requested
 if(args$score){
   sgadata.ns = scoreSGA(sgadata.ns, scoring.function=args$sfunction)
@@ -167,7 +177,7 @@ combined = lapply(sgadata.ns, function(plate.data){
       #df$col = ceiling(df$col/sqrt(args$replicates))
       
       d = attr(df, 'file.name.metadata')
-      if (d$is.control) {
+      if (d$is.control & do.combined) {
         return()
       }
       

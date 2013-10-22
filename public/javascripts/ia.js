@@ -126,3 +126,9 @@ function selectPlateClicked(button){
     }
     
 }
+
+$('#advancedOptsBtn').click(function(){
+    $('#advancedOpts').slideToggle('fast');
+    $('#advancedOptsIcon').toggleClass('icon-chevron-right');
+    $('#advancedOptsIcon').toggleClass('icon-chevron-down');
+});

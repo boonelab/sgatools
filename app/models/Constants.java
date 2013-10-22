@@ -24,9 +24,11 @@ public class Constants {
     public final static String BASE_PUBLIC_DIR = BASE + "/public";
 
     public final static String RSCRIPT_DIR = BASE_PUBLIC_DIR + "/SGAtools";
-
     public final static String RSCRIPT_PATH = RSCRIPT_DIR + "/WebSGAtools.R";
 
+    public final static String GITTER_DIR = BASE_PUBLIC_DIR + "/gitter";
+    public final static String GITTER_PATH = GITTER_DIR + "/gitter.R";
+    
     public final static String JOB_OUTPUT_DIR = BASE_PUBLIC_DIR + "/jobs";
 
     public final static String ARRAY_DEF_PATH = BASE_PUBLIC_DIR + "/data/array-definitions";

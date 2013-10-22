@@ -5,141 +5,196 @@
 @implicitFieldConstructor = @{ FieldConstructor(extra.twitterBootstrapInput.f) }
 @main("Image analysis", nav="ia") {
    <style>
-	    #drop_zone {
-			border: 2px dashed #bbb;
-			-moz-border-radius: 5px;
-			-webkit-border-radius: 5px;
-			border-radius: 5px;
-			padding: 25px;
-			text-align: center;
-			color: #bbb;
-			margin-top:10px;
-			}
-	    </style>
-	    
+        #drop_zone {
+            border: 2px dashed #bbb;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            padding: 25px;
+            text-align: center;
+            color: #bbb;
+            margin-top:10px;
+            }
+        </style>
+        
    @helper.form(action = routes.IAcontroller.submit(), 'enctype -> "multipart/form-data", 'id -> "imageprocessingForm", 'class->"form-horizontal") {
-		<h2>Image analysis</h2>
-		<hr>
-		
-		<!--TIPS START-->
-		<script>
-			$(document).ready(function() {
-				if( $.cookie('tip-filename') == null){
-					$('#tip-filename').show();
-				}if( $.cookie('tip-labelhelp') == null){
-					$('#tip-labelhelp').show();
-				}
-			})
-		</script>
-		
-		
-		<div class="alert alert-info hide" id="tip-labelhelp" style="margin-bottom:5px">
-		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 30 });">&times;</button>
-		  <div class="tip-content">
-			  <strong>Quick help tip! </strong>clicking labels with <abbr title="">dotted underlines</abbr> will provide you with additional help
-		  </div>
-		</div>
-		
-		<div class="alert alert-info hide" id="tip-filename">
-		  <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-filename', true, { expires : 30 });">&times;</button>
-		  <div class="tip-content" style="cursor: hand; cursor: pointer;" onclick="labelHelpClicked('file-naming-help')" data-target="#helpModal" data-toggle="modal">
-			  <strong>File naming tip! </strong>
-			  If you want to score your data after image analysis and normalization, the file names need to follow a pattern. For example, for the control plate of query YER103W crossed into plate 12 of the array should be named like <code>username_ctrl_YER103W_12_...jpg</code>, and double mutant file as <code>username_dm_YER103W_12_...jpg</code>.  The parsed plate type, query name, and plate number are updated in a table below.
-			  <br>
-			  Click this alert box to see further details
-		  </div>
-		</div>
-		
-		
-		
-		
-		<!--TIPS END-->
-		
-		<h3 style="margin-bottom:10px">Data input</h3>
-		
-		<fieldset>
-		
-	    <!--<div id="drop_zone"><h2>Drop files here</h2></div>-->
-	    
-		<!--Images select button-->
-		  @inputFile(
-	        iaForm("plateImages"),
-	        '_label -> "Plate image(s)",
-	        'multiple -> "",
-	        'accept -> "image/gif, image/jpeg, image/png",
-	    	'uploadwidget -> "Select image(s)",
-	    	'helpModal -> "ia-plate-files"
-	    )
-	    
-	    
-	    
-	    <!--Plate format of the screen images-->
-	    @select(
-            iaForm("plateFormat"), 
-            options = options(ComboboxOpts.plateFormat),
-            '_label -> "Plate format",
-            '_showConstraints -> false,
-            'style -> "width:350px",
-            'helpModal -> "ia-plate-format"
-        )
+        <h2>Image analysis</h2>
+        <hr>
         
-	    <!--Crop option - best left at index 0-->
-         @select(
-            iaForm("cropOption"), 
-            options = options(ComboboxOpts.cropOption),
-            '_label -> "Crop option",
-            '_showConstraints -> false,
-            'style -> "width:350px",
-            'helpModal -> "ia-crop-option"
-        )
+        <!--TIPS START-->
+        <script>
+            $(document).ready(function() {
+                if( $.cookie('tip-filename') == null){
+                    $('#tip-filename').show();
+                }if( $.cookie('tip-labelhelp') == null){
+                    $('#tip-labelhelp').show();
+                }if( $.cookie('tip-gitter') == null){
+                    $('#tip-gitter').show();
+                }
+            })
+        </script>
         
-		</fieldset>
-		
-	    <!--Loaded plates only visible when images selected (done via JS)-->
-	    <div id="loaded-plates" style="display:none">
-			<h3 id="loaded-label" style="margin-bottom:10px">Loaded image file(s)</h3>
-			<fieldset>
-				<table id="loaded-table" class="table table-condensed">
-				<thead><tr>
-				
-				<!--<th>Plate image</th>-->
-				<th>File name</th><th>Screen type</th><th>Query name</th><th>Array plate id</th></tr></thead>
-				<tbody></tbody>
-				</table>
-			</fieldset>
-		</div>
-		
-	    <!--Submit/clear all box-->
-	    <div class="form-actions">
-		  <button id="iasubmit" type="submit" class="btn btn-primary">Process images</button>
-		  <a href="@routes.IAcontroller.initIAForm()"><button id="clearall" type="button" class="btn">Clear all</button></a>
-		</div>
-	}
-	
-	<div id="loadingDiv" class="hide">
-		@loading("Processing images", "Expected time 25-60 seconds")
-	</div>
+        
+        <div class="alert alert-warning hide" id="tip-gitter">
+          <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-gitter', true, { expires : 60 });">&times;</button>
+          <div class="tip-content">
+              <strong>New image analysis tool integrated! </strong>
+              To improve image analysis in SGATools we integrated <a target="_blank" href="http://gitter.ccbr.utoronto.ca">gitter</a> image analysis tool.
+              <br>
+              For more information and to download standalone version of gitter, visit <a target="_blank" href="http://gitter.ccbr.utoronto.ca">http://gitter.ccbr.utoronto.ca</a>.
+          </div>
+        </div>
+        
+        <div class="alert alert-info hide" id="tip-labelhelp" style="margin-bottom:5px">
+          <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-labelhelp', true, { expires : 60 });">&times;</button>
+          <div class="tip-content">
+              <strong>Quick help tip! </strong>clicking labels with <abbr title="">dotted underlines</abbr> will provide you with additional help
+          </div>
+        </div>
+        
+        <div class="alert alert-info hide" id="tip-filename">
+          <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-filename', true, { expires : 60 });">&times;</button>
+          <div class="tip-content" style="cursor: hand; cursor: pointer;" onclick="labelHelpClicked('file-naming-help')" data-target="#helpModal" data-toggle="modal">
+              <strong>File naming tip! </strong>
+              If you want to score your data after image analysis and normalization, the file names need to follow a pattern. For example, for the control plate of query YER103W crossed into plate 12 of the array should be named like <code>username_ctrl_YER103W_12_...jpg</code>, and double mutant file as <code>username_dm_YER103W_12_...jpg</code>.  The parsed plate type, query name, and plate number are updated in a table below.
+              <br>
+              Click this alert box to see further details
+          </div>
+        </div>
+        
+        
+        
+        <!--TIPS END-->
+        
+        <h3 style="margin-bottom:10px">Data input</h3>
+        
+        <fieldset>
+        
+            <!--<div id="drop_zone"><h2>Drop files here</h2></div>-->
+            
+            <!--Images select button-->
+              @inputFile(
+                iaForm("plateImages"),
+                '_label -> "Plate image(s)",
+                'multiple -> "",
+                'accept -> "image/gif, image/jpeg, image/png",
+                'uploadwidget -> "Select image(s)",
+                'helpModal -> "ia-plate-files"
+            )
+            
+            
+            
+            <!--Plate format of the screen images-->
+            @select(
+                iaForm("plateFormat"), 
+                options = options(ComboboxOpts.plateFormat),
+                '_label -> "Plate format",
+                '_showConstraints -> false,
+                'style -> "width:350px",
+                'helpModal -> "ia-plate-format"
+            )
+        </fieldset>
+        
+        <!-- ADVANCED OPTIONS -->
+        <div style="display: block;">
+            <hr>
+            <h3 id="advancedOptsBtn" style="margin-bottom:10px;cursor: hand; cursor: pointer;">
+            Advanced options <i id="advancedOptsIcon" class="icon-chevron-right" style="font-size:10px; color:#0081cc"></i></h3>
+            <fieldset id="advancedOpts" class="hide">
+            <div class="alert">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Warning!</strong> Changing these options could drastically affect your results and prolong the processing times. Do not modify unless necessary.
+            </div>
+            
+            <div class="row">
+                <div class="span2">
+                    @helper.input(
+                        iaForm("removeNoise"),
+                        '_label -> "Remove noise",
+                        '_showConstraints -> false,
+                        'helpModal -> "ia-noise-option"
+                    ){ (id, name, value, args) =>
+                        <label class="checkbox">
+                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                            <span>&nbsp;</span>
+                        </label>
+                    }
+                    
+                    @helper.input(
+                        iaForm("autoRotate"),
+                        '_label -> "Autorotate",
+                        '_showConstraints -> false,
+                        'helpModal -> "ia-rotate-option"
+                    ){ (id, name, value, args) =>
+                        <label class="checkbox">
+                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                            <span>&nbsp;</span>
+                        </label>
+                    }
+                    
+                    @helper.input(
+                        iaForm("inverse"),
+                        '_label -> "Inverse",
+                        '_showConstraints -> false,
+                        'helpModal -> "ia-inverse-option"
+                    ){ (id, name, value, args) =>
+                        <label class="checkbox">
+                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                            <span>&nbsp;</span>
+                        </label>
+                    }
+                </div>
+            </div>
+                
+            </fieldset>
+        </div>
+        <!-- END ADVANCED OPTIONS -->
+        
+        <!--Loaded plates only visible when images selected (done via JS)-->
+        <div id="loaded-plates" style="display:none">
+            <h3 id="loaded-label" style="margin-bottom:10px">Loaded image file(s)</h3>
+            <fieldset>
+                <table id="loaded-table" class="table table-condensed">
+                <thead><tr>
+                
+                <!--<th>Plate image</th>-->
+                <th>File name</th><th>Screen type</th><th>Query name</th><th>Array plate id</th></tr></thead>
+                <tbody></tbody>
+                </table>
+            </fieldset>
+        </div>
+        
+        <!--Submit/clear all box-->
+        <div class="form-actions">
+          <button id="iasubmit" type="submit" class="btn btn-primary">Process images</button>
+          <a href="@routes.IAcontroller.initIAForm()"><button id="clearall" type="button" class="btn">Clear all</button></a>
+        </div>
+    }
+    
+    <div id="loadingDiv" class="hide">
+        @loading("Processing images", "Expected time: 10-15 seconds per image")
+    </div>
 
-	<!-- Scripts for the page -->
+    <!-- Scripts for the page -->
     <script src="@routes.Assets.at("javascripts/ia.js")"></script>
     <script>
-    	$(document).ready(function(){
-    		$('#iasubmit').attr('disabled', 'disabled');
-    		//$('#cg-plateImages.control-group .controls').append('<div id="drop_zone"><h2>Drop files here</h2></div>');
-    		//var dropZone = document.getElementById('drop_zone');
-  			//dropZone.addEventListener('dragover', handleDragOver, false);
-  			//dropZone.addEventListener('drop', handleFileSelect, false);
-    	});
-    	// Submit click
-    	$("#iasubmit").click(function() {
-  			$('#imageprocessingForm').toggleClass("hide");
-  			$('#loadingDiv').toggleClass("hide");
-  			$('#imageprocessingForm').submit();
-		});
-    	
-		$('#plateImages').change(handleFileSelect);
-		
-		
-		
+        $(document).ready(function(){
+            $('#iasubmit').attr('disabled', 'disabled');
+            //$('#cg-plateImages.control-group .controls').append('<div id="drop_zone"><h2>Drop files here</h2></div>');
+            //var dropZone = document.getElementById('drop_zone');
+              //dropZone.addEventListener('dragover', handleDragOver, false);
+              //dropZone.addEventListener('drop', handleFileSelect, false);
+        });
+        // Submit click
+        $("#iasubmit").click(function() {
+              $('#imageprocessingForm').toggleClass("hide");
+              $('#loadingDiv').toggleClass("hide");
+              $('#imageprocessingForm').submit();
+        });
+        
+        $('#plateImages').change(handleFileSelect);
+        
+        
+        
     </script>
 }

@@ -273,7 +273,7 @@
 
 			  <!--End plate format-->
 			
-			  <div id="ia-crop-option">
+			  <div id="ia-crop-option" class="hide">
 				<dt><h4>3. Crop option</h4></dt>
 				<dd>
 					<ul>
@@ -292,6 +292,30 @@
 				</dd>
 			</div>
 			
+              <div id="ia-noise-option">
+                <dt><h4>3. Noise removal</h4></dt>
+                <dd>
+                    Flag indicating if noise/speckles should be removed from the thresholded image
+                    prior to analysis.
+                </dd>
+            </div>
+
+              <div id="ia-rotate-option">
+                <dt><h4>4. Autorotate</h4></dt>
+                <dd>
+                    Flag indicating if image should be auto-rotated prior to processing. Only
+                    select this option if image is extremely rotated. gitter is able to handle small
+                    variations in rotations (1-2 degrees) without auto-rotating.
+                </dd>
+            </div>
+            
+              <div id="ia-inverse-option">
+                <dt><h4>5. Inverse</h4></dt>
+                <dd>
+                    Flag indicating if input image is inverted, meaning colonies are darker compared to their background.
+                </dd>
+            </div>
+            
 			</dl><!--End input image analsysis-->
 	        
         	
