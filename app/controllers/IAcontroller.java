@@ -220,7 +220,7 @@ public class IAcontroller extends Controller {
             return redirect("/imageanalysis/" + jobid);
         } else {
             Runnable r = new IAcontroller.DetachedIA(submissionStartTime, filledForm, ipJob, jobid, inputImagesDir, outputFilesDir, zipFilePath,
-                    passedPlateImages, failedPlateImages, inputFileMap, imageProcessing, request().host());
+                    passedPlateImages, failedPlateImages, inputFileMap, imageProcessing);
             
             new Thread(r).start();
             
@@ -326,11 +326,10 @@ public class IAcontroller extends Controller {
         private List<PlateFile> failedPlateImages;
         private Map<String, PlateFile> inputFileMap;
         private RScript imageProcessing;
-        private String host;
 
         public DetachedIA(long submissionStartTime, Form<IAjob> filledForm, IAjob ipJob, String jobid,
                 String inputImagesDir, String outputFilesDir, String zipFilePath, List<PlateFile> passedPlateImages,
-                List<PlateFile> failedPlateImages, Map<String, PlateFile> inputFileMap, RScript imageProcessing, String host) {
+                List<PlateFile> failedPlateImages, Map<String, PlateFile> inputFileMap, RScript imageProcessing) {
             this.submissionStartTime = submissionStartTime;
             this.filledForm = filledForm;
             this.ipJob = ipJob;
@@ -342,13 +341,14 @@ public class IAcontroller extends Controller {
             this.failedPlateImages = failedPlateImages;
             this.inputFileMap = inputFileMap;
             this.imageProcessing = imageProcessing;
-            this.host = host;
         }
         
         @Override
         public void run() {
             String title = "SGATools: Your images have been processed";
             String message = "";
+            String host = Constants.prop.getProperty("sgatools.deployed.host");
+            
             try {
                 processImages(submissionStartTime, filledForm, ipJob, jobid, inputImagesDir, outputFilesDir, zipFilePath,
                         passedPlateImages, failedPlateImages, inputFileMap, imageProcessing);
