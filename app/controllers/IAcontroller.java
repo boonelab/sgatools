@@ -354,7 +354,7 @@ public class IAcontroller extends Controller {
                         passedPlateImages, failedPlateImages, inputFileMap, imageProcessing);
                 
                 message += "The results from the image analysis can be found here:\n";
-                message += "http://" + host + "/imageanalysis/" + jobid + "\n\n";
+                message += host + "/imageanalysis/" + jobid + "\n\n";
                 message += "Should you face any problems please reply to this email and we'll try to get back to you as soon as possible";
             } catch (IAException e) {
                 title = "SGATools: Your images have failed to be processed";
