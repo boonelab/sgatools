@@ -15,6 +15,10 @@ import models.IAjob;
 import models.NSjob;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 import org.codehaus.jackson.JsonNode;
 
 import play.Logger;
@@ -32,6 +36,20 @@ import views.html.ia.iaform;
 import views.html.ia.iasummary;
 
 import com.google.common.base.Joiner;
+
+enum IAExceptionType {
+    RERROR, EMPTYPLATES, WRITEPROBLEM
+}
+
+class IAException extends Exception {
+    private IAExceptionType type;
+    public IAException(IAExceptionType t) {
+        type = t;
+    }
+    public IAExceptionType getType() {
+        return type;
+    }
+}
 
 public class IAcontroller extends Controller {
     final static Form<IAjob> ipForm = form(IAjob.class);
@@ -76,6 +94,10 @@ public class IAcontroller extends Controller {
     }
 
     public static Result submit() {
+        
+        
+        Logger.info(String.format("FOOOOOOOOOOOOOOO:\n%s\n%s\n%s\n", request().uri(), request().host(), request().path()));
+        
         // Process submission
         long submissionStartTime = new Date().getTime(); // start time
 
@@ -173,12 +195,48 @@ public class IAcontroller extends Controller {
         if (ipJob.autoRotate) imageProcessing.addOpt("autorotate");
         if (ipJob.inverse) imageProcessing.addOpt("inverse");
         
+        if (ipJob.email.isEmpty()) {
+            try {
+                processImages(submissionStartTime, filledForm, ipJob, jobid, inputImagesDir, outputFilesDir, zipFilePath,
+                        passedPlateImages, failedPlateImages, inputFileMap, imageProcessing);
+            } catch (IAException e) {
+                switch (e.getType()) {
+                case EMPTYPLATES:
+                    filledForm.reject("plateImages",
+                            "Failed to process all images, please ensure the correct plate images/format is selected");
+                    break;
+                case RERROR:
+                    filledForm.reject("plateImages",
+                            "Failed to run image processing on uploaded images, please contact developers");
+                    break;
+                case WRITEPROBLEM:
+                    filledForm.reject("plateImages", "Fatal error, please contact developers");
+                    break;
+                }
+                
+                return badRequest(iaform.render(filledForm));
+            }
+            
+            return redirect("/imageanalysis/" + jobid);
+        } else {
+            Runnable r = new IAcontroller.DetachedIA(submissionStartTime, filledForm, ipJob, jobid, inputImagesDir, outputFilesDir, zipFilePath,
+                    passedPlateImages, failedPlateImages, inputFileMap, imageProcessing, request().host());
+            
+            new Thread(r).start();
+            
+            return Application.renderIAEmailPage();
+        }
+    }
+
+    private static void processImages(long submissionStartTime, Form<IAjob> filledForm, IAjob ipJob, String jobid,
+            String inputImagesDir, String outputFilesDir, String zipFilePath, List<PlateFile> passedPlateImages,
+            List<PlateFile> failedPlateImages, Map<String, PlateFile> inputFileMap, RScript imageProcessing) throws
+            IAException {
+        
         boolean processingResult = imageProcessing.execute();
         
         if (!processingResult) {
-            filledForm.reject("plateImages",
-                    "Failed to run image processing on uploaded images, please contact developers");
-            return badRequest(iaform.render(filledForm));
+            throw new IAException(IAExceptionType.RERROR);
         }
         
         for (File f : new File(inputImagesDir).listFiles()) {
@@ -204,9 +262,7 @@ public class IAcontroller extends Controller {
         
         // If none of the input files passed, reject form
         if (passedPlateImages.isEmpty()) {
-            filledForm.reject("plateImages",
-                    "Failed to process all images, please ensure the correct plate images/format is selected");
-            return badRequest(iaform.render(filledForm));
+            throw new IAException(IAExceptionType.EMPTYPLATES);
         }
         
         for (PlateFile pf : passedPlateImages) {
@@ -244,12 +300,8 @@ public class IAcontroller extends Controller {
         // Write job as a json - used to show job page with link again
         boolean writePassed = writeJsonJobToFile(ipJob, jobid);
         if (!writePassed) {
-            filledForm.reject("plateImages", "Fatal error, please contact developers");
-            return badRequest(iaform.render(filledForm));
+            throw new IAException(IAExceptionType.WRITEPROBLEM);
         }
-
-        // Direct to summary page
-        return redirect("/imageanalysis/" + jobid);
     }
     
     private static String getPlateFormatValue(int gridType) {
@@ -260,5 +312,88 @@ public class IAcontroller extends Controller {
         case 3: return "32,48";
         }
         return "";
+    }
+    
+    private static class DetachedIA implements Runnable {
+        private long submissionStartTime;
+        private Form<IAjob> filledForm;
+        private IAjob ipJob;
+        private String jobid;
+        private String inputImagesDir;
+        private String outputFilesDir;
+        private String zipFilePath;
+        private List<PlateFile> passedPlateImages;
+        private List<PlateFile> failedPlateImages;
+        private Map<String, PlateFile> inputFileMap;
+        private RScript imageProcessing;
+        private String host;
+
+        public DetachedIA(long submissionStartTime, Form<IAjob> filledForm, IAjob ipJob, String jobid,
+                String inputImagesDir, String outputFilesDir, String zipFilePath, List<PlateFile> passedPlateImages,
+                List<PlateFile> failedPlateImages, Map<String, PlateFile> inputFileMap, RScript imageProcessing, String host) {
+            this.submissionStartTime = submissionStartTime;
+            this.filledForm = filledForm;
+            this.ipJob = ipJob;
+            this.jobid = jobid;
+            this.inputImagesDir = inputImagesDir;
+            this.outputFilesDir = outputFilesDir;
+            this.zipFilePath = zipFilePath;
+            this.passedPlateImages = passedPlateImages;
+            this.failedPlateImages = failedPlateImages;
+            this.inputFileMap = inputFileMap;
+            this.imageProcessing = imageProcessing;
+            this.host = host;
+        }
+        
+        @Override
+        public void run() {
+            String title = "SGATools: Your images have been processed";
+            String message = "";
+            try {
+                processImages(submissionStartTime, filledForm, ipJob, jobid, inputImagesDir, outputFilesDir, zipFilePath,
+                        passedPlateImages, failedPlateImages, inputFileMap, imageProcessing);
+                
+                message += "The results from the image analysis can be found here:\n";
+                message += "http://" + host + "/imageanalysis/" + jobid + "\n\n";
+                message += "Should you face any problems please reply to this email and we'll try to get back to you as soon as possible";
+            } catch (IAException e) {
+                title = "SGATools: Your images have failed to be processed";
+                
+                switch (e.getType()) {
+                case EMPTYPLATES:
+                    message = "Failed to process all images, please ensure the correct plate images/format is selected";
+                    break;
+                case RERROR:
+                    message = "Failed to run image processing on uploaded images, please contact developers";
+                    break;
+                case WRITEPROBLEM:
+                    message = "Fatal error, please contact developers";
+                    break;
+                }
+            }
+            
+            message += "\n\n----\nSGATools team";
+            
+            Email email = new SimpleEmail();
+            email.setHostName("smtp.googlemail.com");
+            email.setSmtpPort(465);
+            
+            String username = Constants.prop.getProperty("email.login.username");
+            String password = Constants.prop.getProperty("email.login.password");
+            
+            Logger.info("Sending with username " + username + " and password " + password);
+            
+            email.setAuthenticator(new DefaultAuthenticator(username, password));
+            email.setSSLOnConnect(true);
+            try {
+                email.setFrom(username);
+                email.setSubject(title);
+                email.setMsg(message);
+                email.addTo(ipJob.email);
+                email.send();
+            } catch (EmailException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

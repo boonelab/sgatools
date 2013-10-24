@@ -20,6 +20,7 @@ public class IAjob {
     public boolean removeNoise;
     public boolean autoRotate;
     public boolean inverse;
+    public String email;
 
     public String jsonSelectedForNS;
 

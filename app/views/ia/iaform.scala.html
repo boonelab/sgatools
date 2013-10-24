@@ -95,60 +95,58 @@
             )
         </fieldset>
         
-        <!-- ADVANCED OPTIONS -->
-        <div style="display: block;">
-            <hr>
-            <h3 id="advancedOptsBtn" style="margin-bottom:10px;cursor: hand; cursor: pointer;">
-            Advanced options <i id="advancedOptsIcon" class="icon-chevron-right" style="font-size:10px; color:#0081cc"></i></h3>
-            <fieldset id="advancedOpts" class="hide">
-            <div class="alert">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <strong>Warning!</strong> Changing these options could drastically affect your results and prolong the processing times. Do not modify unless necessary.
-            </div>
+        <hr>
+        
+        <h3 style="margin-bottom:10px">Additional options</h3>
+        <fieldset>
+            @helper.input(
+                iaForm("removeNoise"),
+                '_label -> "Remove noise",
+                '_showConstraints -> false,
+                'helpModal -> "ia-noise-option"
+            ){ (id, name, value, args) =>
+                <label class="checkbox">
+                    <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                    <span>&nbsp;</span>
+                </label>
+            }
             
-            <div class="row">
-                <div class="span2">
-                    @helper.input(
-                        iaForm("removeNoise"),
-                        '_label -> "Remove noise",
-                        '_showConstraints -> false,
-                        'helpModal -> "ia-noise-option"
-                    ){ (id, name, value, args) =>
-                        <label class="checkbox">
-                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                            <span>&nbsp;</span>
-                        </label>
-                    }
-                    
-                    @helper.input(
-                        iaForm("autoRotate"),
-                        '_label -> "Autorotate",
-                        '_showConstraints -> false,
-                        'helpModal -> "ia-rotate-option"
-                    ){ (id, name, value, args) =>
-                        <label class="checkbox">
-                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                            <span>&nbsp;</span>
-                        </label>
-                    }
-                    
-                    @helper.input(
-                        iaForm("inverse"),
-                        '_label -> "Inverse",
-                        '_showConstraints -> false,
-                        'helpModal -> "ia-inverse-option"
-                    ){ (id, name, value, args) =>
-                        <label class="checkbox">
-                            <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                            <span>&nbsp;</span>
-                        </label>
-                    }
+            @helper.input(
+                iaForm("autoRotate"),
+                '_label -> "Autorotate",
+                '_showConstraints -> false,
+                'helpModal -> "ia-rotate-option"
+            ){ (id, name, value, args) =>
+                <label class="checkbox">
+                    <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                    <span>&nbsp;</span>
+                </label>
+            }
+            
+            @helper.input(
+                iaForm("inverse"),
+                '_label -> "Inverse",
+                '_showConstraints -> false,
+                'helpModal -> "ia-inverse-option"
+            ){ (id, name, value, args) =>
+                <label class="checkbox">
+                    <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
+                    <span>&nbsp;</span>
+                </label>
+            }
+            
+            @helper.input(
+                iaForm("email"),
+                '_label -> "Email",
+                '_showConstraints -> false,
+                'helpModal -> "ia-email-option"
+            ){ (id, name, value, args) =>
+                <div>
+                    <input placeholder="your.email@@university.com" class="span2" id="@id" name="@name" @toHtmlArgs(args) size="32" type="text" style="width:175px">
+                    <span class="help">&nbsp; Enter your email address if you want to be notified once your job is complete.</span>
                 </div>
-            </div>
-                
-            </fieldset>
-        </div>
-        <!-- END ADVANCED OPTIONS -->
+            }
+        </fieldset>
         
         <!--Loaded plates only visible when images selected (done via JS)-->
         <div id="loaded-plates" style="display:none">
@@ -186,15 +184,15 @@
               //dropZone.addEventListener('drop', handleFileSelect, false);
         });
         // Submit click
-        $("#iasubmit").click(function() {
-              $('#imageprocessingForm').toggleClass("hide");
-              $('#loadingDiv').toggleClass("hide");
-              $('#imageprocessingForm').submit();
+        $("#iasubmit").click(function(e) {
+            if (!validateForm()) {
+                return false;
+            }
+            
+            $('#imageprocessingForm').toggleClass("hide");
+            $('#loadingDiv').toggleClass("hide");
         });
         
         $('#plateImages').change(handleFileSelect);
-        
-        
-        
     </script>
 }

@@ -219,6 +219,8 @@ combined$scoreSd = round(as.numeric(combined$scoreSd), digits=3)
 combined$pvalue = round(as.numeric(combined$pvalue), digits=5)
 combined$ctrlsd = round(as.numeric(combined$ctrlsd), digits=3)
 
+combined.dat = combined[ , c('row','col', 'colonysize', 'plateid', 'query', 'array', 'ncolonysize', 'score', 'kvp')]
+
 # Reindex the columns
 combined.new = combined[ , c('query','array', 'ncolonysize', 'sd', 'ctrlncolonysize', 'ctrlsd', 'score', 'scoreSd', 'pvalue', 'kvp')]
 ind = combined.new$query %in% names(genemap)
@@ -235,7 +237,7 @@ savename =  "combined_data.dat"
 comments = c('# Combined data file', comment.ns)
 comments[length(comments)] = '# (1)Row\t(2)Column\t(3)Raw colony size\t(4)Plate id / file name\t(5)Query\t(6)Array\t(7)Normalized colony size\t(8)Normalized colony std\t(9)Score\t(10)p-Value\t(11)Additional information'
 writeLines(comments, savename)
-write.table(combined.new, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
+write.table(combined.dat, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
 
 sheet <- createSheet(wb, sheetName="Combined data")
 addDataFrame(list("Query ORF", "Query Name", "Array ORF", "Array Name", "Normalized colony size (EXPERIMENT)",  "Normalized colony std. dev. (EXPERIMENT)", "Normalized colony size (CONTROL)", "Normalized colony std. dev. (CONTROL)", "Score", "Score stdev", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)

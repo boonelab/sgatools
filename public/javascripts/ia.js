@@ -1,12 +1,24 @@
 /*!
 * Scripts for image analysis page: form
 */
- function validateForm(){
+function IsEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+function validateForm(){
  //TOFINISH
 	if($('#plateImages')[0].files.length == 0){
 		alert('Must select at least one file');
-		return;
+		return false;
 	}
+	
+    if($('#email').val().length > 0 && !IsEmail($('#email').val())){
+        alert('Please enter a valid email');
+        return false;
+    }
+    
+    return true;
 }
 	
 var currList = document.getElementById('loaded-table');
@@ -126,9 +138,3 @@ function selectPlateClicked(button){
     }
     
 }
-
-$('#advancedOptsBtn').click(function(){
-    $('#advancedOpts').slideToggle('fast');
-    $('#advancedOptsIcon').toggleClass('icon-chevron-right');
-    $('#advancedOptsIcon').toggleClass('icon-chevron-down');
-});

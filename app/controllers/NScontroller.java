@@ -267,9 +267,12 @@ public class NScontroller extends Controller {
 
         Map<String, String> outputFilesMap = new HashMap<String, String>();
         for (File of : outputFilesDir.listFiles()) {
-            if (!of.getName().startsWith("combined") && !of.getName().startsWith("README")
-                    && !of.getName().startsWith("scores"))
+            if (of.getName().endsWith(".dat") && !of.getName().startsWith("scores.dat") && !of.getName().startsWith("combined")) {
                 outputFilesMap.put(of.getName(), of.getPath());
+            }
+//            if (!of.getName().startsWith("combined") && !of.getName().startsWith("README")
+//                    && !of.getName().startsWith("scores") && !of.getName().endsWith(".xlsx"))
+//                outputFilesMap.put(of.getName(), of.getPath());
         }
 
         // Save some objects

@@ -7,7 +7,7 @@ public class Constants {
     public final static String SGATOOLS_VERSION = "1.0.0";
     public final static String IA_VERSION = "1.1.7";
 
-    private static final Properties prop;
+    public static final Properties prop;
     static {
         prop = new Properties();
         try {
