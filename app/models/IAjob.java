@@ -17,7 +17,6 @@ public class IAjob {
     public List<PlateFile> passedFiles, failedFiles;
     public String plateFormat;
     public String cropOption;
-    public boolean removeNoise;
     public boolean autoRotate;
     public boolean inverse;
     public String email;

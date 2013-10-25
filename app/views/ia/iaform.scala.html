@@ -100,18 +100,6 @@
         <h3 style="margin-bottom:10px">Additional options</h3>
         <fieldset>
             @helper.input(
-                iaForm("removeNoise"),
-                '_label -> "Remove noise",
-                '_showConstraints -> false,
-                'helpModal -> "ia-noise-option"
-            ){ (id, name, value, args) =>
-                <label class="checkbox">
-                    <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                    <span>&nbsp;</span>
-                </label>
-            }
-            
-            @helper.input(
                 iaForm("autoRotate"),
                 '_label -> "Autorotate",
                 '_showConstraints -> false,
@@ -119,7 +107,7 @@
             ){ (id, name, value, args) =>
                 <label class="checkbox">
                     <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                    <span>&nbsp;</span>
+                    <span>&nbsp; Automatically adjust rotation of my image(s)</span>
                 </label>
             }
             
@@ -131,7 +119,7 @@
             ){ (id, name, value, args) =>
                 <label class="checkbox">
                     <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                    <span>&nbsp;</span>
+                    <span>&nbsp; Correct for inverted images. This means colonies are darker compared to the background</span>
                 </label>
             }
             

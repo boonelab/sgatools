@@ -386,7 +386,7 @@ scoreSGA <- function(plate.data.list, scoring.function=1){
         plate.data$score = dm / (q.smf * a.smf)
       }
       
-      plate.data$ctrlncolonysize = merged.dat.ctrl$ncolonysize;
+      plate.data$ctrlncolonysize = plate.data.list[is.ctrl][[1]]$ncolonysize;
       
       plate.data
     })

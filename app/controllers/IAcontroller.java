@@ -189,9 +189,9 @@ public class IAcontroller extends Controller {
         imageProcessing.addOpt("inputfiles", Joiner.on(",").join(inputFiles)
                 ).addOpt("plateformat", getPlateFormatValue(gridType)
                 ).addOpt("gridfolder", outputImagesDir
-                ).addOpt("datfolder", outputFilesDir);
+                ).addOpt("datfolder", outputFilesDir
+                ).addOpt("removenoise");
         
-        if (ipJob.removeNoise) imageProcessing.addOpt("removenoise");
         if (ipJob.autoRotate) imageProcessing.addOpt("autorotate");
         if (ipJob.inverse) imageProcessing.addOpt("inverse");
         
