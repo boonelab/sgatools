@@ -15,6 +15,10 @@
             color: #bbb;
             margin-top:10px;
             }
+        
+        .auto-width {
+            width: auto;
+        }
         </style>
         
    @helper.form(action = routes.IAcontroller.submit(), 'enctype -> "multipart/form-data", 'id -> "imageprocessingForm", 'class->"form-horizontal") {
@@ -97,7 +101,7 @@
         
         <hr>
         
-        <h3 style="margin-bottom:10px">Additional options</h3>
+        <h3 style="margin-bottom:10px">Options</h3>
         <fieldset>
             @helper.input(
                 iaForm("autoRotate"),
@@ -111,17 +115,15 @@
                 </label>
             }
             
-            @helper.input(
+            @select(
                 iaForm("inverse"),
+                options = options(("true", "Dark"), ("false", "Bright")),
                 '_label -> "Inverse",
                 '_showConstraints -> false,
-                'helpModal -> "ia-inverse-option"
-            ){ (id, name, value, args) =>
-                <label class="checkbox">
-                    <input id="@id" name="@name"  @toHtmlArgs(args) type="checkbox" value="true">
-                    <span>&nbsp; Correct for inverted images. This means colonies are darker compared to the background</span>
-                </label>
-            }
+                'class -> "auto-width",
+                'helpModal -> "ia-inverse-option",
+                'helpInline -> "colonies compared to plate background"
+            )
             
             @helper.input(
                 iaForm("email"),
@@ -157,6 +159,10 @@
         </div>
     }
     
+    <div id="uploadingDiv" class="hide">
+        @loading("Uploading images", "")
+    </div>
+    
     <div id="loadingDiv" class="hide">
         @loading("Processing images", "Expected time: 10-15 seconds per image")
     </div>
@@ -171,14 +177,19 @@
               //dropZone.addEventListener('dragover', handleDragOver, false);
               //dropZone.addEventListener('drop', handleFileSelect, false);
         });
-        // Submit click
+        // Submit click 
         $("#iasubmit").click(function(e) {
             if (!validateForm()) {
                 return false;
             }
             
             $('#imageprocessingForm').toggleClass("hide");
-            $('#loadingDiv').toggleClass("hide");
+            
+            if ($("#email").val().length > 0) {
+                $('#uploadingDiv').toggleClass("hide");
+            } else {
+                $('#loadingDiv').toggleClass("hide");
+            }
         });
         
         $('#plateImages').change(handleFileSelect);

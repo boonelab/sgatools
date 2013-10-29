@@ -190,7 +190,8 @@ public class IAcontroller extends Controller {
                 ).addOpt("plateformat", getPlateFormatValue(gridType)
                 ).addOpt("gridfolder", outputImagesDir
                 ).addOpt("datfolder", outputFilesDir
-                ).addOpt("removenoise");
+//                ).addOpt("removenoise"
+                );
         
         if (ipJob.autoRotate) imageProcessing.addOpt("autorotate");
         if (ipJob.inverse) imageProcessing.addOpt("inverse");

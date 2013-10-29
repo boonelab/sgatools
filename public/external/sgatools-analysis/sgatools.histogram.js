@@ -81,15 +81,23 @@ function drawBarChart(settings) {
 		minVal = d3.min(data, function(d) { return d.score; });
 		
 		
-		if(minVal < 0.5) 
-			minVal = Math.floor(minVal);
-		else
-			minVal = Math.ceil(minVal);
+		if (options.columnToUse == "score") {
+		    minVal = (Math.floor(minVal * 10) / 10) - .2;
+		} else {
+    		if(minVal < 0.5) 
+    			minVal = Math.floor(minVal);
+    		else
+    			minVal = Math.ceil(minVal);
+		}
 			
 		if(maxVal < 0) 
 			maxVal = Math.floor(maxVal);
 		else
-			maxVal = Math.ceil(maxVal);
+		    if (options.columnToUse == "score") {
+		        maxVal = (Math.ceil(maxVal * 10) / 10) + .1;
+		    } else {
+	            maxVal = Math.ceil(maxVal);
+		    }
 		
 		console.log('maxVal='+maxVal);
 		console.log('minVal='+minVal);

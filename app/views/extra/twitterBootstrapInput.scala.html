@@ -46,12 +46,10 @@
 		}else{
 			@if(elements.args.contains('append)){<div class="input-append">}
 			@elements.input
-			@if(elements.args.contains('append)){</div>}
-			
-			<!--
-			<span class="help-inline">@elements.infos.mkString(", ")
-			</span>-->
-			
+			@if(elements.args.contains('helpInline)) {
+			<span class="help-inline">@elements.args.get('helpInline)
+			</span>
+			}
 			@if(elements.hasErrors) {
 					<span class="help-block" style="margin-left:5px;padding-top:5px">@elements.errors.mkString(", ")</span>
 			}

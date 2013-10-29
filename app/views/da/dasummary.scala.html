@@ -82,7 +82,7 @@
 		<select id="dataCombobox" class="input-xlarge" style="margin-top:10px">
 		@for((key,value) <- job.outputFilesMap){
 			<option image-path="/assets/jobs/@job.jobid/ia/input_images/@key.substring(0,key.length-4)" 
-					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/masked_@key.substring(0,key.length-4)" 
+					gridded-image-path="/assets/jobs/@job.jobid/ia/output_images/gridded_@key.substring(0,key.length-4)" 
 					data-path="@routes.Assets.at(value.replace(Constants.BASE_PUBLIC_DIR+"/", ""))">@key</option>
 		}
 			<option value="combined" image-path="NA" data-path="/assets/jobs/@job.jobid/ns/output_files/combined_data.dat">
@@ -312,6 +312,8 @@
 			
 	<script type="text/javascript">
 		window.test = null;
+		var savedParams = {};
+		var lastVT, lastPF;
 		$(document).ready(function() {
 			d3.text('/assets/jobs/@job.jobid/ns/output_files/combined_data.dat', 'text/tsv',function(tsv){
     			tsv = tsv.replace(/^[#@@][^\r\n]+[\r\n]+/mg, '');
@@ -358,15 +360,35 @@
 			
 			
 			function updateViewTypeValues() {
+			    console.log("VIIIIIIIIIIIIIIIIIIWWWWWWWWWWWWWWWWWWWWWWWWww");
+			    
 				var viewtype = $('#viewType option:selected');
-				$('#domainLowInput').val(viewtype.attr('domainLow'));
-				$('#domainMedInput').val(viewtype.attr('domainMed'));
-				$('#domainHighInput').val(viewtype.attr('domainHigh'));
+				var key = $("#dataCombobox").val() + $("#viewType").val();
+				
+                savedParams[lastPF + lastVT] = {
+                        min: $("#domainLowInput").val(),
+                        med: $("#domainMedInput").val(),
+                        max: $("#domainHighInput").val()
+                    };
+                
+				var localSaved = savedParams[key];
+				
+				if (localSaved != undefined) {
+				    console.log("GETTING SAVEEEEEEEEED");
+	                $('#domainLowInput').val(localSaved.min);
+	                $('#domainMedInput').val(localSaved.med);
+	                $('#domainHighInput').val(localSaved.max);
+				} else {
+	                $('#domainLowInput').val(viewtype.attr('domainLow'));
+	                $('#domainMedInput').val(viewtype.attr('domainMed'));
+	                $('#domainHighInput').val(viewtype.attr('domainHigh'));
+				}
+				
+                lastVT = $("#viewType").val();
+                lastPF = $("#dataCombobox").val();
 			}
 			
 			$('#viewType').change(function(){
-				updateViewTypeValues();
-				
 				$('#dataCombobox').trigger('change');
 			});
 			
@@ -381,12 +403,12 @@
 			});
 			
 			$(document).ready(function() {
-				//$('#viewType').trigger('change');
-				updateViewTypeValues();
 				$('#dataCombobox').trigger('change');
 			});
 			
 		    $('#dataCombobox').change(function() {
+		        updateViewTypeValues();
+		        
 		    	var viewtype = $('#viewType option:selected');
 		    	var plate = $('#dataCombobox option:selected');
 		    	var nrows = +$('#showRecords option:selected').val()
