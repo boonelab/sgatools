@@ -258,6 +258,11 @@ for(i in 1:length(sgadata.ns)){
   plate.data$score = round(plate.data$score,5)
   plate.data = plate.data[,!(names(plate.data) %in% c('ctrlncolonysize'))]
   
+  if (nchar(savename) > 31) {
+    savename = substr(savename, 0, 25)
+    savename = paste0(savename, " (", i, ")")
+  }
+  
   sheet <- createSheet(wb, sheetName=savename)
   addDataFrame(list("Row", "Column", "Raw colony size", "Plate id / file name", "Query", "Array", "Normalized colony size", "Score", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
   addDataFrame(plate.data, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
