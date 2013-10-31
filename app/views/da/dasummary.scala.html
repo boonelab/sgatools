@@ -91,7 +91,16 @@
 		
 		<div style="display:inline">
 			@if(iajob != null){ <a class="btn" href="@routes.Assets.at(iajob.downloadZipPath)"><i class="icon-download"></i> Image analysis results</a> }
-			<a class="btn" href="@routes.Assets.at(job.downloadXlsxPath)"><i class="icon-download"></i> Normalized/scored results</a>
+            
+            <div class="btn-group" style="display: inline-block; vertical-align: middle;">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    Normalized/scored results <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="@routes.Assets.at(job.downloadXlsxPath)"><i class="icon-download"></i> Excel&reg; format</a></li>
+                    <li><a href="@routes.Assets.at(job.downloadZipPath)"><i class="icon-download"></i> Raw files</a></li>
+                </ul>
+            </div>
 		</div>
 	
 	</div>

@@ -118,7 +118,7 @@
             @select(
                 iaForm("inverse"),
                 options = options(("true", "Dark"), ("false", "Bright")),
-                '_label -> "Inverse",
+                '_label -> "Colonies",
                 '_showConstraints -> false,
                 'class -> "auto-width",
                 'helpModal -> "ia-inverse-option",
@@ -127,13 +127,13 @@
             
             @helper.input(
                 iaForm("email"),
-                '_label -> "Email",
+                '_label -> "Notification email",
                 '_showConstraints -> false,
                 'helpModal -> "ia-email-option"
             ){ (id, name, value, args) =>
                 <div>
                     <input placeholder="your.email@@university.com" class="span2" id="@id" name="@name" @toHtmlArgs(args) size="32" type="text" style="width:175px">
-                    <span class="help">&nbsp; Enter your email address if you want to be notified once your job is complete.</span>
+                    <span class="help">&nbsp; Receive notification once your job is complete. Recommended for more than 5 images.</span>
                 </div>
             }
         </fieldset>

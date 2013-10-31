@@ -59,7 +59,7 @@ function drawHeatmap(paramsInput){
 	
 	//Replaced d3.tsv(params.dataPath, sgatools)
     d3.text(params.dataPath, 'text/tsv',function(tsv){
-    	tsv = tsv.replace(/^[#@][^\r\n]+[\r\n]+/mg, '');
+    	tsv = tsv.replace(/^[#@(][^\r\n]+[\r\n]+/mg, '');
     	tsv = "row	col	colonysize	plateid	query	array	ncolonysize	score	kvp\n" + tsv;
     	sgadata = d3.tsv.parse(tsv);
 		sgadata = sgadata.filter(function(d,i){

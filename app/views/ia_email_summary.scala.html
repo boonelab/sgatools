@@ -1,6 +1,32 @@
- @main(title="Image analysis job submitted", nav="cn") {
+@(jobid: String)
+
+@main(title="Image analysis job submitted", nav="cn") {
+
+<script type="text/javascript">
+function scheduleNext() {
+    console.log("Scheduling job checking");
+    setTimeout( function(){
+        console.log("Checking job @jobid");
+        
+        $.getJSON("/imageanalysis/status/@jobid", function(data) {
+            console.log("Result: " + data.processed);
+            if (data.processed) {
+                console.log("Redirecting to: " + window.location + "/@jobid");
+                window.location.replace(window.location + "/@jobid");
+            } else {
+                scheduleNext();
+            }
+        });
+    }, 2000);
+}
+
+$(document).ready(function() {
+    scheduleNext();
+});
+</script>
 
 <center>
-    <h3>Your job is being processed. You should receive an email from <a href="mailto:sgatools.info@@gmail.com">sgatools.info@@gmail.com</a> with the link to the results when it's completed.</h3>
+    <h3>Your job is being processed. You will receive an email from <a href="mailto:sgatools.info@@gmail.com">sgatools.info@@gmail.com</a> with the link to the results when it's completed.</h3>
+    <p>This page will redirect to results page automatically when the job is complete.</p>
 </center>
 }

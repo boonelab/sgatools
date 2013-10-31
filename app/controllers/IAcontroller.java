@@ -20,6 +20,7 @@ import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.node.ObjectNode;
 
 import play.Logger;
 import play.data.Form;
@@ -32,6 +33,7 @@ import tools.RScript;
 import tools.RScript.RScriptType;
 import tools.Utils;
 import views.html.errorpage;
+import views.html.ia_email_summary;
 import views.html.ia.iaform;
 import views.html.ia.iasummary;
 
@@ -81,7 +83,16 @@ public class IAcontroller extends Controller {
             return false;
         }
     }
-
+    
+    public static Result jobStatus(String jobid) {
+        IAjob ipJob = IAcontroller.getJobFromJsonFile(jobid);
+        
+        ObjectNode result = Json.newObject();
+        result.put("processed", ipJob != null);
+        
+        return ok(result);
+    }
+    
     public static Result showJob(String jobid) {
         IAjob ipJob = IAcontroller.getJobFromJsonFile(jobid);
 
@@ -94,10 +105,6 @@ public class IAcontroller extends Controller {
     }
 
     public static Result submit() {
-        
-        
-        Logger.info(String.format("FOOOOOOOOOOOOOOO:\n%s\n%s\n%s\n", request().uri(), request().host(), request().path()));
-        
         // Process submission
         long submissionStartTime = new Date().getTime(); // start time
 
@@ -225,7 +232,7 @@ public class IAcontroller extends Controller {
             
             new Thread(r).start();
             
-            return Application.renderIAEmailPage();
+            return ok(ia_email_summary.render(jobid));
         }
     }
 
@@ -373,7 +380,7 @@ public class IAcontroller extends Controller {
                 }
             }
             
-            message += "\n\n----\nSGATools team";
+            message += "\n\n----\nSGAtools team";
             
             Email email = new SimpleEmail();
             email.setHostName("smtp.googlemail.com");

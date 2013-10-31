@@ -82,8 +82,12 @@ Array.prototype.fileTableSGA = function(){
 	if(validQueries.length > 0){
 		validQueries = validQueries.join(', ');
 		$('#linkageGenes').val('CAN1, LYP1, '+validQueries);
-	}	
-	nsFormValid();
+	}
+	
+	if (typeof(nsFormValid) === "function") {
+	    nsFormValid();
+	}
+	
 	//////////////
 	
 	head = "<thead><tr><th>File name</th><th>Screen type</th><th>Query name</th><th>Array plate id</th></tr></thead>";

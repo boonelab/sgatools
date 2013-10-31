@@ -14,6 +14,7 @@ GET		/dataanalysis/						controllers.Application.renderDaPage()
 #Image analysis
 GET		/imageanalysis						controllers.IAcontroller.initIAForm()
 GET		/imageanalysis/:jobid				controllers.IAcontroller.showJob(jobid: String)
+GET     /imageanalysis/status/:jobid        controllers.IAcontroller.jobStatus(jobid: String)
 POST	/imageanalysis						controllers.IAcontroller.submit()
 
 

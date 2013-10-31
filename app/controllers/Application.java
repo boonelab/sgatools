@@ -7,7 +7,6 @@ import views.html.contact;
 import views.html.dapage;
 import views.html.docs;
 import views.html.index;
-import views.html.ia_email_summary;
 
 public class Application extends Controller {
 
@@ -30,9 +29,4 @@ public class Application extends Controller {
     public static Result renderDaPage() {
         return ok(dapage.render());
     }
-
-    public static Result renderIAEmailPage() {
-        return ok(ia_email_summary.render());
-    }
-
 }
