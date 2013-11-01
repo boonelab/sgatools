@@ -290,7 +290,7 @@ $(document).ready(function() {
 	$("#plateFiles").on("change", 
 		{ errorId: "pl-error", 
 		  inputId: "plateFiles", 
-		  commentPat: "^#|^@", linePat: "^(\\d+)(\\s+)(\\d+)(\\s+)(\\d+(\\.\\d*)?)(\\s.*[^\\s])*$", 
+		  commentPat: "^#|^@|^(", linePat: "^(\\d+)(\\s+)(\\d+)(\\s+)(\\d+(\\.\\d*)?)(\\s.*[^\\s])*$", 
 		  ifSkip:{regex:"^Colony Project Data File$", skip:13} 
 		},
 		readAndValidate);

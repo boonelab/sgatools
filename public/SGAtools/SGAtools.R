@@ -47,8 +47,8 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     
     # Read all lines first line, except @ and # symbols
     file.lines = readLines(file.path) 
-    comment.meta = file.lines[grepl('@|#', file.lines)]
-    file.lines = file.lines[!grepl('@|#', file.lines)]
+    comment.meta = file.lines[grepl('@|#|[(]', file.lines)]
+    file.lines = file.lines[!grepl('@|#|[(]', file.lines)]
     
     # If first line is Colony Project Data File, skip the first 13 lines 
     if(grepl('Colony Project Data File', file.lines[1], ignore.case=T)){

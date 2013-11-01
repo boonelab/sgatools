@@ -11,8 +11,13 @@ function scheduleNext() {
         $.getJSON("/imageanalysis/status/@jobid", function(data) {
             console.log("Result: " + data.processed);
             if (data.processed) {
-                console.log("Redirecting to: " + window.location + "/@jobid");
-                window.location.replace(window.location + "/@jobid");
+                if (data.success) {
+                    console.log("Redirecting to: " + window.location + "/@jobid");
+                    window.location.replace(window.location + "/@jobid");
+                } else {
+                    alert("Sorry, your images failed to be processed");
+                    window.location.replace(window.location);
+                }
             } else {
                 scheduleNext();
             }
@@ -26,7 +31,7 @@ $(document).ready(function() {
 </script>
 
 <center>
-    <h3>Your job is being processed. You will receive an email from <a href="mailto:sgatools.info@@gmail.com">sgatools.info@@gmail.com</a> with the link to the results when it's completed.</h3>
-    <p>This page will redirect to results page automatically when the job is complete.</p>
+    <h3>Your job is being processed. You will receive an email from <a href="mailto:sgatools.info@@gmail.com">sgatools.info@@gmail.com</a> with the link to the results when it's completed.<br><br>
+    This page will redirect to results page automatically when the job is complete.</h3>
 </center>
 }

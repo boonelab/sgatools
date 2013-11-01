@@ -85,11 +85,9 @@ public class IAcontroller extends Controller {
     }
     
     public static Result jobStatus(String jobid) {
-        IAjob ipJob = IAcontroller.getJobFromJsonFile(jobid);
-        
         ObjectNode result = Json.newObject();
-        result.put("processed", ipJob != null);
-        
+        result.put("processed", new File(processingFilePath(jobid)).exists());
+        result.put("success", IAcontroller.getJobFromJsonFile(jobid) != null);
         return ok(result);
     }
     
@@ -223,6 +221,11 @@ public class IAcontroller extends Controller {
                 }
                 
                 return badRequest(iaform.render(filledForm));
+            } finally {
+                try {
+                    new File(processingFilePath(jobid)).createNewFile();
+                } catch (IOException e) {
+                }
             }
             
             return redirect("/imageanalysis/" + jobid);
@@ -235,11 +238,19 @@ public class IAcontroller extends Controller {
             return ok(ia_email_summary.render(jobid));
         }
     }
-
+    
+    private static String processingFilePath(String jobid) {
+        return Utils.joinPath(Constants.JOB_OUTPUT_DIR, jobid, "ia", "processed");
+    }
+    
     private static void processImages(long submissionStartTime, Form<IAjob> filledForm, IAjob ipJob, String jobid,
             String inputImagesDir, String outputFilesDir, String zipFilePath, List<PlateFile> passedPlateImages,
             List<PlateFile> failedPlateImages, Map<String, PlateFile> inputFileMap, RScript imageProcessing) throws
             IAException {
+        File placeholder = new File(processingFilePath(jobid));
+        if (placeholder.exists()) {
+            placeholder.delete();
+        }
         
         boolean processingResult = imageProcessing.execute();
         
@@ -377,6 +388,11 @@ public class IAcontroller extends Controller {
                 case WRITEPROBLEM:
                     message = "Fatal error, please contact developers";
                     break;
+                }
+            } finally {
+                try {
+                    new File(processingFilePath(jobid)).createNewFile();
+                } catch (IOException e) {
                 }
             }
             

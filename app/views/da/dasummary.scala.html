@@ -197,11 +197,11 @@
 				
 				$('#exportHmap').click(function(){
 					$('.heatmapSVG').attr('xmlns', 'http://www.w3.org/2000/svg');
-					svg_text = $('<div>').append($('.heatmapSVG').clone()).html();
+					var svg_text = $('<div>').append($('.heatmapSVG').clone()).html();
 					$('#inputHmap').val(svg_text);
 					$('#export-graphics-form').submit();
 				});
-			</script>			
+			</script>
 			
 			<script>
 				$('#griddedImage').change(function(){
