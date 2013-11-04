@@ -369,8 +369,6 @@
 			
 			
 			function updateViewTypeValues() {
-			    console.log("VIIIIIIIIIIIIIIIIIIWWWWWWWWWWWWWWWWWWWWWWWWww");
-			    
 				var viewtype = $('#viewType option:selected');
 				var key = $("#dataCombobox").val() + $("#viewType").val();
 				
@@ -383,7 +381,6 @@
 				var localSaved = savedParams[key];
 				
 				if (localSaved != undefined) {
-				    console.log("GETTING SAVEEEEEEEEED");
 	                $('#domainLowInput').val(localSaved.min);
 	                $('#domainMedInput').val(localSaved.med);
 	                $('#domainHighInput').val(localSaved.max);
