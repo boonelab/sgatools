@@ -364,7 +364,7 @@ public class IAcontroller extends Controller {
         
         @Override
         public void run() {
-            String title = "SGATools: Your images have been processed";
+            String title = "SGAtools: Your images have been processed";
             String message = "";
             String host = Constants.prop.getProperty("sgatools.deployed.host");
             
@@ -376,7 +376,7 @@ public class IAcontroller extends Controller {
                 message += host + "/imageanalysis/" + jobid + "\n\n";
                 message += "Should you face any problems please reply to this email and we'll try to get back to you as soon as possible";
             } catch (IAException e) {
-                title = "SGATools: Your images have failed to be processed";
+                title = "SGAtools: Your images have failed to be processed";
                 
                 switch (e.getType()) {
                 case EMPTYPLATES:
