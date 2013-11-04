@@ -1,5 +1,13 @@
 
 @main("Home", nav="hm") {
+        <script>
+            $(document).ready(function() {
+                if( $.cookie('tip-update') == null){
+                    $('#tip-update').show();
+                }
+            })
+        </script>
+
 	<style>
 	.carousel.carousel-fade .item {
 	  -webkit-transition: opacity 2s ease-in-out;
@@ -111,5 +119,12 @@
 	</center>
 	<br>
 	
+        <div class="alert alert-info hide" id="tip-update" style="margin-bottom:5px">
+          <button type="button" class="close" data-dismiss="alert" onclick="$.cookie('tip-update', true, { expires : 60 });">&times;</button>
+          <div class="tip-content">
+              01/11/13 - SGAtools was updated to include new <a href="http://gitter.ccbr.utoronto.ca">image analysis software</a>, excel-formatted results and an e-mail feature. If you have any concerns about this update, please let us know by emailing <a href="mailto:sgatools.info@@gmail.com">sgatools.info@@gmail.com</a>.
+          </div>
+        </div>
+        
     
 }
