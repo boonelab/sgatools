@@ -173,8 +173,6 @@ tt <- function(x){
 
 combined = lapply(sgadata.ns, function(plate.data){
       df = plate.data
-      #df$row = ceiling(df$row/sqrt(args$replicates))
-      #df$col = ceiling(df$col/sqrt(args$replicates))
       
       d = attr(df, 'file.name.metadata')
       if (d$is.control & do.combined) {
@@ -294,6 +292,44 @@ if(args$score){
 
 # README
 writeLines(readMeLines, 'README.txt')
+
+############################################################
+# Another sheet with averaged colony sizes, scores, etc... #
+############################################################
+
+combined = lapply(sgadata.ns, function(plate.data){
+      df = plate.data
+      
+      collapsed = ddply(df, c("query", "array"), function(df) { 
+            c(  paste0(unique(df$plateid), collapse=';') , 
+                mean(df$colonysize, na.rm=T) ,
+                sd  (df$colonysize, na.rm=T),
+                mean(df$ncolonysize, na.rm=T),
+                sd  (df$ncolonysize, na.rm=T),
+                mean(df$score, na.rm=T),
+                sd  (df$score, na.rm=T),
+                tt  (df$ncolonysize),
+                paste0(unique(df$kvp[!is.na(df$kvp)], na.rm=T), collapse=';')
+            ) 
+          })
+      names(collapsed) = c('query', 'array', 'plateid', 'colonysize','colonysizeSd', 
+          'ncolonysize', 'ncolonysizeSd', 'score', 'scoreSd', 'pvalue', 'kvp')
+      
+      collapsed$kvp[collapsed$kvp == ""] = NA
+      collapsed$ncolonysize[collapsed$ncolonysize == "NaN"] = NA
+      collapsed$score[collapsed$score == "NaN"] = NA
+      collapsed$colonysize = round(as.numeric(collapsed$colonysize), 2)
+      collapsed$ncolonysize = round(as.numeric(collapsed$ncolonysize), 5)
+      collapsed$score = round(as.numeric(collapsed$score), 5)
+      
+      collapsed
+    })
+
+combined = do.call(rbind, combined)
+
+sheet <- createSheet(wb, sheetName='Summary')
+addDataFrame(list("Query", "Array", "Plate id / file name", "Raw avg. colony size", "Raw avg. colony size std. dev.", "Normalized colony size", "Normalized colony size std. dev.", "Score", "Score std. dev.", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+addDataFrame(combined, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
 
 saveWorkbook(wb, "data.xlsx")
 
