@@ -276,9 +276,9 @@ if(args$score){
   # Scores only file
   savename =  "scores.dat"
   comments = c('# Scores only file', comment.ns)
-  comments[length(comments)] = '# (1)Query ORF\t(2)Array ORF\t(3)Score\t(4)Standard deviation\t(5)P-value'
+  comments[length(comments)] = '# (1)Query ORF\t(2)Array ORF\t(4)Array annotation\t(3)Score\t(4)Standard deviation\t(5)P-value'
   writeLines(comments, savename)
-  sc = combined[,c('query','array', 'score', 'sd', 'pvalue')]
+  sc = combined[,c('query','array', 'array_annot', 'score', 'sd', 'pvalue')]
   sc = sc[!is.na(sc[[3]]),]
   
   # Map orf to gene name
