@@ -179,11 +179,12 @@ combined = lapply(sgadata.ns, function(plate.data){
         return()
       }
       
-      collapsed = ddply(df, c("query", "array"), function(df) { 
+      collapsed = ddply(df, c("query", "array_annot"), function(df) { 
             c( mean(df$colonysize, na.rm=T) , 
                 paste0(unique(df$plateid), collapse=';') , 
                 paste0(unique(df$query), collapse=';') , 
                 paste0(unique(df$array), collapse=';') , 
+                paste0(unique(df$array_annot), collapse=';') , 
                 mean(df$ncolonysize, na.rm=T), 
                 mean(df$score, na.rm=T),
                 sd(df$score, na.rm=T),
@@ -196,7 +197,7 @@ combined = lapply(sgadata.ns, function(plate.data){
           })
       collapsed[,1:2] = NA
       names(collapsed) = c('row', 'col', 'colonysize', 'plateid', 
-          'query', 'array', 'ncolonysize', 'score', 'scoreSd', 'kvp', 'sd', 'pvalue', 'ctrlncolonysize', 'ctrlsd')
+          'query', 'array', 'array_annot', 'ncolonysize', 'score', 'scoreSd', 'kvp', 'sd', 'pvalue', 'ctrlncolonysize', 'ctrlsd')
       
       collapsed$kvp[collapsed$kvp == ""] = NA
       collapsed$ncolonysize[collapsed$ncolonysize == "NaN"] = NA
@@ -220,7 +221,7 @@ combined$ctrlsd = round(as.numeric(combined$ctrlsd), digits=3)
 combined.dat = combined[ , c('row','col', 'colonysize', 'plateid', 'query', 'array', 'ncolonysize', 'score', 'kvp')]
 
 # Reindex the columns
-combined.new = combined[ , c('query','array', 'ncolonysize', 'sd', 'ctrlncolonysize', 'ctrlsd', 'score', 'scoreSd', 'pvalue', 'kvp')]
+combined.new = combined[ , c('query','array', 'array_annot', 'ncolonysize', 'sd', 'ctrlncolonysize', 'ctrlsd', 'score', 'scoreSd', 'pvalue', 'kvp')]
 ind = combined.new$query %in% names(genemap)
 combined.new$queryName <- combined.new$query
 combined.new$queryName[ind] = genemap[combined.new$queryName[ind]]
@@ -228,7 +229,7 @@ combined.new$queryName[ind] = genemap[combined.new$queryName[ind]]
 ind = combined.new$array %in% names(genemap)
 combined.new$arrayName <- combined.new$array
 combined.new$arrayName[ind] = genemap[combined.new$arrayName[ind]]
-combined.new = combined.new[ , c('query', 'queryName','array', 'arrayName', 'ncolonysize', 'sd', 'ctrlncolonysize', 'ctrlsd', 'score', 'scoreSd', 'pvalue', 'kvp')]
+combined.new = combined.new[ , c('query', 'queryName','array', 'arrayName', 'array_annot', 'ncolonysize', 'sd', 'ctrlncolonysize', 'ctrlsd', 'score', 'scoreSd', 'pvalue', 'kvp')]
 
 # Combined data
 savename =  "combined_data.dat"
@@ -238,7 +239,7 @@ writeLines(comments, savename)
 write.table(combined.dat, savename, quote=F, row.names=F, col.names=F, sep="\t", append=T)
 
 sheet <- createSheet(wb, sheetName="Combined data")
-addDataFrame(list("Query ORF", "Query Name", "Array ORF", "Array Name", "Normalized colony size (EXPERIMENT)",  "Normalized colony std. dev. (EXPERIMENT)", "Normalized colony size (CONTROL)", "Normalized colony std. dev. (CONTROL)", "Score", "Score stdev", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+addDataFrame(list("Query ORF", "Query Name", "Array ORF", "Array Name", "Array annotation", "Normalized colony size (EXPERIMENT)",  "Normalized colony std. dev. (EXPERIMENT)", "Normalized colony size (CONTROL)", "Normalized colony std. dev. (CONTROL)", "Score", "Score stdev", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
 addDataFrame(combined.new, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
 
 # Write generated files
@@ -300,7 +301,7 @@ writeLines(readMeLines, 'README.txt')
 combined = lapply(sgadata.ns, function(plate.data){
       df = plate.data
       
-      collapsed = ddply(df, c("query", "array"), function(df) { 
+      collapsed = ddply(df, c("query", "array", "array_annot"), function(df) { 
             c(  paste0(unique(df$plateid), collapse=';') , 
                 mean(df$colonysize, na.rm=T) ,
                 sd  (df$colonysize, na.rm=T),
@@ -312,7 +313,7 @@ combined = lapply(sgadata.ns, function(plate.data){
                 paste0(unique(df$kvp[!is.na(df$kvp)], na.rm=T), collapse=';')
             ) 
           })
-      names(collapsed) = c('query', 'array', 'plateid', 'colonysize','colonysizeSd', 
+      names(collapsed) = c('query', 'array', 'array_annot', 'plateid', 'colonysize','colonysizeSd', 
           'ncolonysize', 'ncolonysizeSd', 'score', 'scoreSd', 'pvalue', 'kvp')
       
       collapsed$kvp[collapsed$kvp == ""] = NA
@@ -328,7 +329,7 @@ combined = lapply(sgadata.ns, function(plate.data){
 combined = do.call(rbind, combined)
 
 sheet <- createSheet(wb, sheetName='Summary')
-addDataFrame(list("Query", "Array", "Plate id / file name", "Raw avg. colony size", "Raw avg. colony size std. dev.", "Normalized colony size", "Normalized colony size std. dev.", "Score", "Score std. dev.", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
+addDataFrame(list("Query", "Array", "Array annotation", "Plate id / file name", "Raw avg. colony size", "Raw avg. colony size std. dev.", "Normalized colony size", "Normalized colony size std. dev.", "Score", "Score std. dev.", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
 addDataFrame(combined, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
 
 saveWorkbook(wb, "data.xlsx")

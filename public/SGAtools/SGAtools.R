@@ -94,11 +94,11 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     array.vals = ((cdbl - 1)* (num.rows/2)) + rdbl
     
     # Map to array definition files
-    sga.data[[6]] = mapArrayDefinition(file.name.metadata, array.vals, 
+    sga.data[,6:7] = mapArrayDefinition(file.name.metadata, array.vals, 
                                        rdbl, cdbl, ad.paths)
     
     # Set normalized colony size / score / KVP to NA 
-    sga.data[,7:9] = NA
+    sga.data[,8:10] = NA
     
     # Add comment / meta data lines
     comment(sga.data) = comment.meta
@@ -110,7 +110,7 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     
     # Set column names of data
     names(sga.data) = c('row', 'col', 'colonysize',
-                        'plateid', 'query','array',
+                        'plateid', 'query','array', 'array_annot',
                         'ncolonysize', 'score', 'kvp'  )
     sga.data
   })
@@ -164,8 +164,11 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
   }
   
   ret = as.character(array.vals)
-  ret = unlist( lapply(strsplit(ret, '_'), function(i) i[1]) )
-  return(ret)
+  
+  orfs = unlist( lapply(strsplit(ret, '_'), function(i) i[1]) )
+  annots = unlist( lapply(strsplit(ret, '_'), function(i) i[2]) )
+  
+  return(c(orfs, annots))
 }
 
 # Get metadata encoded in file name
