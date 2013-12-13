@@ -1,3 +1,5 @@
+options(java.parameters = "-Xmx1024m")
+
 suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(logging))
 suppressPackageStartupMessages(library(plyr))
@@ -35,6 +37,7 @@ addDataFrame(readMeLines, sheet, startRow=1, startColumn=1, row.names=F, col.nam
 
 linkage.file = file.path(getwd(), "data", "chrom_coordinates.Rdata")
 genemap.file = file.path(getwd(), "data", "genemap.Rdata")
+allele_map.file = file.path(getwd(), "data", "allele_map.Rdata")
 
 source('SGAtools.R')
 
@@ -51,6 +54,9 @@ if(args$linkagecutoff == -1){
   linkage.genes[ind] = z[linkage.genes[ind]]
   linkage.genes = toupper(linkage.genes)
 }
+
+load(allele_map.file)
+
 # Split by colon (illegal character for filenames)
 args$inputfiles = unlist(strsplit(args$inputfiles, ':'))
 args$savenames = unlist(strsplit(args$savenames, ':'))
@@ -229,7 +235,13 @@ combined.new$queryName[ind] = genemap[combined.new$queryName[ind]]
 ind = combined.new$array %in% names(genemap)
 combined.new$arrayName <- combined.new$array
 combined.new$arrayName[ind] = genemap[combined.new$arrayName[ind]]
+
+ind = tolower(combined.new$array_annot) %in% names(allele_map)
+z = combined.new$array_annot
+combined.new$array_annot <- ''
+combined.new$array_annot[ind] = allele_map[tolower(z[ind])]
 combined.new = combined.new[ , c('query', 'queryName','array', 'arrayName', 'array_annot', 'ncolonysize', 'sd', 'ctrlncolonysize', 'ctrlsd', 'score', 'scoreSd', 'pvalue', 'kvp')]
+
 
 # Combined data
 savename =  "combined_data.dat"
@@ -255,7 +267,7 @@ for(i in 1:length(sgadata.ns)){
   plate.data = sgadata.ns[[i]]
   plate.data$ncolonysize = round(plate.data$ncolonysize,5)
   plate.data$score = round(plate.data$score,5)
-  plate.data = plate.data[,!(names(plate.data) %in% c('ctrlncolonysize'))]
+  plate.data = plate.data[,!(names(plate.data) %in% c('ctrlncolonysize', 'array_annot'))]
   
   sheetName = savename
   
@@ -333,5 +345,3 @@ addDataFrame(list("Query", "Array", "Array annotation", "Plate id / file name", 
 addDataFrame(combined, sheet, startRow=2, startColumn=1, row.names=F, col.names=F, showNA=T)
 
 saveWorkbook(wb, "data.xlsx")
-
-print(linkage.file)

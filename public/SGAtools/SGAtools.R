@@ -168,6 +168,10 @@ mapArrayDefinition <- function(file.name.metadata, array.vals, rdbl, cdbl, ad.pa
   orfs = unlist( lapply(strsplit(ret, '_'), function(i) i[1]) )
   annots = unlist( lapply(strsplit(ret, '_'), function(i) i[2]) )
   
+  if (all(is.na(annots))) {
+    annots = orfs
+  }
+  
   return(c(orfs, annots))
 }
 
@@ -254,7 +258,7 @@ normalizeSGA <- function(plate.data,
   
   ########## (N1) Plate normalization ##########
   plate.data$pnorm = plateNormalization(plate.data, 'colonysize', overall.plate.median)
-  
+
   ########## (F2) Big replicates filter ##########
   if (!keep.large) {
     big.ign = bigReplicatesFilter(plate.data, 'pnorm', max.colony.size)
@@ -263,10 +267,10 @@ normalizeSGA <- function(plate.data,
   
   ########## (N2) Spatial normalization ##########
   plate.data$snorm = spatialNormalization(plate.data, 'pnorm', ignore.ind)
-  
+
   ########## (N3) Row column effect normalization ##########
   plate.data$rcnorm = rowcolNormalization(plate.data, 'snorm', ignore.ind)
-  
+
   ########## (F3) Jackknife filter  ########## 
   # (ON SPOTS? TODO)
   jk.ign = jackknifeFilter(plate.data, 'rcnorm')
@@ -569,6 +573,12 @@ plateNormalization <- function(plate.data, field.to.normalize, default.overall.m
   # We have suffiecent data - get median of center 60% of colonies
   plate.median = median(vals[round(lower*vals.length) : round(upper*vals.length)], na.rm = TRUE)
   
+  if (plate.median == 0) {
+    loginfo('Median is 0, taking median of all')
+    plate.median = mean(vals, na.rm = TRUE)
+    loginfo(paste('New median is', plate.median))
+  }
+  
   # Store the final result computed using all data in result array
   normalized = plate.data[[field.to.normalize]] * (default.overall.median / plate.median)
   
@@ -689,9 +699,10 @@ rowcolNormalizationHelper <- function(rowcol.data, colony.size.data, num.rows, n
   # We only care about Y values (colony size)
   lowess_smoothed = lowess_smoothed[['y']]
   
-  
   tmp = lowess_smoothed / mean(lowess_smoothed)
+  tmp[is.nan(tmp)] = 1
   colony.size.data[!ind.na][ind.sorted] = colony.size.data[!ind.na][ind.sorted] / tmp;
+  colony.size.data[is.infinite(colony.size.data)] = 0
   
   #    lines(x=lx, tmp, col='red')
   #    points(x=lx, colony.size.data[!ind.na][ind.sorted] / tmp, col='blue', pch=3)
