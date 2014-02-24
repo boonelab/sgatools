@@ -24,6 +24,14 @@ library(bootstrap)  # For jackknife function
 
 addHandler(writeToConsole)
 
+# returns string w/o leading whitespace
+trim.leading <- function (x)  sub("^\\s+", "", x)
+
+# returns string w/o trailing whitespace
+trim.trailing <- function (x) sub("\\s+$", "", x)
+
+# returns string w/o leading or trailing whitespace
+trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 
 SGATOOLS_VERSION = '1.0.0'
 ####################################################################################
@@ -54,6 +62,8 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     if(grepl('Colony Project Data File', file.lines[1], ignore.case=T)){
       loginfo('* Detected boone-lab format, skipping first 13 lines')
       file.lines = file.lines[-(1:13)]
+      file.lines = sapply(file.lines, trim)
+      file.lines = gsub(pattern='\\s+',replacement='\t',file.lines)
     }
     
     # Read in the data: we only care about the first 3 columns
