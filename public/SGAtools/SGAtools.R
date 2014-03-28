@@ -102,7 +102,7 @@ readSGA <- function(file.paths, file.names=basename(file.paths), ad.paths=NA, re
     }
     
     # Default arrays as numbers - each replicate has a unique number 
-    array.vals = ((cdbl - 1)* (num.rows/2)) + rdbl
+    array.vals = ((cdbl - 1)* (num.rows/sqrt(replicates))) + rdbl
     
     # Map to array definition files
     sga.data[,6:7] = mapArrayDefinition(file.name.metadata, array.vals, 
