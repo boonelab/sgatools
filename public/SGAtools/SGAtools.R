@@ -374,9 +374,9 @@ scoreSGA <- function(plate.data.list, scoring.function=1){
     })
     
     # Get array smf from control plates
-    arrays = unique(merged.dat.ctrl$array)
+    arrays = unique(merged.dat.ctrl$array_annot)
     array.smf = sapply(arrays, function(curr.array){
-      median( merged.dat.ctrl$ncolonysize[ merged.dat.ctrl$array == curr.array ], na.rm=T )
+      median( merged.dat.ctrl$ncolonysize[ merged.dat.ctrl$array_annot == curr.array ], na.rm=T )
     })
     
     # Use default overall median or median from plates?
@@ -393,7 +393,7 @@ scoreSGA <- function(plate.data.list, scoring.function=1){
     plate.data.list[is.dm] = lapply(plate.data.list[is.dm], function(plate.data){
       # Single mutant fitnesses
       q.smf = query.smf[plate.data$query] / middle.median
-      a.smf = array.smf[plate.data$array] / middle.median
+      a.smf = array.smf[plate.data$array_annot] / middle.median
       # Double mutant fitness
       dm = plate.data$ncolonysize / middle.median
       
