@@ -56,6 +56,8 @@ if(args$linkagecutoff == -1){
 }
 
 load(allele_map.file)
+## Load bad array genes
+bad_array <- read.csv(file.path(getwd(), "bad_strains_20200106.csv"),header = F)
 
 # Split by colon (illegal character for filenames)
 args$inputfiles = unlist(strsplit(args$inputfiles, ':'))
@@ -218,6 +220,9 @@ combined = lapply(sgadata.ns, function(plate.data){
 
 combined = do.call(rbind, combined)
 
+#####remove bad arrays######
+combined <- subset(combined,!array_annot %in% toupper(bad_array$V1))
+
 ind = !is.na(combined$sd)
 combined$sd = round(as.numeric(combined$sd), digits=3)
 combined$scoreSd = round(as.numeric(combined$scoreSd), digits=3)
@@ -339,6 +344,8 @@ combined = lapply(sgadata.ns, function(plate.data){
     })
 
 combined = do.call(rbind, combined)
+
+combined <- subset(combined,!array_annot %in% toupper(bad_array$V1))
 
 sheet <- createSheet(wb, sheetName='Summary')
 addDataFrame(list("Query", "Array", "Array annotation", "Plate id / file name", "Raw avg. colony size", "Raw avg. colony size std. dev.", "Normalized colony size", "Normalized colony size std. dev.", "Score", "Score std. dev.", "p-Value", "Additional information"), sheet, startRow=1, startColumn=1, row.names=F, col.names=F)
